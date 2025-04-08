@@ -3,90 +3,275 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eloquence Créative</title>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Lora&display=swap" rel="stylesheet">
   <style>
-    body {
+    :root {
+      --accent: #76E4D9;
+      --bg: #1F1B2E;
+      --bg-alt: #2A243B;
+      --text: #C9F0FF;
+    }
+    * {
+      box-sizing: border-box;
       margin: 0;
+      padding: 0;
+    }
+    body {
       font-family: 'Quicksand', sans-serif;
-      background-color: #1F1B2E;
-      color: #C9F0FF;
+      background-color: var(--bg);
+      color: var(--text);
       line-height: 1.6;
     }
+    nav {
+      background-color: #1B182A;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: var(--accent);
+    }
+    nav img {
+      height: 40px;
+      margin-right: auto;
+      transition: transform 0.3s ease;
+    }
+    nav img:hover {
+      transform: scale(1.1) rotate(-2deg);
+    }
     header {
+      background-color: var(--accent);
+      color: var(--bg);
       padding: 4rem 2rem;
       text-align: center;
-      background: linear-gradient(135deg, #76E4D9, #C9F0FF);
-      color: #1F1B2E;
     }
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
+    .header-content {
+      max-width: 1100px;
+      margin: auto;
     }
-    header p {
-      font-family: 'Lora', serif;
-      font-size: 1.2rem;
+    .tagline {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: white;
+      background: rgba(0, 0, 0, 0.35);
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      display: inline-block;
+      transform: rotate(-2deg);
+      animation: flicker 1.2s infinite alternate;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+    }
+    .cta-button {
+      display: inline-block;
+      padding: 0.8rem 1.6rem;
+      margin-top: 2rem;
+      background: linear-gradient(135deg, var(--bg-alt), var(--bg));
+      color: var(--accent);
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 1rem;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 0 8px rgba(118, 228, 217, 0.3);
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+    .cta-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 16px rgba(118, 228, 217, 0.6);
+      background: linear-gradient(135deg, var(--bg), var(--bg-alt));
+      color: white;
     }
     section {
       padding: 3rem 2rem;
-      max-width: 900px;
+      max-width: 1100px;
       margin: auto;
     }
     h2 {
-      color: #76E4D9;
+      color: var(--accent);
       font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
     }
     .service {
-      margin-bottom: 2rem;
-    }
-    footer {
-      text-align: center;
+      background-color: var(--bg-alt);
       padding: 2rem;
-      background-color: #1B182A;
-      font-size: 0.9rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .service:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 20px rgba(118, 228, 217, 0.3);
+    }
+    .service em {
+      display: block;
+      margin-top: 1rem;
+      color: #aaa;
+    }
+    .pricing p,
+    #contact p {
+      margin-bottom: 1rem;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .modal-content {
+      background-color: var(--bg-alt);
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 600px;
+      width: 90%;
+      color: var(--text);
+      text-align: left;
+    }
+    .modal-close {
+      float: right;
+      cursor: pointer;
+      font-size: 1.2rem;
+      color: var(--accent);
+    }
+    @keyframes flicker {
+      from { opacity: 1; }
+      to { opacity: 0.6; }
     }
   </style>
 </head>
 <body>
+  <nav>
+    <a href="#top"><img src="logo.png" alt="Logo Éloquence Créative"></a>
+    <a href="#about">À propos</a>
+    <a href="#services">Services</a>
+    <a href="#pricing">Tarifs</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
   <header>
-    <h1>Eloquence Créative</h1>
-    <p>Vos projets méritent des mots justes et une stratégie web qui leur donne vie.</p>
+    <div class="header-content">
+      <p class="tagline">Vos projets méritent des mots <strong><u>justes</u></strong> et une stratégie web qui leur donne <strong><u>vie</u></strong>.</p><br>
+      <a class="cta-button" href="#services">Découvrir mes services</a>
+    </div>
   </header>
-  
-  <section>
+
+  <section id="about">
     <h2>À propos</h2>
-    <p>Je suis Guilhem, consultant indépendant en marketing digital et rédaction SEO.
-      Mon métier : transformer des idées en stratégies efficaces, des mots en leviers de visibilité,
-      et des contenus en véritables vecteurs d’identité. J’accompagne les marques qui veulent prendre la parole avec justesse,
-      créativité et impact — et je le fais avec méthode, rigueur… et un peu d’enthousiasme, toujours. Et parce que l’image de marque
-      passe aussi par l’oreille, je conçois des logos sonores qui renforcent votre présence, même quand l’écran est éteint.
-    </p>
+    <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
+      <img src="portrait.jpg" alt="Portrait de Guilhem, consultant en marketing digital et rédaction SEO, bras croisés devant une baie vitrée avec plante en arrière-plan." style="border-radius: 50%; border: 4px solid var(--accent); width: 180px; height: 180px; object-fit: cover;">
+      <p style="flex: 1; min-width: 250px;">Je suis Guilhem, consultant indépendant en marketing digital et rédaction SEO. Mon métier : transformer des idées en stratégies efficaces, des mots en leviers de visibilité, et des contenus en véritables vecteurs d’identité. J’accompagne les marques qui veulent prendre la parole avec justesse, créativité et impact — et je le fais avec méthode, rigueur… et un peu d’enthousiasme, toujours. <br><br>Parce que l’image de marque passe aussi par l’oreille, je conçois des logos sonores qui renforcent votre présence, même quand l’écran est éteint.</p>
+    </div>
   </section>
 
-  <section>
+  <section id="services">
     <h2>Services</h2>
-    <div class="service">
-      <h3>Marketing digital</h3>
-      <p>En tant que marketer full stack, j’interviens à 360° sur toutes les étapes d’une stratégie digitale : audit, acquisition,
-        contenus, pub, analyse... jusqu’à la célébration des résultats. Je suis comme un couteau suisse, mais sans le tire-bouchon inutile.</p>
-    </div>
-    <div class="service">
-      <h3>Rédaction SEO</h3>
-      <p>Des contenus optimisés pour les moteurs de recherche, pensés d'abord pour les humains. J'écris des textes clairs,
-        engageants et alignés sur votre positionnement, pour booster votre visibilité et affirmer votre identité de marque.
-        Pas de remplissage, pas de phrases creuses : chaque mot compte.</p>
-    </div>
-    <div class="service">
-      <h3>Branding sonore</h3>
-      <p>Un logo visuel, c’est bien. Un logo qui s’entend, c’est mieux. J’imagine et crée des identités sonores qui captent l’attention
-        et marquent les esprits, même quand les yeux sont fermés. Oui, j’fais parler les pixels.</p>
+    <div class="services-grid">
+      <div class="service" onclick="openModal('modal-marketing')">
+        <h3>📣 Marketing digital</h3>
+        <p>Marketer full stack, j’interviens à 360° sur toutes les étapes d’une stratégie digitale jusqu’à la célébration des résultats.</p>
+        <em>Je suis comme un couteau suisse, mais sans le tire-bouchon inutile.</em>
+      </div>
+      <div class="service" onclick="openModal('modal-seo')">
+        <h3>✍️ Rédaction SEO</h3>
+        <p>Des contenus optimisés pour les moteurs de recherche, pensés d'abord pour les humains.</p>
+        <em>Mes textes sont bien référencés, mais promis, ils ne parleront pas comme des robots en lithium sous anxiolytiques.</em>
+      </div>
+      <div class="service" onclick="openModal('modal-audio')">
+        <h3>🎧 Branding sonore</h3>
+        <p>Un logo visuel, c’est bien. Un logo qui s’entend pour créer une émotion durable c’est mieux.</p>
+        <em>Oui, j’fais parler les pixels.</em>
+      </div>
     </div>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Eloquence Créative. Tous droits réservés.</p>
-  </footer>
+  <div id="modal-marketing" class="modal" onclick="closeModal(event)">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal(event)">&times;</span>
+      <h3>📣 Marketing digital</h3>
+      <ul>
+        <li>Audit de présence en ligne et définition des objectifs</li>
+        <li>Stratégie de contenu et rédaction web optimisée pour le référencement naturel (SEO)</li>
+        <li>Création de contenus pour les réseaux sociaux : élaboration de plans médias, rédaction des publications, accompagnement visuel et stratégie éditoriale</li>
+        <li>Création et pilotage de campagnes webmarketing (SEA, e-mailing)</li>
+        <li>Analyse de performances (reporting, optimisation, A/B testing)</li>
+        <li>Conseil éditorial, accompagnement stratégique à long terme et optimisation de l’expérience utilisateur (UX)</li>
+      </ul>
+    </div>
+  </div>
+  <div id="modal-seo" class="modal" onclick="closeModal(event)">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal(event)">&times;</span>
+      <h3>✍️ Rédaction SEO</h3>
+      <p>J'écris des textes clairs, engageants et alignés sur votre positionnement, pour booster votre visibilité et affirmer votre identité de marque auprès de vos cibles. Pas de remplissage, pas de phrases creuses : chaque mot compte.</p>
+    </div>
+  </div>
+  <div id="modal-audio" class="modal" onclick="closeModal(event)">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal(event)">&times;</span>
+      <h3>🎧 Branding sonore</h3>
+      <p>J’imagine et crée des identités sonores qui captent l’attention et marquent les esprits, même quand les yeux sont fermés. Que ce soit pour accueillir vos clients sur votre site internet, pour votre nouvelle publicité, ou bien faire patienter vos clients sur votre standard téléphonique, un logo sonore est un vecteur d'émotions qui donne une voix unique et mémorable à votre marque.</p>
+    </div>
+  </div>
+
+  <section id="pricing">
+    <h2>Tarifs</h2>
+    <p><strong>Conseils en marketing digital et rédaction SEO</strong></p>
+    <p><strong>TJM : 250€</strong> – pour des interventions ponctuelles ou à la journée.</p>
+    <p>Des <strong>forfaits sur mesure</strong> sont également proposés pour les missions longues ou récurrentes, à définir ensemble selon vos besoins.</p>
+    <p><strong>Branding sonore</strong></p>
+    <p>Un premier échange permet d’évaluer votre projet et de comprendre votre brief afin de vous proposer un devis sur mesure.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Vous pouvez me contacter à l'adresse suivante : <a href="mailto:guilhem@eloquencecreative.fr" style="color: var(--accent); font-weight: bold;">guilhem@eloquencecreative.fr</a></p>
+    <p>Téléphone : <a href="tel:+33636666157" style="color: var(--accent); font-weight: bold;">06 36 66 61 57</a></p>
+    <a class="cta-button" href="https://calendly.com/guilhem-eloquencecreative/30min" target="_blank">Prendre rendez-vous</a>
+    <form action="mailto:guilhem@eloquencecreative.fr" method="POST" enctype="text/plain" style="margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem; max-width: 500px;">
+      <label for="email">Votre email :</label>
+      <input type="email" id="email" name="email" required style="padding: 0.5rem; border-radius: 4px; border: none;">
+      <label for="message">Votre message :</label>
+      <textarea id="message" name="message" rows="5" required style="padding: 0.5rem; border-radius: 4px; border: none;"></textarea>
+      <button type="submit" class="cta-button">Envoyer</button>
+    </form>
+  </section>
+
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = 'flex';
+    }
+    function closeModal(event) {
+      if (event.target.classList.contains('modal') || event.target.classList.contains('modal-close')) {
+        event.currentTarget.style.display = 'none';
+      }
+    }
+  </script>
 </body>
 </html>
+
 Ajout index.html à la racine
