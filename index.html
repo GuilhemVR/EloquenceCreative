@@ -13,6 +13,31 @@
   <title>Eloquence Créative</title>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Lora&display=swap" rel="stylesheet">
   <style>
+    .menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    padding-top: 1rem;
+  }
+  .nav-links.show {
+    display: flex;
+  }
+}
+
     .nav-links {
       display: flex;
       gap: 1.5rem;
@@ -225,6 +250,7 @@
 <body>
   <nav>
   <a href="#top"><img src="logo.png" alt="Logo Éloquence Créative"></a>
+    <button class="menu-toggle" onclick="toggleMobileMenu()">☰</button>
   <div class="nav-links desktop-nav">
   <a href="#about">À propos</a>
   <div class="dropdown" style="position: relative; display: inline-block;">
@@ -541,5 +567,12 @@ function toggleDropdown(event) {
   </p>
 </footer>
 </footer>
+  <script>
+  function toggleMobileMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('show');
+  }
+</script>
+
 </body>
 </html>
