@@ -1,7 +1,7 @@
 backend:
-  name: bejewelled-baklava-a4f72e
-  repo: GuilhemVR/EloquenceCreative
+  name: git-gateway
   branch: main
+  site_domain: bejewelled-baklava-a4f72e.netlify.app
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
@@ -16,3 +16,4 @@ collections:
       - { label: "Titre", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Contenu", name: "body", widget: "markdown" }
+
