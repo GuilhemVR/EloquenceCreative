@@ -1,7 +1,7 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: GuilhemVR/EloquenceCreative
   branch: main
-  site_domain: bejewelled-baklava-a4f72e.netlify.app
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
