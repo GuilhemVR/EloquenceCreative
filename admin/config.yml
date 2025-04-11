@@ -15,7 +15,4 @@ collections:
       - { label: "Titre", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Contenu", name: "body", widget: "markdown" }
-git add admin/config.yml
-git commit -m "Fix: switch backend to git-gateway"
-git push origin main
 
