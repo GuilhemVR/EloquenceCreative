@@ -1,73 +1,28 @@
-<!-- V1 du site EloquenceCreative - Code HTML de base -->
+<!-- V1 du site EloquenceCreative - Version nettoyée et corrigée -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consultant marketing digital, rédaction SEO & branding sonore | Éloquence Créative</title>
   <link rel="canonical" href="https://eloquencecreative.fr/">
-<link rel="icon" type="image/png" href="https://eloquencecreative.fr/favicon.png">
+  <link rel="icon" type="image/png" href="https://eloquencecreative.fr/favicon.png">
   <meta name="description" content="Consultant en marketing digital, rédaction SEO et branding sonore. Je donne vie à vos projets avec des stratégies sur-mesure, des mots justes et une identité qui résonne.">
-  <!-- Balises Open Graph pour LinkedIn -->
-<meta property="og:title" content="Éloquence Créative – Consultant en Marketing Digital, Rédaction SEO & Branding Sonore">
-<meta property="og:description" content="Consultant en marketing digital, rédaction SEO et branding sonore. Je donne vie à vos projets avec des stratégies sur-mesure, des mots justes et une identité qui résonne.">
-<meta property="og:image" content="https://guilhemvr.github.io/EloquenceCreative/portrait.png">
-<meta property="og:url" content="https://eloquencecreative.fr">
-<meta property="og:type" content="website">
 
+  <!-- Open Graph & Twitter -->
+  <meta property="og:title" content="Éloquence Créative – Consultant en Marketing Digital, Rédaction SEO & Branding Sonore">
+  <meta property="og:description" content="Consultant en marketing digital, rédaction SEO et branding sonore. Je donne vie à vos projets avec des stratégies sur-mesure, des mots justes et une identité qui résonne.">
+  <meta property="og:image" content="https://guilhemvr.github.io/EloquenceCreative/portrait.png">
+  <meta property="og:url" content="https://eloquencecreative.fr">
+  <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Éloquence Créative">
   <meta name="twitter:description" content="Consultant en marketing digital, rédaction SEO et branding sonore. Je donne vie à vos projets avec des stratégies sur-mesure, des mots justes et une identité qui résonne.">
   <meta name="twitter:image" content="favicon.png">
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Consultant marketing digital, rédaction SEO & branding sonore | Éloquence Créative</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Lora&display=swap" rel="stylesheet">
+
   <style>
-    .menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  color: var(--accent);
-  font-size: 1.8rem;
-  cursor: pointer;
-}
-
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%;
-    padding-top: 1rem;
-  }
-  .nav-links.show {
-    display: flex;
-  }
-}
-
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-    }
-    .desktop-nav {
-      margin-left: auto;
-    }
-    .menu-toggle {
-      display: none;
-    }
-    .tagline {
-      font-size: 1.4rem;
-      font-weight: 600;
-      color: white;
-      background: rgba(0, 0, 0, 0.3);
-      padding: 0.3rem 0.9rem;
-      border-radius: 10px;
-      display: inline-block;
-      transform: rotate(-1deg);
-      animation: flicker 1.2s infinite alternate;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
-    }
     :root {
       --accent: #76E4D9;
       --bg: #1F1B2E;
@@ -86,17 +41,17 @@
       line-height: 1.6;
     }
     nav {
-  background-color: #1B182A;
-  padding: 1rem 2rem;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
- justify-content: flex-start;
-  gap: 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
+      background-color: #1B182A;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      gap: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
     nav a {
       color: var(--text);
       text-decoration: none;
@@ -108,279 +63,108 @@
     }
     nav img {
       height: 40px;
-      margin-right: auto;
       transition: transform 0.3s ease;
     }
     nav img:hover {
       transform: scale(1.1) rotate(-2deg);
     }
-    header {
-      background-color: var(--accent);
-      color: var(--bg);
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-    .header-content {
-      max-width: 1100px;
-      margin: auto;
-    }
-        .cta-button {
-      display: inline-block;
-      padding: 0.6rem 1.2rem;
-      margin-top: 1.5rem;
-      background: linear-gradient(135deg, var(--bg-alt), var(--bg));
-      color: var(--accent);
+    .menu-toggle {
+      display: none;
+      background: none;
       border: none;
-      border-radius: 8px;
-      font-weight: bold;
-      font-size: 0.95rem;
-      text-align: center;
-      text-decoration: none;
-      box-shadow: 0 0 6px rgba(118, 228, 217, 0.25);
-      transition: transform 0.2s ease, box-shadow 0.3s ease;
-    }
-    .cta-button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 16px rgba(118, 228, 217, 0.6);
-      background: linear-gradient(135deg, var(--bg), var(--bg-alt));
-      color: white;
-    }
-    section {
-      padding: 3rem 2rem;
-      max-width: 1100px;
-      margin: auto;
-    }
-    h2 {
       color: var(--accent);
       font-size: 1.8rem;
-      margin-bottom: 1rem;
+      cursor: pointer;
+      margin-left: auto;
     }
-    .services-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-    .service {
-      background-color: var(--bg-alt);
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      margin-left: auto;
+    }
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding-top: 1rem;
+      }
+      .nav-links.show {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+    .hero-title {
       text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-    }
-    .service.case-client {
-  cursor: default;
-     } 
-    .case-client {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  align-items: center;
-}
-
-.case-client .text-col {
-  flex: 1 1 300px;
-}
-
-.case-client .img-col {
-  flex: 0 0 220px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.case-client .img-col img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-
-    .service:hover {
-      transform: scale(1.03);
-      box-shadow: 0 6px 20px rgba(118, 228, 217, 0.3);
-    }
-    .service em {
-      display: block;
-      margin-top: 1rem;
-      color: #aaa;
-    }
-    .pricing p,
-    #contact p {
-      margin-bottom: 1rem;
-    }
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-    .modal-content {
-      background-color: var(--bg-alt);
-      padding: 2rem;
-      border-radius: 12px;
-      max-width: 600px;
-      width: 90%;
+      padding: 4rem 2rem 2rem;
+      background-color: var(--bg);
       color: var(--text);
-      text-align: left;
     }
-    .modal-close {
-      float: right;
-      cursor: pointer;
-      font-size: 1.2rem;
+    .eyebrow {
+      text-transform: uppercase;
+      font-size: 0.9rem;
       color: var(--accent);
+      letter-spacing: 1.5px;
+      margin-bottom: 0.6rem;
+      font-weight: 600;
     }
-    @keyframes flicker {
-      from { opacity: 1; }
-      to { opacity: 0.6; }
+    .hero-title h1 {
+      font-size: 2.4rem;
+      line-height: 1.4;
+      font-weight: 600;
+      margin: 0 auto 1rem;
+      max-width: 800px;
     }
-      @media (max-width: 768px) {
-  .desktop-nav {
-    display: none;
-  }
-  .menu-toggle {
-    display: block;
-  }
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem;
-  }
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    gap: 1rem;
-    padding-top: 1rem;
-  }
-  .nav-links.show {
-    display: flex;
-  }
-  .menu-toggle {
-    display: block;
-    background: none;
-    border: none;
-    color: var(--accent);
-    font-size: 1.5rem;
-    cursor: pointer;
-    margin-left: auto;
-  }
-}
-      nav a {
-        padding: 0.5rem 0;
-        font-size: 1rem;
+    .hero-title h1 strong {
+      color: var(--accent);
+      font-weight: inherit;
+    }
+    .h1-underline {
+      width: 60px;
+      height: 4px;
+      background-color: var(--accent);
+      margin: 1rem auto 0;
+      border-radius: 2px;
+      animation: growBar 1s ease-out;
+    }
+    @keyframes growBar {
+      from {
+        width: 0;
+        opacity: 0;
       }
-      nav img {
-        margin-bottom: 0.5rem;
+      to {
+        width: 60px;
+        opacity: 1;
       }
     }
-.hero-title {
-  text-align: center;
-  padding: 4rem 2rem 2rem;
-  background-color: var(--bg); /* ou --bg-alt si tu veux un contraste léger */
-  color: var(--text);
-}
-
-.eyebrow {
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  color: var(--accent);
-  letter-spacing: 1.5px;
-  margin-bottom: 0.6rem;
-  font-weight: 600;
-}
-
-.hero-title h1 {
-  font-size: 2.4rem;
-  line-height: 1.4;
-  font-weight: 600;
-  margin: 0 auto 1rem;
-  max-width: 800px;
-}
-
-.hero-title h1 strong {
-  color: var(--accent);
-  font-weight: inherit;
-}
-
-.h1-underline {
-  width: 60px;
-  height: 4px;
-  background-color: var(--accent);
-  margin: 1rem auto 0;
-  border-radius: 2px;
-  animation: growBar 1s ease-out;
-}
-
-@keyframes growBar {
-  from {
-    width: 0;
-    opacity: 0;
-  }
-  to {
-    width: 60px;
-    opacity: 1;
-  }
-}
-</style>
+  </style>
 </head>
 <body>
   <nav>
-  <section class="hero-title">
-  <p class="eyebrow">Éloquence Créative</p>
-  <h1>Accompagnement sur-mesure en <strong>stratégie digitale</strong>, <strong>rédaction SEO</strong> & <strong>identité sonore</strong></h1>
-  <div class="h1-underline"></div>
-</section>
-  <a href="#top"><img src="logo.png" alt="Logo Éloquence Créative"></a>
+    <a href="#top"><img src="logo.png" alt="Logo Éloquence Créative"></a>
     <button class="menu-toggle" onclick="toggleMobileMenu()">☰</button>
-  <div class="nav-links desktop-nav">
-  <a href="#about">À propos</a>
-  <div class="dropdown" style="position: relative; display: inline-block;">
-    <a href="#services" style="padding: 0.5rem 0; font-size: 1rem; line-height: 1.5rem; display: inline-block;" onclick="toggleDropdown(event)">Services ▼</a>
-    <div class="dropdown-content" style="display: block; position: absolute; background-color: #1B182A; margin-top: 0.5rem; padding: 0.5rem; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
-      <a href="marketing.html">Marketing digital</a>
-      <a href="redaction.html">Rédaction SEO</a>
-      <a href="branding.html">Branding sonore</a>
+    <div class="nav-links">
+      <a href="#about">À propos</a>
+      <a href="#services">Services</a>
+      <a href="#method">Ma méthode</a>
+      <a href="#pricing">Tarifs</a>
+      <a href="#contact">Contact</a>
+      <a href="blog.html">Blog</a>
     </div>
-  </div>
-  <a href="#method">Ma méthode</a>
-  <a href="#pricing">Tarifs</a>
-  <a href="#contact">Contact</a>
-  <a href="blog.html">Blog</a>
-</div>
-<script>
-function toggleDropdown(event) {
-  event.preventDefault();
-  const dropdown = document.querySelector('.dropdown-content');
-  dropdown.classList.toggle('show');
-  dropdown.style.display = dropdown.classList.contains('show') ? 'block' : 'none';
-}
-  document.addEventListener('click', function (e) {
-    const dropdown = document.querySelector('.dropdown-content');
-    if (!e.target.closest('.dropdown')) {
-      dropdown.classList.remove('show');
-      dropdown.style.display = 'none';
-    } else {
-      dropdown.style.display = dropdown.classList.contains('show') ? 'block' : 'none';
-    }
-  });
-</script>
-    
   </nav>
-  <header>
-    <div class="header-content" style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
-      <p class="tagline">Vos projets méritent des mots <strong><u>justes</u></strong> et une stratégie web qui leur donne <strong><u>vie</u></strong> !</p>
-      <a href="#services" class="cta-button">Découvrir mes services</a>
-    </div>
-  
-  </header>
+
+  <section class="hero-title">
+    <p class="eyebrow">Éloquence Créative</p>
+    <h1>Accompagnement sur-mesure en <strong>stratégie digitale</strong>, <strong>rédaction SEO</strong> & <strong>identité sonore</strong></h1>
+    <div class="h1-underline"></div>
+  </section>
+
 
   <section id="about">
     <h2>À propos</h2>
