@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Branding sonore : capter l’attention autrement</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    body {
+      background-color: #1F1B2E;
+      color: #C9F0FF;
+      font-family: 'Quicksand', sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0 1rem 3rem;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      background-color: #1F1B2E;
+    }
+    header img {
+      height: 40px;
+    }
+    .blog-article {
+      max-width: 800px;
+      margin: auto;
+      padding: 3rem 1rem;
+    }
+    a.back-button {
+      display: inline-block;
+      margin-top: 2rem;
+      background-color: #76E4D9;
+      color: #1F1B2E;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+    p, ul, li {
+      margin-bottom: 1rem;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    section {
+      max-width: 800px;
+      margin: auto;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #444;
+      margin: 2rem 0;
+    }
+    img {
+      width: 100%;
+      border-radius: 12px;
+      margin: 2rem 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="https://eloquencecreative.fr/">
+      <img src="/logo.png" alt="Logo Éloquence Créative" style="height: 40px; margin: 1rem;">
+    </a>
+  </header>
+  <section class="blog-article">
+
+    <img src="Cubase_Compositionmusicale.jpg" alt="Écran de session Cubase pour une création d’identité musicale">
+
+    <p style="color: #aaa; margin-bottom: 0.5rem;">Publié le : 19 avril 2025</p>
+    <h1 style="color: var(--accent); margin-bottom: 2rem;">🎧 Branding sonore : capter l’attention autrement</h1>
+
+    <p>Week-end de Pâques… Certains cherchent des œufs. D’autres, comme moi, chassent quelque chose de plus rare : l’attention.</p>
+
+    <p>Dans un monde saturé de contenus, être visible ne suffit plus. Une marque qui veut vraiment marquer doit aller plus loin que le visuel.</p>
+
+    <p>Elle doit être <strong>entendue</strong>.</p>
+
+    <h2>🎶 Le branding sonore, une signature qui marque</h2>
+    <p>Le branding sonore, c’est cette capacité à transmettre une émotion, une ambiance, une identité en seulement deux secondes.</p>
+
+    <ul>
+      <li>Une ambiance musicale bien choisie</li>
+      <li>Un jingle discret mais mémorable</li>
+      <li>Un logo sonore placé au bon moment</li>
+    </ul>
+
+    <p>C’est là que la magie opère : on ne lit plus la marque, on la ressent.</p>
+
+    <h2>🎛 Derrière les coulisses : création en studio</h2>
+    <p>Sur l’image ci-dessus, une session ouverte dans Cubase — mon laboratoire sonore.</p>
+
+    <p>Je compose, j’expérimente, je sculpte un univers sonore fidèle à l’ADN du client.</p>
+
+    <img src="GuitareMayones.jpg" alt="Travail d'identité musicale à la guitare, studio personnel">
+
+    <p>Et parfois, je prends la guitare, tout simplement. Car derrière le branding, il y a aussi un geste artistique, une sensibilité qui ne s’encode pas dans un brief.</p>
+
+    <h2>💡 L’identité sonore, une brique stratégique</h2>
+    <p>Chez <strong>Éloquence Créative</strong>, je ne sépare pas la forme du fond. J’allie <strong>rédaction stratégique</strong>, <strong>vision marketing</strong> et <strong>création sonore</strong> pour construire des identités qui parlent autant qu’elles vibrent.</p>
+
+    <p>Parce que les marques qui s’imposent aujourd’hui sont celles qu’on <em>n’oublie pas</em>.</p>
+
+    <hr>
+
+    <h3>🔊 Et si on faisait entendre votre marque ?</h3>
+    <p>J’accompagne les entreprises qui veulent créer une expérience sonore forte, différenciante et alignée avec leur image.</p>
+    <p>
+      📧 <strong>Écrivez-moi :</strong> <a href="mailto:guilhem@eloquencecreative.fr" style="color: var(--accent);">guilhem@eloquencecreative.fr</a><br>
+      📞 <strong>Ou prenons rendez-vous :</strong> <a href="https://calendly.com/guilhem-eloquencecreative/30min" target="_blank" style="color: var(--accent);">calendly.com/guilhem-eloquencecreative</a>
+    </p>
+
+    <a href="https://eloquencecreative.fr/blog.html" class="back-button">← Revenir au blog</a>
+  </section>
+</body>
+</html>
