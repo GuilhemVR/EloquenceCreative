@@ -282,10 +282,65 @@
         margin-bottom: 0.5rem;
       }
     }
+.hero-title {
+  text-align: center;
+  padding: 4rem 2rem 2rem;
+  background-color: var(--bg); /* ou --bg-alt si tu veux un contraste léger */
+  color: var(--text);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: var(--accent);
+  letter-spacing: 1.5px;
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+}
+
+.hero-title h1 {
+  font-size: 2.4rem;
+  line-height: 1.4;
+  font-weight: 600;
+  margin: 0 auto 1rem;
+  max-width: 800px;
+}
+
+.hero-title h1 strong {
+  color: var(--accent);
+  font-weight: inherit;
+}
+
+.h1-underline {
+  width: 60px;
+  height: 4px;
+  background-color: var(--accent);
+  margin: 1rem auto 0;
+  border-radius: 2px;
+  animation: growBar 1s ease-out;
+}
+
+@keyframes growBar {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 60px;
+    opacity: 1;
+  }
+}
 </style>
 </head>
 <body>
   <nav>
+  <section class="hero-title">
+  <p class="eyebrow">Éloquence Créative</p>
+  <h1>
+    Accompagnement sur-mesure en <strong>stratégie digitale</strong>, <strong>rédaction SEO</strong> & <strong>identité sonore</strong>
+  </h1>
+  <div class="h1-underline"></div>
+</section>
   <a href="#top"><img src="logo.png" alt="Logo Éloquence Créative"></a>
     <button class="menu-toggle" onclick="toggleMobileMenu()">☰</button>
   <div class="nav-links desktop-nav">
