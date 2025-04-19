@@ -330,6 +330,19 @@
   }
 }
 </style>
+  .logo-container {
+  display: flex;
+  align-items: center;
+  margin-right: auto; /* pousse les autres éléments à droite */
+}
+.logo-container img {
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+.logo-container img:hover {
+  transform: scale(1.1) rotate(-2deg);
+}
+
 </head>
 <body>
   <nav>
