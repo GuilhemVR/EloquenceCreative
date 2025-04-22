@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manifeste d'une communication qui résonne – Eloquence Créative</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    body {
+      background-color: #1F1B2E;
+      color: #C9F0FF;
+      font-family: 'Quicksand', sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0 1rem 3rem;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      background-color: #1F1B2E;
+    }
+    header img {
+      height: 40px;
+    }
+    .blog-article {
+      max-width: 800px;
+      margin: auto;
+      padding: 3rem 1rem;
+    }
+    a.back-button {
+      display: inline-block;
+      margin-top: 2rem;
+      background-color: #76E4D9;
+      color: #1F1B2E;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+    p, ul, li {
+      margin-bottom: 1rem;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    section {
+      max-width: 800px;
+      margin: auto;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #444;
+      margin: 2rem 0;
+    }
+    img {
+      width: 100%;
+      border-radius: 12px;
+      margin: 2rem 0;
+    }
+    h2, h3 {
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="https://eloquencecreative.fr/">
+      <img src="/logo.png" alt="Logo Éloquence Créative" style="height: 40px; margin: 1rem;">
+    </a>
+  </header>
+  <section class="blog-article">
+
+    <img src="abeille_pollen.jpeg" alt="Abeille butinant une fleur - Métaphore de la communication utile">
+
+    <p style="color: #aaa; margin-bottom: 0.5rem;">Publié le : 22 avril 2025</p>
+    <h1 style="color: var(--accent); margin-bottom: 2rem;">🐝 Manifeste d'une communication qui résonne</h1>
+
+    <p>À l’heure où l’injonction à “produire du contenu” devient un réflexe automatique pour la plupart des marques, une question se pose : <strong>qu’est-ce qui a vraiment du sens ?</strong></p>
+
+    <p>On parle de visibilité, d’algorithmes, de viralité. Mais est-ce suffisant pour exister durablement dans l’esprit de ses publics&nbsp;?</p>
+
+    <p><strong>Chez Éloquence Créative, je défends une autre vision.</strong></p>
+
+    <h2>🌪️ L’illusion de la visibilité à tout prix</h2>
+    <p>Publier pour publier, c’est comme semer du vent. Trop d’entreprises cherchent à être vues. Mais combien sont réellement <strong>audibles</strong>&nbsp;? <strong>Compréhensibles</strong>&nbsp;? <strong>Mémorables</strong>&nbsp;?</p>
+
+    <p>Être visible n’a de valeur que si le message est porteur de sens, aligné avec l’ADN de la marque et pensé pour durer.</p>
+
+    <h2>🧭 Vers une communication alignée et authentique</h2>
+    <p>Ma mission&nbsp;: <strong>aider les marques à se raconter de façon sincère, cohérente et impactante</strong>.</p>
+    <ul>
+      <li>✍️ Rédaction web SEO pensée pour la clarté, la pertinence et la compréhension.</li>
+      <li>🔊 Branding sonore pour traduire l’identité de la marque en émotion et en expérience mémorable.</li>
+      <li>📢 Stratégie digitale qui amplifie le vrai, au lieu de masquer le vide.</li>
+    </ul>
+
+    <h2>🌱 Créer du lien en cultivant le sens</h2>
+    <p>Dans un monde saturé d’informations, ce ne sont pas les contenus les plus bruyants qui marquent les esprits, mais ceux qui sont <strong>cohérents, sincères et porteurs de sens</strong>.</p>
+
+    <p>Le contenu utile, c’est celui qui nourrit et relie. Celui qui <em>transmet</em>, pas celui qui sature ou fatigue.</p>
+
+    <h2>🐝 La communication, travail d’abeille</h2>
+    <p>J’aime comparer mon métier à celui de l’abeille&nbsp;: pas de bruit inutile, mais un travail patient, humble et précieux.</p>
+
+    <p>L’abeille butine, relie les fleurs, transmet la vie. De la même façon, une communication bien pensée nourrit la marque, crée du lien, et fait éclore des opportunités durables.</p>
+
+    <hr>
+
+    <h3>✨ Prêt·e à faire vibrer votre marque autrement&nbsp;?</h3>
+    <p>Si cette vision vous inspire, discutons-en. Ensemble, construisons une communication qui vous ressemble&nbsp;: alignée, authentique et durable.</p>
+    <p>
+      📧 <strong>Écrivez-moi :</strong> <a href="mailto:guilhem@eloquencecreative.fr" style="color: var(--accent);">guilhem@eloquencecreative.fr</a><br>
+      📞 <strong>Ou prenons rendez-vous :</strong> <a href="https://calendly.com/guilhem-eloquencecreative/30min" target="_blank" style="color: var(--accent);">calendly.com/guilhem-eloquencecreative</a>
+    </p>
+
+    <a href="https://eloquencecreative.fr/blog.html" class="back-button">← Revenir au blog</a>
+  </section>
+</body>
+</html>
