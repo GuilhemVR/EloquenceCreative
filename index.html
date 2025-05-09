@@ -722,5 +722,16 @@ function toggleDropdown(event) {
     navLinks.classList.toggle('show');
   }
 </script>
+<script>
+  function adjustPaddingForNav() {
+    const nav = document.querySelector('nav');
+    if (nav) {
+      document.body.style.paddingTop = nav.offsetHeight + 'px';
+    }
+  }
+
+  window.addEventListener('load', adjustPaddingForNav);
+  window.addEventListener('resize', adjustPaddingForNav);
+</script>  
 </body>
 </html>
