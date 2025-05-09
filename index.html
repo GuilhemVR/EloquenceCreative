@@ -295,10 +295,10 @@
   will-change: opacity, transform;
 }
 
-.hero-title.hidden {
-  opacity: 0;
-  transform: translateY(-100%);
-  pointer-events: none;
+.hero-title {
+  transition: all 0.4s ease;
+  /* ou pour être précis : */
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
     
 .eyebrow {
@@ -734,7 +734,6 @@ function toggleDropdown(event) {
     navLinks.classList.toggle('show');
   }
   });
-<script>
   document.addEventListener("DOMContentLoaded", () => {
     const hero = document.querySelector('.hero-title');
     window.addEventListener('scroll', () => {
