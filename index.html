@@ -741,14 +741,16 @@ function toggleDropdown(event) {
       hero.classList.remove('hidden');
     }
   });
-</script>
-  const hero = document.querySelector('.hero-title');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 80) {
-      hero.classList.add('hidden');
-    } else {
-      hero.classList.remove('hidden');
-    }
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const hero = document.querySelector('.hero-title');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        hero.classList.add('hidden');
+      } else {
+        hero.classList.remove('hidden');
+      }
+    });
   });
 </script>
 </body>
