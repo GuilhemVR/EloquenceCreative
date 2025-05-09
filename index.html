@@ -287,6 +287,15 @@
   padding: 4rem 2rem 2rem;
   background-color: var(--bg); /* ou --bg-alt si tu veux un contraste léger */
   color: var(--text);
+  position: relative;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  will-change: opacity, transform;
+}
+
+.hero-title.hidden {
+  opacity: 0;
+  transform: translateY(-50px);
+  pointer-events: none;
 }
 
 .eyebrow {
@@ -722,16 +731,15 @@ function toggleDropdown(event) {
     navLinks.classList.toggle('show');
   }
 </script>
-<script>
-  function adjustPaddingForNav() {
-    const nav = document.querySelector('nav');
-    if (nav) {
-      document.body.style.paddingTop = nav.offsetHeight + 'px';
+  <script>
+  const hero = document.querySelector('.hero-title');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+      hero.classList.add('hidden');
+    } else {
+      hero.classList.remove('hidden');
     }
-  }
-
-  window.addEventListener('load', adjustPaddingForNav);
-  window.addEventListener('resize', adjustPaddingForNav);
-</script>  
+  });
+</script>
 </body>
 </html>
