@@ -366,7 +366,7 @@
   <a href="#contact">Contact</a>
   <a href="blog.html">Blog</a>
 </div>
-     <section class="hero-title">
+     <section class="hero-title" id="intro-hero">
   <p class="eyebrow">Éloquence Créative</p>
   <h1>Accompagnement sur-mesure en <strong>stratégie digitale</strong>, <strong>rédaction SEO</strong> & <strong>identité sonore</strong></h1>
   <div class="h1-underline"></div>
@@ -389,7 +389,7 @@ function toggleDropdown(event) {
   });
 </script> 
   </nav>
-  <header>
+ <header id="intro-header">
     <div class="header-content" style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
       <p class="tagline">Vos projets méritent des mots <strong><u>justes</u></strong> et une stratégie web qui leur donne <strong><u>vie</u></strong> !</p>
       <a href="#services" class="cta-button">Découvrir mes services</a>
@@ -732,22 +732,26 @@ function toggleDropdown(event) {
     navLinks.classList.toggle('show');
   }
 </script>
-  <script>
-  const hero = document.querySelector('.hero-title');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-      hero.classList.add('hidden');
-    } else {
-      hero.classList.remove('hidden');
-    }
-  });
-</script>
-  const hero = document.querySelector('.hero-title');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 80) {
-      hero.classList.add('hidden');
-    } else {
-      hero.classList.remove('hidden');
+<script>
+  let lastScrollTop = 0;
+
+  window.addEventListener('scroll', function () {
+    const header = document.getElementById('intro-header');
+    const hero = document.getElementById('intro-hero');
+
+    // Limité aux mobiles/tablettes
+    if (window.innerWidth <= 768) {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (scrollTop > lastScrollTop) {
+        header.style.display = 'none';
+        hero.classList.add('hidden');
+      } else {
+        header.style.display = '';
+        hero.classList.remove('hidden');
+      }
+
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     }
   });
 </script>
