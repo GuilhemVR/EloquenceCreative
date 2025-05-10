@@ -144,6 +144,9 @@
       box-shadow: 0 0 16px rgba(118, 228, 217, 0.6);
       background: linear-gradient(135deg, var(--bg), var(--bg-alt));
       color: white;
+      #intro-hero, #intro-header {
+  transition: opacity 0.3s ease;
+}
     }
     section {
       padding: 3rem 2rem;
@@ -718,36 +721,25 @@ function toggleDropdown(event) {
 </footer>
   <script>
   function hideIntroOnScroll() {
-    const heroTitle = document.querySelector('.hero-title');
-    const header = document.querySelector('header');
+  const hero = document.getElementById('intro-hero');
+  const header = document.getElementById('intro-header');
 
-    if (window.innerWidth <= 768) {
-      if (window.scrollY > 50) {
-        heroTitle.style.opacity = '0';
-        heroTitle.style.height = '0';
-        heroTitle.style.overflow = 'hidden';
-        heroTitle.style.pointerEvents = 'none';
+  const scrolled = window.scrollY > 50;
+  const isMobile = window.innerWidth <= 768;
 
-        header.style.opacity = '0';
-        header.style.height = '0';
-        header.style.overflow = 'hidden';
-        header.style.pointerEvents = 'none';
-      } else {
-        heroTitle.style.opacity = '1';
-        heroTitle.style.height = 'auto';
-        heroTitle.style.overflow = 'visible';
-        heroTitle.style.pointerEvents = 'auto';
-
-        header.style.opacity = '1';
-        header.style.height = 'auto';
-        header.style.overflow = 'visible';
-        header.style.pointerEvents = 'auto';
-      }
+  if (isMobile) {
+    if (scrolled) {
+      hero.style.display = 'none';
+      header.style.display = 'none';
+    } else {
+      hero.style.display = 'block';
+      header.style.display = 'block';
     }
+  } else {
+    hero.style.display = 'block';
+    header.style.display = 'block';
   }
-
-  window.addEventListener('scroll', hideIntroOnScroll);
-  window.addEventListener('resize', hideIntroOnScroll);
+}
 </script>
 </body>
 </html>
