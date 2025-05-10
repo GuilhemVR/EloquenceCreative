@@ -281,11 +281,17 @@
         margin-bottom: 0.5rem;
       }
     }
-.hero-title {
-  text-align: center;
-  padding: 4rem 2rem 2rem;
-  background-color: var(--bg); /* ou --bg-alt si tu veux un contraste léger */
-  color: var(--text);
+.hero-title,
+header {
+  transition: all 0.3s ease;
+  z-index: 1; /* inférieur à nav */
+  position: relative;
+}
+
+nav {
+  z-index: 999 !important; /* pour rester au-dessus */
+  position: sticky;
+  top: 0;
 }
 
 .eyebrow {
@@ -714,19 +720,34 @@ function toggleDropdown(event) {
   function hideIntroOnScroll() {
     const heroTitle = document.querySelector('.hero-title');
     const header = document.querySelector('header');
-    if (window.innerWidth <= 768) { // version mobile uniquement
+
+    if (window.innerWidth <= 768) {
       if (window.scrollY > 50) {
-        heroTitle.style.display = 'none';
-        header.style.display = 'none';
+        heroTitle.style.opacity = '0';
+        heroTitle.style.height = '0';
+        heroTitle.style.overflow = 'hidden';
+        heroTitle.style.pointerEvents = 'none';
+
+        header.style.opacity = '0';
+        header.style.height = '0';
+        header.style.overflow = 'hidden';
+        header.style.pointerEvents = 'none';
       } else {
-        heroTitle.style.display = 'block';
-        header.style.display = 'block';
+        heroTitle.style.opacity = '1';
+        heroTitle.style.height = 'auto';
+        heroTitle.style.overflow = 'visible';
+        heroTitle.style.pointerEvents = 'auto';
+
+        header.style.opacity = '1';
+        header.style.height = 'auto';
+        header.style.overflow = 'visible';
+        header.style.pointerEvents = 'auto';
       }
     }
   }
 
   window.addEventListener('scroll', hideIntroOnScroll);
-  window.addEventListener('resize', hideIntroOnScroll); // si on change de taille de fenêtre
+  window.addEventListener('resize', hideIntroOnScroll);
 </script>
 </body>
 </html>
