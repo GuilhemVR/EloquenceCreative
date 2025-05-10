@@ -714,32 +714,19 @@ function toggleDropdown(event) {
   function hideIntroOnScroll() {
     const heroTitle = document.querySelector('.hero-title');
     const header = document.querySelector('header');
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth <= 768) { // version mobile uniquement
       if (window.scrollY > 50) {
-        heroTitle.style.visibility = 'hidden';
-        heroTitle.style.opacity = '0';
-        heroTitle.style.height = '0';
-        heroTitle.style.overflow = 'hidden';
-
-        header.style.visibility = 'hidden';
-        header.style.opacity = '0';
-        header.style.height = '0';
-        header.style.overflow = 'hidden';
+        heroTitle.style.display = 'none';
+        header.style.display = 'none';
       } else {
-        heroTitle.style.visibility = 'visible';
-        heroTitle.style.opacity = '1';
-        heroTitle.style.height = 'auto';
-        heroTitle.style.overflow = 'visible';
-
-        header.style.visibility = 'visible';
-        header.style.opacity = '1';
-        header.style.height = 'auto';
-        header.style.overflow = 'visible';
+        heroTitle.style.display = 'block';
+        header.style.display = 'block';
       }
     }
   }
+
   window.addEventListener('scroll', hideIntroOnScroll);
-  window.addEventListener('resize', hideIntroOnScroll);
+  window.addEventListener('resize', hideIntroOnScroll); // si on change de taille de fenêtre
 </script>
 </body>
 </html>
