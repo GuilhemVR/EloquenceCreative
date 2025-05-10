@@ -711,22 +711,10 @@ function toggleDropdown(event) {
 </footer>
 </footer>
   <script>
-  function hideIntroOnScroll() {
-    const heroTitle = document.querySelector('.hero-title');
-    const header = document.querySelector('header');
-    if (window.innerWidth <= 768) { // version mobile uniquement
-      if (window.scrollY > 50) {
-        heroTitle.style.display = 'none';
-        header.style.display = 'none';
-      } else {
-        heroTitle.style.display = 'block';
-        header.style.display = 'block';
-      }
-    }
+  function toggleMobileMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('show');
   }
-
-  window.addEventListener('scroll', hideIntroOnScroll);
-  window.addEventListener('resize', hideIntroOnScroll); // si on change de taille de fenêtre
 </script>
 </body>
 </html>
