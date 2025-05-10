@@ -737,18 +737,16 @@ function toggleDropdown(event) {
 
   window.addEventListener('scroll', function () {
     const header = document.getElementById('intro-header');
-    const hero = document.getElementById('intro-hero');
 
-    // Limité aux mobiles/tablettes
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth < 768) {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
       if (scrollTop > lastScrollTop) {
+        // Scrolling down = HIDE header brutalement
         header.style.display = 'none';
-        hero.classList.add('hidden');
       } else {
+        // Scrolling up = SHOW header
         header.style.display = '';
-        hero.classList.remove('hidden');
       }
 
       lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
