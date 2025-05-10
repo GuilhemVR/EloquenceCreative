@@ -727,22 +727,51 @@ function toggleDropdown(event) {
   </p>
 </footer>
 </footer>
-  <script>
-  function toggleMobileMenu() {
-    const navLinks = document.querySelector('.nav-links');
-    navLinks.classList.toggle('show');
-  }
+ <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const hero = document.querySelector('.hero-title');
-    if (!hero) return; // anti plantage
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 100) {
-        hero.classList.add('hidden');
+    const heroTitle = document.querySelector('.hero-title');
+    const header = document.querySelector('header');
+
+    if (!heroTitle || !header) return; // Anti-plantage
+
+    // Vérifier si l'écran est en version mobile
+    function isMobile() {
+      return window.innerWidth <= 768;
+    }
+
+    // Fonction pour gérer l'effet de fade et slide
+    function handleScroll() {
+      if (!isMobile()) return;
+
+      const heroTitleRect = heroTitle.getBoundingClientRect();
+      const headerRect = header.getBoundingClientRect();
+
+      if (heroTitleRect.bottom <= 0) {
+        heroTitle.style.opacity = '0';
+        heroTitle.style.transform = 'translateY(-100%)';
       } else {
-        hero.classList.remove('hidden');
+        heroTitle.style.opacity = '1';
+        heroTitle.style.transform = 'translateY(0)';
+      }
+    }
+
+    // Ajouter un écouteur d'événement pour le scroll
+    window.addEventListener('scroll', handleScroll);
+
+    // Initialiser l'effet au chargement de la page
+    handleScroll();
+
+    // Ajouter un écouteur d'événement pour le redimensionnement de la fenêtre
+    window.addEventListener('resize', () => {
+      if (isMobile()) {
+        handleScroll();
+      } else {
+        heroTitle.style.opacity = '1';
+        heroTitle.style.transform = 'translateY(0)';
       }
     });
   });
 </script>
+
 </body>
 </html>
