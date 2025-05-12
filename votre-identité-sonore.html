@@ -4,148 +4,233 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Identité Sonore – Eloquence Créative</title>
-  <style>
-    :root {
-      --background-color: #1F1B2E;
-      --text-color: #C9F0FF;
-      --accent-color: #76E4D9;
-      --header-color: #1B182A;
-    }
+<style>
+  :root {
+    --background-color: #1F1B2E;
+    --text-color: #C9F0FF;
+    --accent-color: #76E4D9;
+    --header-color: #1B182A;
+  }
 
-    body {
-      font-family: 'Quicksand', sans-serif;
-      background-color: var(--background-color);
-      color: var(--text-color);
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      max-width: 960px;
-      margin: auto;
-      padding-top: 70px;
-    }
+  body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    max-width: 960px;
+    margin: auto;
+    padding-top: 70px;
+  }
 
-    header, footer {
-      background-color: var(--header-color);
-      color: var(--accent-color);
+  header, footer {
+    background-color: var(--header-color);
+    color: var(--accent-color);
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  h1, h2, h3 {
+    color: var(--accent-color);
+    margin-top: 0;
+  }
+
+  section {
+    padding: 2.5rem 1.5rem;
+  }
+
+  ul, ol {
+    padding-left: 1.2rem;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+ul li::before {
+  content: "";
+}
+
+  .subsection {
+    margin-top: 2rem;
+  }
+
+  .cta-button {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 1rem 2rem;
+    background-color: var(--accent-color);
+    color: var(--background-color);
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background-color: #57c7bd;
+  }
+
+  iframe {
+    width: 100%;
+    height: 400px;
+    border: none;
+    margin-top: 1.5rem;
+  }
+
+  blockquote {
+    font-style: italic;
+    margin: 1.5rem 0;
+    padding-left: 1rem;
+    border-left: 3px solid var(--accent-color);
+  }
+
+  @media (max-width: 768px) {
+    section {
       padding: 2rem 1rem;
     }
 
-    h1, h2, h3 {
-      color: var(--accent-color);
-      margin-top: 0;
-    }
-
-    section {
-      padding: 2.5rem 1.5rem;
-    }
-
-    ul, ol {
-      padding-left: 1.2rem;
-    }
-
-    ul {
-      list-style: none;
-    }
-
-    ul li::before {
-      content: "✅ ";
-      margin-right: 0.3rem;
-    }
-
-    .subsection {
-      margin-top: 2rem;
-    }
-
     .cta-button {
-      display: inline-block;
-      margin-top: 1.5rem;
-      padding: 1rem 2rem;
-      background-color: var(--accent-color);
-      color: var(--background-color);
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
-
-    .cta-button:hover {
-      background-color: #57c7bd;
-    }
-
-    iframe {
       width: 100%;
-      height: 400px;
-      border: none;
-      margin-top: 1.5rem;
+      text-align: center;
     }
-
-    blockquote {
-      font-style: italic;
-      margin: 1.5rem 0;
-      padding-left: 1rem;
-      border-left: 3px solid var(--accent-color);
-    }
-
-    .header-container {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      gap: 1.5rem;
-      max-width: 960px;
-      margin: 0 auto;
-    }
-
-    .logo-link {
-      display: inline-block;
-      flex-shrink: 0;
-    }
-
-    .site-logo {
-      height: 50px;
-      width: auto;
-    }
-
-    .header-title {
-      flex-grow: 1;
-    }
-
-    @media (max-width: 768px) {
-      section {
-        padding: 2rem 1rem;
-      }
-
-      .cta-button {
-        width: 100%;
-        text-align: center;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .header-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
 
-  <header>
-    <div class="header-container">
-      <a href="https://eloquencecreative.fr/" class="logo-link">
-        <img src="https://raw.githubusercontent.com/GuilhemVR/EloquenceCreative/main/logo.png" alt="Logo Eloquence Créative" class="site-logo" />
-      </a>
-      <div class="header-title">
-        <h1>Le pouvoir du branding sonore</h1>
-        <p>Par Eloquence Créative</p>
-      </div>
+ <header>
+      <h1>Le pouvoir du branding sonore</h1>
+      <p>Par Eloquence Créative</p>
     </div>
-  </header>
+  </div>
+</header>
+  
+  <section>
+    <h2>Pourquoi le son est-il si puissant pour une marque ?</h2>
+    <p>
+      Le son génère de l’émotion et touche là où l’image ne suffit plus.
+      Il crée un lien immédiat avec votre audience et ancre votre marque dans leur mémoire.
+      Une identité sonore, ce n’est pas un simple jingle : c’est votre voix stratégique.
+    </p>
+    <h3>Objectifs d’une identité sonore</h3>
+    <ul>
+      <li>Créer de la reconnaissance immédiate</li>
+      <li>Générer de l’émotion et de l’attachement</li>
+      <li>Se différencier durablement dans un monde saturé d’images</li>
+      <li>Renforcer l’identité globale de la marque</li>
+    </ul>
+  </section>
 
-  <!-- Le reste de ton contenu inchangé commence ici -->
+  <section>
+    <h2>🎧 Une signature audio, des usages multiples</h2>
+    <p>
+      Votre logo sonore devient un actif précieux, déployable sur tous vos canaux pour renforcer l’impact, l’émotion et la cohérence de votre communication.
+    </p>
 
-  <!-- (Tu peux garder les sections suivantes comme elles sont, je les ai déjà corrigées précédemment) -->
+    <div class="subsection">
+      <h3>📢 Communication & Marketing</h3>
+      <ul>
+        <li>🎬 Intro/outro de vidéos (YouTube, LinkedIn, shorts)</li>
+        <li>📱 Stories, Reels, TikTok</li>
+        <li>🎙️ Générique de Podcasts, interviews</li>
+        <li>📢 Publicités digitales audio ou vidéo</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <h3>📲 Expérience client & digitale</h3>
+      <ul>
+        <li>🔔 Notifications dans vos apps & sites web</li>
+        <li>🎵 Musique d’attente téléphonique</li>
+        <li>✨ Feedback audio UX : validation, interaction</li>
+        <li>🧭 Guidage sonore ou interfaces vocales</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <h3>👥 Marque employeur & présentiel</h3>
+      <ul>
+        <li>🎓 Onboardings RH & vidéos internes</li>
+        <li>🎤 Conférences, événements & salons</li>
+        <li>🎧 Formations en ligne, MOOC</li>
+        <li>💼 Campagnes de recrutement différenciantes</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>🎯 Cas client à découvrir : Noblead. Un exemple d'identité sonore alignée sur des valeurs humaines et engagées</h2>
+    <p>
+      Noblead est un cabinet de recrutement fondé sur une conviction forte : recruter autrement, avec authenticité, impact RSE et engagement sociétal.
+    </p>
+    <ul>
+      <li>Approche sincère, centrée sur la réalité du terrain</li>
+      <li>Modèle solidaire & RSE : 20% des honoraires à une association</li>
+      <li>Expertise pointue (cybersécurité, data, finance...)</li>
+    </ul>
+    <blockquote>
+      "Chez NOBLead, notre engagement est simple : bâtir un cabinet qui aide ses clients à recruter les bons talents tout en soutenant les causes solidaires qui leur sont chères."
+      <br>— Louis, Fondateur de Noblead
+    </blockquote>
+    <h3>🎥 Vidéo de présentation du logo sonore de Noblead</h3>
+      <div style="padding:56.25% 0 0 0;position:relative; margin-bottom: 2.5rem;">
+      <iframe src="https://player.vimeo.com/video/1083525329?h=0591de6b59&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+        style="position:absolute;top:0;left:0;width:100%;height:100%;"
+        title="Présentation du logo sonore de Noblead">
+      </iframe>
+    </div>
+    <script src="https://player.vimeo.com/api/player.js"></script>
+   
+    <p>
+      <strong>Dans cette vidéo, découvrez comment nous avons conçu le logo sonore de Noblead : de la compréhension de la marque à la création d'une signature audio unique.</strong>
+    </p>
+    <blockquote>
+      "Le logo sonore conçu par Eloquence Créative retranscrit parfaitement l’ADN de Noblead : l'engagement humain et l'impact positif de notre positionnement RSE."
+      <br>— Louis, CEO de Noblead
+    </blockquote>
+  </section>
+
+  <section>
+    <h2>Un accompagnement stratégique et créatif à 360°</h2>
+    <p>
+      Je vous guide pas à pas dans la création de votre identité sonore, combinant écoute stratégique, direction artistique et production sonore professionnelle.
+    </p>
+    <ol>
+      <li>🎯 Brief stratégique</li>
+      <li>🎹 Recherche sonore</li>
+      <li>🎧 Conception du logo sonore</li>
+      <li>📦 Déclinaisons multi-supports</li>
+      <li>🛠️ Charte sonore</li>
+    </ol>
+    <a href="https://calendly.com/guilhem-eloquencecreative/30min?month=2025-05" class="cta-button" target="_blank" rel="noopener noreferrer">📞 Prenez RDV gratuitement</a>
+
+  </section>
+
+  <section>
+    <h2>Une signature audio prête à l’emploi et durable</h2>
+    <p>Votre logo sonore vous appartient. Vous recevez :</p>
+    <ul>
+      <li>🎼 Un logo sonore professionnel</li>
+      <li>🎛️ Des déclinaisons (long, court, intro/outro)</li>
+      <li>📂 Tous les formats audio</li>
+      <li>📘 Une mini charte sonore</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Prêt·e à faire entendre votre marque ?</h2>
+    <p>Créez une identité sonore mémorable dès aujourd’hui</p>
+    <a href="https://calendly.com/guilhem-eloquencecreative/30min?month=2025-05" class="cta-button" target="_blank" rel="noopener noreferrer">📅 Réservez votre appel découverte</a>
+
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Eloquence Créative – Tous droits réservés</p>
+  </footer>
 
 </body>
 </html>
