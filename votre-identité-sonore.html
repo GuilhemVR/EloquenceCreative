@@ -4,142 +4,153 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Identité Sonore – Eloquence Créative</title>
-<style>
-  :root {
-    --background-color: #1F1B2E;
-    --text-color: #C9F0FF;
-    --accent-color: #76E4D9;
-    --header-color: #1B182A;
-  }
+  <style>
+    :root {
+      --background-color: #1F1B2E;
+      --text-color: #C9F0FF;
+      --accent-color: #76E4D9;
+      --header-color: #1B182A;
+    }
 
-  body {
-    font-family: 'Quicksand', sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    max-width: 960px;
-    margin: auto;
-    padding-top: 70px;
-  }
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      max-width: 960px;
+      margin: auto;
+      padding-top: 70px;
+    }
 
-  header, footer {
-    background-color: var(--header-color);
-    color: var(--accent-color);
-    text-align: center;
-    padding: 2rem 1rem;
-  }
-
-  h1, h2, h3 {
-    color: var(--accent-color);
-    margin-top: 0;
-  }
-
-  section {
-    padding: 2.5rem 1.5rem;
-  }
-
-  ul, ol {
-    padding-left: 1.2rem;
-  }
-
-  ul {
-    list-style: none;
-  }
-
-  ul li::before {
-    content: "✅ ";
-    margin-right: 0.3rem;
-  }
-
-  .subsection {
-    margin-top: 2rem;
-  }
-
-  .cta-button {
-    display: inline-block;
-    margin-top: 1.5rem;
-    padding: 1rem 2rem;
-    background-color: var(--accent-color);
-    color: var(--background-color);
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-  }
-
-  .cta-button:hover {
-    background-color: #57c7bd; /* hover un peu plus foncé */
-  }
-
-  iframe {
-    width: 100%;
-    height: 400px;
-    border: none;
-    margin-top: 1.5rem;
-  }
-
-  blockquote {
-    font-style: italic;
-    margin: 1.5rem 0;
-    padding-left: 1rem;
-    border-left: 3px solid var(--accent-color);
-  }
-.video-wrapper {
-  position: relative;
-  padding-top: 56.25%; /* 16:9 aspect ratio */
-  margin-top: 1.5rem;
-}
-
-.video-thumbnail {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-  background-color: #000;
-  overflow: hidden;
-}
-
-.video-thumbnail img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  filter: brightness(0.7);
-}
-
-.play-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 4rem;
-  color: var(--accent-color);
-  background-color: rgba(31, 27, 46, 0.7);
-  border-radius: 50%;
-  padding: 1rem 1.2rem;
-  transition: background-color 0.3s ease;
-}
-
-.play-button:hover {
-  background-color: rgba(118, 228, 217, 0.85);
-  color: var(--background-color);
-}
-
-  @media (max-width: 768px) {
-    section {
+    header, footer {
+      background-color: var(--header-color);
+      color: var(--accent-color);
+      text-align: center;
       padding: 2rem 1rem;
     }
 
-    .cta-button {
-      width: 100%;
-      text-align: center;
+    h1, h2, h3 {
+      color: var(--accent-color);
+      margin-top: 0;
     }
-  }
-</style>
+
+    section {
+      padding: 2.5rem 1.5rem;
+    }
+
+    ul, ol {
+      padding-left: 1.2rem;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    ul li::before {
+      content: "✅ ";
+      margin-right: 0.3rem;
+    }
+
+    .subsection {
+      margin-top: 2rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 1rem 2rem;
+      background-color: var(--accent-color);
+      color: var(--background-color);
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #57c7bd;
+    }
+
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+      margin-top: 1.5rem;
+    }
+
+    blockquote {
+      font-style: italic;
+      margin: 1.5rem 0;
+      padding-left: 1rem;
+      border-left: 3px solid var(--accent-color);
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 960px;
+      height: 500px;
+      margin: 1.5rem auto;
+    }
+
+    .video-thumbnail,
+    .video-embed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .video-thumbnail {
+      cursor: pointer;
+      background-color: #000;
+      overflow: hidden;
+    }
+
+    .video-thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: brightness(0.7);
+    }
+
+    .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 4rem;
+      color: var(--accent-color);
+      background-color: rgba(31, 27, 46, 0.7);
+      border-radius: 50%;
+      padding: 1rem 1.2rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .play-button:hover {
+      background-color: rgba(118, 228, 217, 0.85);
+      color: var(--background-color);
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 2rem 1rem;
+      }
+
+      .cta-button {
+        width: 100%;
+        text-align: center;
+      }
+
+      .video-wrapper {
+        height: 280px;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -163,6 +174,7 @@
       <li>Renforcer l’identité globale de la marque</li>
     </ul>
   </section>
+
   <section>
     <h2>🎧 Une signature audio, des usages multiples</h2>
     <p>
@@ -215,28 +227,13 @@
       <br>— Louis, Fondateur de Noblead
     </blockquote>
     <h3>🎥 Vidéo de présentation du logo sonore de Noblead</h3>
-   <h3>🎥 Vidéo de présentation du logo sonore de Noblead</h3>
-<div class="video-wrapper">
-  <div class="video-thumbnail" onclick="loadVideo()">
-    <img src="https://i.vimeocdn.com/video/1780291703-6a0bff6b22b6eb5df327499de6f183a9a458f27d7a87b32ad97f1f318b7d799c-d_640x360.jpg" alt="Vignette vidéo" />
-    <div class="play-button">▶</div>
-  </div>
-  <div class="video-embed" id="videoContainer" style="display: none;"></div>
-</div>
-
-<script>
-  function loadVideo() {
-    const container = document.getElementById('videoContainer');
-    container.innerHTML = `<iframe src="https://player.vimeo.com/video/1083525329?autoplay=1&h=0591de6b59&badge=0&autopause=0&player_id=0&app_id=58479"
-      frameborder="0"
-      allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-      style="width:100%;height:100%;"
-      title="Présentation du logo sonore de Noblead"></iframe>`;
-    container.style.display = 'block';
-    document.querySelector('.video-thumbnail').style.display = 'none';
-  }
-</script>
-
+    <div class="video-wrapper">
+      <div class="video-thumbnail" onclick="loadVideo()">
+        <img src="https://i.vimeocdn.com/video/1780291703-6a0bff6b22b6eb5df327499de6f183a9a458f27d7a87b32ad97f1f318b7d799c-d_640x360.jpg" alt="Vignette vidéo" />
+        <div class="play-button">▶</div>
+      </div>
+      <div class="video-embed" id="videoContainer" style="display: none;"></div>
+    </div>
     <p>
       Dans cette vidéo, découvrez comment nous avons conçu le logo sonore de Noblead : de la compréhension de leur univers à la création d'une signature audio unique.
     </p>
@@ -281,6 +278,19 @@
   <footer>
     <p>&copy; 2025 Eloquence Créative – Tous droits réservés</p>
   </footer>
+
+  <script>
+    function loadVideo() {
+      const container = document.getElementById('videoContainer');
+      container.innerHTML = `<iframe src="https://player.vimeo.com/video/1083525329?autoplay=1&h=0591de6b59&badge=0&autopause=0&player_id=0&app_id=58479"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+        style="width:100%;height:100%;"
+        title="Présentation du logo sonore de Noblead"></iframe>`;
+      container.style.display = 'block';
+      document.querySelector('.video-thumbnail').style.display = 'none';
+    }
+  </script>
 
 </body>
 </html>
