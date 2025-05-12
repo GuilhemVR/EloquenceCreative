@@ -86,6 +86,48 @@
     padding-left: 1rem;
     border-left: 3px solid var(--accent-color);
   }
+.video-wrapper {
+  position: relative;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+  margin-top: 1.5rem;
+}
+
+.video-thumbnail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  background-color: #000;
+  overflow: hidden;
+}
+
+.video-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.7);
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  color: var(--accent-color);
+  background-color: rgba(31, 27, 46, 0.7);
+  border-radius: 50%;
+  padding: 1rem 1.2rem;
+  transition: background-color 0.3s ease;
+}
+
+.play-button:hover {
+  background-color: rgba(118, 228, 217, 0.85);
+  color: var(--background-color);
+}
 
   @media (max-width: 768px) {
     section {
@@ -173,7 +215,28 @@
       <br>— Louis, Fondateur de Noblead
     </blockquote>
     <h3>🎥 Vidéo de présentation du logo sonore de Noblead</h3>
-    <iframe src="https://www.youtube.com/embed/VID_ID"></iframe>
+   <h3>🎥 Vidéo de présentation du logo sonore de Noblead</h3>
+<div class="video-wrapper">
+  <div class="video-thumbnail" onclick="loadVideo()">
+    <img src="https://i.vimeocdn.com/video/1780291703-6a0bff6b22b6eb5df327499de6f183a9a458f27d7a87b32ad97f1f318b7d799c-d_640x360.jpg" alt="Vignette vidéo" />
+    <div class="play-button">▶</div>
+  </div>
+  <div class="video-embed" id="videoContainer" style="display: none;"></div>
+</div>
+
+<script>
+  function loadVideo() {
+    const container = document.getElementById('videoContainer');
+    container.innerHTML = `<iframe src="https://player.vimeo.com/video/1083525329?autoplay=1&h=0591de6b59&badge=0&autopause=0&player_id=0&app_id=58479"
+      frameborder="0"
+      allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+      style="width:100%;height:100%;"
+      title="Présentation du logo sonore de Noblead"></iframe>`;
+    container.style.display = 'block';
+    document.querySelector('.video-thumbnail').style.display = 'none';
+  }
+</script>
+
     <p>
       Dans cette vidéo, découvrez comment nous avons conçu le logo sonore de Noblead : de la compréhension de leur univers à la création d'une signature audio unique.
     </p>
