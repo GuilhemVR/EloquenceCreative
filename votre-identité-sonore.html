@@ -1,119 +1,124 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Eloquence Créative - Création d'identités sonores pour marques ambitieuses.">
-  <title>Eloquence Créative – Identité Sonore</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <title>Éloquence Créative – Identité Sonore</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0D0C11;
-      --text: #ECE8E1;
-      --accent: #B49C73;
-      --bg-alt: #1A191F;
+      --bg: #FAF8F5;
+      --text: #2A2A2A;
+      --accent: #AC855E;
+      --accent-hover: #8A6B4F;
+      --bg-alt: #E5DCD0;
     }
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     body {
+      font-family: 'Inter', sans-serif;
       background-color: var(--bg);
       color: var(--text);
-      font-family: 'Inter', sans-serif;
       line-height: 1.6;
     }
 
-    nav {
-      background-color: var(--bg-alt);
-      padding: 1rem 2rem;
+    header {
+      background-color: var(--bg);
+      padding: 1.5rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      border-bottom: 1px solid var(--bg-alt);
       position: sticky;
       top: 0;
-      z-index: 1000;
+      z-index: 100;
     }
 
     .logo {
       font-family: 'Playfair Display', serif;
       font-size: 1.6rem;
+      font-weight: 700;
       color: var(--accent);
     }
 
-    .nav-links {
-      display: flex;
-      gap: 2rem;
+    nav ul {
       list-style: none;
+      display: flex;
+      gap: 1.5rem;
     }
 
-    .nav-links a {
+    nav a {
       text-decoration: none;
       color: var(--text);
-      font-weight: 500;
+      font-weight: 600;
+      transition: color 0.3s;
     }
 
-    .nav-links a:hover {
-      color: var(--accent);
+    nav a:hover {
+      color: var(--accent-hover);
     }
 
     .hero {
+      background-color: var(--bg);
       text-align: center;
-      padding: 6rem 2rem;
-      background: radial-gradient(ellipse at center, rgba(26,25,31,0.9), var(--bg));
+      padding: 6rem 2rem 5rem;
     }
 
     .hero h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 2.8rem;
-      color: var(--accent);
+      font-size: 2.5rem;
+      color: var(--text);
       margin-bottom: 1rem;
+    }
+
+    .hero h1 strong {
+      color: var(--accent);
     }
 
     .hero p {
       font-size: 1.2rem;
-      opacity: 0.85;
+      margin-bottom: 2rem;
     }
 
     .cta-button {
-      display: inline-block;
-      margin-top: 2rem;
-      padding: 0.8rem 1.4rem;
       background-color: var(--accent);
-      color: var(--bg);
-      font-family: 'Inter', sans-serif;
-      font-weight: 500;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-weight: 600;
       border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
       text-decoration: none;
-      box-shadow: 0 0 10px rgba(180, 156, 115, 0.2);
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      display: inline-block;
     }
 
     .cta-button:hover {
-      background-color: #A38B62;
-      box-shadow: 0 0 16px rgba(180, 156, 115, 0.4);
+      background-color: var(--accent-hover);
     }
   </style>
 </head>
 <body>
   <header>
+    <div class="logo">Éloquence Créative</div>
     <nav>
-      <div class="logo">Éloquence Créative</div>
-      <ul class="nav-links">
+      <ul>
         <li><a href="#identite-sonore">Identité sonore</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#about">À propos</a></li>
+        <li><a href="#apropos">À propos</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <section class="hero">
-    <h1>Faites résonner votre marque avec une identité sonore mémorable.</h1>
+    <h1>Faites résonner votre marque avec une <strong>identité sonore mémorable</strong>.</h1>
     <p>Créateur d’identités musicales sur-mesure pour marques ambitieuses.</p>
     <a href="#portfolio" class="cta-button">🎧 Écouter les réalisations</a>
   </section>
