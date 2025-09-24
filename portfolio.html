@@ -79,21 +79,20 @@
       color: var(--accent);
     }
 
-   .portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  padding: 3rem 2rem;
-  max-width: 1100px;
-  margin: auto;
-}
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      padding: 3rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
 
-@media screen and (max-width: 768px) {
-  .portfolio-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
+    @media screen and (max-width: 768px) {
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
     .card {
       background: white;
@@ -138,7 +137,6 @@
       background-color: var(--accent-hover);
     }
 
-    /* Fenêtre modale */
     .modal {
       display: none;
       position: fixed;
@@ -158,6 +156,10 @@
       padding: 2rem;
       border-radius: 12px;
       max-width: 800px;
+    }
+
+    .modal-content p {
+      margin-bottom: 1rem;
     }
 
     .modal h2 {
@@ -213,28 +215,28 @@
     <!-- Carte 1 -->
     <div class="card">
       <h3>Bleu d'Eclipse – Parfumerie contemporaine</h3>
-      <p>Création d’une identité sonore de 30 secondes pour un spot publicitaire TV et réseaux sociaux. </p>
+      <p>Création d’une identité sonore de 30 secondes pour un spot publicitaire TV et réseaux sociaux.</p>
       <button class="cta-button" onclick="openModal('modal1')">Détail</button>
     </div>
 
     <!-- Carte 2 -->
     <div class="card">
-      <h3>Cas Client #2</h3>
-      <p>Texte introductif à compléter.</p>
+      <h3>Nom du projet – Client #2</h3>
+      <p>Identité sonore originale conçue pour renforcer l’univers de marque à travers une composition narrative.</p>
       <button class="cta-button" onclick="openModal('modal2')">Détail</button>
     </div>
 
     <!-- Carte 3 -->
     <div class="card">
-      <h3>Cas Client #3</h3>
-      <p>Texte introductif à compléter.</p>
+      <h3>Nom du projet – Client #3</h3>
+      <p>Création d’un paysage sonore immersif pour accompagner un lancement produit à dimension émotionnelle.</p>
       <button class="cta-button" onclick="openModal('modal3')">Détail</button>
     </div>
 
     <!-- Carte 4 -->
     <div class="card">
-      <h3>Cas Client #4</h3>
-      <p>Texte introductif à compléter.</p>
+      <h3>Nom du projet – Client #4</h3>
+      <p>Habillage sonore élégant et symbolique destiné à traduire les valeurs d’un univers de luxe contemporain.</p>
       <button class="cta-button" onclick="openModal('modal4')">Détail</button>
     </div>
   </section>
@@ -245,14 +247,9 @@
       <span class="close" onclick="closeModal('modal1')">&times;</span>
       <h2>✨ Bleu d'Eclipse – Parfumerie contemporaine</h2>
       <p><strong>Client :</strong> Bleu d’Eclipse, maison de parfum parisienne célébrant l’invisible à travers des compositions audacieuses et sensorielles. Chaque fragrance est conçue comme un récit intime, mêlant esthétique contemporaine, imaginaire poétique et élégance intemporelle.</p>
-     
       <p><strong>Brief :</strong> Accompagner la campagne de lancement avec une identité sonore immersive et évocatrice, en parfaite cohérence avec l’univers olfactif et visuel. La composition devait prolonger l’expérience sensorielle et offrir un rendu cinématographique.</p>
-     
       <p><strong>Format :</strong> Identité musicale (30s) pour spot publicitaire TV & réseaux sociaux.</p>
-      
       <p><strong>Création :</strong> Orchestration élégante jouant sur les contrastes et les silences. Le passage du mineur au majeur traduit la dualité de l’éclipse, entre ombre et lumière. Les notes tenues renforcent l’aura poétique et la sensation de suspension cinématographique.</p>
-      
-      <!-- Lecteur audio -->
       <div class="audio-player">
         <h3>🎧 Écouter l’identité sonore</h3>
         <audio controls>
@@ -263,10 +260,60 @@
     </div>
   </div>
 
-  <!-- Modales vides pour les autres cartes -->
-  <div id="modal2" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('modal2')">&times;</span><h2>Cas Client #2</h2><p>À compléter.</p></div></div>
-  <div id="modal3" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('modal3')">&times;</span><h2>Cas Client #3</h2><p>À compléter.</p></div></div>
-  <div id="modal4" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('modal4')">&times;</span><h2>Cas Client #4</h2><p>À compléter.</p></div></div>
+  <!-- Modales 2 à 4 -->
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal2')">&times;</span>
+      <h2>Nom du projet – Client #2</h2>
+      <p><strong>Client :</strong> À compléter.</p>
+      <p><strong>Brief :</strong> À compléter.</p>
+      <p><strong>Format :</strong> À compléter.</p>
+      <p><strong>Création :</strong> À compléter.</p>
+      <div class="audio-player">
+        <h3>🎧 Écouter l’identité sonore</h3>
+        <audio controls>
+          <source src="#" type="audio/mpeg">
+          Votre navigateur ne supporte pas la lecture audio.
+        </audio>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal3')">&times;</span>
+      <h2>Nom du projet – Client #3</h2>
+      <p><strong>Client :</strong> À compléter.</p>
+      <p><strong>Brief :</strong> À compléter.</p>
+      <p><strong>Format :</strong> À compléter.</p>
+      <p><strong>Création :</strong> À compléter.</p>
+      <div class="audio-player">
+        <h3>🎧 Écouter l’identité sonore</h3>
+        <audio controls>
+          <source src="#" type="audio/mpeg">
+          Votre navigateur ne supporte pas la lecture audio.
+        </audio>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal4" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal4')">&times;</span>
+      <h2>Nom du projet – Client #4</h2>
+      <p><strong>Client :</strong> À compléter.</p>
+      <p><strong>Brief :</strong> À compléter.</p>
+      <p><strong>Format :</strong> À compléter.</p>
+      <p><strong>Création :</strong> À compléter.</p>
+      <div class="audio-player">
+        <h3>🎧 Écouter l’identité sonore</h3>
+        <audio controls>
+          <source src="#" type="audio/mpeg">
+          Votre navigateur ne supporte pas la lecture audio.
+        </audio>
+      </div>
+    </div>
+  </div>
 
   <script>
     function openModal(id) {
