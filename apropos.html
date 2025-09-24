@@ -1,1 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>À propos – Eloquence Créative</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Navigation -->
+  <header class="bg-white shadow-md fixed top-0 left-0 w-full z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center py-4 px-6">
+      <a href="index.html" class="text-xl font-bold text-gray-900">Eloquence Créative</a>
+      <nav class="space-x-6 hidden md:flex">
+        <a href="portfolio.html" class="hover:text-indigo-600">Portfolio</a>
+        <a href="services.html" class="hover:text-indigo-600">Services</a>
+        <a href="a-propos.html" class="text-indigo-600 font-semibold">À propos</a>
+        <a href="contact.html" class="hover:text-indigo-600">Contact</a>
+      </nav>
+      <button class="md:hidden text-gray-700" id="menu-btn">☰</button>
+    </div>
+    <div class="hidden md:hidden bg-white px-6 pb-4" id="mobile-menu">
+      <a href="portfolio.html" class="block py-2 hover:text-indigo-600">Portfolio</a>
+      <a href="services.html" class="block py-2 hover:text-indigo-600">Services</a>
+      <a href="a-propos.html" class="block py-2 text-indigo-600 font-semibold">À propos</a>
+      <a href="contact.html" class="block py-2 hover:text-indigo-600">Contact</a>
+    </div>
+  </header>
+
+  <!-- Section À propos -->
+  <section class="max-w-6xl mx-auto px-6 pt-32 pb-20 grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <img src="images/guilhem-vallery-radot.jpg" alt="Portrait de Guilhem Vallery-Radot" class="rounded-2xl shadow-lg object-cover w-full">
+    </div>
+    <div>
+      <h1 class="text-3xl font-bold mb-4">À propos</h1>
+      <h2 class="text-xl font-medium text-gray-600 mb-6">Guilhem Vallery-Radot – Artisan du son et stratège de marque</h2>
+      <p class="mb-4">Issu d’un double parcours en marketing et en composition musicale, je conçois des identités sonores sur-mesure qui donnent une voix authentique aux marques.</p>
+      <p class="mb-4">Depuis plus de 20 ans, je suis guitariste, compositeur et arrangeur, avec une pratique musicale exigeante nourrie par mon expérience de scène et de studio.</p>
+      <p class="mb-4">Mon approche repose sur un équilibre entre émotion, stratégie et sens du détail, avec une volonté constante d’incarner la singularité de chaque marque à travers le son.</p>
+      <p class="mb-4">Je puise aussi dans mon parcours artistique personnel – notamment en tant que fondateur du groupe <strong>A/Oratos</strong>, signé sur un label et salué par la critique – pour insuffler de la profondeur, de la texture et du style à mes créations.</p>
+      <p class="mb-4">🎧 Aujourd’hui, je mets cette sensibilité au service des marques ambitieuses qui veulent se démarquer, marquer les esprits et créer un lien durable avec leur audience grâce à une signature musicale forte.</p>
+    </div>
+  </section>
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
 
