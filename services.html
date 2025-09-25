@@ -14,7 +14,11 @@
       --bg-alt: #E5DCD0;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
       font-family: 'Inter', sans-serif;
@@ -29,8 +33,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-top: 1px solid var(--bg-alt);   /* Fine barre au-dessus */
-      border-bottom: 1px solid var(--bg-alt); /* Fine barre en dessous */
+      border-bottom: 1px solid var(--bg-alt); /* seulement une barre en bas */
       position: sticky;
       top: 0;
       z-index: 100;
@@ -43,21 +46,51 @@
       color: var(--accent);
     }
 
-    nav ul { list-style: none; display: flex; gap: 1.5rem; }
-    nav a { text-decoration: none; color: var(--text); font-weight: 600; transition: color 0.3s; }
-    nav a:hover { color: var(--accent-hover); }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
 
-    .hero { text-align: center; padding: 5rem 2rem 3rem; }
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--accent-hover);
+    }
+
+    .hero {
+      text-align: center;
+      padding: 5rem 2rem 3rem;
+    }
+
     .hero h1 {
       font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
       color: var(--text);
       margin-bottom: 0.75rem;
     }
-    .hero h1 strong { color: var(--accent); }
-    .hero p { max-width: 760px; margin: 0 auto; }
 
-    .services-container { max-width: 1000px; margin: auto; padding: 3rem 2rem; display: grid; gap: 2rem; }
+    .hero h1 strong {
+      color: var(--accent);
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .services-container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 3rem 2rem;
+      display: grid;
+      gap: 2rem;
+    }
 
     .service-block {
       background: #fff;
@@ -66,6 +99,11 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.08);
       padding: 2rem;
       text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .service-block:hover {
+      transform: translateY(-5px);
     }
 
     .service-block h2 {
@@ -81,11 +119,22 @@
 
     .cta-button {
       background-color: var(--accent);
-      color: white; border: none; padding: 0.6rem 1.2rem; font-weight: 600;
-      border-radius: 8px; font-size: 0.95rem; cursor: pointer; transition: background-color 0.3s; text-decoration: none;
-      display: inline-block; margin-top: 0.5rem;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      font-weight: 600;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 0.5rem;
     }
-    .cta-button:hover { background-color: var(--accent-hover); }
+
+    .cta-button:hover {
+      background-color: var(--accent-hover);
+    }
   </style>
 </head>
 <body>
