@@ -1,1 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services – Éloquence Créative</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #FAF8F5;
+      --text: #2A2A2A;
+      --accent: #AC855E;
+      --accent-hover: #8A6B4F;
+      --bg-alt: #E5DCD0;
+    }
 
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* Barre supérieure */
+    .top-bar {
+      background-color: var(--bg-alt);
+      height: 6px;
+      width: 100%;
+    }
+
+    header {
+      background-color: var(--bg);
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--bg-alt);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    nav ul { list-style: none; display: flex; gap: 1.5rem; }
+    nav a { text-decoration: none; color: var(--text); font-weight: 600; transition: color 0.3s; }
+    nav a:hover { color: var(--accent-hover); }
+
+    .hero { text-align: center; padding: 5rem 2rem 3rem; }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+    }
+    .hero h1 strong { color: var(--accent); }
+    .hero p { max-width: 760px; margin: 0 auto; }
+
+    /* Sections pleine largeur */
+    .service-section {
+      padding: 6rem 2rem;
+      text-align: center;
+    }
+
+    .service-section:nth-child(even) {
+      background-color: var(--bg-alt);
+    }
+
+    .service-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .service-section p {
+      max-width: 800px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .cta-button {
+      background-color: var(--accent);
+      color: white; border: none; padding: 0.6rem 1.2rem; font-weight: 600;
+      border-radius: 8px; font-size: 0.95rem; cursor: pointer; transition: background-color 0.3s; text-decoration: none;
+      display: inline-block; margin-top: 0.5rem;
+    }
+    .cta-button:hover { background-color: var(--accent-hover); }
+  </style>
+</head>
+<body>
+  <div class="top-bar"></div>
+  <header>
+    <div class="logo">Éloquence Créative</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="apropos.html">À propos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1><strong>Services</strong></h1>
+    <p>Découvrez comment le branding sonore peut donner une voix unique et mémorable à votre marque.</p>
+  </section>
+
+  <!-- Logo sonore -->
+  <section class="service-section">
+    <h2>🎵 Logo sonore</h2>
+    <p>Une signature sonore courte et impactante qui accompagne votre logo visuel et marque immédiatement l’esprit de vos clients. Le logo sonore devient un repère auditif unique qui renforce la mémorisation et l’attachement à votre marque.</p>
+    <a class="cta-button" href="contact.html">Créer mon logo sonore</a>
+  </section>
+
+  <!-- Musique de marque -->
+  <section class="service-section">
+    <h2>🎬 Musique de marque & à l’image</h2>
+    <p>Une composition originale pensée pour vos films publicitaires, institutionnels ou vos contenus digitaux. Elle traduit vos valeurs et votre identité en musique, créant une expérience émotionnelle forte et cohérente avec votre univers visuel.</p>
+    <a class="cta-button" href="contact.html">Composer ma musique de marque</a>
+  </section>
+
+  <!-- Ambiance sonore -->
+  <section class="service-section">
+    <h2>🎧 Ambiance sonore UX & in-store</h2>
+    <p>Des environnements sonores immersifs pour vos applications, podcasts, boutiques ou événements. Chaque ambiance sonore prolonge l’expérience de marque et crée un lien durable avec vos publics dans leur quotidien.</p>
+    <a class="cta-button" href="contact.html">Imaginer mon ambiance sonore</a>
+  </section>
+</body>
+</html>
