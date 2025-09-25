@@ -29,7 +29,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid var(--bg-alt);
+      border-top: 1px solid var(--bg-alt);   /* Fine barre au-dessus */
+      border-bottom: 1px solid var(--bg-alt); /* Fine barre en dessous */
       position: sticky;
       top: 0;
       z-index: 100;
@@ -56,26 +57,26 @@
     .hero h1 strong { color: var(--accent); }
     .hero p { max-width: 760px; margin: 0 auto; }
 
-    /* Sections pleine largeur */
-    .service-section {
-      padding: 6rem 2rem;
+    .services-container { max-width: 1000px; margin: auto; padding: 3rem 2rem; display: grid; gap: 2rem; }
+
+    .service-block {
+      background: #fff;
+      border: 1px solid var(--bg-alt);
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      padding: 2rem;
       text-align: center;
     }
 
-   .service-section:nth-child(odd) {
-  background-color: var(--bg-alt);
-    }
-
-    .service-section h2 {
+    .service-block h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 2rem;
+      font-size: 1.8rem;
       color: var(--accent);
       margin-bottom: 1rem;
     }
 
-    .service-section p {
-      max-width: 800px;
-      margin: 0 auto 1.5rem;
+    .service-block p {
+      margin-bottom: 1.5rem;
     }
 
     .cta-button {
@@ -106,25 +107,27 @@
     <p>Découvrez comment le branding sonore peut donner une voix unique et mémorable à votre marque.</p>
   </section>
 
-  <!-- Logo sonore -->
-  <section class="service-section">
-    <h2>🎵 Logo sonore</h2>
-    <p>Une signature sonore courte et impactante qui accompagne votre logo visuel et marque immédiatement l’esprit de vos clients. Le logo sonore devient un repère auditif unique qui renforce la mémorisation et l’attachement à votre marque.</p>
-    <a class="cta-button" href="contact.html">Créer mon logo sonore</a>
-  </section>
+  <main class="services-container">
+    <!-- Logo sonore -->
+    <div class="service-block">
+      <h2>🎵 Logo sonore</h2>
+      <p>Une signature sonore courte et impactante qui accompagne votre logo visuel et marque immédiatement l’esprit de vos clients. Le logo sonore devient un repère auditif unique qui renforce la mémorisation et l’attachement à votre marque.</p>
+      <a class="cta-button" href="#">En savoir plus</a>
+    </div>
 
-  <!-- Musique de marque -->
-  <section class="service-section">
-    <h2>🎬 Musique de marque & à l’image</h2>
-    <p>Une composition originale pensée pour vos films publicitaires, institutionnels ou vos contenus digitaux. Elle traduit vos valeurs et votre identité en musique, créant une expérience émotionnelle forte et cohérente avec votre univers visuel.</p>
-    <a class="cta-button" href="contact.html">Composer ma musique de marque</a>
-  </section>
+    <!-- Musique de marque -->
+    <div class="service-block">
+      <h2>🎬 Musique de marque & à l’image</h2>
+      <p>Une composition originale pensée pour vos films publicitaires, institutionnels ou vos contenus digitaux. Elle traduit vos valeurs et votre identité en musique, créant une expérience émotionnelle forte et cohérente avec votre univers visuel.</p>
+      <a class="cta-button" href="#">En savoir plus</a>
+    </div>
 
-  <!-- Ambiance sonore -->
-  <section class="service-section">
-    <h2>🎧 Ambiance sonore UX & in-store</h2>
-    <p>Des environnements sonores immersifs pour vos applications, podcasts, boutiques ou événements. Chaque ambiance sonore prolonge l’expérience de marque et crée un lien durable avec vos publics dans leur quotidien.</p>
-    <a class="cta-button" href="contact.html">Imaginer mon ambiance sonore</a>
-  </section>
+    <!-- Ambiance sonore -->
+    <div class="service-block">
+      <h2>🎧 Ambiance sonore UX & in-store</h2>
+      <p>Des environnements sonores immersifs pour vos applications, podcasts, boutiques ou événements. Chaque ambiance sonore prolonge l’expérience de marque et crée un lien durable avec vos publics dans leur quotidien.</p>
+      <a class="cta-button" href="#">En savoir plus</a>
+    </div>
+  </main>
 </body>
 </html>
