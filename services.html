@@ -157,12 +157,78 @@
   </section>
 
   <main class="services-container">
-    <!-- Logo sonore -->
-    <div class="service-block">
-      <h2>🎵 Logo sonore</h2>
-      <p>Une signature sonore courte et impactante qui accompagne votre logo visuel et marque immédiatement l’esprit de vos clients. Le logo sonore devient un repère auditif unique qui renforce la mémorisation et l’attachement à votre marque.</p>
-      <a class="cta-button" href="#">En savoir plus</a>
-    </div>
+   <!-- Bloc Logo sonore avec accordéon -->
+<div class="service-block">
+  <h2>🎵 Logo sonore</h2>
+  <p>L’essence de votre marque en quelques secondes</p>
+  <button class="cta-button" onclick="toggleAccordion('accordion-logo')">En savoir plus</button>
+
+  <div id="accordion-logo" class="accordion-content">
+    <p>
+      Un logo sonore est une signature auditive courte qui condense votre identité de marque en un repère émotionnel instantané. <br>
+      <em>En 2025</em>
+    </p>
+
+    <h3>Pourquoi est-ce essentiel ?</h3>
+    <ul>
+      <li><strong>Mémorisation accrue :</strong> le cerveau retient une mélodie bien plus rapidement qu’un slogan.</li>
+      <li><strong>Universalité :</strong> au-delà des langues, le son touche tout le monde de façon immédiate.</li>
+      <li><strong>Omnicanal :</strong> adapté aux écrans, aux réseaux sociaux, aux podcasts, aux événements.</li>
+      <li><strong>Différenciation :</strong> dans un monde saturé d’images, le son crée une connexion émotionnelle entre la marque et son public.</li>
+    </ul>
+
+    <h3>Notre approche</h3>
+    <ol>
+      <li><strong>Analyse de votre identité :</strong> valeurs, ADN de marque, mission, positionnement et cibles.</li>
+      <li><strong>Recherche créative :</strong> exploration musicale et sound-design inspirés par votre univers.</li>
+      <li><strong>Composition et design sonore :</strong> création d’un motif court, distinctif et émotionnellement juste.</li>
+      <li><strong>Déclinaisons multi-supports :</strong> versions courte et longue pour tous vos cas d’usage.</li>
+    </ol>
+
+    <h3>Quelles sont les applications d’un logo sonore ?</h3>
+    <ul>
+      <li><strong>Spots publicitaires TV & campagnes digitales :</strong> signature en fin de spot pour renforcer la mémorisation.</li>
+      <li><strong>Identité sonore sur les réseaux sociaux :</strong> séquence reconnaissable pour TikTok, Instagram, LinkedIn, YouTube.</li>
+      <li><strong>Présentations corporate & événements :</strong> sonorisation de vidéos institutionnelles, slides et keynotes.</li>
+      <li><strong>Ambiances retail & in-store :</strong> cohérence sonore dans vos points de vente et interactions digitales.</li>
+      <li><strong>Intro & outro de podcasts & webinaires :</strong> repère auditif qui structure et signe vos productions.</li>
+      <li><strong>Applications mobiles & UX :</strong> sons courts intégrés aux notifications et interactions utilisateurs.</li>
+      <li><strong>Attentes téléphoniques :</strong> expérience client personnalisée et premium dès le premier contact.</li>
+    </ul>
+
+    <a class="cta-button" href="contact.html">Créer mon logo sonore et donner une voix unique à ma marque</a>
+  </div>
+</div>
+
+<style>
+  .accordion-content {
+    display: none;
+    margin-top: 1.5rem;
+    text-align: left;
+  }
+  .accordion-content h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--accent);
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .accordion-content ul, 
+  .accordion-content ol {
+    margin-left: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  .accordion-content li {
+    margin-bottom: 0.5rem;
+  }
+</style>
+
+<script>
+  function toggleAccordion(id) {
+    const content = document.getElementById(id);
+    content.style.display = (content.style.display === "block") ? "none" : "block";
+  }
+</script>
+
 
     <!-- Musique de marque -->
     <div class="service-block">
