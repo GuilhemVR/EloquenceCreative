@@ -148,7 +148,7 @@
       gap: 4px;
       z-index: 0;
       height: 60px;
-      opacity: 0.6;
+      opacity: 0.4;
     }
 
     .wave-animation span {
@@ -173,6 +173,54 @@
     @keyframes wavePulse {
       0%, 100% { height: 20%; }
       50% { height: 100%; }
+    }
+
+    /* Responsive pour mobile */
+    @media screen and (max-width: 768px) {
+      .hero {
+        padding: 4rem 1.5rem 3rem;
+      }
+
+      .hero h1 {
+        font-size: 1.8rem;
+        line-height: 1.4;
+      }
+
+      .hero p {
+        font-size: 1.05rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .cta-button {
+        font-size: 1rem;
+        padding: 1rem 1.8rem;
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .wave-animation {
+        height: 40px;
+        opacity: 0.5;
+        gap: 3px;
+      }
+
+      .wave-animation span {
+        width: 3px;
+      }
+
+      .hero-quote {
+        font-size: 1rem;
+        margin-top: 1.5rem;
+      }
+
+      section {
+        padding: 3rem 1.5rem !important;
+      }
+
+      .services ul {
+        grid-template-columns: 1fr !important;
+        padding: 0;
+      }
     }
   </style>
 </head>
