@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ – Éloquence Créative</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #FAF8F5;
+      --text: #2A2A2A;
+      --accent: #AC855E;
+      --accent-hover: #8A6B4F;
+      --bg-alt: #E5DCD0;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* --- Header identique --- */
+    header {
+      background-color: var(--bg);
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--bg-alt);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo-link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .logo-img {
+      max-height: 80px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--accent-hover);
+    }
+
+    .burger {
+      display: none;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: var(--text);
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: var(--bg);
+        position: absolute;
+        top: 100%;
+        right: 2rem;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        border-radius: 8px;
+        padding: 1rem;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .burger {
+        display: block;
+      }
+    }
+
+    /* --- Hero --- */
+    .hero {
+      text-align: center;
+      padding: 5rem 2rem 3rem;
+      background-color: var(--bg);
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .hero h1 strong {
+      color: var(--accent);
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+
+    /* --- FAQ Section --- */
+    main {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 2rem 4rem;
+    }
+
+    .faq-item {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+      margin-bottom: 1.5rem;
+      padding: 1.5rem;
+      border-left: 5px solid var(--accent);
+    }
+
+    .faq-item h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      margin-bottom: 0.75rem;
+      color: var(--accent);
+    }
+
+    .faq-item p {
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo-link">
+      <img src="EloquenceCréativeLOGOVF 2.png" alt="Logo Éloquence Créative" class="logo-img">
+    </a>
+    <nav>
+      <button class="burger" onclick="toggleMenu()">☰</button>
+      <ul id="menu">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="apropos.html">À propos</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1><strong>FAQ</strong></h1>
+    <p>Retrouvez ici les réponses aux questions fréquentes sur le branding sonore et mes services.</p>
+  </section>
+
+  <main>
+    <div class="faq-item">
+      <h2>Qu’est-ce que le branding sonore&nbsp;?</h2>
+      <p>Le branding sonore désigne l’ensemble des éléments sonores qui incarnent une marque : logo sonore, identité musicale, ambiance UX ou in-store, voix, etc. Il permet à la marque d’être reconnue sans image, de renforcer son univers et d’émouvoir son public.</p>
+    </div>
+
+    <div class="faq-item">
+      <h2>En quoi un logo sonore est-il utile&nbsp;?</h2>
+      <p>Le logo sonore est une signature courte et mémorable qui accompagne l’apparition de votre logo visuel. Il ancre la marque dans la mémoire auditive et améliore la reconnaissance sur tous les supports : vidéos, podcasts, pubs TV, applis ou événements.</p>
+    </div>
+
+    <div class="faq-item">
+      <h2>Quelle est la différence entre identité sonore et musique à l’image&nbsp;?</h2>
+      <p>L’identité sonore regroupe les sons permanents qui définissent votre marque (logo, thème musical, ambiance UX).  
+      La musique à l’image est composée pour un projet visuel précis (spot TV, vidéo corporate) et reflète l’univers de la marque dans ce contexte particulier.</p>
+    </div>
+
+    <div class="faq-item">
+      <h2>Combien de temps dure la création d’une identité sonore&nbsp;?</h2>
+      <p>Selon la complexité et le nombre d’éléments à produire, il faut en général entre 2 et 6 semaines, incluant la phase d’échanges créatifs, la composition, le sound design et les ajustements.</p>
+    </div>
+
+    <div class="faq-item">
+      <h2>Quels sont les livrables fournis&nbsp;?</h2>
+      <p>Je livre des fichiers audio haute-qualité (WAV/MP3) adaptés aux différents supports : TV, digital, radio, podcast, réseaux sociaux.  
+      Si nécessaire, je fournis plusieurs déclinaisons (durées courtes, versions sans voix, variations de tempo).</p>
+    </div>
+
+    <div class="faq-item">
+      <h2>Ai-je besoin de payer des droits d’auteur supplémentaires&nbsp;?</h2>
+      <p>Toutes les créations originales livrées sont libres de droits d’exécution additionnels : vous disposez d’une licence d’utilisation complète selon les conditions définies dans le contrat (durée, territoire, médias).  
+      Aucune redevance supplémentaire n’est due à la SACEM sauf si vous décidez d’exploiter la musique hors du périmètre convenu.</p>
+    </div>
+
+    <div class="faq-item">
+      <h2>Comment se déroule la collaboration&nbsp;?</h2>
+      <p>Tout commence par un rendez-vous pour comprendre votre marque, vos valeurs et vos besoins. Je propose ensuite une direction créative et un calendrier.  
+      Après validation des maquettes, nous affinons la production jusqu’au rendu final, avec des allers-retours inclus pour garantir votre satisfaction.</p>
+    </div>
+
+    <div class="faq-item">
+      <h2>Proposez-vous aussi l’intégration technique (UX, appli, événement)&nbsp;?</h2>
+      <p>Oui. Je peux vous conseiller sur l’intégration de l’identité sonore dans vos interfaces digitales, points de vente ou installations événementielles, en collaboration avec vos équipes techniques.</p>
+    </div>
+
+    <div class="faq-item">
+      <h2>Comment obtenir un devis&nbsp;?</h2>
+      <p>Il vous suffit de <a href="contact.html" style="color: var(--accent); text-decoration: underline;">me contacter</a> via le formulaire ou par email.  
+      Après un échange sur votre projet, je vous fournis un devis détaillé et transparent sous 48 h.</p>
+    </div>
+  </main>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("show");
+    }
+  </script>
+</body>
+</html>
