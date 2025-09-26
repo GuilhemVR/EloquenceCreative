@@ -33,25 +33,24 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid var(--bg-alt); /* seulement une barre en bas */
+      border-bottom: 1px solid var(--bg-alt);
       position: sticky;
       top: 0;
       z-index: 100;
     }
 
-   .logo-link {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
+    .logo-link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
 
-.logo-img {
-  height: 800px;
-  max-height: 80px;
-  width: auto;
-  object-fit: contain;
-}
-
+    .logo-img {
+      height: 800px;
+      max-height: 80px;
+      width: auto;
+      object-fit: contain;
+    }
 
     nav ul {
       list-style: none;
@@ -68,6 +67,42 @@
 
     nav a:hover {
       color: var(--accent-hover);
+    }
+
+    /* Responsive menu */
+    @media screen and (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        background: var(--bg);
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        display: none;
+      }
+      nav ul.show {
+        display: flex;
+      }
+      nav li {
+        padding: 1rem;
+        border-bottom: 1px solid var(--bg-alt);
+      }
+      nav ul li:last-child {
+        border-bottom: none;
+      }
+      .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--text);
+      }
+    }
+    @media screen and (min-width: 769px) {
+      .menu-toggle {
+        display: none;
+      }
     }
 
     .hero {
@@ -142,15 +177,37 @@
     .cta-button:hover {
       background-color: var(--accent-hover);
     }
+
+    .accordion-content {
+      display: none;
+      margin-top: 1.5rem;
+      text-align: left;
+    }
+    .accordion-content h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--accent);
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .accordion-content ul,
+    .accordion-content ol {
+      margin-left: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    .accordion-content li {
+      margin-bottom: 0.5rem;
+    }
   </style>
 </head>
 <body>
+
 <header>
   <a href="index.html" class="logo-link">
     <img src="EloquenceCréativeLOGOVF 2.png" alt="Logo Éloquence Créative" class="logo-img">
   </a>
   <nav>
-    <ul>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <ul id="nav-list">
       <li><a href="index.html">Accueil</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="portfolio.html">Portfolio</a></li>
@@ -160,231 +217,140 @@
   </nav>
 </header>
 
+<section class="hero">
+  <h1><strong>Services</strong></h1>
+  <p>Découvrez comment le branding sonore peut donner une voix unique et mémorable à votre marque.</p>
+</section>
 
-  <section class="hero">
-    <h1><strong>Services</strong></h1>
-    <p>Découvrez comment le branding sonore peut donner une voix unique et mémorable à votre marque.</p>
-  </section>
+<main class="services-container">
+  <!-- Logo sonore -->
+  <div class="service-block">
+    <h2>🎵 Logo sonore</h2>
+    <p>L’essence de votre marque en quelques secondes</p>
+    <button class="cta-button" onclick="toggleAccordion('accordion-logo')">En savoir plus</button>
 
-  <main class="services-container">
-   <!-- Bloc Logo sonore avec accordéon -->
-<div class="service-block">
-  <h2>🎵 Logo sonore</h2>
-  <p>L’essence de votre marque en quelques secondes</p>
-  <button class="cta-button" onclick="toggleAccordion('accordion-logo')">En savoir plus</button>
+    <div id="accordion-logo" class="accordion-content">
+      <p>Un logo sonore est une signature auditive courte qui condense votre identité de marque en un repère émotionnel instantané.</p>
 
-  <div id="accordion-logo" class="accordion-content">
-    <p>
-      Un logo sonore est une signature auditive courte qui condense votre identité de marque en un repère émotionnel instantané. <br>
-    
-    </p>
+      <h3>Pourquoi est-ce essentiel ?</h3>
+      <ul>
+        <li><strong>Mémorisation accrue :</strong> le cerveau retient une mélodie bien plus rapidement qu’un slogan.</li>
+        <li><strong>Universalité :</strong> au-delà des langues, la musique touche tout le monde de façon immédiate.</li>
+        <li><strong>Omnicanal :</strong> adapté aux écrans, aux réseaux sociaux et à tous vos points de contact.</li>
+        <li><strong>Différenciation :</strong> dans un monde saturé d’images, le son crée une connexion émotionnelle entre la marque et son public.</li>
+      </ul>
 
-    <h3>Pourquoi est-ce essentiel ?</h3>
-    <ul>
-      <li><strong>Mémorisation accrue :</strong> le cerveau retient une mélodie bien plus rapidement qu’un slogan.</li>
-      <li><strong>Universalité :</strong> au-delà des langues, la musique touche tout le monde de façon immédiate.</li>
-      <li><strong>Omnicanal :</strong> adapté aux écrans, aux réseaux sociaux et à tous vos points de contact.</li>
-      <li><strong>Différenciation :</strong> dans un monde saturé d’images, le son crée une connexion émotionnelle entre la marque et son public.</li>
-    </ul>
+      <h3>Mon approche</h3>
+      <ol>
+        <li><strong>Analyse de votre identité :</strong> valeurs, ADN de marque, mission, positionnement et cibles.</li>
+        <li><strong>Recherche créative :</strong> exploration musicale et sound-design inspirés par votre univers.</li>
+        <li><strong>Composition et design sonore :</strong> création d’un motif court, distinctif et émotionnellement juste.</li>
+        <li><strong>Déclinaisons multi-supports :</strong> versions courte et longue pour tous vos cas d’usage.</li>
+      </ol>
 
-    <h3>Mon approche</h3>
-    <ol>
-      <li><strong>Analyse de votre identité :</strong> valeurs, ADN de marque, mission, positionnement et cibles.</li>
-      <li><strong>Recherche créative :</strong> exploration musicale et sound-design inspirés par votre univers.</li>
-      <li><strong>Composition et design sonore :</strong> création d’un motif court, distinctif et émotionnellement juste.</li>
-      <li><strong>Déclinaisons multi-supports :</strong> versions courte et longue pour tous vos cas d’usage.</li>
-    </ol>
+      <h3>Applications</h3>
+      <ul>
+        <li><strong>Publicités TV/radio & digitales</strong> – identité sonore pour renforcer mémorisation et impact.</li>
+        <li><strong>Réseaux sociaux</strong> – séquence courte reconnaissable pour formats courts.</li>
+        <li><strong>Présentations corporate & événements</strong> – professionnalisme et immersion.</li>
+        <li><strong>Ambiances retail & in-store</strong> – univers sonore cohérent en boutique et en ligne.</li>
+        <li><strong>Podcasts & webinaires</strong> – intro/outro mémorable et cohérente.</li>
+        <li><strong>Applications mobiles & UX</strong> – sons courts pour notifications et interactions.</li>
+        <li><strong>Attentes téléphoniques</strong> – expérience client personnalisée et premium.</li>
+      </ul>
 
-    <h3>Quelles sont les applications d’un logo sonore ?</h3>
-<ul>
-  <li>
-    <strong>Publicités TV ou radio & campagnes digitales</strong><br>
-    Une identité sonore conçue pour capter l’attention, renforcer la mémorisation et prolonger l’impact de vos campagnes.
-  </li>
-  <li>
-    <strong>Identité sonore sur les réseaux sociaux</strong><br>
-    Une séquence reconnaissable et adaptée aux formats courts sur vos réeaux sociaux.
-  </li>
-  <li>
-    <strong>Présentations corporate & événements</strong><br>
-    Pour apporter professionnalisme et immersion à vos vidéos institutionnelles, renforcer votre marque employeur dans vos vidéos d'onboarding RH et vos évènements en présentiel.
-  </li>
-  <li>
-    <strong>Ambiances retail & in-store</strong><br>
-    Un univers sonore cohérent qui accompagne vos points de vente et interactions digitales en boutique.
-  </li>
-  <li>
-    <strong>Intro & outro de podcasts & webinaires</strong><br>
-    Un repère auditif qui structure vos productions et installe une reconnaissance immédiate.
-  </li>
-  <li>
-    <strong>Applications mobiles & UX</strong><br>
-    Des sons courts intégrés aux notifications, transitions et interactions utilisateurs pour une expérience fluide.
-  </li>
-  <li>
-    <strong>Attentes téléphoniques</strong><br>
-    Une expérience client personnalisée et premium dès le premier contact au téléphone.
-  </li>
-</ul>
-
-
-    <a class="cta-button" href="contact.html">Créer mon logo sonore et donner une voix unique à ma marque</a>
+      <a class="cta-button" href="contact.html">Créer mon logo sonore</a>
+    </div>
   </div>
-</div>
 
-<style>
-  .accordion-content {
-    display: none;
-    margin-top: 1.5rem;
-    text-align: left;
-  }
-  .accordion-content h3 {
-    font-family: 'Playfair Display', serif;
-    color: var(--accent);
-    margin-top: 1.5rem;
-    margin-bottom: 0.75rem;
-  }
-  .accordion-content ul, 
-  .accordion-content ol {
-    margin-left: 1.2rem;
-    margin-bottom: 1rem;
-  }
-  .accordion-content li {
-    margin-bottom: 0.5rem;
-  }
-</style>
+  <!-- Musique de marque -->
+  <div class="service-block">
+    <h2>🎬 Musique de marque & musique à l’image</h2>
+    <p>Une bande-son originale qui traduit votre identité en émotion musicale et révèle la force de vos images.</p>
+    <button class="cta-button" onclick="toggleAccordion('accordion-musique')">En savoir plus</button>
+
+    <div id="accordion-musique" class="accordion-content">
+      <p>La musique de marque est une <strong>composition originale sur-mesure</strong>, imaginée comme une <em>bande-son signature</em> qui accompagne durablement votre identité et installe un territoire sonore reconnaissable.</p>
+
+      <h3>L’impact stratégique</h3>
+      <ul>
+        <li><strong>Reconnaissance & mémorisation :</strong> ancre la marque dans l’esprit du public.</li>
+        <li><strong>Attachement émotionnel :</strong> traduit les valeurs et la personnalité, crée un lien durable.</li>
+        <li><strong>Différenciation :</strong> repère distinctif face à la saturation d’images et slogans.</li>
+        <li><strong>Performance :</strong> augmente la rétention et l’engagement sur tous les formats.</li>
+      </ul>
+
+      <h3>Mon approche</h3>
+      <ol>
+        <li><strong>Brief & ADN de marque :</strong> valeurs, ton, cibles, objectifs média.</li>
+        <li><strong>Références & moodboard :</strong> textures, tempo, intention émotionnelle.</li>
+        <li><strong>Composition à l’image :</strong> écriture thématique et synchronisation.</li>
+        <li><strong>Orchestration & sound-design :</strong> choix des timbres, dynamique et transitions.</li>
+        <li><strong>Déclinaisons & livrables :</strong> versions 60/30/15 s, alt mixes, stems, normalisation et droits.</li>
+      </ol>
+
+      <h3>Cas d’usage</h3>
+      <ul>
+        <li><strong>Films publicitaires & brand content</strong> – thème original décliné pour TV et social.</li>
+        <li><strong>Films institutionnels & RH</strong> – musique qui valorise le récit et la crédibilité.</li>
+        <li><strong>Réseaux sociaux</strong> – hooks mélodiques efficaces pour formats courts.</li>
+        <li><strong>Événements & lancements produit</strong> – habillage musical modulable pour reveal et keynotes.</li>
+        <li><strong>Podcasts & capsules audio/vidéo</strong> – thème principal et variations intro/outro.</li>
+      </ul>
+
+      <a class="cta-button" href="contact.html">Composer ma musique de marque</a>
+    </div>
+  </div>
+
+  <!-- Ambiance sonore -->
+  <div class="service-block">
+    <h2>🎧 Ambiance sonore UX & in-store</h2>
+    <p>Des environnements sonores immersifs qui prolongent l’expérience de marque dans la vie quotidienne de vos publics.</p>
+    <button class="cta-button" onclick="toggleAccordion('accordion-ambiance')">En savoir plus</button>
+
+    <div id="accordion-ambiance" class="accordion-content">
+      <p>L’ambiance sonore est une <strong>expérience immersive</strong> qui accompagne vos clients dans leur parcours, en boutique, lors d’un événement ou via une application digitale.</p>
+
+      <h3>Avantages</h3>
+      <ul>
+        <li><strong>Expérience client enrichie :</strong> influence positive sur la perception de marque.</li>
+        <li><strong>Engagement émotionnel :</strong> crée un lien instinctif et durable.</li>
+        <li><strong>Cohérence sensorielle :</strong> complète l’univers visuel et verbal.</li>
+        <li><strong>Différenciation :</strong> environnement sonore unique et mémorable.</li>
+      </ul>
+
+      <h3>Mon approche</h3>
+      <ol>
+        <li><strong>Analyse des points de contact :</strong> retail, app, site web, événement…</li>
+        <li><strong>Design de l’expérience sonore :</strong> intensité, rythme, textures adaptées.</li>
+        <li><strong>Composition & sound-design :</strong> création d’ambiances modulables et immersives.</li>
+        <li><strong>Déploiement & optimisation :</strong> livrables adaptés : boucles, playlists, UX, diffusion in-store.</li>
+      </ol>
+
+      <h3>Cas d’usage</h3>
+      <ul>
+        <li><strong>Retail & in-store</strong> – atmosphère sonore qui prolonge l’univers de marque.</li>
+        <li><strong>Applications & sites web</strong> – sons UX pour transitions et notifications.</li>
+        <li><strong>Événements & salons</strong> – habillage sonore des espaces et scénographies.</li>
+        <li><strong>Podcasts & contenus immersifs</strong> – environnements sonores qui renforcent la narration.</li>
+        <li><strong>Attente téléphonique & service client</strong> – ambiance adaptée qui humanise la relation.</li>
+      </ul>
+
+      <a class="cta-button" href="contact.html">Créer une expérience sonore immersive</a>
+    </div>
+  </div>
+</main>
 
 <script>
+  function toggleMenu() {
+    const navList = document.getElementById('nav-list');
+    navList.classList.toggle('show');
+  }
+
   function toggleAccordion(id) {
     const content = document.getElementById(id);
     content.style.display = (content.style.display === "block") ? "none" : "block";
   }
 </script>
-
-
-   <!-- Musique de marque & à l’image – Accordéon -->
-<div class="service-block">
-  <h2>🎬 Musique de marque & musique à l’image</h2>
-  <p>Une bande-son originale qui traduit votre identité en émotion musicale et révèle la force de vos images.</p>
-  <button class="cta-button" onclick="toggleAccordion('accordion-musique')">En savoir plus</button>
-
-  <div id="accordion-musique" class="accordion-content">
-    <p>
-  La musique de marque est une <strong>composition originale et sur-mesure</strong>, imaginée comme une véritable 
-  <em>bande-son signature</em> qui accompagne durablement votre identité et installe un territoire sonore immédiatement reconnaissable.
-</p>
-
-<p>
-  Que ce soit pour un film publicitaire diffusé à la TV, un film institutionnel retraçant une rétrospective ou un manifeste de marque, 
-  une campagne social media ou un lancement de produit, cette création sur mesure apporte <strong>cohérence, impact émotionnel et différenciation</strong>, 
-  en inscrivant votre univers dans la mémoire de vos publics et en renforçant la valeur perçue de votre marque sur tous ses points de contact.
-</p>
-
-    <h3>L'impact stratégique d'une musique de marque</h3>
-    <ul>
-      <li><strong>Reconnaissance et mémorisation :</strong> une signature musicale ancre la marque dans l’esprit du public et facilite la mémorisation du message marketing, bien au-delà du visuel seul.</li>
-      <li><strong>Attachement émotionnel & incarnation des valeurs :</strong> le son agit immédiatement sur l’émotion : il traduit les valeurs et la personnalité de la marque, et crée une connexion instinctive et durable avec les consommateurs.</li>
-      <li><strong>Différenciation :</strong> Ddns un univers saturé d’images et de slogans, une musique originale offre un repère distinctif et donne à la marque une personnalité unique.</li>
-      <li><strong>Performance :</strong> une musique de marque augmente la rétention et stimule l’engagement, aussi bien sur les formats courts que sur les formats longs..</li>
-    </ul>
-
-    <h3>Mon approche</h3>
-    <ol>
-      <li><strong>Brief & ADN de marque :</strong> valeurs, promesse, ton, cibles et objectifs média.</li>
-      <li><strong>Références & moodboard :</strong> textures, tempo, palette d’instruments, intention émotionnelle.</li>
-      <li><strong>Composition à l’image :</strong> écriture thématique, synchronisation (repères, tempo map, hit points).</li>
-      <li><strong>Orchestration & sound design :</strong> choix des timbres, profondeur, dynamique, transitions.</li>
-      <li><strong>Déclinaisons & livrables :</strong> versions 60/30/15 s, cutdowns, alt mixes (no drums, underscore), <em>stems</em> séparés.</li>
-      <li><strong>Normalisation & droits :</strong> livraison dans les bons formats et niveaux techniques pour chaque canal (broadcast TV, radio, digital), et nous définissons les conditions d’utilisation (licence, métadonnées, droits d’auteur).</li>
-    </ol>
-
-    <h3>Cas d’usage</h3>
-    <ul>
-      <li>
-        <strong>Films publicitaires & brand content</strong><br>
-        Thème original synchronisé à l’image, décliné en formats 60/30/15 s pour TV, online et social.
-      </li>
-      <li>
-        <strong>Films institutionnels & RH</strong><br>
-        Musique qui valorise le récit, apporte crédibilité et chaleur humaine (interviews, corporate, manifesto).
-      </li>
-      <li>
-        <strong>Réseaux sociaux (TikTok, Instagram, LinkedIn, YouTube)</strong><br>
-        Hooks mélodiques efficaces pour formats courts, montages agiles et réutilisables.
-      </li>
-      <li>
-        <strong>Événements & lancement produit</strong><br>
-        Habillage musical modulable pour reveal, keynote, scénographie et transitions.
-      </li>
-      <li>
-        <strong>Podcasts & capsules audio/vidéo</strong><br>
-        Thème principal + variations (intro/outro/bed) pour une identité éditoriale cohérente.
-      </li>
-    </ul>
-
-    <a class="cta-button" href="contact.html">Composer ma musique de marque</a>
-  </div>
-</div>
-
-
-    <!-- Ambiance sonore -->
-    <!-- Ambiance sonore UX & in-store – Accordéon -->
-<div class="service-block">
-  <h2>🎧 Ambiance sonore UX & in-store</h2>
-  <p>Des environnements sonores immersifs qui prolongent l’expérience de marque dans la vie quotidienne de vos publics.</p>
-  <button class="cta-button" onclick="toggleAccordion('accordion-ambiance')">En savoir plus</button>
-
-  <div id="accordion-ambiance" class="accordion-content">
-    <p>
-      L’ambiance sonore est une <strong>expérience immersive et contextuelle</strong> qui accompagne vos clients dans leur parcours, 
-      que ce soit en boutique, lors d’un événement, ou dans l’usage d’une application digitale.  
-      Elle crée une atmosphère cohérente avec votre identité de marque et favorise un engagement émotionnel fort.
-    </p>
-
-    <h3>Les avantages d'une UX sonore </h3>
-    <ul>
-      <li><strong>Expérience client enrichie :</strong> le son renforce l’atmosphère et influence positivement la perception de la marque.</li>
-      <li><strong>Engagement émotionnel :</strong> une ambiance sonore adaptée provoque des émotions instinctives et crée un lien plus durable.</li>
-      <li><strong>Cohérence sensorielle :</strong> la musique complète l’univers visuel et verbal pour une expérience globale harmonisée.</li>
-      <li><strong>Différenciation :</strong> un environnement sonore unique distingue votre marque et la rend mémorable.</li>
-    </ul>
-
-    <h3>Mon approche</h3>
-    <ol>
-      <li><strong>Analyse des points de contact :</strong> retail, app, site web, événement, attente téléphonique…</li>
-      <li><strong>Design de l’expérience sonore :</strong> définir l’intensité, le rythme, les textures adaptées à chaque contexte.</li>
-      <li><strong>Composition & sound design :</strong> création d’ambiances modulables, immersives et cohérentes avec l’ADN de la marque.</li>
-      <li><strong>Déploiement & optimisation :</strong> livrables techniques adaptés à chaque support (boucles, playlists, intégration UX, diffusion in-store).</li>
-    </ol>
-
-    <h3>Cas d’usage</h3>
-    <ul>
-      <li>
-        <strong>Retail & in-store</strong><br>
-        Création d’une atmosphère sonore qui prolonge l’univers de marque et influence positivement le temps passé en boutique.
-      </li>
-      <li>
-        <strong>Applications & sites web</strong><br>
-        Sons UX pour transitions, notifications et parcours utilisateur, apportant confort et fluidité.
-      </li>
-      <li>
-        <strong>Événements & salons</strong><br>
-        Habillage sonore des espaces et scénographies pour renforcer l’impact émotionnel et mémorable de l’expérience live.
-      </li>
-      <li>
-        <strong>Podcasts & contenus immersifs</strong><br>
-        Création d’environnements sonores qui renforcent la narration et l’identité éditoriale.
-      </li>
-      <li>
-        <strong>Attente téléphonique & services clients</strong><br>
-        Ambiance adaptée et personnalisée qui humanise la relation client et transmet les valeurs de la marque.
-      </li>
-    </ul>
-
-    <a class="cta-button" href="contact.html">Créer une expérience sonore immersive</a>
-  </div>
-</div>
-
-  </main>
 </body>
 </html>
