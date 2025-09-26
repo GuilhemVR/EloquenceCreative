@@ -94,6 +94,10 @@
       animation: waveText 1.2s infinite ease-in-out;
     }
 
+    .accent-text {
+      color: var(--accent);
+    }
+
     @keyframes waveText {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-4px); }
@@ -173,7 +177,6 @@
   </style>
 </head>
 <body>
-
   <header>
     <a href="index.html" class="logo-link">
       <img src="EloquenceCréativeLOGOVF 2.png" alt="Logo Éloquence Créative" class="logo-img">
@@ -191,10 +194,10 @@
 
   <section class="hero">
     <div class="hero-content">
-     <h1>
-  Faites <strong class="animated-word">résonner</strong> votre marque avec une 
-  <strong class="accent-text">identité sonore mémorable</strong>.
-</h1>
+      <h1>
+        Faites <strong class="animated-word">résonner</strong> votre marque avec une
+        <strong class="accent-text">identité sonore mémorable</strong>.
+      </h1>
       <p>Artisan du son, je connecte votre marque à votre public grâce au pouvoir de la musique.</p>
       <a href="portfolio.html" class="cta-button">🎧 Écouter les réalisations</a>
 
@@ -205,14 +208,58 @@
         </em>
       </blockquote>
     </div>
-
-    <!-- 🎵 Visualiseur audio animé -->
     <div class="wave-animation" aria-hidden="true">
       <span></span><span></span><span></span><span></span><span></span>
       <span></span><span></span><span></span><span></span><span></span>
     </div>
   </section>
 
-  <!-- Le reste de ta page continue ici... -->
+  <section id="identite-sonore" style="padding: 5rem 2rem; max-width: 900px; margin: auto;">
+    <h2 style="
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      text-align: center;">
+      Une signature auditive à la hauteur de votre image
+    </h2>
+    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2.5rem; text-align: center;">
+      Le branding sonore désigne l’ensemble des éléments sonores qui incarnent une marque de manière cohérente, émotionnelle et reconnaissable. Il ajoute une <strong>dimension sensorielle forte</strong> capable de renforcer l'empreinte mémorielle de la marque et de créer un lien profond avec son audience.
+    </p>
+  </section>
+
+  <section class="services" style="padding: 4rem 2rem; max-width: 900px; margin: auto;">
+    <h2 style="text-align: center; font-family: 'Playfair Display', serif; color: var(--accent); font-size: 2rem; margin-bottom: 2rem;">
+      Mes services
+    </h2>
+    <p style="text-align: center; max-width: 700px; margin: 0 auto 3rem; font-size: 1.1rem;">
+      Des créations sur-mesure qui donnent de la voix à votre marque.
+      Que vous souhaitiez marquer les esprits, enrichir l’expérience client ou structurer une identité audio cohérente, je vous accompagne à chaque étape de votre univers sonore.
+    </p>
+    <ul style="list-style: none; padding-left: 0; display: grid; gap: 2.5rem; grid-template-columns: 1fr; max-width: 700px; margin: auto;">
+      <li>
+        <strong style="color: var(--accent);">🎧 Logo sonore</strong><br>
+        Une signature sonore brève et percutante, pensée pour accompagner l’apparition de votre logo sur tous vos supports. Elle ancre instantanément votre marque dans la mémoire auditive.
+      </li>
+      <li>
+        <strong style="color: var(--accent);">🎼 Musique de marque et à l'image</strong><br>
+        Une bande-son originale et synchronisée avec l'image pour révéler votre univers selon vos formats de diffusion : film publicitaire & spot TV, vidéos de marque, film institutionnel et contenu digital.
+      </li>
+      <li>
+        <strong style="color: var(--accent);">🎛 Ambiance sonore UX / in-store</strong><br>
+        Une atmosphère sonore immersive pensée pour vos applications, boutiques, showrooms ou événements, afin de prolonger l’expérience de marque au plus près de vos clients.
+      </li>
+    </ul>
+  </section>
+
+  <section id="apropos" style="padding: 4rem 2rem; max-width: 800px; margin: auto;">
+    <h2 style="text-align: center; font-family: 'Playfair Display', serif; color: var(--accent); font-size: 2rem; margin-bottom: 1.5rem;">
+      Mon approche
+    </h2>
+    <p style="font-size: 1.1rem; line-height: 1.8; text-align: center;">
+      Je m’appelle Guilhem Vallery-Radot. Issu du marketing digital et musicien depuis plus de 20 ans, j’ai fondé <strong>Éloquence Créative</strong> pour faire le lien entre stratégie de marque et émotion musicale.<br><br>
+      Mon parcours mêle rigueur de la communication et sensibilité artistique. Guitariste et compositeur, je conçois chaque identité sonore comme une <em>signature sensible</em> qui vous distingue durablement.
+    </p>
+  </section>
 </body>
 </html>
