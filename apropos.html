@@ -23,7 +23,7 @@
       line-height: 1.6;
     }
 
-    /* Header – identique au portfolio */
+    /* --- Header avec burger identique à l’accueil --- */
     header {
       background-color: var(--bg);
       padding: 1.5rem 2rem;
@@ -37,43 +37,120 @@
     }
 
     .logo-link {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
 
-.logo-img {
-  height: 800px;
-  max-height: 80px;
-  width: auto;
-  object-fit: contain;
-}
+    .logo-img {
+      max-height: 80px;
+      width: auto;
+      object-fit: contain;
+    }
 
-    nav ul { list-style: none; display: flex; gap: 1.5rem; }
-    nav a { text-decoration: none; color: var(--text); font-weight: 600; transition: color 0.3s; }
-    nav a:hover { color: var(--accent-hover); }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
 
-    /* Hero */
-    .hero { text-align: center; padding: 5rem 2rem 3rem; }
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--accent-hover);
+    }
+
+    /* Burger identique à la page d’accueil */
+    .burger {
+      display: none;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: var(--text);
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: var(--bg);
+        position: absolute;
+        top: 100%;
+        right: 2rem;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        border-radius: 8px;
+        padding: 1rem;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .burger {
+        display: block;
+      }
+    }
+
+    /* --- Hero --- */
+    .hero {
+      text-align: center;
+      padding: 5rem 2rem 3rem;
+    }
+
     .hero h1 {
       font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
       color: var(--text);
       margin-bottom: 0.75rem;
     }
-    .hero h1 strong { color: var(--accent); }
-    .hero p { max-width: 760px; margin: 0 auto; }
 
-    /* Layout */
-    .container { max-width: 1100px; margin: auto; padding: 3rem 2rem; }
+    .hero h1 strong {
+      color: var(--accent);
+    }
 
-    .about-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 2rem; align-items: start; }
-    @media screen and (max-width: 900px) { .about-grid { grid-template-columns: 1fr; } }
+    .hero p {
+      max-width: 760px;
+      margin: 0 auto;
+    }
 
-    .card { background: #fff; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); padding: 2rem; }
+    /* --- Layout --- */
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 3rem 2rem;
+    }
 
-    .about-photo { overflow: hidden; }
-    .about-photo img { width: 100%; height: 100%; display: block; object-fit: cover; border-radius: 12px; }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    @media screen and (max-width: 900px) {
+      .about-grid { grid-template-columns: 1fr; }
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      padding: 2rem;
+    }
+
+    .about-photo img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      border-radius: 12px;
+    }
 
     .about-content h2 {
       font-family: 'Playfair Display', serif;
@@ -81,15 +158,27 @@
       color: var(--accent);
       margin-bottom: 1rem;
     }
+
     .about-content p { margin-bottom: 1rem; }
 
     .cta-button {
       background-color: var(--accent);
-      color: white; border: none; padding: 0.6rem 1.2rem; font-weight: 600;
-      border-radius: 8px; font-size: 0.95rem; cursor: pointer; transition: background-color 0.3s; text-decoration: none;
-      display: inline-block; margin-top: 0.5rem;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      font-weight: 600;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 0.5rem;
     }
-    .cta-button:hover { background-color: var(--accent-hover); }
+
+    .cta-button:hover {
+      background-color: var(--accent-hover);
+    }
   </style>
 </head>
 <body>
@@ -98,7 +187,8 @@
     <img src="EloquenceCréativeLOGOVF 2.png" alt="Logo Éloquence Créative" class="logo-img">
   </a>
   <nav>
-    <ul>
+    <button class="burger" onclick="toggleMenu()">☰</button>
+    <ul id="menu">
       <li><a href="index.html">Accueil</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="portfolio.html">Portfolio</a></li>
@@ -108,44 +198,50 @@
   </nav>
 </header>
 
+<section class="hero">
+  <h1><strong>À propos</strong></h1>
+  <p>Découvrez qui je suis et mon environnement de travail.</p>
+</section>
 
-  <section class="hero">
-    <h1> <strong>À propos</strong></h1>
-    <p>Découvrez qui je suis et mon environnement de travail.</p>
-  </section>
-
-  <main class="container">
-    <div class="about-grid">
-      <!-- Photo -->
-      <div class="card about-photo" aria-label="Portrait de Guilhem Vallery-Radot">
-        <img src="photo GVR.jpg" alt="Portrait de Guilhem Vallery-Radot" />
-      </div>
-
-      <!-- Contenu -->
-      <article class="card about-content">
-        <h2>Guilhem Vallery-Radot – Artisan du son et stratège de marque</h2>
-        <p>Issu d’un double parcours en marketing et en composition musicale, je conçois des identités sonores sur-mesure qui donnent une voix authentique aux marques.</p>
-        <p>Depuis plus de 15 ans, je suis guitariste, compositeur et arrangeur, avec une pratique musicale exigeante nourrie par mon expérience de scène et de studio.</p>
-        <p>Mon approche repose sur un équilibre entre émotion, stratégie et sens du détail, avec une volonté constante d’incarner la singularité de chaque marque à travers le son.</p>
-        <p>Je puise aussi dans mon parcours artistique personnel – notamment en tant que fondateur du groupe <strong>A/Oratos</strong>, signé sur un label spécialisé et salué par la critique – pour insuffler de la profondeur et du style à mes créations. <a href="https://docs.google.com/document/d/1p0zokkMfIFeumodVQTn0sy0QZnrTXk7ah_VIVGdEpt8/edit?usp=sharing" target="_blank">
-  Revue de presse
-</a>
-</p>
-        <p>🎧 Aujourd’hui, je mets cette sensibilité au service des marques qui veulent se démarquer de façon ambitieuse et créer un lien durable avec leur audience avec une signature musicale forte.</p>
-        <a class="cta-button" href="contact.html">Discutons de votre projet</a>
-      </article>
+<main class="container">
+  <div class="about-grid">
+    <!-- Photo -->
+    <div class="card about-photo" aria-label="Portrait de Guilhem Vallery-Radot">
+      <img src="photo GVR.jpg" alt="Portrait de Guilhem Vallery-Radot" />
     </div>
-    <div class="card" style="margin-top:2rem;">
-<h3 style="font-family:'Playfair Display', serif; color:var(--accent); margin-bottom:1rem;"> Mon environnement de création</h3>
-<p>Je compose et produis dans un studio équipé professionnellement à mon domicile.</p>
-<p>Mon environnement repose sur <strong>Cubase Pro 13</strong>, un ordinateur puissant configuré spécialement pour la MAO et une interface audio de qualité garantissant fiabilité et précision sonore.</p>
-<p>J’utilise un set d’instruments variés (guitares haut de gamme, basse et claviers) ainsi qu’un vaste ensemble de plugins et VST dédiés au sound design, me permettant de créer des identités sonores riches, texturées et adaptées aux besoins de chaque projet.</p>
-<p>Chaque production est travaillée dans un cadre technique rigoureux, conforme aux standards de diffusion actuels (digital, podcast, vidéo, TV & cinéma).</p>
-</div>
-  </main>
 
-  <script>
-    // (Optionnel) Vous pouvez ajouter des interactions ici si nécessaire
-  </script>
+    <!-- Contenu -->
+    <article class="card about-content">
+      <h2>Guilhem Vallery-Radot – Artisan du son et stratège de marque</h2>
+      <p>Issu d’un double parcours en marketing et en composition musicale, je conçois des identités sonores sur-mesure qui donnent une voix authentique aux marques.</p>
+      <p>Depuis plus de 15 ans, je suis guitariste, compositeur et arrangeur, avec une pratique musicale exigeante nourrie par mon expérience de scène et de studio.</p>
+      <p>Mon approche repose sur un équilibre entre émotion, stratégie et sens du détail, avec une volonté constante d’incarner la singularité de chaque marque à travers le son.</p>
+      <p>Je puise aussi dans mon parcours artistique personnel – notamment en tant que fondateur du groupe <strong>A/Oratos</strong>, signé sur un label spécialisé et salué par la critique – pour insuffler de la profondeur et du style à mes créations.
+        <a href="https://docs.google.com/document/d/1p0zokkMfIFeumodVQTn0sy0QZnrTXk7ah_VIVGdEpt8/edit?usp=sharing" target="_blank">
+          Revue de presse
+        </a>
+      </p>
+      <p>🎧 Aujourd’hui, je mets cette sensibilité au service des marques qui veulent se démarquer de façon ambitieuse et créer un lien durable avec leur audience avec une signature musicale forte.</p>
+      <a class="cta-button" href="contact.html">Discutons de votre projet</a>
+    </article>
+  </div>
+
+  <div class="card" style="margin-top:2rem;">
+    <h3 style="font-family:'Playfair Display', serif; color:var(--accent); margin-bottom:1rem;">
+      Mon environnement de création
+    </h3>
+    <p>Je compose et produis dans un studio équipé professionnellement à mon domicile.</p>
+    <p>Mon environnement repose sur <strong>Cubase Pro 13</strong>, un ordinateur puissant configuré spécialement pour la MAO et une interface audio de qualité garantissant fiabilité et précision sonore.</p>
+    <p>J’utilise un set d’instruments variés (guitares haut de gamme, basse et claviers) ainsi qu’un vaste ensemble de plugins et VST dédiés au sound design, me permettant de créer des identités sonores riches, texturées et adaptées aux besoins de chaque projet.</p>
+    <p>Chaque production est travaillée dans un cadre technique rigoureux, conforme aux standards de diffusion actuels (digital, podcast, vidéo, TV & cinéma).</p>
+  </div>
+</main>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById("menu");
+    menu.classList.toggle("show");
+  }
+</script>
 </body>
 </html>
