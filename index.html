@@ -46,7 +46,6 @@
     }
 
     .logo-img {
-      height: 800px;
       max-height: 80px;
       width: auto;
       object-fit: contain;
@@ -67,6 +66,16 @@
 
     nav a:hover {
       color: var(--accent-hover);
+    }
+
+    .burger {
+      display: none;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: var(--text);
+      background: none;
+      border: none;
+      cursor: pointer;
     }
 
     .hero {
@@ -159,24 +168,48 @@
       border-radius: 2px;
     }
 
-    .wave-animation span:nth-child(1)  { animation-delay: 0s; }
-    .wave-animation span:nth-child(2)  { animation-delay: 0.1s; }
-    .wave-animation span:nth-child(3)  { animation-delay: 0.2s; }
-    .wave-animation span:nth-child(4)  { animation-delay: 0.3s; }
-    .wave-animation span:nth-child(5)  { animation-delay: 0.4s; }
-    .wave-animation span:nth-child(6)  { animation-delay: 0.5s; }
-    .wave-animation span:nth-child(7)  { animation-delay: 0.6s; }
-    .wave-animation span:nth-child(8)  { animation-delay: 0.7s; }
-    .wave-animation span:nth-child(9)  { animation-delay: 0.8s; }
-    .wave-animation span:nth-child(10) { animation-delay: 0.9s; }
+    .wave-animation span:nth-child(n) {
+      animation-delay: calc(0.1s * var(--i));
+    }
+
+    .wave-animation span:nth-child(1)  { --i: 0; }
+    .wave-animation span:nth-child(2)  { --i: 1; }
+    .wave-animation span:nth-child(3)  { --i: 2; }
+    .wave-animation span:nth-child(4)  { --i: 3; }
+    .wave-animation span:nth-child(5)  { --i: 4; }
+    .wave-animation span:nth-child(6)  { --i: 5; }
+    .wave-animation span:nth-child(7)  { --i: 6; }
+    .wave-animation span:nth-child(8)  { --i: 7; }
+    .wave-animation span:nth-child(9)  { --i: 8; }
+    .wave-animation span:nth-child(10) { --i: 9; }
 
     @keyframes wavePulse {
       0%, 100% { height: 20%; }
       50% { height: 100%; }
     }
 
-    /* Responsive pour mobile */
+    /* Responsive */
     @media screen and (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: var(--bg);
+        position: absolute;
+        top: 100%;
+        right: 2rem;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        border-radius: 8px;
+        padding: 1rem;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .burger {
+        display: block;
+      }
+
       .hero {
         padding: 4rem 1.5rem 3rem;
       }
@@ -230,7 +263,8 @@
       <img src="EloquenceCréativeLOGOVF 2.png" alt="Logo Éloquence Créative" class="logo-img">
     </a>
     <nav>
-      <ul>
+      <button class="burger" onclick="toggleMenu()">☰</button>
+      <ul id="menu">
         <li><a href="index.html">Accueil</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="portfolio.html">Portfolio</a></li>
@@ -263,12 +297,7 @@
   </section>
 
   <section id="identite-sonore" style="padding: 5rem 2rem; max-width: 900px; margin: auto;">
-    <h2 style="
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      color: var(--accent);
-      margin-bottom: 1.5rem;
-      text-align: center;">
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--accent); margin-bottom: 1.5rem; text-align: center;">
       Une signature auditive à la hauteur de votre image
     </h2>
     <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2.5rem; text-align: center;">
@@ -287,7 +316,7 @@
     <ul style="list-style: none; padding-left: 0; display: grid; gap: 2.5rem; grid-template-columns: 1fr; max-width: 700px; margin: auto;">
       <li>
         <strong style="color: var(--accent);">🎧 Logo sonore</strong><br>
-        Une signature sonore brève et percutante, pensée pour accompagner l’apparition de votre logo sur tous vos supports. Elle ancre instantanément votre marque dans la mémoire auditive.
+        Une signature sonore brève et percutante, pensée pour accompagner l’apparition de votre logo sur tous vos supports.
       </li>
       <li>
         <strong style="color: var(--accent);">🎼 Musique de marque et à l'image</strong><br>
@@ -295,7 +324,7 @@
       </li>
       <li>
         <strong style="color: var(--accent);">🎛 Ambiance sonore UX / in-store</strong><br>
-        Une atmosphère sonore immersive pensée pour vos applications, boutiques, showrooms ou événements, afin de prolonger l’expérience de marque au plus près de vos clients.
+        Une atmosphère sonore immersive pensée pour vos applications, boutiques, showrooms ou événements.
       </li>
     </ul>
   </section>
@@ -309,5 +338,12 @@
       Mon parcours mêle rigueur de la communication et sensibilité artistique. Guitariste et compositeur, je conçois chaque identité sonore comme une <em>signature sensible</em> qui vous distingue durablement.
     </p>
   </section>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("show");
+    }
+  </script>
 </body>
 </html>
