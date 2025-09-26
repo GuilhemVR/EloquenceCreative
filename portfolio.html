@@ -39,19 +39,17 @@
       z-index: 100;
     }
 
-.logo-link {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
+    .logo-link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
 
-.logo-img {
-  height: 800px;
-  max-height: 80px;
-  width: auto;
-  object-fit: contain;
-}
-
+    .logo-img {
+      max-height: 80px;
+      width: auto;
+      object-fit: contain;
+    }
 
     nav ul {
       list-style: none;
@@ -68,6 +66,39 @@
 
     nav a:hover {
       color: var(--accent-hover);
+    }
+
+    /* --- Menu burger identique à la page d’accueil --- */
+    .burger {
+      display: none;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: var(--text);
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: var(--bg);
+        position: absolute;
+        top: 100%;
+        right: 2rem;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        border-radius: 8px;
+        padding: 1rem;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .burger {
+        display: block;
+      }
     }
 
     .hero {
@@ -107,7 +138,6 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.08);
       padding: 2rem;
       text-align: center;
-      position: relative;
       transition: transform 0.3s;
     }
 
@@ -144,6 +174,7 @@
       background-color: var(--accent-hover);
     }
 
+    /* --- Modales --- */
     .modal {
       display: none;
       position: fixed;
@@ -201,19 +232,20 @@
 </head>
 <body>
   <header>
-  <a href="index.html" class="logo-link">
-    <img src="EloquenceCréativeLOGOVF 2.png" alt="Logo Éloquence Créative" class="logo-img">
-  </a>
-  <nav>
-    <ul>
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
-      <li><a href="apropos.html">À propos</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+    <a href="index.html" class="logo-link">
+      <img src="EloquenceCréativeLOGOVF 2.png" alt="Logo Éloquence Créative" class="logo-img">
+    </a>
+    <nav>
+      <button class="burger" onclick="toggleMenu()">☰</button>
+      <ul id="menu">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="apropos.html">À propos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <section class="hero">
     <h1>Découvrez mes <strong>réalisations</strong></h1>
@@ -277,7 +309,7 @@
       <p><strong>Client :</strong> Maison Capucine est une agence spécialisée dans la vente de biens d’exception à Paris. Ses vidéos de présentation valorisent des lieux uniques à travers une mise en scène élégante et cinématographique.</p>
       <p><strong>Brief :</strong> Concevoir une signature musicale de fin de vidéo de présentation des biens, à la fois discrète, esthétique et reconnaissable. La musique doit permettre de conclure chaque film avec finesse, accompagner le logo et renforcer l’image haut de gamme de l’agence.</p>
       <p><strong>Format :</strong> Signature sonore pour outro vidéo : apparition du logo, coordonnées et devise de la marque.</p>
-      <p><strong>Création :</strong> Composition légère au pianon et violoncelle à tempo lent, jouant sur l’espace, et la résonance. Une texture feutrée et lumineuse qui suggère la sérénité, l’élégance et la confiance. La forme courte et identifiable permet une réutilisation systématique comme signature sonore.</p>
+      <p><strong>Création :</strong> Composition légère au pianon et violoncelle à tempo lent, jouant sur l’espace et la résonance. Une texture feutrée et lumineuse qui suggère la sérénité, l’élégance et la confiance.</p>
       <div class="audio-player">
         <h3>🎧 Écouter l’identité sonore</h3>
         <audio controls>
@@ -293,9 +325,9 @@
       <span class="close" onclick="closeModal('modal3')">&times;</span>
       <h2>Ethera – Joaillerie contemporaine</h2>
       <p><strong>Client :</strong> Ethera est une maison de joaillerie parisienne au positionnement contemporain. Elle s’adresse à une nouvelle génération de femmes en quête de pièces à la fois puissantes et délicates, alliant élégance intemporelle et expression personnelle.</p>
-      <p><strong>Brief :</strong> Créer une identité sonore pour les campagnes digitales de la marque, incarnant son univers visuel et émotionnel. La musique doit suggérer un luxe discret, mais affirmé, en restant accessible à une clientèle jeune, sensible à la narration et à l’élégance sensorielle.</p>
+      <p><strong>Brief :</strong> Créer une identité sonore pour les campagnes digitales de la marque, incarnant son univers visuel et émotionnel.</p>
       <p><strong>Format :</strong> Identité musicale pour vidéo manifeste, déclinée en formats courts pour les campagnes digitales sur les réseaux sociaux.</p>
-      <p><strong>Création :</strong> Une composition éthérée et texturée, construite sur une nappe moderne aux harmoniques cristallines pour refléter l'éclat d'un bijou</p>
+      <p><strong>Création :</strong> Une composition éthérée et texturée, construite sur une nappe moderne aux harmoniques cristallines pour refléter l'éclat d'un bijou.</p>
       <div class="audio-player">
         <h3>🎧 Écouter l’identité sonore</h3>
         <audio controls>
@@ -310,10 +342,9 @@
     <div class="modal-content">
       <span class="close" onclick="closeModal('modal4')">&times;</span>
       <h2>Noblead – Cabinet de recrutement à impact RSE</h2>
-      <p><strong>Client :</strong> NOBLEAD est un cabinet de de recrutement mulisectoriel combinant performance business et impact sociétal fort : jusqu’à 20 % des honoraires sont reversés à une association partenaire choisie par le client.
-      <p><strong>Brief :</strong> Créer un logo sonore qui incarne la singularité de Noblead : le sérieux et l'efficacité d’un cabinet de recrutement, alliés à une dimension humaine, transparente et responsable.
-Le logo doit à la fois inspirer confiance et dynamisme, tout en reflétant la valeur ajoutée sociétale de la marque.</p>
-      <p><strong>Format :</strong> Logo sonore pour la communication digitale de la marque</p>
+      <p><strong>Client :</strong> NOBLEAD est un cabinet de recrutement multisectoriel combinant performance business et impact sociétal fort : jusqu’à 20 % des honoraires sont reversés à une association partenaire choisie par le client.</p>
+      <p><strong>Brief :</strong> Créer un logo sonore qui incarne la singularité de Noblead : le sérieux et l'efficacité d’un cabinet de recrutement, alliés à une dimension humaine, transparente et responsable.</p>
+      <p><strong>Format :</strong> Logo sonore pour la communication digitale de la marque.</p>
       <p><strong>Création :</strong> La composition s’articule autour d’un motif lumineux traduisant la confiance et la réussite collective.</p>
       <div class="audio-player">
         <h3>🎧 Écouter l’identité sonore</h3>
@@ -326,12 +357,19 @@ Le logo doit à la fois inspirer confiance et dynamisme, tout en reflétant la v
   </div>
 
   <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("show");
+    }
+
     function openModal(id) {
       document.getElementById(id).style.display = 'block';
     }
+
     function closeModal(id) {
       document.getElementById(id).style.display = 'none';
     }
+
     window.onclick = function(event) {
       if (event.target.classList.contains('modal')) {
         event.target.style.display = 'none';
