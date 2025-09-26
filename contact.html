@@ -6,11 +6,6 @@
   <title>Contact – Éloquence Créative</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    .accent-color {
-  color: var(--accent);
-  font-weight: 600;
-}
-
     :root {
       --bg: #FAF8F5;
       --text: #2A2A2A;
@@ -32,6 +27,7 @@
       line-height: 1.6;
     }
 
+    /* --- Header identique à la page d’accueil --- */
     header {
       background-color: var(--bg);
       padding: 1.5rem 2rem;
@@ -44,18 +40,17 @@
       z-index: 100;
     }
 
-.logo-link {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
+    .logo-link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
 
-.logo-img {
-  height: 800px;
-  max-height: 80px;
-  width: auto;
-  object-fit: contain;
-}
+    .logo-img {
+      max-height: 80px;
+      width: auto;
+      object-fit: contain;
+    }
 
     nav ul {
       list-style: none;
@@ -74,6 +69,40 @@
       color: var(--accent-hover);
     }
 
+    /* --- Burger identique à l’accueil --- */
+    .burger {
+      display: none;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: var(--text);
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: var(--bg);
+        position: absolute;
+        top: 100%;
+        right: 2rem;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        border-radius: 8px;
+        padding: 1rem;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .burger {
+        display: block;
+      }
+    }
+
+    /* --- Section Hero --- */
     .hero {
       text-align: center;
       padding: 5rem 2rem 2rem;
@@ -96,6 +125,7 @@
       font-size: 1.1rem;
     }
 
+    /* --- Formulaire Contact --- */
     .contact-container {
       max-width: 800px;
       margin: 3rem auto;
@@ -173,6 +203,11 @@
       color: var(--accent-hover);
     }
 
+    .accent-color {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
     @media (max-width: 600px) {
       .hero h1 {
         font-size: 2rem;
@@ -186,12 +221,13 @@
   </style>
 </head>
 <body>
- <header>
+<header>
   <a href="index.html" class="logo-link">
     <img src="EloquenceCréativeLOGOVF 2.png" alt="Logo Éloquence Créative" class="logo-img">
   </a>
   <nav>
-    <ul>
+    <button class="burger" onclick="toggleMenu()">☰</button>
+    <ul id="menu">
       <li><a href="index.html">Accueil</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="portfolio.html">Portfolio</a></li>
@@ -201,13 +237,12 @@
   </nav>
 </header>
 
+<section class="hero">
+  <h1><strong>Contact</strong></h1>
+  <p>Vous avez un projet ou une idée à faire résonner ? Parlons-en !</p>
+</section>
 
-  <section class="hero">
-    <h1><strong>Contact</strong></h1>
-    <p>Vous avez un projet ou une idée à faire résonner ? Parlons-en !</p>
-  </section>
-
-  <main>
+<main>
   <div class="contact-container">
     <h2>Envoyez-moi un message</h2>
     <form action="https://formspree.io/f/mdkeykwk" method="POST">
@@ -235,11 +270,18 @@
     </form>
 
     <div class="social-links">
-      Ou contactez-moi directement : 
+      Ou contactez-moi directement :
       <span class="accent-color">guilhem@eloquencecreative.fr</span> |
       <a href="https://www.linkedin.com/in/guilhem-vallery-radot/" target="_blank">LinkedIn</a>
     </div>
   </div>
 </main>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById("menu");
+    menu.classList.toggle("show");
+  }
+</script>
 </body>
 </html>
