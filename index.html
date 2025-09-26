@@ -45,13 +45,12 @@
       text-decoration: none;
     }
 
-  .logo-img {
-  height: 800px;
-  max-height: 80px;
-  width: auto;
-  object-fit: contain;
-}
-
+    .logo-img {
+      height: 800px;
+      max-height: 80px;
+      width: auto;
+      object-fit: contain;
+    }
 
     nav ul {
       list-style: none;
@@ -74,6 +73,8 @@
       background-color: var(--bg);
       text-align: center;
       padding: 6rem 2rem 5rem;
+      position: relative;
+      overflow: hidden;
     }
 
     .hero h1 {
@@ -85,6 +86,13 @@
 
     .hero h1 strong {
       color: var(--accent);
+      display: inline-block;
+      animation: waveText 1.2s infinite ease-in-out;
+    }
+
+    @keyframes waveText {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
     }
 
     .hero p {
@@ -122,6 +130,42 @@
       border-left: 4px solid var(--accent);
       border-radius: 8px;
     }
+
+    .wave-animation {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 4px;
+      z-index: 0;
+      height: 60px;
+      opacity: 0.2;
+    }
+
+    .wave-animation span {
+      display: block;
+      width: 4px;
+      background: var(--accent);
+      animation: wavePulse 1.2s infinite ease-in-out;
+      border-radius: 2px;
+    }
+
+    .wave-animation span:nth-child(1)  { animation-delay: 0s; }
+    .wave-animation span:nth-child(2)  { animation-delay: 0.1s; }
+    .wave-animation span:nth-child(3)  { animation-delay: 0.2s; }
+    .wave-animation span:nth-child(4)  { animation-delay: 0.3s; }
+    .wave-animation span:nth-child(5)  { animation-delay: 0.4s; }
+    .wave-animation span:nth-child(6)  { animation-delay: 0.5s; }
+    .wave-animation span:nth-child(7)  { animation-delay: 0.6s; }
+    .wave-animation span:nth-child(8)  { animation-delay: 0.7s; }
+    .wave-animation span:nth-child(9)  { animation-delay: 0.8s; }
+    .wave-animation span:nth-child(10) { animation-delay: 0.9s; }
+
+    @keyframes wavePulse {
+      0%, 100% { height: 20%; }
+      50% { height: 100%; }
+    }
   </style>
 </head>
 <body>
@@ -142,16 +186,24 @@
   </header>
 
   <section class="hero">
-    <h1>Faites résonner votre marque avec une <strong>identité sonore mémorable</strong>.</h1>
-    <p>Artisan du son, je connecte votre marque à votre public grâce au pouvoir de la musique.</p>
-    <a href="portfolio.html" class="cta-button">🎧 Écouter les réalisations</a>
+    <div class="hero-content">
+      <h1>Faites résonner votre marque avec une <strong>identité sonore mémorable</strong>.</h1>
+      <p>Artisan du son, je connecte votre marque à votre public grâce au pouvoir de la musique.</p>
+      <a href="portfolio.html" class="cta-button">🎧 Écouter les réalisations</a>
 
-    <blockquote class="hero-quote">
-      <em>
-        Dans un monde saturé d'images et de bruits, votre marque mérite la plus belle des voix.<br><br>
-        Une identité sonore permet à votre marque d’être reconnue sans être vue, d’émouvoir sans dire un mot, et de renforcer votre univers là où l’image ne suffit plus.
-      </em>
-    </blockquote>
+      <blockquote class="hero-quote">
+        <em>
+          Dans un monde saturé d'images et de bruits, votre marque mérite la plus belle des voix.<br><br>
+          Une identité sonore permet à votre marque d’être reconnue sans être vue, d’émouvoir sans dire un mot, et de renforcer votre univers là où l’image ne suffit plus.
+        </em>
+      </blockquote>
+    </div>
+
+    <!-- 🎵 Animation sonore visuelle -->
+    <div class="wave-animation" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
   </section>
 
   <section id="identite-sonore" style="padding: 5rem 2rem; max-width: 900px; margin: auto;">
