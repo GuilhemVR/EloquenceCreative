@@ -46,7 +46,6 @@
     }
 
     .logo-img {
-      height: 800px;
       max-height: 80px;
       width: auto;
       object-fit: contain;
@@ -69,39 +68,36 @@
       color: var(--accent-hover);
     }
 
-    /* Responsive menu */
+    /* --- Menu burger identique à la page d’accueil --- */
+    .burger {
+      display: none;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: var(--text);
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
     @media screen and (max-width: 768px) {
       nav ul {
+        display: none;
         flex-direction: column;
-        background: var(--bg);
+        background-color: var(--bg);
         position: absolute;
         top: 100%;
-        right: 0;
-        width: 100%;
-        display: none;
+        right: 2rem;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        border-radius: 8px;
+        padding: 1rem;
       }
+
       nav ul.show {
         display: flex;
       }
-      nav li {
-        padding: 1rem;
-        border-bottom: 1px solid var(--bg-alt);
-      }
-      nav ul li:last-child {
-        border-bottom: none;
-      }
-      .menu-toggle {
+
+      .burger {
         display: block;
-        background: none;
-        border: none;
-        font-size: 1.5rem;
-        cursor: pointer;
-        color: var(--text);
-      }
-    }
-    @media screen and (min-width: 769px) {
-      .menu-toggle {
-        display: none;
       }
     }
 
@@ -124,6 +120,7 @@
     .hero p {
       max-width: 760px;
       margin: 0 auto;
+      font-size: 1.1rem;
     }
 
     .services-container {
@@ -183,17 +180,20 @@
       margin-top: 1.5rem;
       text-align: left;
     }
+
     .accordion-content h3 {
       font-family: 'Playfair Display', serif;
       color: var(--accent);
       margin-top: 1.5rem;
       margin-bottom: 0.75rem;
     }
+
     .accordion-content ul,
     .accordion-content ol {
       margin-left: 1.2rem;
       margin-bottom: 1rem;
     }
+
     .accordion-content li {
       margin-bottom: 0.5rem;
     }
@@ -206,8 +206,8 @@
     <img src="EloquenceCréativeLOGOVF 2.png" alt="Logo Éloquence Créative" class="logo-img">
   </a>
   <nav>
-    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-    <ul id="nav-list">
+    <button class="burger" onclick="toggleMenu()">☰</button>
+    <ul id="menu">
       <li><a href="index.html">Accueil</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="portfolio.html">Portfolio</a></li>
@@ -343,8 +343,8 @@
 
 <script>
   function toggleMenu() {
-    const navList = document.getElementById('nav-list');
-    navList.classList.toggle('show');
+    const menu = document.getElementById("menu");
+    menu.classList.toggle("show");
   }
 
   function toggleAccordion(id) {
