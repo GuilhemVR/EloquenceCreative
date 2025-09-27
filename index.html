@@ -257,6 +257,114 @@
     }
   </style>
 </head>
+  <!-- ====== Bandeau Cookies ====== -->
+<div id="cookie-banner" style="display:none;">
+  <div class="cookie-content">
+    <p>
+      Nous utilisons des cookies de mesure d’audience (Google Analytics) pour améliorer votre expérience.
+      Vous pouvez accepter, refuser ou personnaliser vos choix.
+    </p>
+    <div class="cookie-buttons">
+      <button id="accept-cookies">Tout accepter</button>
+      <button id="reject-cookies">Tout refuser</button>
+      <button id="customize-cookies">Personnaliser</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  #cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #FAF8F5;
+    color: #2A2A2A;
+    border-top: 1px solid #E5DCD0;
+    box-shadow: 0 -2px 6px rgba(0,0,0,0.1);
+    padding: 1rem 2rem;
+    font-size: 0.95rem;
+    z-index: 9999;
+  }
+  .cookie-content {
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .cookie-buttons button {
+    background: #AC855E;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  .cookie-buttons button:hover { background: #8A6B4F; }
+  .cookie-buttons #reject-cookies {
+    background: #ccc;
+    color: #2A2A2A;
+  }
+  .cookie-buttons #reject-cookies:hover { background: #999; }
+  .cookie-buttons #customize-cookies {
+    background: transparent;
+    color: #AC855E;
+    border: 1px solid #AC855E;
+  }
+  .cookie-buttons #customize-cookies:hover {
+    background: #AC855E;
+    color: #fff;
+  }
+</style>
+
+<script>
+  const GA_MEASUREMENT_ID = "G-M9SM7L6HEH";  // <-- Votre ID GA4
+
+  window.addEventListener("load", () => {
+    const consent = localStorage.getItem("cookieConsent");
+    if (!consent) {
+      document.getElementById("cookie-banner").style.display = "block";
+    } else if (consent === "accepted") {
+      loadGA();
+    }
+  });
+
+  document.getElementById("accept-cookies").addEventListener("click", () => {
+    localStorage.setItem("cookieConsent", "accepted");
+    document.getElementById("cookie-banner").style.display = "none";
+    loadGA();
+  });
+
+  document.getElementById("reject-cookies").addEventListener("click", () => {
+    localStorage.setItem("cookieConsent", "rejected");
+    document.getElementById("cookie-banner").style.display = "none";
+  });
+
+  document.getElementById("customize-cookies").addEventListener("click", () => {
+    alert("Fonction de personnalisation à venir.");
+  });
+
+  function loadGA() {
+    if (!window.gtag) {
+      const script = document.createElement("script");
+      script.async = true;
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+      document.head.appendChild(script);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      gtag("js", new Date());
+      gtag("config", GA_MEASUREMENT_ID);
+    }
+  }
+</script>
+<!-- ====== Fin Bandeau Cookies ====== -->
 <body>
   <header>
     <a href="index.html" class="logo-link">
