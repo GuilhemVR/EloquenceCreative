@@ -257,101 +257,108 @@
     }
   </style>
 </head>
-  <!-- ====== Bandeau Cookies ====== -->
+<!-- ================== BANDEAU COOKIES + PERSONNALISATION ================== -->
 <div id="cookie-banner" style="display:none;">
-  <div class="cookie-content">
-    <p>
-      Nous utilisons des cookies de mesure d’audience (Google Analytics) pour améliorer votre expérience.
-      Vous pouvez accepter, refuser ou personnaliser vos choix.
-    </p>
-    <div class="cookie-buttons">
-      <button id="accept-cookies">Tout accepter</button>
-      <button id="reject-cookies">Tout refuser</button>
-      <button id="customize-cookies">Personnaliser</button>
-    </div>
+  <p>
+    Nous utilisons des cookies pour améliorer votre expérience et mesurer l’audience (Google Analytics).
+    <a href="politique-cookies.html" style="color:#fff;text-decoration:underline;">En savoir plus</a>
+  </p>
+  <div>
+    <button id="accept-cookies">Tout accepter</button>
+    <button id="reject-cookies">Tout refuser</button>
+    <button id="customize-cookies">Personnaliser</button>
+  </div>
+</div>
+
+<!-- Fenêtre de personnalisation -->
+<div id="cookie-modal" style="display:none;">
+  <div class="modal-content">
+    <h2>Paramètres des cookies</h2>
+
+    <label>
+      <input type="checkbox" disabled checked />
+      Cookies essentiels (obligatoires)
+    </label><br>
+
+    <label>
+      <input type="checkbox" id="analytics-cookies" />
+      Cookies de mesure d’audience (Google Analytics)
+    </label><br><br>
+
+    <button id="save-preferences">Enregistrer mes préférences</button>
+    <button id="close-modal">Fermer</button>
   </div>
 </div>
 
 <style>
+  /* Bandeau cookies */
   #cookie-banner {
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 100%;
-    background: #FAF8F5;
-    color: #2A2A2A;
-    border-top: 1px solid #E5DCD0;
-    box-shadow: 0 -2px 6px rgba(0,0,0,0.1);
+    right: 0;
+    background: rgba(44,44,44,0.95);
+    color: #fff;
     padding: 1rem 2rem;
-    font-size: 0.95rem;
-    z-index: 9999;
-  }
-  .cookie-content {
-    max-width: 900px;
-    margin: auto;
     display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    z-index: 1000;
+    font-size: 0.95rem;
+    flex-wrap: wrap;
   }
-  .cookie-buttons button {
+  #cookie-banner button {
+    background: #AC855E;
+    border: none;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    margin-left: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  #cookie-banner button:hover { background: #8A6B4F; }
+
+  /* Fenêtre modal */
+  #cookie-modal {
+    position: fixed;
+    top:0; left:0; right:0; bottom:0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+  }
+  #cookie-modal .modal-content {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 90%;
+  }
+  #cookie-modal button {
     background: #AC855E;
     color: #fff;
     border: none;
-    border-radius: 6px;
-    padding: 0.6rem 1rem;
-    font-size: 0.9rem;
-    font-weight: 600;
-    margin-right: 0.5rem;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    margin-right: .5rem;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s;
   }
-  .cookie-buttons button:hover { background: #8A6B4F; }
-  .cookie-buttons #reject-cookies {
-    background: #ccc;
-    color: #2A2A2A;
-  }
-  .cookie-buttons #reject-cookies:hover { background: #999; }
-  .cookie-buttons #customize-cookies {
-    background: transparent;
-    color: #AC855E;
-    border: 1px solid #AC855E;
-  }
-  .cookie-buttons #customize-cookies:hover {
-    background: #AC855E;
-    color: #fff;
-  }
+  #cookie-modal button:hover { background: #8A6B4F; }
 </style>
 
 <script>
-  const GA_MEASUREMENT_ID = "G-M9SM7L6HEH";  // <-- Votre ID GA4
+  const GA_MEASUREMENT_ID = "G-M9SM7L6HEH"; // Votre ID GA4
+  const banner = document.getElementById("cookie-banner");
+  const modal = document.getElementById("cookie-modal");
+  const analyticsCheckbox = document.getElementById("analytics-cookies");
 
-  window.addEventListener("load", () => {
-    const consent = localStorage.getItem("cookieConsent");
-    if (!consent) {
-      document.getElementById("cookie-banner").style.display = "block";
-    } else if (consent === "accepted") {
-      loadGA();
-    }
-  });
-
-  document.getElementById("accept-cookies").addEventListener("click", () => {
-    localStorage.setItem("cookieConsent", "accepted");
-    document.getElementById("cookie-banner").style.display = "none";
-    loadGA();
-  });
-
-  document.getElementById("reject-cookies").addEventListener("click", () => {
-    localStorage.setItem("cookieConsent", "rejected");
-    document.getElementById("cookie-banner").style.display = "none";
-  });
-
-  document.getElementById("customize-cookies").addEventListener("click", () => {
-    alert("Fonction de personnalisation à venir.");
-  });
-
+  // Charger GA4 si consentement analytics accepté
   function loadGA() {
-    if (!window.gtag) {
-      const script = document.createElement("script");
+    if (!window.gaLoaded) {
+      const script = document.createElement('script');
       script.async = true;
       script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
       document.head.appendChild(script);
@@ -359,12 +366,55 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       window.gtag = gtag;
-      gtag("js", new Date());
-      gtag("config", GA_MEASUREMENT_ID);
+      gtag('js', new Date());
+      gtag('config', GA_MEASUREMENT_ID);
+
+      window.gaLoaded = true;
+      console.log("GA4 chargé");
     }
   }
+
+  // Gestion des boutons
+  document.getElementById("accept-cookies").onclick = () => {
+    localStorage.setItem("cookieConsent","accepted");
+    banner.style.display = "none";
+    loadGA();
+  };
+
+  document.getElementById("reject-cookies").onclick = () => {
+    localStorage.setItem("cookieConsent","rejected");
+    banner.style.display = "none";
+  };
+
+  document.getElementById("customize-cookies").onclick = () => {
+    modal.style.display = "flex";
+  };
+
+  document.getElementById("close-modal").onclick = () => {
+    modal.style.display = "none";
+  };
+
+  document.getElementById("save-preferences").onclick = () => {
+    if(analyticsCheckbox.checked){
+      localStorage.setItem("cookieConsent","accepted");
+      loadGA();
+    } else {
+      localStorage.setItem("cookieConsent","rejected");
+    }
+    modal.style.display = "none";
+    banner.style.display = "none";
+  };
+
+  // Affichage du bandeau selon consentement
+  window.addEventListener("load", () => {
+    const consent = localStorage.getItem("cookieConsent");
+    if(consent === "accepted"){ loadGA(); }
+    else if(consent === "rejected"){ /* ne rien charger */ }
+    else { banner.style.display = "flex"; }
+  });
 </script>
-<!-- ====== Fin Bandeau Cookies ====== -->
+<!-- ================== FIN BANDEAU COOKIES ================== -->
+
 <body>
   <header>
     <a href="index.html" class="logo-link">
