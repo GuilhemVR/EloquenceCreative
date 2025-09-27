@@ -374,6 +374,11 @@
     }
   }
 
+  // Réouverture via le bouton du footer
+  function openCookieSettings() {
+    banner.style.display = "flex";
+  }
+
   // Gestion des boutons
   document.getElementById("accept-cookies").onclick = () => {
     localStorage.setItem("cookieConsent","accepted");
@@ -414,6 +419,7 @@
   });
 </script>
 <!-- ================== FIN BANDEAU COOKIES ================== -->
+
 
 <body>
   <header>
