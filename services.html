@@ -159,38 +159,117 @@
     </div>
   </main>
 
-  <!-- SECTEURS D’ACTIVITÉ -->
-  <section class="secteurs-section">
-    <h2>Des solutions adaptées à chaque secteur</h2>
-    <p>Le branding sonore crée de la valeur dans de nombreux domaines. Chaque secteur a ses codes et son public&nbsp;: je conçois des signatures et des univers sonores qui renforcent votre image et créent un lien émotionnel fort avec vos audiences.</p>
+<!-- ========= SECTEURS D’INTERVENTION ========= -->
+<section id="secteurs" style="padding:4rem 2rem; max-width:1100px; margin:auto;">
+  <h2 style="font-family:'Playfair Display',serif; font-size:2rem; color:var(--accent); text-align:center; margin-bottom:1rem;">
+    Secteurs d’intervention
+  </h2>
+  <p style="text-align:center; max-width:760px; margin:0 auto 2rem;">
+    Des créations sonores adaptées aux enjeux et aux usages spécifiques de votre secteur.
+  </p>
 
-    <div class="secteurs-grid">
-      <div class="secteurs-card">
-        <h3>💎 Luxe, Mode & Beauté</h3>
-        <p>Signatures élégantes pour parfums, joaillerie, mode et cosmétiques.</p>
-      </div>
-      <div class="secteurs-card">
-        <h3>🏨 Hôtellerie & Tourisme</h3>
-        <p>Identités sonores chaleureuses pour hôtels, spas, resorts et destinations.</p>
-      </div>
-      <div class="secteurs-card">
-        <h3>🏢 Immobilier & Architecture</h3>
-        <p>Univers sonores premium pour agences, promoteurs et espaces de vente.</p>
-      </div>
-      <div class="secteurs-card">
-        <h3>🛍 Retail & Grande distribution</h3>
-        <p>Ambiances immersives pour boutiques, grands magasins et flagships.</p>
-      </div>
-      <div class="secteurs-card">
-        <h3>🎭 Culture, Musées & Lieux d’exposition</h3>
-        <p>Parcours sonores et ambiances immersives pour expositions, musées et institutions culturelles.</p>
-      </div>
-      <div class="secteurs-card">
-        <h3>⚙️ Tech & Startups</h3>
-        <p>Univers sonores modernes pour applications, plateformes digitales, innovations et lancements de produits.</p>
-      </div>
-    </div>
-  </section>
+  <div class="sectors-grid">
+    <!-- 1. Luxe, Mode & Beauté -->
+    <article class="sector-card">
+      <h3>💎 Luxe, Mode &amp; Beauté</h3>
+      <p>
+        Nous créons des signatures sonores <strong>élégantes et raffinées</strong> qui prolongent l’univers des
+        <strong>parfums</strong>, maisons de <strong>joaillerie</strong>, <strong>mode</strong> et <strong>cosmétiques</strong>.
+        Elles accompagnent les campagnes publicitaires, les lancements de produits et les expériences en boutique pour
+        renforcer le prestige et l’émotion liés à la marque.
+      </p>
+    </article>
+
+    <!-- 2. Hôtellerie & Tourisme -->
+    <article class="sector-card">
+      <h3>🏨 Hôtellerie &amp; Tourisme</h3>
+      <p>
+        Des identités sonores <strong>chaleureuses et immersives</strong> pour <strong>hôtels</strong>, <strong>spas</strong>,
+        <strong>resorts</strong> et <strong>destinations touristiques</strong>. Elles instaurent une atmosphère d’accueil
+        mémorable, valorisent les espaces et contribuent à une expérience client fluide, du site web jusqu’au lobby.
+      </p>
+    </article>
+
+    <!-- 3. Immobilier & Architecture -->
+    <article class="sector-card">
+      <h3>🏢 Immobilier &amp; Architecture</h3>
+      <p>
+        Des univers sonores <strong>premium et apaisants</strong> pour <strong>agences immobilières</strong>, <strong>promoteurs</strong>
+        et <strong>espaces de vente</strong>. Ils soutiennent les vidéos de présentation de biens d’exception, habillent les
+        événements de lancement et reflètent le standing des projets architecturaux.
+      </p>
+    </article>
+
+    <!-- 4. Tech & Startups (à la place de Retail) -->
+    <article class="sector-card">
+      <h3>⚙️ Tech &amp; Startups</h3>
+      <p>
+        Des <strong>univers sonores modernes et dynamiques</strong> pour <strong>applications</strong>, <strong>plateformes digitales</strong>,
+        <strong>innovations</strong> et <strong>lancements de produits</strong>. Ils optimisent l’<strong>expérience utilisateur (UX)</strong>,
+        valorisent les interfaces et créent une identité audio cohérente avec l’esprit d’innovation.
+      </p>
+    </article>
+
+    <!-- 5. Retail & Grande distribution (à la place de Culture & Musées) -->
+    <article class="sector-card">
+      <h3>🛍 Retail &amp; Grande distribution</h3>
+      <p>
+        Des <strong>ambiances immersives et modulables</strong> pour <strong>boutiques</strong>, <strong>grands magasins</strong>
+        et <strong>flagships</strong>. Elles valorisent l’expérience en magasin, prolongent l’identité de la marque et
+        incitent à un parcours client plus fluide et engageant.
+      </p>
+    </article>
+
+    <!-- 6. Culture, Musées & Lieux d’exposition (passe en 6e) -->
+    <article class="sector-card">
+      <h3>🎭 Culture, Musées &amp; Lieux d’exposition</h3>
+      <p>
+        Des <strong>parcours sonores narratifs</strong> et des <strong>ambiances immersives</strong> pour <strong>expositions</strong>,
+        <strong>musées</strong> et <strong>institutions culturelles</strong>. La création sonore guide le visiteur, souligne
+        le propos des œuvres et enrichit l’expérience émotionnelle et pédagogique.
+      </p>
+    </article>
+  </div>
+</section>
+
+<style>
+  /* Grid 3 x 3 (3 colonnes en desktop, 2 en tablette, 1 en mobile) */
+  .sectors-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+  @media (max-width: 992px) {
+    .sectors-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 640px) {
+    .sectors-grid { grid-template-columns: 1fr; }
+  }
+
+  .sector-card {
+    background: #fff;
+    border: 1px solid var(--bg-alt);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    padding: 1.5rem;
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .sector-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+  }
+  .sector-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--accent);
+    margin-bottom: .6rem;
+  }
+  .sector-card p {
+    font-size: 0.98rem;
+    line-height: 1.75;
+  }
+</style>
+<!-- ======== FIN SECTEURS D’INTERVENTION ======== -->
 
   <!-- FOOTER -->
   <footer>
