@@ -3,8 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio – Éloquence Créative</title>
+
+  <!-- ==================== SEO ==================== -->
+  <title>Portfolio – Éloquence Créative | Réalisations en Branding Sonore</title>
+  <meta name="description" content="Découvrez le portfolio d’Éloquence Créative : logos sonores, identités musicales et ambiances sonores réalisés pour des marques comme Bleu d’Eclipse, Maison Capucine, Ethera et Noblead." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Éloquence Créative" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Portfolio – Éloquence Créative | Branding Sonore" />
+  <meta property="og:description" content="Découvrez les réalisations d’Éloquence Créative : logos sonores, musiques de marque et ambiances sonores pour Bleu d’Eclipse, Maison Capucine, Ethera, Noblead et plus encore." />
+  <meta property="og:image" content="https://eloquencecreative.fr/images/og-image.jpg" />
+  <meta property="og:url" content="https://eloquencecreative.fr/portfolio.html" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- ==================== FAVICONS ==================== -->
+  <link rel="icon" href="favicon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon/web-app-manifest-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="favicon/web-app-manifest-512x512.png">
+  <meta name="theme-color" content="#FAF8F5">
+
+  <!-- ==================== FONTS ==================== -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- ==================== CSS ==================== -->
   <style>
     :root {
       --bg: #FAF8F5;
@@ -14,11 +41,7 @@
       --bg-alt: #E5DCD0;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Inter', sans-serif;
@@ -39,83 +62,42 @@
       z-index: 100;
     }
 
-    .logo-link {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-    }
+    .logo-link { display: flex; align-items: center; text-decoration: none; }
+    .logo-img { max-height: 80px; width: auto; object-fit: contain; }
 
-    .logo-img {
-      max-height: 80px;
-      width: auto;
-      object-fit: contain;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-    }
-
+    nav ul { list-style: none; display: flex; gap: 1.5rem; }
     nav a {
-      text-decoration: none;
-      color: var(--text);
-      font-weight: 600;
+      text-decoration: none; color: var(--text); font-weight: 600;
       transition: color 0.3s;
     }
+    nav a:hover { color: var(--accent-hover); }
 
-    nav a:hover {
-      color: var(--accent-hover);
-    }
-
-    /* --- Menu burger identique à la page d’accueil --- */
     .burger {
-      display: none;
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: var(--text);
-      background: none;
-      border: none;
-      cursor: pointer;
+      display: none; font-size: 1.8rem; font-weight: bold; color: var(--text);
+      background: none; border: none; cursor: pointer;
     }
 
     @media screen and (max-width: 768px) {
       nav ul {
-        display: none;
-        flex-direction: column;
-        background-color: var(--bg);
-        position: absolute;
-        top: 100%;
-        right: 2rem;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        border-radius: 8px;
-        padding: 1rem;
+        display: none; flex-direction: column; background-color: var(--bg);
+        position: absolute; top: 100%; right: 2rem;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 8px; padding: 1rem;
       }
-
-      nav ul.show {
-        display: flex;
-      }
-
-      .burger {
-        display: block;
-      }
+      nav ul.show { display: flex; }
+      .burger { display: block; }
     }
 
     .hero {
       text-align: center;
       padding: 5rem 2rem 3rem;
     }
-
     .hero h1 {
       font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
       color: var(--text);
       margin-bottom: 1rem;
     }
-
-    .hero h1 strong {
-      color: var(--accent);
-    }
+    .hero h1 strong { color: var(--accent); }
 
     .portfolio-grid {
       display: grid;
@@ -125,11 +107,8 @@
       max-width: 1100px;
       margin: auto;
     }
-
     @media screen and (max-width: 768px) {
-      .portfolio-grid {
-        grid-template-columns: 1fr;
-      }
+      .portfolio-grid { grid-template-columns: 1fr; }
     }
 
     .card {
@@ -140,10 +119,7 @@
       text-align: center;
       transition: transform 0.3s;
     }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
+    .card:hover { transform: translateY(-5px); }
 
     .card h3 {
       font-family: 'Playfair Display', serif;
@@ -151,11 +127,7 @@
       color: var(--accent);
       margin-bottom: 1rem;
     }
-
-    .card p {
-      font-size: 1rem;
-      margin-bottom: 1.5rem;
-    }
+    .card p { font-size: 1rem; margin-bottom: 1.5rem; }
 
     .cta-button {
       background-color: var(--accent);
@@ -169,43 +141,24 @@
       transition: background-color 0.3s;
       text-decoration: none;
     }
-
-    .cta-button:hover {
-      background-color: var(--accent-hover);
-    }
+    .cta-button:hover { background-color: var(--accent-hover); }
 
     /* --- Modales --- */
     .modal {
-      display: none;
-      position: fixed;
-      z-index: 200;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow-y: auto;
-      background-color: rgba(0,0,0,0.6);
-      padding: 2rem;
+      display: none; position: fixed; z-index: 200;
+      left: 0; top: 0; width: 100%; height: 100%;
+      overflow-y: auto; background-color: rgba(0,0,0,0.6); padding: 2rem;
     }
-
     .modal-content {
-      background: #fff;
-      margin: auto;
-      padding: 2rem;
-      border-radius: 12px;
-      max-width: 800px;
+      background: #fff; margin: auto; padding: 2rem;
+      border-radius: 12px; max-width: 800px;
     }
-
-    .modal-content p {
-      margin-bottom: 1rem;
-    }
-
+    .modal-content p { margin-bottom: 1rem; }
     .modal h2 {
       font-family: 'Playfair Display', serif;
       color: var(--accent);
       margin-bottom: 1rem;
     }
-
     .close {
       color: var(--text);
       float: right;
@@ -213,185 +166,12 @@
       font-weight: bold;
       cursor: pointer;
     }
+    .close:hover { color: var(--accent); }
 
-    .close:hover {
-      color: var(--accent);
-    }
-
-    .audio-player {
-      margin-top: 1.5rem;
-      text-align: center;
-    }
-
-    audio {
-      width: 100%;
-      max-width: 500px;
-      outline: none;
-    }
+    .audio-player { margin-top: 1.5rem; text-align: center; }
+    audio { width: 100%; max-width: 500px; outline: none; }
   </style>
 </head>
- <!-- ================== BANDEAU COOKIES + PERSONNALISATION ================== -->
-<div id="cookie-banner" style="display:none;">
-  <p>
-    Nous utilisons des cookies pour améliorer votre expérience et mesurer l’audience (Google Analytics).
-    <a href="politique-cookies.html" style="color:#fff;text-decoration:underline;">En savoir plus</a>
-  </p>
-  <div>
-    <button id="accept-cookies">Tout accepter</button>
-    <button id="reject-cookies">Tout refuser</button>
-    <button id="customize-cookies">Personnaliser</button>
-  </div>
-</div>
-
-<!-- Fenêtre de personnalisation -->
-<div id="cookie-modal" style="display:none;">
-  <div class="modal-content">
-    <h2>Paramètres des cookies</h2>
-
-    <label>
-      <input type="checkbox" disabled checked />
-      Cookies essentiels (obligatoires)
-    </label><br>
-
-    <label>
-      <input type="checkbox" id="analytics-cookies" />
-      Cookies de mesure d’audience (Google Analytics)
-    </label><br><br>
-
-    <button id="save-preferences">Enregistrer mes préférences</button>
-    <button id="close-modal">Fermer</button>
-  </div>
-</div>
-
-<style>
-  /* Bandeau cookies */
-  #cookie-banner {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(44,44,44,0.95);
-    color: #fff;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    z-index: 1000;
-    font-size: 0.95rem;
-    flex-wrap: wrap;
-  }
-  #cookie-banner button {
-    background: #AC855E;
-    border: none;
-    color: #fff;
-    padding: 0.5rem 1rem;
-    margin-left: 0.5rem;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  #cookie-banner button:hover { background: #8A6B4F; }
-
-  /* Fenêtre modal */
-  #cookie-modal {
-    position: fixed;
-    top:0; left:0; right:0; bottom:0;
-    background: rgba(0,0,0,0.6);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2000;
-  }
-  #cookie-modal .modal-content {
-    background: #fff;
-    padding: 2rem;
-    border-radius: 8px;
-    max-width: 400px;
-    width: 90%;
-  }
-  #cookie-modal button {
-    background: #AC855E;
-    color: #fff;
-    border: none;
-    padding: 0.5rem 1rem;
-    margin-top: 1rem;
-    margin-right: .5rem;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  #cookie-modal button:hover { background: #8A6B4F; }
-</style>
-
-<script>
-  const GA_MEASUREMENT_ID = "G-M9SM7L6HEH"; // Votre ID GA4
-  const banner = document.getElementById("cookie-banner");
-  const modal = document.getElementById("cookie-modal");
-  const analyticsCheckbox = document.getElementById("analytics-cookies");
-
-  // Charger GA4 si consentement analytics accepté
-  function loadGA() {
-    if (!window.gaLoaded) {
-      const script = document.createElement('script');
-      script.async = true;
-      script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
-      document.head.appendChild(script);
-
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      window.gtag = gtag;
-      gtag('js', new Date());
-      gtag('config', GA_MEASUREMENT_ID);
-
-      window.gaLoaded = true;
-      console.log("GA4 chargé");
-    }
-  }
-
-  // Réouverture via le bouton du footer
-  function openCookieSettings() {
-    banner.style.display = "flex";
-  }
-
-  // Gestion des boutons
-  document.getElementById("accept-cookies").onclick = () => {
-    localStorage.setItem("cookieConsent","accepted");
-    banner.style.display = "none";
-    loadGA();
-  };
-
-  document.getElementById("reject-cookies").onclick = () => {
-    localStorage.setItem("cookieConsent","rejected");
-    banner.style.display = "none";
-  };
-
-  document.getElementById("customize-cookies").onclick = () => {
-    modal.style.display = "flex";
-  };
-
-  document.getElementById("close-modal").onclick = () => {
-    modal.style.display = "none";
-  };
-
-  document.getElementById("save-preferences").onclick = () => {
-    if(analyticsCheckbox.checked){
-      localStorage.setItem("cookieConsent","accepted");
-      loadGA();
-    } else {
-      localStorage.setItem("cookieConsent","rejected");
-    }
-    modal.style.display = "none";
-    banner.style.display = "none";
-  };
-
-  // Affichage du bandeau selon consentement
-  window.addEventListener("load", () => {
-    const consent = localStorage.getItem("cookieConsent");
-    if(consent === "accepted"){ loadGA(); }
-    else if(consent === "rejected"){ /* ne rien charger */ }
-    else { banner.style.display = "flex"; }
-  });
-</script>
-<!-- ================== FIN BANDEAU COOKIES ================== -->
 
 <body>
   <header>
@@ -401,7 +181,7 @@
     <nav>
       <button class="burger" onclick="toggleMenu()">☰</button>
       <ul id="menu">
-       <li><a href="index.html">Accueil</a></li>
+        <li><a href="index.html">Accueil</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="portfolio.html">Portfolio</a></li>
         <li><a href="apropos.html">À propos</a></li>
@@ -411,11 +191,13 @@
     </nav>
   </header>
 
+  <!-- ================= HERO ================= -->
   <section class="hero">
     <h1>Découvrez mes <strong>réalisations</strong></h1>
     <p>Un aperçu de collaborations où le son donne une voix unique aux marques.</p>
   </section>
 
+  <!-- ================= PORTFOLIO GRID ================= -->
   <section class="portfolio-grid">
     <!-- Carte 1 -->
     <div class="card">
@@ -446,6 +228,7 @@
     </div>
   </section>
 
+  <!-- ================= MODALES ================= -->
   <!-- Modale Carte 1 -->
   <div id="modal1" class="modal">
     <div class="modal-content">
@@ -465,7 +248,7 @@
     </div>
   </div>
 
-  <!-- Modales 2 à 4 -->
+  <!-- Modale Carte 2 -->
   <div id="modal2" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('modal2')">&times;</span>
@@ -484,6 +267,7 @@
     </div>
   </div>
 
+  <!-- Modale Carte 3 -->
   <div id="modal3" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('modal3')">&times;</span>
@@ -502,6 +286,7 @@
     </div>
   </div>
 
+  <!-- Modale Carte 4 -->
   <div id="modal4" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('modal4')">&times;</span>
@@ -520,73 +305,29 @@
     </div>
   </div>
 
+  <!-- ================= SCRIPTS ================= -->
   <script>
     function toggleMenu() {
-      const menu = document.getElementById("menu");
-      menu.classList.toggle("show");
+      document.getElementById("menu").classList.toggle("show");
     }
-
     function openModal(id) {
       document.getElementById(id).style.display = 'block';
     }
-
     function closeModal(id) {
       document.getElementById(id).style.display = 'none';
     }
-
     window.onclick = function(event) {
       if (event.target.classList.contains('modal')) {
         event.target.style.display = 'none';
       }
     }
   </script>
-  <!-- ========= FOOTER ÉLÉGANT ========= -->
-<footer style="background: var(--bg-alt); color: var(--text); padding: 2rem 1rem 1.2rem; font-size: 0.9rem; margin-top: 3rem;">
 
-  <!-- Bloc principal -->
-  <div style="max-width: 1100px; margin: auto; display: flex; justify-content: center; align-items: flex-start; gap: 6rem; flex-wrap: wrap; text-align: center;">
-
-    <!-- Navigation -->
-    <div>
-      <h3 style="font-family: 'Playfair Display', serif; color: var(--accent); font-size: 1.1rem; margin-bottom: 0.8rem;">Navigation</h3>
-      <nav style="display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap; font-size: 0.95rem;">
-        <a href="index.html" style="text-decoration: none; color: var(--text);">Accueil</a>
-        <span style="color: rgba(0,0,0,0.3);">|</span>
-        <a href="services.html" style="text-decoration: none; color: var(--text);">Services</a>
-        <span style="color: rgba(0,0,0,0.3);">|</span>
-        <a href="portfolio.html" style="text-decoration: none; color: var(--text);">Portfolio</a>
-        <span style="color: rgba(0,0,0,0.3);">|</span>
-        <a href="apropos.html" style="text-decoration: none; color: var(--text);">À propos</a>
-        <span style="color: rgba(0,0,0,0.3);">|</span>
-        <a href="contact.html" style="text-decoration: none; color: var(--text);">Contact</a>
-        <span style="color: rgba(0,0,0,0.3);">|</span>
-        <a href="faq.html" style="text-decoration: none; color: var(--text);">FAQ</a>
-      </nav>
-    </div>
-
-    <!-- Contact -->
-    <div>
-      <h3 style="font-family: 'Playfair Display', serif; color: var(--accent); font-size: 1.1rem; margin-bottom: 0.8rem;">Contact</h3>
-      <p style="margin: 0.3rem 0;">
-        <a href="mailto:guilhem@eloquencecreative.fr" style="color: var(--text); text-decoration: none;">guilhem@eloquencecreative.fr</a>
-      </p>
-      <p style="margin: 0.3rem 0;">
-        <a href="https://www.linkedin.com/in/guilhem-vallery-radot/" target="_blank" style="color: var(--text); text-decoration: none;">LinkedIn</a>
-      </p>
-      <button onclick="openCookieSettings()" style="margin-top: 0.7rem; background: var(--accent); color: #fff; border: none; padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; cursor: pointer;">Gérer mes cookies</button>
-    </div>
-
-  </div>
-
-  <!-- Bas du footer -->
-  <div style="border-top: 1px solid rgba(0,0,0,0.1); margin-top: 2rem; padding-top: 0.8rem; font-size: 0.8rem; text-align: center;">
-    <p>© 2025 Éloquence Créative – Tous droits réservés</p>
-    <p style="margin-top: 0.3rem;">
-      <a href="mentions-legales.html" style="text-decoration: none; color: var(--text);">Mentions légales</a> |
-      <a href="politique-cookies.html" style="text-decoration: none; color: var(--text);">Politique de confidentialité & cookies</a>
-    </p>
-  </div>
-</footer>
-<!-- ========= FIN FOOTER ========= -->
-</body>
-</html>
+  <!-- ================= FOOTER ================= -->
+  <footer style="background: var(--bg-alt); color: var(--text); padding: 2rem 1rem 1.2rem; font-size: 0.9rem; margin-top: 3rem;">
+    <div style="max-width: 1100px; margin: auto; display: flex; justify-content: center; align-items: flex-start; gap: 6rem; flex-wrap: wrap; text-align: center;">
+      <div>
+        <h3 style="font-family: 'Playfair Display', serif; color: var(--accent); font-size: 1.1rem; margin-bottom: 0.8rem;">Navigation</h3>
+        <nav style="display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap; font-size: 0.95rem;">
+          <a href="index.html" style="text-decoration: none; color: var(--text);">Accueil</a><span>|</span>
+          <a href="services
