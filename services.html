@@ -2,9 +2,39 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services – Éloquence Créative</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ==================== SEO ==================== -->
+  <title>Services – Branding Sonore, Logo Sonore & Ambiance | Éloquence Créative</title>
+  <meta name="description" content="Découvrez les services d’Éloquence Créative : logo sonore, musique de marque et ambiances UX/in-store. Créez une identité sonore mémorable et différenciante pour votre marque." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Éloquence Créative" />
+  <link rel="canonical" href="https://eloquencecreative.fr/services.html" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Services – Éloquence Créative : Logo sonore, Musique de marque & Ambiance UX" />
+  <meta property="og:description" content="Studio de branding sonore à Paris : identité musicale, logo sonore et ambiances immersives pour faire résonner votre marque." />
+  <meta property="og:url" content="https://eloquencecreative.fr/services.html" />
+  <meta property="og:site_name" content="Éloquence Créative" />
+  <meta property="og:image" content="https://eloquencecreative.fr/images/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- ==================== FAVICONS ==================== -->
+  <link rel="icon" href="favicon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon/web-app-manifest-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="favicon/web-app-manifest-512x512.png">
+  <meta name="theme-color" content="#FAF8F5">
+
+  <!-- ==================== FONTS ==================== -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- ==================== CSS ==================== -->
   <style>
     :root {
       --bg: #FAF8F5;
@@ -13,555 +43,325 @@
       --accent-hover: #8A6B4F;
       --bg-alt: #E5DCD0;
     }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
 
     header {
-      background-color: var(--bg);
+      background: var(--bg);
       padding: 1.5rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      display: flex; justify-content: space-between; align-items: center;
       border-bottom: 1px solid var(--bg-alt);
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      position: sticky; top: 0; z-index: 100;
     }
+    .logo-link img { max-height: 80px; width: auto; object-fit: contain; }
 
-    .logo-link {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-    }
+    nav ul { list-style: none; display: flex; gap: 1.5rem; }
+    nav a { text-decoration: none; color: var(--text); font-weight: 600; transition: color .3s; }
+    nav a:hover { color: var(--accent-hover); }
 
-    .logo-img {
-      max-height: 80px;
-      width: auto;
-      object-fit: contain;
-    }
+    .burger { display: none; font-size: 1.8rem; font-weight: bold; background: none; border: none; cursor: pointer; color: var(--text); }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: var(--text);
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: var(--accent-hover);
-    }
-
-    /* --- Menu burger identique à la page d’accueil --- */
-    .burger {
-      display: none;
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: var(--text);
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-
-    @media screen and (max-width: 768px) {
+    @media (max-width: 768px) {
       nav ul {
-        display: none;
-        flex-direction: column;
-        background-color: var(--bg);
-        position: absolute;
-        top: 100%;
-        right: 2rem;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        border-radius: 8px;
-        padding: 1rem;
+        display: none; flex-direction: column; background: var(--bg);
+        position: absolute; top: 100%; right: 2rem;
+        box-shadow: 0 4px 8px rgba(0,0,0,.1); border-radius: 8px; padding: 1rem;
       }
-
-      nav ul.show {
-        display: flex;
-      }
-
-      .burger {
-        display: block;
-      }
+      nav ul.show { display: flex; }
+      .burger { display: block; }
     }
 
-    .hero {
-      text-align: center;
-      padding: 5rem 2rem 3rem;
-    }
+    /* ============ HERO ============ */
+    .hero { text-align: center; padding: 5rem 2rem 3rem; }
+    .hero h1 { font-family:'Playfair Display',serif; font-size: 2.5rem; color: var(--text); margin-bottom: .75rem; }
+    .hero h1 strong { color: var(--accent); }
+    .hero p { max-width: 760px; margin: 0 auto; font-size: 1.1rem; }
 
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      color: var(--text);
-      margin-bottom: 0.75rem;
+    /* ============ SERVICES ============ */
+    main.services-container {
+      max-width: 1000px; margin: auto; padding: 3rem 2rem; display: grid; gap: 2rem;
     }
-
-    .hero h1 strong {
-      color: var(--accent);
-    }
-
-    .hero p {
-      max-width: 760px;
-      margin: 0 auto;
-      font-size: 1.1rem;
-    }
-
-    .services-container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 3rem 2rem;
-      display: grid;
-      gap: 2rem;
-    }
-
     .service-block {
-      background: #fff;
-      border: 1px solid var(--bg-alt);
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      padding: 2rem;
-      text-align: center;
-      transition: transform 0.3s;
+      background:#fff; border:1px solid var(--bg-alt); border-radius:12px;
+      box-shadow:0 4px 10px rgba(0,0,0,.08); padding:2rem; text-align:center; transition: transform .3s;
     }
-
-    .service-block:hover {
-      transform: translateY(-5px);
-    }
-
-    .service-block h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      color: var(--accent);
-      margin-bottom: 1rem;
-    }
-
-    .service-block p {
-      margin-bottom: 1.5rem;
-    }
+    .service-block:hover { transform: translateY(-5px); }
+    .service-block h2 { font-family:'Playfair Display',serif; font-size:1.8rem; color:var(--accent); margin-bottom:1rem; }
+    .service-block p { margin-bottom: 1.5rem; }
 
     .cta-button {
-      background-color: var(--accent);
-      color: white;
-      border: none;
-      padding: 0.6rem 1.2rem;
-      font-weight: 600;
-      border-radius: 8px;
-      font-size: 0.95rem;
-      cursor: pointer;
-      transition: background-color 0.3s;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 0.5rem;
+      background: var(--accent); color:#fff; border:none; padding:.6rem 1.2rem;
+      font-weight:600; border-radius:8px; font-size:.95rem; cursor:pointer;
+      transition: background .3s; text-decoration:none; display:inline-block; margin-top: .5rem;
     }
+    .cta-button:hover { background: var(--accent-hover); }
 
-    .cta-button:hover {
-      background-color: var(--accent-hover);
-    }
+    .accordion-content { display: none; margin-top: 1.5rem; text-align: left; }
+    .accordion-content h3 { font-family:'Playfair Display',serif; color:var(--accent); margin:1.5rem 0 .75rem; }
+    .accordion-content ul, .accordion-content ol { margin-left:1.2rem; margin-bottom:1rem; }
+    .accordion-content li { margin-bottom:.5rem; }
 
-    .accordion-content {
-      display: none;
-      margin-top: 1.5rem;
-      text-align: left;
+    /* ============ COOKIE BANNER ============ */
+    #cookie-banner {
+      position: fixed; bottom: 0; left: 0; right: 0;
+      background: rgba(44,44,44,.95); color:#fff;
+      padding: 1rem 2rem; display: none; justify-content: space-between; align-items: center;
+      gap: 1rem; z-index: 1000; font-size: .95rem; flex-wrap: wrap;
     }
+    #cookie-banner a { color:#fff; text-decoration: underline; }
+    #cookie-banner button {
+      background: var(--accent); border: none; color: #fff;
+      padding: .5rem 1rem; border-radius: 5px; cursor: pointer; margin-left: .5rem;
+    }
+    #cookie-banner button:hover { background: var(--accent-hover); }
 
-    .accordion-content h3 {
-      font-family: 'Playfair Display', serif;
-      color: var(--accent);
-      margin-top: 1.5rem;
-      margin-bottom: 0.75rem;
+    #cookie-modal {
+      position: fixed; inset: 0; background: rgba(0,0,0,.6);
+      display: none; justify-content: center; align-items: center; z-index: 2000;
     }
+    #cookie-modal .modal-content {
+      background: #fff; padding: 2rem; border-radius: 8px; max-width: 400px; width: 90%;
+    }
+    #cookie-modal button {
+      background: var(--accent); color:#fff; border:none; padding:.5rem 1rem;
+      border-radius:5px; cursor:pointer; margin-top:1rem; margin-right:.5rem;
+    }
+    #cookie-modal button:hover { background: var(--accent-hover); }
 
-    .accordion-content ul,
-    .accordion-content ol {
-      margin-left: 1.2rem;
-      margin-bottom: 1rem;
-    }
-
-    .accordion-content li {
-      margin-bottom: 0.5rem;
-    }
+    /* ============ FOOTER ============ */
+    footer { background: var(--bg-alt); color: var(--text); padding: 2rem 1rem 1.2rem; font-size: .9rem; margin-top: 3rem; }
+    footer a { color: var(--text); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
   </style>
 </head>
-<!-- ================== BANDEAU COOKIES + PERSONNALISATION ================== -->
-<div id="cookie-banner" style="display:none;">
-  <p>
-    Nous utilisons des cookies pour améliorer votre expérience et mesurer l’audience (Google Analytics).
-    <a href="politique-cookies.html" style="color:#fff;text-decoration:underline;">En savoir plus</a>
-  </p>
-  <div>
-    <button id="accept-cookies">Tout accepter</button>
-    <button id="reject-cookies">Tout refuser</button>
-    <button id="customize-cookies">Personnaliser</button>
-  </div>
-</div>
-
-<!-- Fenêtre de personnalisation -->
-<div id="cookie-modal" style="display:none;">
-  <div class="modal-content">
-    <h2>Paramètres des cookies</h2>
-
-    <label>
-      <input type="checkbox" disabled checked />
-      Cookies essentiels (obligatoires)
-    </label><br>
-
-    <label>
-      <input type="checkbox" id="analytics-cookies" />
-      Cookies de mesure d’audience (Google Analytics)
-    </label><br><br>
-
-    <button id="save-preferences">Enregistrer mes préférences</button>
-    <button id="close-modal">Fermer</button>
-  </div>
-</div>
-
-<style>
-  /* Bandeau cookies */
-  #cookie-banner {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(44,44,44,0.95);
-    color: #fff;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    z-index: 1000;
-    font-size: 0.95rem;
-    flex-wrap: wrap;
-  }
-  #cookie-banner button {
-    background: #AC855E;
-    border: none;
-    color: #fff;
-    padding: 0.5rem 1rem;
-    margin-left: 0.5rem;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  #cookie-banner button:hover { background: #8A6B4F; }
-
-  /* Fenêtre modal */
-  #cookie-modal {
-    position: fixed;
-    top:0; left:0; right:0; bottom:0;
-    background: rgba(0,0,0,0.6);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2000;
-  }
-  #cookie-modal .modal-content {
-    background: #fff;
-    padding: 2rem;
-    border-radius: 8px;
-    max-width: 400px;
-    width: 90%;
-  }
-  #cookie-modal button {
-    background: #AC855E;
-    color: #fff;
-    border: none;
-    padding: 0.5rem 1rem;
-    margin-top: 1rem;
-    margin-right: .5rem;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  #cookie-modal button:hover { background: #8A6B4F; }
-</style>
-
-<script>
-  const GA_MEASUREMENT_ID = "G-M9SM7L6HEH"; // Votre ID GA4
-  const banner = document.getElementById("cookie-banner");
-  const modal = document.getElementById("cookie-modal");
-  const analyticsCheckbox = document.getElementById("analytics-cookies");
-
-  // Charger GA4 si consentement analytics accepté
-  function loadGA() {
-    if (!window.gaLoaded) {
-      const script = document.createElement('script');
-      script.async = true;
-      script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
-      document.head.appendChild(script);
-
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      window.gtag = gtag;
-      gtag('js', new Date());
-      gtag('config', GA_MEASUREMENT_ID);
-
-      window.gaLoaded = true;
-      console.log("GA4 chargé");
-    }
-  }
-
-  // Réouverture via le bouton du footer
-  function openCookieSettings() {
-    banner.style.display = "flex";
-  }
-
-  // Gestion des boutons
-  document.getElementById("accept-cookies").onclick = () => {
-    localStorage.setItem("cookieConsent","accepted");
-    banner.style.display = "none";
-    loadGA();
-  };
-
-  document.getElementById("reject-cookies").onclick = () => {
-    localStorage.setItem("cookieConsent","rejected");
-    banner.style.display = "none";
-  };
-
-  document.getElementById("customize-cookies").onclick = () => {
-    modal.style.display = "flex";
-  };
-
-  document.getElementById("close-modal").onclick = () => {
-    modal.style.display = "none";
-  };
-
-  document.getElementById("save-preferences").onclick = () => {
-    if(analyticsCheckbox.checked){
-      localStorage.setItem("cookieConsent","accepted");
-      loadGA();
-    } else {
-      localStorage.setItem("cookieConsent","rejected");
-    }
-    modal.style.display = "none";
-    banner.style.display = "none";
-  };
-
-  // Affichage du bandeau selon consentement
-  window.addEventListener("load", () => {
-    const consent = localStorage.getItem("cookieConsent");
-    if(consent === "accepted"){ loadGA(); }
-    else if(consent === "rejected"){ /* ne rien charger */ }
-    else { banner.style.display = "flex"; }
-  });
-</script>
-<!-- ================== FIN BANDEAU COOKIES ================== -->
 
 <body>
-<header>
-  <a href="index.html" class="logo-link">
-    <img src="EloquenceCréativeLOGOVF 2.png" alt="Logo Éloquence Créative" class="logo-img">
-  </a>
-  <nav>
-    <button class="burger" onclick="toggleMenu()">☰</button>
-    <ul id="menu">
-      <li><a href="index.html">Accueil</a></li>
-        <li><a href="services.html">Services</a></li>
+  <!-- ================== BANDEAU COOKIES + PERSONNALISATION ================== -->
+  <div id="cookie-banner" role="dialog" aria-live="polite">
+    <p>
+      Nous utilisons des cookies pour améliorer votre expérience et mesurer l’audience (Google Analytics).
+      <a href="politique-cookies.html">En savoir plus</a>
+    </p>
+    <div>
+      <button id="accept-cookies">Tout accepter</button>
+      <button id="reject-cookies">Tout refuser</button>
+      <button id="customize-cookies">Personnaliser</button>
+    </div>
+  </div>
+
+  <div id="cookie-modal" aria-modal="true" role="dialog">
+    <div class="modal-content">
+      <h2>Paramètres des cookies</h2>
+      <label><input type="checkbox" disabled checked /> Cookies essentiels (obligatoires)</label><br>
+      <label><input type="checkbox" id="analytics-cookies" /> Cookies de mesure d’audience (Google Analytics)</label><br><br>
+      <button id="save-preferences">Enregistrer mes préférences</button>
+      <button id="close-modal">Fermer</button>
+    </div>
+  </div>
+  <!-- ================== FIN BANDEAU COOKIES ================== -->
+
+  <header>
+    <a href="index.html" class="logo-link">
+      <img src="EloquenceCréativeLOGOVF 2.png" alt="Logo Éloquence Créative – Studio de branding sonore">
+    </a>
+    <nav>
+      <button class="burger" onclick="toggleMenu()" aria-label="Menu mobile">☰</button>
+      <ul id="menu">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="services.html" aria-current="page">Services</a></li>
         <li><a href="portfolio.html">Portfolio</a></li>
         <li><a href="apropos.html">À propos</a></li>
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
-
-<section class="hero">
-  <h1><strong>Services</strong></h1>
-  <p>Découvrez comment le branding sonore peut donner une voix unique et mémorable à votre marque.</p>
-</section>
-
-<main class="services-container">
-  <!-- Logo sonore -->
-  <div class="service-block">
-    <h2>Logo sonore</h2>
-    <p>L’essence de votre marque en quelques secondes</p>
-    <button class="cta-button" onclick="toggleAccordion('accordion-logo')">En savoir plus</button>
-
-    <div id="accordion-logo" class="accordion-content">
-      <p>Un logo sonore est une signature auditive courte qui condense votre identité de marque en un repère émotionnel instantané.</p>
-
-      <h3>Pourquoi est-ce essentiel ?</h3>
-      <ul>
-        <li><strong>Mémorisation accrue :</strong> le cerveau retient une mélodie bien plus rapidement qu’un slogan.</li>
-        <li><strong>Universalité :</strong> au-delà des langues, la musique touche tout le monde de façon immédiate.</li>
-        <li><strong>Omnicanal :</strong> adapté aux écrans, aux réseaux sociaux et à tous vos points de contact.</li>
-        <li><strong>Différenciation :</strong> dans un monde saturé d’images, le son crée une connexion émotionnelle entre la marque et son public.</li>
       </ul>
+    </nav>
+  </header>
 
-      <h3>Mon approche</h3>
-      <ol>
-        <li><strong>Analyse de votre identité :</strong> valeurs, ADN de marque, mission, positionnement et cibles.</li>
-        <li><strong>Recherche créative :</strong> exploration musicale et sound-design inspirés par votre univers.</li>
-        <li><strong>Composition et design sonore :</strong> création d’un motif court, distinctif et émotionnellement juste.</li>
-        <li><strong>Déclinaisons multi-supports :</strong> versions courte et longue pour tous vos cas d’usage.</li>
-      </ol>
+  <!-- HERO -->
+  <section class="hero">
+    <h1><strong>Services de Branding Sonore</strong></h1>
+    <p>Découvrez comment le logo sonore, la musique de marque et l’ambiance UX immersive renforcent votre identité et marquent durablement votre audience.</p>
+  </section>
 
-      <h3>Applications</h3>
-      <ul>
-        <li><strong>Publicités TV/radio & digitales</strong> – identité sonore pour renforcer mémorisation et impact.</li>
-        <li><strong>Réseaux sociaux</strong> – séquence courte reconnaissable pour formats courts.</li>
-        <li><strong>Présentations corporate & événements</strong> – professionnalisme et immersion.</li>
-        <li><strong>Ambiances retail & in-store</strong> – univers sonore cohérent en boutique et en ligne.</li>
-        <li><strong>Podcasts & webinaires</strong> – intro/outro mémorable et cohérente.</li>
-        <li><strong>Applications mobiles & UX</strong> – sons courts pour notifications et interactions.</li>
-        <li><strong>Attentes téléphoniques</strong> – expérience client personnalisée et premium.</li>
-      </ul>
-
-      <a class="cta-button" href="contact.html">Créer mon logo sonore</a>
+  <!-- SERVICES -->
+  <main class="services-container">
+    <!-- Logo sonore -->
+    <div class="service-block" id="service-logo-sonore">
+      <h2>Logo sonore</h2>
+      <p>L’essence de votre marque en quelques secondes.</p>
+      <button class="cta-button" onclick="toggleAccordion('accordion-logo')">En savoir plus</button>
+      <div id="accordion-logo" class="accordion-content">
+        <p>Un logo sonore est une signature auditive courte qui condense votre identité de marque en un repère émotionnel instantané.</p>
+        <h3>Pourquoi est-ce essentiel ?</h3>
+        <ul>
+          <li><strong>Mémorisation accrue :</strong> le cerveau retient une mélodie plus vite qu’un slogan.</li>
+          <li><strong>Universalité :</strong> la musique touche tout le monde au-delà des langues.</li>
+          <li><strong>Omnicanal :</strong> adapté aux écrans, réseaux sociaux et points de contact.</li>
+          <li><strong>Différenciation :</strong> le son crée une connexion émotionnelle unique.</li>
+        </ul>
+        <h3>Mon approche</h3>
+        <ol>
+          <li><strong>Analyse :</strong> valeurs, ADN, cibles, usages.</li>
+          <li><strong>Recherche créative :</strong> exploration musicale & sound design.</li>
+          <li><strong>Composition :</strong> motif distinctif, juste émotionnellement.</li>
+          <li><strong>Déclinaisons :</strong> versions courte/longue et multi-supports.</li>
+        </ol>
+        <h3>Applications</h3>
+        <ul>
+          <li>Publicités TV/radio & digitales</li>
+          <li>Réseaux sociaux (formats courts)</li>
+          <li>Présentations & événements</li>
+          <li>Retail & in-store</li>
+          <li>Podcasts & webinaires</li>
+          <li>Applications & UX</li>
+          <li>Attente téléphonique</li>
+        </ul>
+        <a class="cta-button" href="contact.html">Créer mon logo sonore</a>
+      </div>
     </div>
-  </div>
 
-  <!-- Musique de marque -->
-  <div class="service-block">
-    <h2>Musique de marque & musique à l’image</h2>
-    <p>Une bande-son originale qui traduit votre identité en émotion musicale et révèle la force de vos images.</p>
-    <button class="cta-button" onclick="toggleAccordion('accordion-musique')">En savoir plus</button>
-
-    <div id="accordion-musique" class="accordion-content">
-      <p>La musique de marque est une <strong>composition originale sur-mesure</strong>, imaginée comme une <em>bande-son signature</em> qui accompagne durablement votre identité et installe un territoire sonore reconnaissable.</p>
-
-      <h3>L’impact stratégique</h3>
-      <ul>
-        <li><strong>Reconnaissance & mémorisation :</strong> ancre la marque dans l’esprit du public.</li>
-        <li><strong>Attachement émotionnel :</strong> traduit les valeurs et la personnalité, crée un lien durable.</li>
-        <li><strong>Différenciation :</strong> repère distinctif face à la saturation d’images et slogans.</li>
-        <li><strong>Performance :</strong> augmente la rétention et l’engagement sur tous les formats.</li>
-      </ul>
-
-      <h3>Mon approche</h3>
-      <ol>
-        <li><strong>Brief & ADN de marque :</strong> valeurs, ton, cibles, objectifs média.</li>
-        <li><strong>Références & moodboard :</strong> textures, tempo, intention émotionnelle.</li>
-        <li><strong>Composition à l’image :</strong> écriture thématique et synchronisation.</li>
-        <li><strong>Orchestration & sound-design :</strong> choix des timbres, dynamique et transitions.</li>
-        <li><strong>Déclinaisons & livrables :</strong> versions 60/30/15 s, alt mixes, stems, normalisation et droits.</li>
-      </ol>
-
-      <h3>Cas d’usage</h3>
-      <ul>
-        <li><strong>Films publicitaires & brand content</strong> – thème original décliné pour TV et social.</li>
-        <li><strong>Films institutionnels & RH</strong> – musique qui valorise le récit et la crédibilité.</li>
-        <li><strong>Réseaux sociaux</strong> – hooks mélodiques efficaces pour formats courts.</li>
-        <li><strong>Événements & lancements produit</strong> – habillage musical modulable pour reveal et keynotes.</li>
-        <li><strong>Podcasts & capsules audio/vidéo</strong> – thème principal et variations intro/outro.</li>
-      </ul>
-
-      <a class="cta-button" href="contact.html">Composer ma musique de marque</a>
+    <!-- Musique de marque -->
+    <div class="service-block" id="service-musique-marque">
+      <h2>Musique de marque & à l’image</h2>
+      <p>Une bande-son originale qui traduit votre identité et renforce l’impact visuel.</p>
+      <button class="cta-button" onclick="toggleAccordion('accordion-musique')">En savoir plus</button>
+      <div id="accordion-musique" class="accordion-content">
+        <p>La musique de marque est une composition originale imaginée comme une bande-son signature qui installe un territoire sonore reconnaissable.</p>
+        <h3>L’impact stratégique</h3>
+        <ul>
+          <li><strong>Reconnaissance & mémorisation</strong> – ancre la marque dans l’esprit du public.</li>
+          <li><strong>Attachement émotionnel</strong> – traduit les valeurs et la personnalité.</li>
+          <li><strong>Différenciation</strong> – repère distinctif dans un univers saturé d’images.</li>
+          <li><strong>Performance</strong> – favorise rétention et engagement.</li>
+        </ul>
+        <h3>Mon approche</h3>
+        <ol>
+          <li><strong>Brief & ADN :</strong> ton, cibles, objectifs média.</li>
+          <li><strong>Moodboard & références :</strong> textures, tempos, intentions.</li>
+          <li><strong>Composition à l’image :</strong> écriture thématique & synchro.</li>
+          <li><strong>Orchestration & sound design :</strong> timbres, dynamique, transitions.</li>
+          <li><strong>Déclinaisons :</strong> 60/30/15s, alt mixes, stems, normalisation.</li>
+        </ol>
+        <a class="cta-button" href="contact.html">Composer ma musique de marque</a>
+      </div>
     </div>
-  </div>
 
-  <!-- Ambiance sonore -->
-  <div class="service-block">
-    <h2>Ambiance sonore UX & in-store</h2>
-    <p>Des environnements sonores immersifs qui prolongent l’expérience de marque dans la vie quotidienne de vos publics.</p>
-    <button class="cta-button" onclick="toggleAccordion('accordion-ambiance')">En savoir plus</button>
-
-    <div id="accordion-ambiance" class="accordion-content">
-      <p>L’ambiance sonore est une <strong>expérience immersive</strong> qui accompagne vos clients dans leur parcours, en boutique, lors d’un événement ou via une application digitale.</p>
-
-      <h3>Avantages</h3>
-      <ul>
-        <li><strong>Expérience client enrichie :</strong> influence positive sur la perception de marque.</li>
-        <li><strong>Engagement émotionnel :</strong> crée un lien instinctif et durable.</li>
-        <li><strong>Cohérence sensorielle :</strong> complète l’univers visuel et verbal.</li>
-        <li><strong>Différenciation :</strong> environnement sonore unique et mémorable.</li>
-      </ul>
-
-      <h3>Mon approche</h3>
-      <ol>
-        <li><strong>Analyse des points de contact :</strong> retail, app, site web, événement…</li>
-        <li><strong>Design de l’expérience sonore :</strong> intensité, rythme, textures adaptées.</li>
-        <li><strong>Composition & sound-design :</strong> création d’ambiances modulables et immersives.</li>
-        <li><strong>Déploiement & optimisation :</strong> livrables adaptés : boucles, playlists, UX, diffusion in-store.</li>
-      </ol>
-
-      <h3>Cas d’usage</h3>
-      <ul>
-        <li><strong>Retail & in-store</strong> – atmosphère sonore qui prolonge l’univers de marque.</li>
-        <li><strong>Applications & sites web</strong> – sons UX pour transitions et notifications.</li>
-        <li><strong>Événements & salons</strong> – habillage sonore des espaces et scénographies.</li>
-        <li><strong>Podcasts & contenus immersifs</strong> – environnements sonores qui renforcent la narration.</li>
-        <li><strong>Attente téléphonique & service client</strong> – ambiance adaptée qui humanise la relation.</li>
-      </ul>
-
-      <a class="cta-button" href="contact.html">Créer une expérience sonore immersive</a>
+    <!-- Ambiance sonore -->
+    <div class="service-block" id="service-ambiance-ux">
+      <h2>Ambiance sonore UX & in-store</h2>
+      <p>Des environnements immersifs qui enrichissent l’expérience client.</p>
+      <button class="cta-button" onclick="toggleAccordion('accordion-ambiance')">En savoir plus</button>
+      <div id="accordion-ambiance" class="accordion-content">
+        <p>L’ambiance sonore accompagne vos clients en boutique, lors d’événements ou via des interfaces digitales.</p>
+        <h3>Avantages</h3>
+        <ul>
+          <li><strong>Expérience client enrichie</strong> – influence positive sur la perception.</li>
+          <li><strong>Engagement émotionnel</strong> – lien instinctif et durable.</li>
+          <li><strong>Cohérence sensorielle</strong> – complète l’univers visuel et verbal.</li>
+          <li><strong>Différenciation</strong> – environnement unique et mémorable.</li>
+        </ul>
+        <h3>Mon approche</h3>
+        <ol>
+          <li><strong>Cartographie des points de contact</strong> (retail, app, web, événement).</li>
+          <li><strong>Design de l’expérience</strong> (intensité, rythme, textures).</li>
+          <li><strong>Composition & sound design</strong> (ambiances modulables).</li>
+          <li><strong>Déploiement & optimisation</strong> (boucles, playlists, UX, diffusion in-store).</li>
+        </ol>
+        <a class="cta-button" href="contact.html">Créer une expérience sonore immersive</a>
+      </div>
     </div>
-  </div>
-</main>
+  </main>
 
-<script>
-  function toggleMenu() {
-    const menu = document.getElementById("menu");
-    menu.classList.toggle("show");
-  }
-
-  function toggleAccordion(id) {
-    const content = document.getElementById(id);
-    content.style.display = (content.style.display === "block") ? "none" : "block";
-  }
-</script>
   <!-- ========= FOOTER ÉLÉGANT ========= -->
-<footer style="background: var(--bg-alt); color: var(--text); padding: 2rem 1rem 1.2rem; font-size: 0.9rem; margin-top: 3rem;">
+  <footer>
+    <div style="max-width:1100px;margin:auto;display:flex;justify-content:center;align-items:flex-start;gap:6rem;flex-wrap:wrap;text-align:center;">
+      <div>
+        <h3 style="font-family:'Playfair Display',serif;color:var(--accent);font-size:1.1rem;margin-bottom:.8rem;">Navigation</h3>
+        <nav style="display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap;font-size:.95rem;">
+          <a href="index.html">Accueil</a><span style="color:rgba(0,0,0,.3);">|</span>
+          <a href="services.html">Services</a><span style="color:rgba(0,0,0,.3);">|</span>
+          <a href="portfolio.html">Portfolio</a><span style="color:rgba(0,0,0,.3);">|</span>
+          <a href="apropos.html">À propos</a><span style="color:rgba(0,0,0,.3);">|</span>
+          <a href="contact.html">Contact</a><span style="color:rgba(0,0,0,.3);">|</span>
+          <a href="faq.html">FAQ</a>
+        </nav>
+      </div>
 
-  <!-- Bloc principal -->
-  <div style="max-width: 1100px; margin: auto; display: flex; justify-content: center; align-items: flex-start; gap: 6rem; flex-wrap: wrap; text-align: center;">
-
-    <!-- Navigation -->
-    <div>
-      <h3 style="font-family: 'Playfair Display', serif; color: var(--accent); font-size: 1.1rem; margin-bottom: 0.8rem;">Navigation</h3>
-      <nav style="display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap; font-size: 0.95rem;">
-        <a href="index.html" style="text-decoration: none; color: var(--text);">Accueil</a>
-        <span style="color: rgba(0,0,0,0.3);">|</span>
-        <a href="services.html" style="text-decoration: none; color: var(--text);">Services</a>
-        <span style="color: rgba(0,0,0,0.3);">|</span>
-        <a href="portfolio.html" style="text-decoration: none; color: var(--text);">Portfolio</a>
-        <span style="color: rgba(0,0,0,0.3);">|</span>
-        <a href="apropos.html" style="text-decoration: none; color: var(--text);">À propos</a>
-        <span style="color: rgba(0,0,0,0.3);">|</span>
-        <a href="contact.html" style="text-decoration: none; color: var(--text);">Contact</a>
-        <span style="color: rgba(0,0,0,0.3);">|</span>
-        <a href="faq.html" style="text-decoration: none; color: var(--text);">FAQ</a>
-      </nav>
+      <div>
+        <h3 style="font-family:'Playfair Display',serif;color:var(--accent);font-size:1.1rem;margin-bottom:.8rem;">Contact</h3>
+        <p style="margin:.3rem 0;"><a href="mailto:guilhem@eloquencecreative.fr">guilhem@eloquencecreative.fr</a></p>
+        <p style="margin:.3rem 0;"><a href="https://www.linkedin.com/in/guilhem-vallery-radot/" target="_blank" rel="noopener">LinkedIn</a></p>
+        <button onclick="openCookieSettings()" style="margin-top:.7rem;background:var(--accent);color:#fff;border:none;padding:.5rem 1rem;border-radius:6px;font-size:.85rem;cursor:pointer;">Gérer mes cookies</button>
+      </div>
     </div>
 
-    <!-- Contact -->
-    <div>
-      <h3 style="font-family: 'Playfair Display', serif; color: var(--accent); font-size: 1.1rem; margin-bottom: 0.8rem;">Contact</h3>
-      <p style="margin: 0.3rem 0;">
-        <a href="mailto:guilhem@eloquencecreative.fr" style="color: var(--text); text-decoration: none;">guilhem@eloquencecreative.fr</a>
+    <div style="border-top:1px solid rgba(0,0,0,.1);margin-top:2rem;padding-top:.8rem;font-size:.8rem;text-align:center;">
+      <p>© 2025 Éloquence Créative – Tous droits réservés</p>
+      <p style="margin-top:.3rem;">
+        <a href="mentions-legales.html">Mentions légales</a> |
+        <a href="politique-cookies.html">Politique de confidentialité & cookies</a>
       </p>
-      <p style="margin: 0.3rem 0;">
-        <a href="https://www.linkedin.com/in/guilhem-vallery-radot/" target="_blank" style="color: var(--text); text-decoration: none;">LinkedIn</a>
-      </p>
-      <button onclick="openCookieSettings()" style="margin-top: 0.7rem; background: var(--accent); color: #fff; border: none; padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; cursor: pointer;">Gérer mes cookies</button>
     </div>
+  </footer>
+  <!-- ========= FIN FOOTER ========= -->
 
-  </div>
+  <!-- ================== SCRIPTS ================== -->
+  <script>
+    function toggleMenu(){ document.getElementById('menu').classList.toggle('show'); }
+    function toggleAccordion(id){ const el = document.getElementById(id); el.style.display = (el.style.display === 'block') ? 'none' : 'block'; }
+    function openCookieSettings(){ document.getElementById('cookie-banner').style.display = 'flex'; }
 
-  <!-- Bas du footer -->
-  <div style="border-top: 1px solid rgba(0,0,0,0.1); margin-top: 2rem; padding-top: 0.8rem; font-size: 0.8rem; text-align: center;">
-    <p>© 2025 Éloquence Créative – Tous droits réservés</p>
-    <p style="margin-top: 0.3rem;">
-      <a href="mentions-legales.html" style="text-decoration: none; color: var(--text);">Mentions légales</a> |
-      <a href="politique-cookies.html" style="text-decoration: none; color: var(--text);">Politique de confidentialité & cookies</a>
-    </p>
-  </div>
-</footer>
-<!-- ========= FIN FOOTER ========= -->
+    // === Cookies / GA4 ===
+    const GA_MEASUREMENT_ID = "G-M9SM7L6HEH";
+    const banner = document.getElementById("cookie-banner");
+    const modal  = document.getElementById("cookie-modal");
+    const analyticsCheckbox = document.getElementById("analytics-cookies");
+
+    function loadGA(){
+      if(!window.gaLoaded){
+        const s = document.createElement('script');
+        s.async = true;
+        s.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+        document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ dataLayer.push(arguments); }
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', GA_MEASUREMENT_ID);
+        window.gaLoaded = true;
+        console.log("GA4 chargé");
+      }
+    }
+
+    document.getElementById("accept-cookies").onclick = () => {
+      localStorage.setItem("cookieConsent","accepted");
+      banner.style.display = "none";
+      loadGA();
+    };
+    document.getElementById("reject-cookies").onclick = () => {
+      localStorage.setItem("cookieConsent","rejected");
+      banner.style.display = "none";
+    };
+    document.getElementById("customize-cookies").onclick = () => { modal.style.display = "flex"; };
+    document.getElementById("close-modal").onclick = () => { modal.style.display = "none"; };
+    document.getElementById("save-preferences").onclick = () => {
+      if(analyticsCheckbox.checked){
+        localStorage.setItem("cookieConsent","accepted");
+        loadGA();
+      }else{
+        localStorage.setItem("cookieConsent","rejected");
+      }
+      modal.style.display = "none";
+      banner.style.display = "none";
+    };
+
+    window.addEventListener("load", () => {
+      const consent = localStorage.getItem("cookieConsent");
+      if(consent === "accepted"){ loadGA(); }
+      else if(consent === "rejected"){ /* rien à charger */ }
+      else { banner.style.display = "flex"; }
+    });
+  </script>
 </body>
 </html>
