@@ -73,15 +73,14 @@
     }
 
     /* ================= HERO ================= */
-  .hero {
-  text-align: center;
-  padding: 6rem 2rem 5rem;
-  background: var(--bg);
-  position: relative;
-  /* SUPPRIMER la ligne overflow:hidden */
-  width: 100%;           /* le bloc occupe tout l’écran */
-  max-width: 1400px;     /* optionnel : limite sur très grands écrans */
-  margin: 0 auto;        /* centre le bloc si max-width activé */
+    .hero {
+      text-align: center;
+      padding: 6rem 2rem 5rem;
+      background: var(--bg);
+      position: relative;
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
     }
     .hero h1 {
       font-family: 'Playfair Display', serif;
@@ -117,7 +116,7 @@
       background: #F2EEE8; border-left: 4px solid var(--accent); border-radius: 8px;
     }
 
-    /* ================= WAVEFORM arrondi ================= */
+    /* ================= WAVEFORM ================= */
     .wave-animation {
       position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
       display: flex; gap: 4px; height: 60px; opacity: 0.4;
@@ -133,7 +132,6 @@
       50% { height: 100%; }
     }
 
-    /* ================= SECTIONS ================= */
     section { padding: 4rem 2rem; max-width: 900px; margin: auto; }
     section h2 {
       font-family: 'Playfair Display', serif;
@@ -141,21 +139,17 @@
     }
     section p { font-size: 1.1rem; line-height: 1.8; text-align: center; margin-bottom: 2rem; }
 
-    /* Services */
     .services ul { list-style: none; display: grid; gap: 2rem; max-width: 700px; margin: auto; padding-left: 0; }
     .services li strong { color: var(--accent); }
 
-    /* ========== Forcer le titre HERO sur 1 ligne et ajuster ========== */
     @media screen and (min-width: 1024px) {
       .hero h1 {
         white-space: nowrap;
-        font-size: 2.2rem;     /* réduit légèrement la taille */
-        max-width: 90%;        /* empêche le débordement */
+        font-size: 2.2rem;
+        max-width: 90%;
         margin: 0 auto;
       }
     }
-
-    /* ================= Responsive ================= */
     @media(max-width:768px){
       nav ul {
         display: none; flex-direction: column; background: var(--bg);
@@ -169,6 +163,32 @@
       .wave-animation { height: 40px; gap: 3px; }
       .wave-animation span { width: 3px; }
     }
+
+    /* ===== Cookie banner & modal ===== */
+    #cookie-banner {
+      display:none;
+      position:fixed; bottom:0; left:0; width:100%;
+      background:#fff; color:#000; border-top:1px solid #ccc;
+      padding:1rem; text-align:center; z-index:9999;
+      box-shadow:0 -2px 5px rgba(0,0,0,0.1);
+    }
+    #cookie-banner button {
+      margin-left:0.5rem; padding:0.4rem 0.8rem;
+      background:var(--accent); color:#fff; border:none; border-radius:5px; cursor:pointer;
+    }
+    #cookie-modal {
+      display:none;
+      position:fixed; top:0; left:0; width:100%; height:100%;
+      background:rgba(0,0,0,0.5); justify-content:center; align-items:center; z-index:10000;
+    }
+    #cookie-modal .modal-content {
+      background:#fff; padding:2rem; max-width:400px; border-radius:8px; text-align:center;
+    }
+    #cookie-modal button {
+      margin-top:1rem; padding:0.5rem 1rem; border:none; cursor:pointer; border-radius:5px;
+    }
+    #cookie-modal .accept { background:var(--accent); color:#fff; }
+    #cookie-modal .decline { background:#ccc; }
   </style>
 </head>
 
@@ -267,9 +287,71 @@
     </div>
   </footer>
 
+  <!-- ===== Cookie Banner & Modal ===== -->
+  <div id="cookie-banner">
+    Ce site utilise des cookies pour mesurer l’audience et améliorer votre expérience.
+    <button onclick="acceptCookies()">Accepter</button>
+    <button onclick="declineCookies()">Refuser</button>
+  </div>
+
+  <div id="cookie-modal">
+    <div class="modal-content">
+      <h3>Préférences cookies</h3>
+      <p>Vous pouvez activer ou désactiver la mesure d’audience (Google Analytics).</p>
+      <button class="accept" onclick="acceptCookies()">Autoriser</button>
+      <button class="decline" onclick="declineCookies()">Désactiver</button>
+      <button style="background:#eee;" onclick="closeCookieModal()">Fermer</button>
+    </div>
+  </div>
+
+  <!-- ================= SCRIPTS ================= -->
   <script>
     function toggleMenu(){ document.getElementById("menu").classList.toggle("show"); }
-    function openCookieSettings(){ document.getElementById("cookie-banner").style.display="flex"; }
+
+    // Bannière cookies
+    function openCookieSettings(){
+      document.getElementById("cookie-modal").style.display = "flex";
+    }
+    function closeCookieModal(){
+      document.getElementById("cookie-modal").style.display = "none";
+    }
+
+    function acceptCookies(){
+      localStorage.setItem("cookiesAccepted","true");
+      document.getElementById("cookie-banner").style.display="none";
+      document.getElementById("cookie-modal").style.display="none";
+      loadGoogleAnalytics();
+    }
+    function declineCookies(){
+      localStorage.setItem("cookiesAccepted","false");
+      document.getElementById("cookie-banner").style.display="none";
+      document.getElementById("cookie-modal").style.display="none";
+    }
+
+    window.addEventListener("load",()=>{
+      const consent = localStorage.getItem("cookiesAccepted");
+      if(consent==="true"){ loadGoogleAnalytics(); }
+      else if(consent!=="false"){ document.getElementById("cookie-banner").style.display="block"; }
+    });
+
+    // Charger GA4 seulement après consentement
+    function loadGoogleAnalytics(){
+      if(window.gaLoaded) return;
+      window.gaLoaded = true;
+      const script1 = document.createElement("script");
+      script1.async = true;
+      script1.src = "https://www.googletagmanager.com/gtag/js?id=G-M9SM7L6HEH";
+      document.head.appendChild(script1);
+
+      const script2 = document.createElement("script");
+      script2.innerHTML = `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-M9SM7L6HEH');
+      `;
+      document.head.appendChild(script2);
+    }
   </script>
 </body>
 </html>
