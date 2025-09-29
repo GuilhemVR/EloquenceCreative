@@ -119,7 +119,7 @@
     .wave-animation span {
       display: block; width: 4px; background: var(--accent);
       animation: wavePulse 1.2s infinite ease-in-out;
-      border-radius: 20px; /* arrondi */
+      border-radius: 20px;
     }
     .wave-animation span:nth-child(n) { animation-delay: calc(0.1s * var(--i)); }
     @keyframes wavePulse {
@@ -139,9 +139,14 @@
     .services ul { list-style: none; display: grid; gap: 2rem; max-width: 700px; margin: auto; padding-left: 0; }
     .services li strong { color: var(--accent); }
 
-    /* ========== Force le titre du HERO sur 1 ligne en desktop ========== */
+    /* ========== Forcer le titre HERO sur 1 ligne et ajuster ========== */
     @media screen and (min-width: 1024px) {
-      .hero h1 { white-space: nowrap; }
+      .hero h1 {
+        white-space: nowrap;
+        font-size: 2.2rem;     /* réduit légèrement la taille */
+        max-width: 90%;        /* empêche le débordement */
+        margin: 0 auto;
+      }
     }
 
     /* ================= Responsive ================= */
