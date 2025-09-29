@@ -4,11 +4,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- ==================== SEO ==================== -->
   <title>Portfolio – Éloquence Créative | Réalisations en Branding Sonore</title>
   <meta name="description" content="Découvrez le portfolio d’Éloquence Créative : logos sonores, identités musicales et ambiances sonores réalisés pour des marques comme Bleu d’Eclipse, Maison Capucine, Ethera et Noblead." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Éloquence Créative" />
+  <meta property="og:title" content="Portfolio – Éloquence Créative | Branding Sonore" />
+  <meta property="og:description" content="Découvrez les réalisations d’Éloquence Créative : logos sonores, musiques de marque et ambiances sonores pour Bleu d’Eclipse, Maison Capucine, Ethera, Noblead et plus encore." />
+  <meta property="og:image" content="https://eloquencecreative.fr/images/og-image.jpg" />
+  <meta property="og:url" content="https://eloquencecreative.fr/portfolio.html" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
 
+  <!-- ==================== FAVICONS ==================== -->
+  <link rel="icon" href="favicon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon/web-app-manifest-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="favicon/web-app-manifest-512x512.png">
+  <meta name="theme-color" content="#FAF8F5">
+
+  <!-- ==================== FONTS ==================== -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
+  <!-- ==================== CSS ==================== -->
   <style>
     :root {
       --bg: #FAF8F5;
@@ -29,7 +50,7 @@
 
     /* HEADER */
     header {
-      background: var(--bg);
+      background-color: var(--bg);
       padding: 1.5rem 2rem;
       display: flex;
       justify-content: space-between;
@@ -39,48 +60,39 @@
       top: 0;
       z-index: 100;
     }
-    .logo-img { max-height: 80px; width: auto; }
+    .logo-link { display: inline-flex; align-items: center; text-decoration: none; }
+    .logo-img { max-height: 80px; width: auto; object-fit: contain; }
     nav ul { list-style: none; display: flex; gap: 1.5rem; }
-    nav a {
-      text-decoration: none; color: var(--text);
-      font-weight: 600; transition: color 0.3s;
-    }
+    nav a { text-decoration: none; color: var(--text); font-weight: 600; transition: color 0.3s; }
     nav a:hover { color: var(--accent-hover); }
+    .burger { display: none; font-size: 1.8rem; background: none; border: none; cursor: pointer; }
 
-    .burger {
-      display: none; font-size: 1.8rem; background: none;
-      border: none; cursor: pointer;
-    }
     @media (max-width: 768px) {
       nav ul {
-        display: none; flex-direction: column;
-        background: var(--bg); position: absolute; top: 100%; right: 2rem;
-        padding: 1rem; box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        border-radius: 8px;
+        display: none; flex-direction: column; background: var(--bg);
+        position: absolute; top: 100%; right: 2rem; padding: 1rem;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 8px;
       }
       nav ul.show { display: flex; }
       .burger { display: block; }
     }
 
     /* HERO */
-    .hero {
-      text-align: center;
-      padding: 5rem 2rem 3rem;
-    }
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem; margin-bottom: 1rem; color: var(--text);
-    }
+    .hero { text-align: center; padding: 5rem 2rem 3rem; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--text); margin-bottom: 1rem; }
     .hero h1 strong { color: var(--accent); }
 
-    /* PORTFOLIO GRID */
+    /* GRID 2x2 */
     .portfolio-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 colonnes fixes */
       gap: 2rem;
       max-width: 1100px;
       margin: 0 auto 3rem;
       padding: 0 2rem;
+    }
+    @media (max-width: 900px) {
+      .portfolio-grid { grid-template-columns: 1fr; } /* 1 colonne en mobile */
     }
 
     .card {
@@ -91,26 +103,21 @@
       text-align: center;
       display: flex;
       flex-direction: column;
-      justify-content: space-between; /* <-- Aligne le bouton en bas */
+      justify-content: space-between; /* bouton toujours en bas */
       transition: transform 0.3s;
     }
     .card:hover { transform: translateY(-5px); }
-
     .card h3 {
       font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
+      font-size: 1.45rem;
       color: var(--accent);
       margin-bottom: 1rem;
-      min-height: 3.5rem; /* équilibre les hauteurs des titres */
+      min-height: 3.2rem; /* équilibre les titres sur 2 lignes max */
     }
-    .card p {
-      flex-grow: 1;
-      font-size: 1rem;
-      margin-bottom: 1.5rem;
-    }
+    .card p { font-size: 1rem; margin-bottom: 1.5rem; flex-grow: 1; }
 
     .cta-button {
-      background: var(--accent);
+      background-color: var(--accent);
       color: #fff;
       border: none;
       padding: 0.6rem 1.2rem;
@@ -120,28 +127,35 @@
       cursor: pointer;
       transition: background 0.3s;
       text-decoration: none;
+      align-self: center;
     }
     .cta-button:hover { background: var(--accent-hover); }
 
     /* MODALES */
     .modal {
-      display: none; position: fixed; z-index: 200;
-      top: 0; left: 0; width: 100%; height: 100%;
+      display: none;
+      position: fixed;
+      z-index: 200;
+      inset: 0;
       background: rgba(0,0,0,0.6);
-      overflow-y: auto; padding: 2rem;
+      overflow-y: auto;
+      padding: 2rem;
     }
     .modal-content {
-      background: #fff; margin: auto; padding: 2rem;
-      border-radius: 12px; max-width: 800px;
+      background: #fff;
+      margin: auto;
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 800px;
     }
-    .modal-content h2 { color: var(--accent); font-family: 'Playfair Display', serif; margin-bottom: 1rem; }
+    .modal-content h2 { font-family: 'Playfair Display', serif; color: var(--accent); margin-bottom: 1rem; }
+    .modal-content p { margin-bottom: 1rem; }
     .close { float: right; font-size: 1.5rem; font-weight: bold; cursor: pointer; }
     .close:hover { color: var(--accent); }
-
     .audio-player { margin-top: 1.5rem; text-align: center; }
     audio { width: 100%; max-width: 500px; outline: none; }
 
-    /* FOOTER */
+    /* FOOTER (sans surbrillance/hover) */
     footer {
       background: var(--bg-alt);
       color: var(--text);
@@ -149,18 +163,34 @@
       font-size: 0.9rem;
       margin-top: 3rem;
     }
-    footer nav a { text-decoration: none; color: var(--text); }
-    footer nav a:hover { color: var(--accent-hover); }
+    footer h3 { font-family:'Playfair Display', serif; color: var(--accent); font-size:1.1rem; margin-bottom:.8rem; }
+    footer nav { display:flex; gap:1.2rem; justify-content:center; flex-wrap:wrap; font-size:.95rem; }
+    footer nav a {
+      text-decoration: none;
+      color: var(--text);
+      -webkit-tap-highlight-color: transparent;
+    }
+    footer nav a:hover { color: var(--text); text-decoration: none; } /* aucune surbrillance */
     footer span { color: rgba(0,0,0,0.3); }
-
+    footer .footer-top {
+      max-width:1100px; margin:auto; display:flex; justify-content:center; align-items:flex-start; gap:6rem; flex-wrap:wrap; text-align:center;
+    }
+    footer .footer-bottom {
+      border-top:1px solid rgba(0,0,0,.1); margin-top:2rem; padding-top:.8rem; font-size:.8rem; text-align:center;
+    }
+    footer .footer-bottom a { color: var(--text); text-decoration: none; }
+    footer .footer-bottom a:hover { color: var(--text); text-decoration: none; }
   </style>
 </head>
 
 <body>
+  <!-- ================= HEADER ================= -->
   <header>
-    <a href="index.html"><img src="EloquenceCréativeLOGOVF 2.png" alt="Logo Éloquence Créative" class="logo-img"></a>
+    <a href="index.html" class="logo-link">
+      <img src="EloquenceCréativeLOGOVF 2.png" alt="Logo Éloquence Créative" class="logo-img">
+    </a>
     <nav>
-      <button class="burger" onclick="toggleMenu()">☰</button>
+      <button class="burger" onclick="toggleMenu()" aria-label="Ouvrir le menu">☰</button>
       <ul id="menu">
         <li><a href="index.html">Accueil</a></li>
         <li><a href="services.html">Services</a></li>
@@ -172,45 +202,153 @@
     </nav>
   </header>
 
-  <!-- HERO -->
+  <!-- ================= HERO ================= -->
   <section class="hero">
     <h1>Découvrez mes <strong>réalisations</strong></h1>
     <p>Un aperçu de collaborations où le son donne une voix unique aux marques.</p>
   </section>
 
-  <!-- PORTFOLIO GRID -->
+  <!-- ================= GRID 2x2 ================= -->
   <section class="portfolio-grid">
+    <!-- Carte 1 -->
     <div class="card">
       <h3>Bleu d'Eclipse – Parfum</h3>
       <p>Création d’une identité sonore de 30 secondes pour un spot publicitaire TV et réseaux sociaux.</p>
-      <button class="cta-button" onclick="openModal('modal1')">Écouter Bleu d'Eclipse</button>
+      <button type="button" class="cta-button" onclick="openModal('modal1')">Écouter Bleu d'Eclipse</button>
     </div>
+
+    <!-- Carte 2 -->
     <div class="card">
       <h3>Maison Capucine – Immobilier de prestige</h3>
       <p>Création d'une signature musicale pour des vidéos de présentation de biens d’exception.</p>
-      <button class="cta-button" onclick="openModal('modal2')">Écouter Maison Capucine</button>
+      <button type="button" class="cta-button" onclick="openModal('modal2')">Écouter Maison Capucine</button>
     </div>
+
+    <!-- Carte 3 -->
     <div class="card">
       <h3>Ethera – Joaillerie contemporaine</h3>
       <p>Création d’une identité sonore pour accompagner la campagne digitale de la marque.</p>
-      <button class="cta-button" onclick="openModal('modal3')">Écouter Ethera</button>
+      <button type="button" class="cta-button" onclick="openModal('modal3')">Écouter Ethera</button>
     </div>
+
+    <!-- Carte 4 -->
     <div class="card">
       <h3>Noblead – Cabinet de recrutement engagé à impact RSE</h3>
       <p>Création d'un logo sonore pour la communication digitale de la marque.</p>
-      <button class="cta-button" onclick="openModal('modal4')">Écouter Noblead</button>
+      <button type="button" class="cta-button" onclick="openModal('modal4')">Écouter Noblead</button>
     </div>
   </section>
 
-  <!-- MODALES -->
-  <!-- (Garde tout ton contenu des modales identique ici) -->
+  <!-- ================= MODALES ================= -->
+  <!-- Modale Carte 1 -->
+  <div id="modal1" class="modal" role="dialog" aria-modal="true" aria-labelledby="m1-title">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal1')" aria-label="Fermer la fenêtre">&times;</span>
+      <h2 id="m1-title">Bleu d'Eclipse – Parfum</h2>
+      <p><strong>Client :</strong> Maison de parfum parisienne, Bleu d’Eclipse conçoit des fragrances contemporaines audacieuses aux univers narratifs et sensoriels marqués.</p>
+      <p><strong>Brief :</strong> Accompagner la campagne de lancement avec une identité sonore immersive et évocatrice, en parfaite cohérence avec l’univers olfactif et visuel. La composition doit venir en prolongement de l’expérience sensorielle et offrir un rendu cinématographique.</p>
+      <p><strong>Format :</strong> Identité musicale (30s) pour spot publicitaire TV & réseaux sociaux.</p>
+      <p><strong>Création :</strong> Orchestration élégante jouant sur les contrastes et les silences. Le passage du mineur au majeur traduit la dualité de l’éclipse, entre ombre et lumière. Les notes tenues renforcent l’aura poétique et la sensation de suspension cinématographique.</p>
+      <div class="audio-player">
+        <h3>🎧 Écouter l’identité sonore</h3>
+        <audio controls>
+          <source src="Eloquence Créative - Portfolio Bleu d'Eclipse Parfum.wav" type="audio/wav">
+          Votre navigateur ne supporte pas la lecture audio.
+        </audio>
+      </div>
+    </div>
+  </div>
 
-  <!-- FOOTER -->
+  <!-- Modale Carte 2 -->
+  <div id="modal2" class="modal" role="dialog" aria-modal="true" aria-labelledby="m2-title">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal2')" aria-label="Fermer la fenêtre">&times;</span>
+      <h2 id="m2-title">Maison Capucine – Immobilier de prestige</h2>
+      <p><strong>Client :</strong> Maison Capucine est une agence spécialisée dans la vente de biens d’exception à Paris. Ses vidéos de présentation valorisent des lieux uniques à travers une mise en scène élégante et cinématographique.</p>
+      <p><strong>Brief :</strong> Concevoir une signature musicale de fin de vidéo de présentation des biens, à la fois discrète, esthétique et reconnaissable. La musique doit permettre de conclure chaque film avec finesse, accompagner le logo et renforcer l’image haut de gamme de l’agence.</p>
+      <p><strong>Format :</strong> Signature sonore pour outro vidéo : apparition du logo, coordonnées et devise de la marque.</p>
+      <p><strong>Création :</strong> Composition légère au pianon et violoncelle à tempo lent, jouant sur l’espace et la résonance. Une texture feutrée et lumineuse qui suggère la sérénité, l’élégance et la confiance.</p>
+      <div class="audio-player">
+        <h3>🎧 Écouter l’identité sonore</h3>
+        <audio controls>
+          <source src="Eloquence Creative - Portfolio Maison Capucine.wav" type="audio/wav">
+          Votre navigateur ne supporte pas la lecture audio.
+        </audio>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modale Carte 3 -->
+  <div id="modal3" class="modal" role="dialog" aria-modal="true" aria-labelledby="m3-title">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal3')" aria-label="Fermer la fenêtre">&times;</span>
+      <h2 id="m3-title">Ethera – Joaillerie contemporaine</h2>
+      <p><strong>Client :</strong> Ethera est une maison de joaillerie parisienne au positionnement contemporain. Elle s’adresse à une nouvelle génération de femmes en quête de pièces à la fois puissantes et délicates, alliant élégance intemporelle et expression personnelle.</p>
+      <p><strong>Brief :</strong> Créer une identité sonore pour les campagnes digitales de la marque, incarnant son univers visuel et émotionnel.</p>
+      <p><strong>Format :</strong> Identité musicale pour vidéo manifeste, déclinée en formats courts pour les campagnes digitales sur les réseaux sociaux.</p>
+      <p><strong>Création :</strong> Une composition éthérée et texturée, construite sur une nappe moderne aux harmoniques cristallines pour refléter l'éclat d'un bijou.</p>
+      <div class="audio-player">
+        <h3>🎧 Écouter l’identité sonore</h3>
+        <audio controls>
+          <source src="Eloquence Creative - Ethera.wav" type="audio/wav">
+          Votre navigateur ne supporte pas la lecture audio.
+        </audio>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modale Carte 4 -->
+  <div id="modal4" class="modal" role="dialog" aria-modal="true" aria-labelledby="m4-title">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal4')" aria-label="Fermer la fenêtre">&times;</span>
+      <h2 id="m4-title">Noblead – Cabinet de recrutement à impact RSE</h2>
+      <p><strong>Client :</strong> NOBLEAD est un cabinet de recrutement multisectoriel combinant performance business et impact sociétal fort : jusqu’à 20 % des honoraires sont reversés à une association partenaire choisie par le client.</p>
+      <p><strong>Brief :</strong> Créer un logo sonore qui incarne la singularité de Noblead : le sérieux et l'efficacité d’un cabinet de recrutement, alliés à une dimension humaine, transparente et responsable.</p>
+      <p><strong>Format :</strong> Logo sonore pour la communication digitale de la marque.</p>
+      <p><strong>Création :</strong> La composition s’articule autour d’un motif lumineux traduisant la confiance et la réussite collective.</p>
+      <div class="audio-player">
+        <h3>🎧 Écouter l’identité sonore</h3>
+        <audio controls>
+          <source src="Eloquence Créative - Noblead.wav" type="audio/wav">
+          Votre navigateur ne supporte pas la lecture audio.
+        </audio>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("show");
+    }
+    function openModal(id) {
+      var el = document.getElementById(id);
+      if (el) el.style.display = 'block';
+    }
+    function closeModal(id) {
+      var el = document.getElementById(id);
+      if (el) el.style.display = 'none';
+    }
+    // Fermer en cliquant à l’extérieur
+    window.addEventListener('click', function(e){
+      if (e.target.classList && e.target.classList.contains('modal')) {
+        e.target.style.display = 'none';
+      }
+    });
+    // ESC pour fermer
+    window.addEventListener('keydown', function(e){
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.modal').forEach(m => m.style.display = 'none');
+      }
+    });
+  </script>
+
+  <!-- ================= FOOTER ================= -->
   <footer>
-    <div style="max-width:1100px;margin:auto;display:flex;justify-content:center;align-items:flex-start;gap:6rem;flex-wrap:wrap;text-align:center;">
+    <div class="footer-top">
       <div>
-        <h3 style="font-family:'Playfair Display',serif;color:var(--accent);font-size:1.1rem;margin-bottom:.8rem;">Navigation</h3>
-        <nav style="display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap;font-size:.95rem;">
+        <h3>Navigation</h3>
+        <nav>
           <a href="index.html">Accueil</a><span>|</span>
           <a href="services.html">Services</a><span>|</span>
           <a href="portfolio.html">Portfolio</a><span>|</span>
@@ -220,13 +358,13 @@
         </nav>
       </div>
       <div>
-        <h3 style="font-family:'Playfair Display',serif;color:var(--accent);font-size:1.1rem;margin-bottom:.8rem;">Contact</h3>
+        <h3>Contact</h3>
         <p><a href="mailto:guilhem@eloquencecreative.fr">guilhem@eloquencecreative.fr</a></p>
-        <p><a href="https://www.linkedin.com/in/guilhem-vallery-radot/" target="_blank">LinkedIn</a></p>
-        <button onclick="openCookieSettings()" style="margin-top:.7rem;background:var(--accent);color:#fff;border:none;padding:.5rem 1rem;border-radius:6px;font-size:.85rem;cursor:pointer;">Gérer mes cookies</button>
+        <p><a href="https://www.linkedin.com/in/guilhem-vallery-radot/" target="_blank" rel="noopener">LinkedIn</a></p>
+        <button onclick="openCookieSettings && openCookieSettings()" style="margin-top:.7rem;background:var(--accent);color:#fff;border:none;padding:.5rem 1rem;border-radius:6px;font-size:.85rem;cursor:pointer;">Gérer mes cookies</button>
       </div>
     </div>
-    <div style="border-top:1px solid rgba(0,0,0,.1);margin-top:2rem;padding-top:.8rem;font-size:.8rem;text-align:center;">
+    <div class="footer-bottom">
       <p>© 2025 Éloquence Créative – Tous droits réservés</p>
       <p style="margin-top:.3rem;">
         <a href="mentions-legales.html">Mentions légales</a> |
@@ -234,20 +372,5 @@
       </p>
     </div>
   </footer>
-
-  <script>
-    function toggleMenu() {
-      document.getElementById("menu").classList.toggle("show");
-    }
-    function openModal(id) {
-      document.getElementById(id).style.display = "block";
-    }
-    function closeModal(id) {
-      document.getElementById(id).style.display = "none";
-    }
-    window.onclick = function(e){
-      if(e.target.classList.contains("modal")) e.target.style.display = "none";
-    }
-  </script>
 </body>
 </html>
