@@ -73,9 +73,15 @@
     }
 
     /* ================= HERO ================= */
-    .hero {
-      text-align: center; padding: 6rem 2rem 5rem;
-      background: var(--bg); position: relative; overflow: hidden;
+  .hero {
+  text-align: center;
+  padding: 6rem 2rem 5rem;
+  background: var(--bg);
+  position: relative;
+  /* SUPPRIMER la ligne overflow:hidden */
+  width: 100%;           /* le bloc occupe tout l’écran */
+  max-width: 1400px;     /* optionnel : limite sur très grands écrans */
+  margin: 0 auto;        /* centre le bloc si max-width activé */
     }
     .hero h1 {
       font-family: 'Playfair Display', serif;
