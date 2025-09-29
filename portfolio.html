@@ -156,6 +156,23 @@
     audio { width: 100%; max-width: 500px; outline: none; }
 
     /* FOOTER (sans surbrillance/hover) */
+    footer a {
+  text-decoration: none;       /* enlève le souligné */
+  color: var(--text);          /* même couleur que le texte du footer */
+}
+
+footer a:visited {
+  color: var(--text);          /* évite le violet pour les liens visités */
+}
+
+footer a:hover,
+footer a:active,
+footer a:focus {
+  color: var(--text);          /* aucune variation au survol/clic/focus */
+  text-decoration: none;       /* garde le texte neutre */
+  outline: none;               /* enlève le contour focus bleu */
+}
+
     footer {
       background: var(--bg-alt);
       color: var(--text);
