@@ -3,8 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact – Éloquence Créative</title>
+
+  <!-- ==================== SEO ==================== -->
+  <title>Contact – Éloquence Créative | Branding Sonore</title>
+  <meta name="description" content="Contactez Éloquence Créative pour discuter de votre projet de branding sonore, logo sonore ou identité musicale sur-mesure." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Éloquence Créative" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Contact – Éloquence Créative | Branding Sonore" />
+  <meta property="og:description" content="Un projet sonore ? Contactez Éloquence Créative pour un accompagnement personnalisé et créatif." />
+  <meta property="og:image" content="https://eloquencecreative.fr/images/og-image.jpg" />
+  <meta property="og:url" content="https://eloquencecreative.fr/contact.html" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- ==================== FAVICONS ==================== -->
+  <link rel="icon" href="favicon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+  <meta name="theme-color" content="#FAF8F5">
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- ==================== CSS ==================== -->
   <style>
     :root {
       --bg: #FAF8F5;
@@ -13,131 +38,72 @@
       --accent-hover: #8A6B4F;
       --bg-alt: #E5DCD0;
     }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * { margin:0; padding:0; box-sizing:border-box; }
 
     body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
+      font-family:'Inter',sans-serif;
+      background-color:var(--bg);
+      color:var(--text);
+      line-height:1.6;
     }
 
     header {
-      background-color: var(--bg);
-      padding: 1.5rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid var(--bg-alt);
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      background-color:var(--bg);
+      padding:1.5rem 2rem;
+      display:flex; justify-content:space-between; align-items:center;
+      border-bottom:1px solid var(--bg-alt);
+      position:sticky; top:0; z-index:100;
+    }
+    .logo-link { display:flex; align-items:center; text-decoration:none; }
+    .logo-img { max-height:80px; width:auto; object-fit:contain; }
+
+    nav ul { list-style:none; display:flex; gap:1.5rem; }
+    nav a { text-decoration:none; color:var(--text); font-weight:600; transition:color .3s; }
+    nav a:hover { color:var(--accent-hover); }
+
+    .burger { display:none; font-size:1.8rem; font-weight:bold; background:none; border:none; cursor:pointer; }
+    @media(max-width:768px){
+      nav ul{display:none;flex-direction:column;background-color:var(--bg);
+        position:absolute;top:100%;right:2rem;box-shadow:0 4px 8px rgba(0,0,0,0.1);
+        border-radius:8px;padding:1rem;}
+      nav ul.show{display:flex;}
+      .burger{display:block;}
     }
 
-    .logo-link { display: flex; align-items: center; text-decoration: none; }
-    .logo-img { max-height: 80px; width: auto; object-fit: contain; }
+    .hero{text-align:center;padding:5rem 2rem 2rem;}
+    .hero h1{font-family:'Playfair Display',serif;font-size:2.5rem;color:var(--text);margin-bottom:.5rem;}
+    .hero h1 strong{color:var(--accent);}
+    .hero p{max-width:700px;margin:0 auto;font-size:1.1rem;}
 
-    nav ul { list-style: none; display: flex; gap: 1.5rem; }
-    nav a { text-decoration: none; color: var(--text); font-weight: 600; transition: color 0.3s; }
-    nav a:hover { color: var(--accent-hover); }
-
-    .burger { display: none; font-size: 1.8rem; font-weight: bold; background: none; border: none; cursor: pointer; }
-
-    @media screen and (max-width: 768px) {
-      nav ul {
-        display: none;
-        flex-direction: column;
-        background-color: var(--bg);
-        position: absolute;
-        top: 100%;
-        right: 2rem;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        border-radius: 8px;
-        padding: 1rem;
-      }
-      nav ul.show { display: flex; }
-      .burger { display: block; }
+    .contact-container{
+      max-width:800px;margin:3rem auto;background:#fff;border:1px solid var(--bg-alt);
+      border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,0.08);padding:2.5rem;
     }
-
-    .hero {
-      text-align: center;
-      padding: 5rem 2rem 2rem;
+    .contact-container h2{
+      font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.5rem;color:var(--accent);
     }
-
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      color: var(--text);
-      margin-bottom: 0.5rem;
+    form{display:grid;gap:1.2rem;}
+    label{font-weight:600;}
+    input,textarea,select{
+      padding:.75rem 1rem;border:1px solid var(--bg-alt);border-radius:8px;font-size:1rem;width:100%;
+      font-family:'Inter',sans-serif;
     }
+    textarea{resize:vertical;min-height:120px;}
 
-    .hero h1 strong { color: var(--accent); }
-
-    .hero p {
-      max-width: 700px;
-      margin: 0 auto;
-      font-size: 1.1rem;
+    .cta-button{
+      background-color:var(--accent);color:white;border:none;padding:.75rem 1.5rem;font-weight:600;
+      border-radius:8px;font-size:1rem;cursor:pointer;transition:background-color .3s;width:fit-content;
     }
+    .cta-button:hover{background-color:var(--accent-hover);}
 
-    .contact-container {
-      max-width: 800px;
-      margin: 3rem auto;
-      background: #fff;
-      border: 1px solid var(--bg-alt);
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      padding: 2.5rem;
-    }
+    .social-links{text-align:center;margin-top:2rem;font-size:.95rem;}
+    .social-links a{color:var(--accent);text-decoration:none;font-weight:600;margin:0 .5rem;}
+    .social-links a:hover{color:var(--accent-hover);}
+    .accent-color{color:var(--accent);font-weight:600;}
 
-    .contact-container h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      margin-bottom: 0.5rem;
-      color: var(--accent);
-    }
-
-    form { display: grid; gap: 1.2rem; }
-    label { font-weight: 600; }
-
-    input, textarea, select {
-      padding: 0.75rem 1rem;
-      border: 1px solid var(--bg-alt);
-      border-radius: 8px;
-      font-size: 1rem;
-      width: 100%;
-      font-family: 'Inter', sans-serif;
-    }
-
-    textarea { resize: vertical; min-height: 120px; }
-
-    .cta-button {
-      background-color: var(--accent);
-      color: white;
-      border: none;
-      padding: 0.75rem 1.5rem;
-      font-weight: 600;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background-color 0.3s;
-      width: fit-content;
-    }
-    .cta-button:hover { background-color: var(--accent-hover); }
-
-    .social-links {
-      margin-top: 2rem;
-      text-align: center;
-      font-size: 0.95rem;
-    }
-    .social-links a { color: var(--accent); text-decoration: none; font-weight: 600; margin: 0 0.5rem; }
-    .social-links a:hover { color: var(--accent-hover); }
-
-    .accent-color { color: var(--accent); font-weight: 600; }
-
-    @media (max-width: 600px) {
-      .hero h1 { font-size: 2rem; }
-      .contact-container { padding: 1.5rem; margin: 2rem 1rem; }
+    @media(max-width:600px){
+      .hero h1{font-size:2rem;}
+      .contact-container{padding:1.5rem;margin:2rem 1rem;}
     }
   </style>
 </head>
@@ -150,12 +116,12 @@
   <nav>
     <button class="burger" onclick="toggleMenu()">☰</button>
     <ul id="menu">
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="apropos.html">À propos</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="contact.html">Contact</a></li>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="apropos.html">À propos</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 </header>
@@ -168,18 +134,17 @@
 <main>
   <div class="contact-container">
     <h2>Envoyez-moi un message</h2>
-    <p style="margin-bottom: 1rem; font-size: 0.95rem; color: var(--text);">
+    <p style="margin-bottom:1rem;font-size:.95rem;color:var(--text);">
       Sélectionnez l’objet de votre demande pour mieux cibler votre besoin :
     </p>
     <form action="https://formspree.io/f/mdkeykwk" method="POST">
-
       <div>
-        <label for="name">Nom <span style="color: var(--accent);">*</span></label>
+        <label for="name">Nom <span style="color:var(--accent);">*</span></label>
         <input type="text" id="name" name="name" placeholder="Votre nom complet" required />
       </div>
 
       <div>
-        <label for="email">Email <span style="color: var(--accent);">*</span></label>
+        <label for="email">Email <span style="color:var(--accent);">*</span></label>
         <input type="email" id="email" name="email" placeholder="exemple@domaine.com" required />
       </div>
 
@@ -189,7 +154,7 @@
       </div>
 
       <div>
-        <label for="type">Objet de la demande <span style="color: var(--accent);">*</span></label>
+        <label for="type">Objet de la demande <span style="color:var(--accent);">*</span></label>
         <select id="type" name="type" required>
           <option value="">-- Sélectionnez --</option>
           <option value="Devis">Demander un devis</option>
@@ -200,7 +165,7 @@
       </div>
 
       <div>
-        <label for="message">Message <span style="color: var(--accent);">*</span></label>
+        <label for="message">Message <span style="color:var(--accent);">*</span></label>
         <textarea id="message" name="message" placeholder="Décrivez votre besoin..." required></textarea>
       </div>
 
@@ -216,44 +181,36 @@
 </main>
 
 <script>
-  function toggleMenu() {
-    const menu = document.getElementById("menu");
-    menu.classList.toggle("show");
+  function toggleMenu(){
+    document.getElementById("menu").classList.toggle("show");
   }
 </script>
 
-<!-- ========= FOOTER ========= -->
-<footer style="background: var(--bg-alt); color: var(--text); padding: 2rem 1rem 1.2rem; font-size: 0.9rem; margin-top: 3rem;">
-  <div style="max-width: 1100px; margin: auto; display: flex; justify-content: center; align-items: flex-start; gap: 6rem; flex-wrap: wrap; text-align: center;">
-
+<footer style="background:var(--bg-alt);color:var(--text);padding:2rem 1rem 1.2rem;font-size:.9rem;margin-top:3rem;">
+  <div style="max-width:1100px;margin:auto;display:flex;justify-content:center;align-items:flex-start;gap:6rem;flex-wrap:wrap;text-align:center;">
     <div>
-      <h3 style="font-family: 'Playfair Display', serif; color: var(--accent); font-size: 1.1rem; margin-bottom: 0.8rem;">Navigation</h3>
-      <nav style="display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap; font-size: 0.95rem;">
-        <a href="index.html" style="text-decoration: none; color: var(--text);">Accueil</a> |
-        <a href="services.html" style="text-decoration: none; color: var(--text);">Services</a> |
-        <a href="portfolio.html" style="text-decoration: none; color: var(--text);">Portfolio</a> |
-        <a href="apropos.html" style="text-decoration: none; color: var(--text);">À propos</a> |
-        <a href="contact.html" style="text-decoration: none; color: var(--text);">Contact</a> |
-        <a href="faq.html" style="text-decoration: none; color: var(--text);">FAQ</a>
+      <h3 style="font-family:'Playfair Display',serif;color:var(--accent);font-size:1.1rem;margin-bottom:.8rem;">Navigation</h3>
+      <nav style="display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap;font-size:.95rem;">
+        <a href="index.html" style="text-decoration:none;color:var(--text);">Accueil</a> |
+        <a href="services.html" style="text-decoration:none;color:var(--text);">Services</a> |
+        <a href="portfolio.html" style="text-decoration:none;color:var(--text);">Portfolio</a> |
+        <a href="apropos.html" style="text-decoration:none;color:var(--text);">À propos</a> |
+        <a href="contact.html" style="text-decoration:none;color:var(--text);">Contact</a> |
+        <a href="faq.html" style="text-decoration:none;color:var(--text);">FAQ</a>
       </nav>
     </div>
-
     <div>
-      <h3 style="font-family: 'Playfair Display', serif; color: var(--accent); font-size: 1.1rem; margin-bottom: 0.8rem;">Contact</h3>
-      <p><a href="mailto:guilhem@eloquencecreative.fr" style="color: var(--text); text-decoration: none;">guilhem@eloquencecreative.fr</a></p>
-      <p><a href="https://www.linkedin.com/in/guilhem-vallery-radot/" target="_blank" style="color: var(--text); text-decoration: none;">LinkedIn</a></p>
-      <button onclick="openCookieSettings()" style="margin-top: 0.7rem; background: var(--accent); color: #fff; border: none; padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; cursor: pointer;">Gérer mes cookies</button>
+      <h3 style="font-family:'Playfair Display',serif;color:var(--accent);font-size:1.1rem;margin-bottom:.8rem;">Contact</h3>
+      <p><a href="mailto:guilhem@eloquencecreative.fr" style="color:var(--text);text-decoration:none;">guilhem@eloquencecreative.fr</a></p>
+      <p><a href="https://www.linkedin.com/in/guilhem-vallery-radot/" target="_blank" style="color:var(--text);text-decoration:none;">LinkedIn</a></p>
+      <button onclick="openCookieSettings()" style="margin-top:.7rem;background:var(--accent);color:#fff;border:none;padding:.5rem 1rem;border-radius:6px;font-size:.85rem;cursor:pointer;">Gérer mes cookies</button>
     </div>
-
   </div>
-
-  <div style="border-top: 1px solid rgba(0,0,0,0.1); margin-top: 2rem; padding-top: 0.8rem; font-size: 0.8rem; text-align: center;">
+  <div style="border-top:1px solid rgba(0,0,0,0.1);margin-top:2rem;padding-top:.8rem;font-size:.8rem;text-align:center;">
     <p>© 2025 Éloquence Créative – Tous droits réservés</p>
-    <p><a href="mentions-legales.html" style="text-decoration: none; color: var(--text);">Mentions légales</a> |
-       <a href="politique-cookies.html" style="text-decoration: none; color: var(--text);">Politique de confidentialité & cookies</a></p>
+    <p><a href="mentions-legales.html" style="text-decoration:none;color:var(--text);">Mentions légales</a> |
+       <a href="politique-cookies.html" style="text-decoration:none;color:var(--text);">Politique de confidentialité & cookies</a></p>
   </div>
 </footer>
-<!-- ========= FIN FOOTER ========= -->
-
 </body>
 </html>
