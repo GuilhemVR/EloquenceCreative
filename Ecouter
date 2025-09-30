@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Écouter – Éloquence Créative | Identité Sonore</title>
+  <meta name="description" content="Écoutez un extrait du showreel Éloquence Créative. Découvrez comment une identité sonore renforce campagnes digitales, spots TV et expériences de marque." />
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #FAF8F5;
+      --text: #2A2A2A;
+      --accent: #AC855E;
+      --accent-hover: #8A6B4F;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      margin: 0;
+      line-height: 1.6;
+      text-align: center;
+    }
+    header { padding: 2rem 1rem 1rem; }
+    header img { max-height: 80px; }
+    .hero {
+      padding: 2rem 1.5rem;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+    .hero p {
+      max-width: 700px;
+      margin: 0 auto 1.5rem;
+      font-size: 1.1rem;
+    }
+    .audio-player {
+      margin: 2rem auto;
+      max-width: 500px;
+    }
+    audio { width: 100%; outline: none; }
+    .cta-button {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 0.9rem 1.8rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 1.5rem;
+    }
+    .cta-button:hover { background: var(--accent-hover); }
+    footer {
+      margin-top: 3rem;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="EloquenceCréativeLOGOVF 2.png" alt="Logo Éloquence Créative">
+  </header>
+
+  <section class="hero">
+    <h1>🎧 Écoutez l’univers sonore</h1>
+    <p>
+      Une identité sonore donne à votre marque une voix unique.<br>
+      Découvrez en 60 secondes comment la musique de marque sublime vos campagnes digitales et spots TV.
+    </p>
+  </section>
+
+  <div class="audio-player">
+    <audio controls autoplay>
+      <source src="showreel-eloquence-creative.mp3" type="audio/mpeg">
+      Votre navigateur ne supporte pas la lecture audio.
+    </audio>
+  </div>
+
+  <a href="https://calendly.com/eloquencecreative/session-ecoute" target="_blank" class="cta-button">
+    Réserver une session d’écoute (20 min)
+  </a>
+
+  <footer>
+    <p>© 2025 Éloquence Créative – Identité Sonore & Musique de Marque</p>
+    <p><a href="mailto:guilhem@eloquencecreative.fr">guilhem@eloquencecreative.fr</a></p>
+  </footer>
+</body>
+</html>
