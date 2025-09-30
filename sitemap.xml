@@ -1,28 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Page d’accueil -->
   <url>
     <loc>https://eloquencecreative.fr/</loc>
+    <lastmod>2025-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- Pages principales -->
   <url>
-    <loc>https://eloquencecreative.fr/marketing.html</loc>
+    <loc>https://eloquencecreative.fr/services.html</loc>
+    <lastmod>2025-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://eloquencecreative.fr/portfolio.html</loc>
+    <lastmod>2025-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
-    <loc>https://eloquencecreative.fr/redaction.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://eloquencecreative.fr/apropos.html</loc>
+    <lastmod>2025-09-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
   </url>
+
   <url>
-    <loc>https://eloquencecreative.fr/branding.html</loc>
+    <loc>https://eloquencecreative.fr/faq.html</loc>
+    <lastmod>2025-09-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://eloquencecreative.fr/blog.html</loc>
-    <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
+
+  <url>
+    <loc>https://eloquencecreative.fr/contact.html</loc>
+    <lastmod>2025-09-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Pages légales -->
+  <url>
+    <loc>https://eloquencecreative.fr/mentions-legales.html</loc>
+    <lastmod>2025-09-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://eloquencecreative.fr/politique-cookies.html</loc>
+    <lastmod>2025-09-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
 </urlset>
