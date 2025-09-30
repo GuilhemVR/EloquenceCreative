@@ -469,74 +469,64 @@
       <button style="background:#eee;" onclick="closeCookieModal()">Fermer</button>
     </div>
   </div>
+<!-- ================= SCRIPTS ================= -->
+<script>
+  function toggleMenu(){ document.getElementById("menu").classList.toggle("show"); }
 
-  <!-- ================= SCRIPTS ================= -->
-  <script>
-    function toggleMenu(){ document.getElementById("menu").classList.toggle("show"); }
+  // Bannière cookies
+  function openCookieSettings(){ document.getElementById("cookie-modal").style.display = "flex"; }
+  function closeCookieModal(){ document.getElementById("cookie-modal").style.display = "none"; }
 
-    // Bannière cookies
-    function openCookieSettings(){
-      document.getElementById("cookie-modal").style.display = "flex";
-    }
-    function closeCookieModal(){
-      document.getElementById("cookie-modal").style.display = "none";
-    }
+  function acceptCookies(){
+    localStorage.setItem("cookiesAccepted","true");
+    document.getElementById("cookie-banner").style.display="none";
+    document.getElementById("cookie-modal").style.display="none";
+    loadGoogleAnalytics();
+  }
+  function declineCookies(){
+    localStorage.setItem("cookiesAccepted","false");
+    document.getElementById("cookie-banner").style.display="none";
+    document.getElementById("cookie-modal").style.display="none";
+  }
 
-    function acceptCookies(){
-      localStorage.setItem("cookiesAccepted","true");
-      document.getElementById("cookie-banner").style.display="none";
-      document.getElementById("cookie-modal").style.display="none";
-      loadGoogleAnalytics();
-    }
-    function declineCookies(){
-      localStorage.setItem("cookiesAccepted","false");
-      document.getElementById("cookie-banner").style.display="none";
-      document.getElementById("cookie-modal").style.display="none";
-    }
+  window.addEventListener("load",()=>{
+    const consent = localStorage.getItem("cookiesAccepted");
+    if(consent==="true"){ loadGoogleAnalytics(); }
+    else if(consent!=="false"){ document.getElementById("cookie-banner").style.display="block"; }
+  });
 
-    window.addEventListener("load",()=>{
-      const consent = localStorage.getItem("cookiesAccepted");
-      if(consent==="true"){ loadGoogleAnalytics(); }
-      else if(consent!=="false"){ document.getElementById("cookie-banner").style.display="block"; }
-    });
+  // Charger GA4 seulement après consentement
+  function loadGoogleAnalytics(){
+    if(window.gaLoaded) return;
+    window.gaLoaded = true;
+    const script1 = document.createElement("script");
+    script1.async = true;
+    script1.src = "https://www.googletagmanager.com/gtag/js?id=G-M9SM7L6HEH";
+    document.head.appendChild(script1);
 
-    // Charger GA4 seulement après consentement
-    function loadGoogleAnalytics(){
-      if(window.gaLoaded) return;
-      window.gaLoaded = true;
-      const script1 = document.createElement("script");
-      script1.async = true;
-      script1.src = "https://www.googletagmanager.com/gtag/js?id=G-M9SM7L6HEH";
-      document.head.appendChild(script1);
+    const script2 = document.createElement("script");
+    script2.innerHTML = `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-M9SM7L6HEH');
+    `;
+    document.head.appendChild(script2);
+  }
 
-      const script2 = document.createElement("script");
-      script2.innerHTML = `
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-M9SM7L6HEH');
-      `;
-      document.head.appendChild(script2);
-    }
-    <script>
-  // ... tes autres fonctions ...
-
+  // === Accordéons des services ===
   function toggleAccordion(id) {
     const panel = document.getElementById(id);
     if (!panel) return;
 
-    // (facultatif) refermer les autres accordéons
+    // Refermer les autres
     document.querySelectorAll('.accordion-content').forEach(el => {
-      if (el !== panel) {
-        el.style.display = 'none';
-      }
+      if (el !== panel) el.style.display = 'none';
     });
 
-    // ouvrir/fermer le panneau ciblé
+    // Ouvrir / fermer le bon
     panel.style.display = (panel.style.display === 'block') ? 'none' : 'block';
   }
 </script>
-
-    </script>
   </body>
 </html>
