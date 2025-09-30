@@ -518,6 +518,25 @@
       `;
       document.head.appendChild(script2);
     }
+    <script>
+  // ... tes autres fonctions ...
+
+  function toggleAccordion(id) {
+    const panel = document.getElementById(id);
+    if (!panel) return;
+
+    // (facultatif) refermer les autres accordéons
+    document.querySelectorAll('.accordion-content').forEach(el => {
+      if (el !== panel) {
+        el.style.display = 'none';
+      }
+    });
+
+    // ouvrir/fermer le panneau ciblé
+    panel.style.display = (panel.style.display === 'block') ? 'none' : 'block';
+  }
+</script>
+
     </script>
   </body>
 </html>
