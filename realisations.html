@@ -24,6 +24,9 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
+  <!-- WaveSurfer.js -->
+  <script src="https://unpkg.com/wavesurfer.js"></script>
+
   <style>
     :root {
       --bg: #FAF8F5;
@@ -38,8 +41,10 @@
       padding: 0;
       font-family: 'Inter', sans-serif;
       background: var(--bg);
+      color: var(--text);
     }
 
+    /* HEADER */
     header {
       background: var(--bg);
       padding: 1.5rem 2rem;
@@ -51,11 +56,13 @@
       top: 0;
       z-index: 100;
     }
+
     nav ul { list-style: none; display: flex; gap: 1.5rem; }
     nav a { text-decoration: none; color: var(--text); font-weight: 600; }
     nav a:hover { color: var(--accent-hover); }
     .logo-img { max-height: 80px; }
 
+    /* HERO */
     .hero {
       text-align: center;
       padding: 5rem 2rem 2rem;
@@ -76,7 +83,7 @@
       font-size: 0.98rem;
     }
 
-    /* PLAYER AUDIO */
+    /* AUDIO PLAYER */
     .audio-section {
       max-width: 900px;
       margin: 3rem auto;
@@ -94,30 +101,52 @@
       text-align: center;
     }
 
-    #trackList {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 1.5rem 0;
+    #playlist {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 1.5rem;
     }
 
-    #trackList li {
+    .track {
       padding: 12px 16px;
-      margin-bottom: 6px;
+      border: none;
       background: #f4f4f4;
-      border-radius: 6px;
+      border-radius: 8px;
       cursor: pointer;
+      text-align: left;
+      font-size: 1rem;
       transition: 0.2s;
     }
 
-    #trackList li:hover { background: #e3e3e3; }
-    #trackList li.active {
-      background: #d6d6d6;
+    .track:hover { background: #e8e8e8; }
+    .track.active {
+      background: #d8d8d8;
       font-weight: 600;
+      border-left: 4px solid var(--accent);
     }
 
-    audio {
+    #waveform {
       width: 100%;
-      margin-top: 1rem;
+      height: 120px;
+      margin-bottom: 1rem;
+    }
+
+    .play-button {
+      padding: 12px 20px;
+      border-radius: 8px;
+      background: var(--accent);
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.2s;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .play-button:hover {
+      background: var(--accent-hover);
     }
 
     footer {
@@ -132,7 +161,7 @@
 <body>
 
 <header>
-  <a href="index.html"><img src="EloquenceCréativeLOGOVF 2.png" class="logo-img"></a>
+  <a href="index.html"><img src="EloquenceCréativeLOGOVF 2.png" class="logo-img" alt="Éloquence Créative"></a>
   <nav>
     <ul>
       <li><a href="index.html">Accueil</a></li>
@@ -151,20 +180,22 @@
 </section>
 
 <div class="portfolio-note">
-  Sélection d’extraits sonores illustrant différentes créations réalisées dans le cadre de mon activité de compositeur et sound designer.
+  Sélection d’extraits sonores illustrant mon travail de compositeur et sound designer.
 </div>
 
-<!-- ========= PLAYER AUDIO MOPI (remplace tout) ========== -->
+<!-- ========= PLAYER SOUNDCLOUD-LIKE ========= -->
 <section class="audio-section">
   <h2>Écouter mes créations</h2>
 
-  <ul id="trackList">
-    <li data-src="audio/titre1.mp3">Titre 1 – Nom du morceau</li>
-    <li data-src="audio/titre2.mp3">Titre 2 – Nom du morceau</li>
-    <li data-src="audio/titre3.mp3">Titre 3 – Nom du morceau</li>
-  </ul>
+  <div id="playlist">
+    <button class="track" data-src="audio/titre1.mp3">Titre 1 — Identité sonore</button>
+    <button class="track" data-src="audio/titre2.mp3">Titre 2 — Ambiance immersive</button>
+    <button class="track" data-src="audio/titre3.mp3">Titre 3 — Logo sonore</button>
+  </div>
 
-  <audio id="audio" controls></audio>
+  <div id="waveform"></div>
+
+  <button id="playPause" class="play-button">Lecture</button>
 </section>
 
 <footer>
@@ -172,22 +203,44 @@
 </footer>
 
 <script>
-  const audio = document.getElementById("audio");
-  const tracks = document.querySelectorAll("#trackList li");
-
-  tracks.forEach(track => {
-      track.addEventListener("click", () => {
-          tracks.forEach(t => t.classList.remove("active"));
-          track.classList.add("active");
-          const src = track.getAttribute("data-src");
-          audio.src = src;
-          audio.play();
-      });
+  let wavesurfer = WaveSurfer.create({
+    container: '#waveform',
+    waveColor: '#BBAA99',
+    progressColor: '#AC855E',
+    height: 120,
+    responsive: true,
+    barWidth: 3,
+    barGap: 2,
+    barRadius: 2
   });
 
-  // Lecture automatique du premier titre
-  tracks[0].classList.add("active");
-  audio.src = tracks[0].getAttribute("data-src");
+  const playPause = document.getElementById("playPause");
+  const tracks = document.querySelectorAll(".track");
+
+  function loadTrack(src, button) {
+    tracks.forEach(t => t.classList.remove("active"));
+    button.classList.add("active");
+
+    wavesurfer.load(src);
+    wavesurfer.on('ready', () => {
+      wavesurfer.play();
+      playPause.textContent = "Pause";
+    });
+  }
+
+  tracks.forEach(btn => {
+    btn.addEventListener('click', () => {
+      loadTrack(btn.getAttribute("data-src"), btn);
+    });
+  });
+
+  playPause.addEventListener("click", () => {
+    wavesurfer.playPause();
+    playPause.textContent = wavesurfer.isPlaying() ? "Pause" : "Lecture";
+  });
+
+  // Charger automatiquement le premier titre
+  loadTrack(tracks[0].getAttribute("data-src"), tracks[0]);
 </script>
 
 </body>
