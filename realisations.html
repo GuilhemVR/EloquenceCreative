@@ -149,6 +149,51 @@
       background: var(--accent-hover);
     }
 
+    /* COMPOSER SECTION */
+    .composer-section {
+      max-width: 900px;
+      margin: 4rem auto;
+      padding: 2rem;
+      background: #ffffff;
+      border-radius: 14px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+
+    .composer-section h2 {
+      font-family: 'Playfair Display', serif;
+      text-align: center;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+    }
+
+    .composer-intro {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 1rem;
+    }
+
+    .spotify-wrapper {
+      margin-bottom: 2rem;
+    }
+
+    .video-wrapper {
+      margin: 2rem 0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .band-bio h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--accent);
+      margin-bottom: 0.8rem;
+    }
+
+    .band-bio p {
+      line-height: 1.7;
+    }
+
     footer {
       background: var(--bg-alt);
       padding: 2rem 1rem 1rem;
@@ -196,6 +241,47 @@
   <div id="waveform"></div>
 
   <button id="playPause" class="play-button">Lecture</button>
+</section>
+
+<!-- ========= SECTION A/ORATOS ========= -->
+<section class="composer-section">
+  <h2>Mon travail de compositeur – A/Oratos</h2>
+
+  <p class="composer-intro">
+    En parallèle de mes créations professionnelles, je développe un univers musical
+    cinématique et immersif avec mon groupe <strong>A/Oratos</strong>.
+  </p>
+
+  <!-- PLAYER SPOTIFY -->
+  <div class="spotify-wrapper">
+    <iframe data-testid="embed-iframe" style="border-radius:12px"
+      src="https://open.spotify.com/embed/artist/3DTbRdhoSGCtp6O9wFRxQH?utm_source=generator"
+      width="100%" height="352" frameBorder="0" allowfullscreen=""
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+    </iframe>
+  </div>
+
+  <!-- VIDEO PLAYTHROUGH -->
+  <div class="video-wrapper">
+    <iframe width="100%" height="350"
+      src="https://www.youtube.com/embed/st_iBikyKyY?si=KwhQEHQ6dgidDbVy"
+      title="A/Oratos – Guitar Playthrough"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <!-- COURTE BIO -->
+  <div class="band-bio">
+    <h3>À propos d’A/Oratos</h3>
+    <p>
+      A/Oratos est un projet musical mêlant musique cinématique, metal atmosphérique et textures sonores immersives.
+      Le groupe explore une esthétique à la frontière du sacré, du symbolique et de l’onirique.
+      Cette recherche artistique nourrit ma pratique de compositeur et enrichit mes créations d’identités sonores professionnelles.
+    </p>
+  </div>
 </section>
 
 <footer>
