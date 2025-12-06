@@ -83,70 +83,90 @@
       font-size: 0.98rem;
     }
 
-    /* AUDIO PLAYER */
+    /* ==== PLAYER STYLE SPOTIFY ==== */
+
     .audio-section {
       max-width: 900px;
       margin: 3rem auto;
-      padding: 2rem;
-      background: white;
-      border-radius: 14px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      padding: 0;
+      background: #AC855E;
+      border-radius: 18px;
+      color: #fff;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
     }
 
-    .audio-section h2 {
-      font-family: 'Playfair Display', serif;
-      color: var(--accent);
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      text-align: center;
-    }
-
-    #playlist {
+    .audio-card-header {
       display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 1.5rem;
+      align-items: center;
+      padding: 2rem;
+      gap: 1.5rem;
     }
 
-    .track {
-      padding: 12px 16px;
+    .audio-cover {
+      width: 110px;
+      height: 110px;
+      border-radius: 12px;
+      background: #d6c2ac;
+    }
+
+    .audio-info h2 {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.9rem;
+    }
+
+    .subtitle {
+      margin-top: 4px;
+      opacity: 0.8;
+    }
+
+    .big-play-btn {
+      margin-left: auto;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
       border: none;
-      background: #f4f4f4;
-      border-radius: 8px;
+      background: white;
+      color: #AC855E;
+      font-size: 1.8rem;
+      font-weight: bold;
       cursor: pointer;
-      text-align: left;
-      font-size: 1rem;
       transition: 0.2s;
     }
 
-    .track:hover { background: #e8e8e8; }
-    .track.active {
-      background: #d8d8d8;
-      font-weight: 600;
-      border-left: 4px solid var(--accent);
+    .big-play-btn:hover {
+      transform: scale(1.05);
     }
 
-    #waveform {
-      width: 100%;
-      height: 120px;
-      margin-bottom: 1rem;
+    .track-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
     }
 
-    .play-button {
-      padding: 12px 20px;
-      border-radius: 8px;
-      background: var(--accent);
-      color: white;
-      border: none;
+    .track-list li {
+      background: rgba(255,255,255,0.08);
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       cursor: pointer;
-      font-weight: 600;
-      transition: 0.2s;
-      display: block;
-      margin: 0 auto;
+      transition: background 0.15s;
     }
 
-    .play-button:hover {
-      background: var(--accent-hover);
+    .track-list li:hover {
+      background: rgba(255,255,255,0.18);
+    }
+
+    .track-list li.active {
+      background: rgba(255,255,255,0.3);
+      font-weight: bold;
+    }
+
+    .track-play {
+      opacity: 0.8;
     }
 
     /* COMPOSER SECTION */
@@ -228,43 +248,56 @@
   Sélection d’extraits sonores illustrant mon travail de compositeur et sound designer.
 </div>
 
-<!-- ========= PLAYER SOUNDCLOUD-LIKE ========= -->
+<!-- ========= PLAYER SPOTIFY-LIKE ========= -->
 <section class="audio-section">
-  <h2>Écouter mes créations</h2>
-
-  <div id="playlist">
-    <button class="track" data-src="audio/titre1.mp3">Titre 1 — Identité sonore</button>
-    <button class="track" data-src="audio/titre2.mp3">Titre 2 — Ambiance immersive</button>
-    <button class="track" data-src="audio/titre3.mp3">Titre 3 — Logo sonore</button>
+  <div class="audio-card-header">
+    <div class="audio-cover"></div>
+    <div class="audio-info">
+      <h2>Écouter mes créations</h2>
+      <p class="subtitle">Sélection de compositions</p>
+    </div>
+    <button id="mainPlay" class="big-play-btn">▶</button>
   </div>
 
-  <div id="waveform"></div>
+  <ul id="trackList" class="track-list">
+    <li data-src="audio/titre1.mp3">
+      <span class="track-name">Titre 1 — Identité sonore</span>
+      <span class="track-play">▶</span>
+    </li>
 
-  <button id="playPause" class="play-button">Lecture</button>
+    <li data-src="audio/titre2.mp3">
+      <span class="track-name">Titre 2 — Ambiance immersive</span>
+      <span class="track-play">▶</span>
+    </li>
+
+    <li data-src="audio/titre3.mp3">
+      <span class="track-name">Titre 3 — Logo sonore</span>
+      <span class="track-play">▶</span>
+    </li>
+  </ul>
+
+  <audio id="audio"></audio>
 </section>
 
 <!-- ========= SECTION A/ORATOS ========= -->
 <section class="composer-section">
   <h2>Mon travail de compositeur – A/Oratos</h2>
 
-  <p class="composer-intro">
   <div class="band-bio">
-  <p>
-    En parallèle de mes créations professionnelles, je développe un univers musical conceptuel avec mon groupe de Black Metal 
-    <strong>A/Oratos</strong>. Le projet explore une dimension mystique et ésotérique, portée par une écriture de guitare exigeante, 
-    des arrangements complexes et une approche profondément immersive de la composition.
-  </p>
-  <p>
-    A/Oratos publie un premier EP en <strong>2018</strong>, suivi en <strong>2024</strong> de l’album 
-    <em>Ecclesia Gnostica</em>, sorti chez <strong>Les Acteurs de l’Ombre</strong>. L’album reçoit un accueil élogieux, 
-    salué par la presse française et internationale, et désigné <strong>Album du Mois</strong> par Rock Hard France.
-  </p>
-  <p>
-    Cette démarche artistique nourrit ma pratique de compositeur et enrichit mes créations d’identités sonores professionnelles.
-  </p>
-</div>
-
-  </p>
+    <p>
+      En parallèle de mes créations professionnelles, je développe un univers musical conceptuel avec mon groupe de Black Metal 
+      <strong>A/Oratos</strong>. Le projet explore une dimension mystique et ésotérique, portée par une écriture de guitare exigeante, 
+      des arrangements complexes et une approche profondément immersive de la composition.
+    </p>
+    <p>
+      A/Oratos publie un premier EP en <strong>2018</strong>, suivi en <strong>2024</strong> de l’album 
+      <em>Ecclesia Gnostica</em>, sorti chez <strong>Les Acteurs de l’Ombre</strong>. L’album reçoit un accueil élogieux, 
+      salué par la presse française et internationale, et désigné <strong>Album du Mois</strong> par Rock Hard France.
+    </p>
+    <p>
+      Cette démarche artistique nourrit ma pratique de compositeur et enrichit mes créations d’identités sonores professionnelles.
+    </p>
+  </div>
 
   <!-- PLAYER SPOTIFY -->
   <div class="spotify-wrapper">
@@ -286,50 +319,49 @@
       allowfullscreen>
     </iframe>
   </div>
+</section>
 
 <footer>
   © 2025 Éloquence Créative – Tous droits réservés
 </footer>
 
+<!-- ========= SCRIPT PLAYER ========= -->
 <script>
-  let wavesurfer = WaveSurfer.create({
-    container: '#waveform',
-    waveColor: '#BBAA99',
-    progressColor: '#AC855E',
-    height: 120,
-    responsive: true,
-    barWidth: 3,
-    barGap: 2,
-    barRadius: 2
-  });
+const audio = document.getElementById("audio");
+const tracks = document.querySelectorAll("#trackList li");
+const mainPlay = document.getElementById("mainPlay");
 
-  const playPause = document.getElementById("playPause");
-  const tracks = document.querySelectorAll(".track");
+let currentTrack = null;
 
-  function loadTrack(src, button) {
-    tracks.forEach(t => t.classList.remove("active"));
-    button.classList.add("active");
+function playTrack(li) {
+  tracks.forEach(t => t.classList.remove("active"));
+  li.classList.add("active");
 
-    wavesurfer.load(src);
-    wavesurfer.on('ready', () => {
-      wavesurfer.play();
-      playPause.textContent = "Pause";
-    });
+  const src = li.getAttribute("data-src");
+  audio.src = src;
+  audio.play();
+
+  currentTrack = li;
+  mainPlay.textContent = "❚❚";
+}
+
+tracks.forEach(li => {
+  li.addEventListener("click", () => playTrack(li));
+});
+
+mainPlay.addEventListener("click", () => {
+  if (!currentTrack) {
+    playTrack(tracks[0]);
+    return;
   }
-
-  tracks.forEach(btn => {
-    btn.addEventListener('click', () => {
-      loadTrack(btn.getAttribute("data-src"), btn);
-    });
-  });
-
-  playPause.addEventListener("click", () => {
-    wavesurfer.playPause();
-    playPause.textContent = wavesurfer.isPlaying() ? "Pause" : "Lecture";
-  });
-
-  // Charger automatiquement le premier titre
-  loadTrack(tracks[0].getAttribute("data-src"), tracks[0]);
+  if (audio.paused) {
+    audio.play();
+    mainPlay.textContent = "❚❚";
+  } else {
+    audio.pause();
+    mainPlay.textContent = "▶";
+  }
+});
 </script>
 
 </body>
