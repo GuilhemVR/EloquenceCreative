@@ -1,545 +1,498 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <link rel="icon" type="image/png" href="favicon.png">
-  <meta name="description" content="Consultant en marketing digital, rédaction SEO et branding sonore. Je donne vie à vos projets avec des stratégies sur-mesure, des mots justes et une identité qui résonne.">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Éloquence Créative">
-  <meta name="twitter:description" content="Consultant en marketing digital, rédaction SEO et branding sonore. Je donne vie à vos projets avec des stratégies sur-mesure, des mots justes et une identité qui résonne.">
-  <meta name="twitter:image" content="favicon.png">
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eloquence Créative</title>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Lora&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ==================== SEO ==================== -->
+  <title>Éloquence Créative – Branding Sonore, Logo Sonore et Identité Musicale</title>
+  <meta name="description" content="Éloquence Créative, studio de branding sonore à Paris : logo sonore, identité musicale, UX audio et ambiances sur mesure pour faire résonner votre marque." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Éloquence Créative" />
+  <link rel="canonical" href="https://eloquencecreative.fr/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Éloquence Créative – Branding Sonore" />
+  <meta property="og:description" content="Studio de branding sonore à Paris : logo sonore, identité musicale, UX audio et ambiances sur mesure pour faire résonner votre marque." />
+  <meta property="og:image" content="https://eloquencecreative.fr/images/og-image.jpg" />
+  <meta property="og:url" content="https://eloquencecreative.fr/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- ==================== FAVICONS ==================== -->
+  <link rel="icon" href="favicon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon/web-app-manifest-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="favicon/web-app-manifest-512x512.png">
+  <meta name="theme-color" content="#FAF8F5">
+
+  <!-- ==================== FONTS ==================== -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- ==================== CSS ==================== -->
   <style>
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-    }
-    .desktop-nav {
-      margin-left: auto;
-    }
-    .menu-toggle {
-      display: none;
-    }
-    .tagline {
-      font-size: 1.4rem;
-      font-weight: 600;
-      color: white;
-      background: rgba(0, 0, 0, 0.3);
-      padding: 0.3rem 0.9rem;
-      border-radius: 10px;
-      display: inline-block;
-      transform: rotate(-1deg);
-      animation: flicker 1.2s infinite alternate;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
-    }
     :root {
-      --accent: #76E4D9;
-      --bg: #1F1B2E;
-      --bg-alt: #2A243B;
-      --text: #C9F0FF;
+      --bg: #FAF8F5;
+      --text: #2A2A2A;
+      --accent: #AC855E;
+      --accent-hover: #8A6B4F;
+      --bg-alt: #E5DCD0;
     }
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-      font-family: 'Quicksand', sans-serif;
-      background-color: var(--bg);
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
       color: var(--text);
       line-height: 1.6;
     }
-    nav {
-  background-color: #1B182A;
-  padding: 1rem 2rem;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
+
+    header {
+      background: var(--bg);
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--bg-alt);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .logo-link img { max-height: 80px; width: auto; object-fit: contain; }
+
+    nav ul { list-style: none; display: flex; gap: 1.5rem; }
     nav a {
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 600;
+      text-decoration: none; color: var(--text); font-weight: 600;
       transition: color 0.3s;
     }
-    nav a:hover {
-      color: var(--accent);
+    nav a:hover { color: var(--accent-hover); }
+
+    .burger {
+      display: none; font-size: 1.8rem; font-weight: bold; color: var(--text);
+      background: none; border: none; cursor: pointer;
     }
-    nav img {
-      height: 40px;
-      margin-right: auto;
-      transition: transform 0.3s ease;
-    }
-    nav img:hover {
-      transform: scale(1.1) rotate(-2deg);
-    }
-    header {
-      background-color: var(--accent);
-      color: var(--bg);
-      padding: 4rem 2rem;
+
+    /* ================= HERO ================= */
+    .hero {
       text-align: center;
-    }
-    .header-content {
-      max-width: 1100px;
-      margin: auto;
-    }
-        .cta-button {
-      display: inline-block;
-      padding: 0.6rem 1.2rem;
-      margin-top: 1.5rem;
-      background: linear-gradient(135deg, var(--bg-alt), var(--bg));
-      color: var(--accent);
-      border: none;
-      border-radius: 8px;
-      font-weight: bold;
-      font-size: 0.95rem;
-      text-align: center;
-      text-decoration: none;
-      box-shadow: 0 0 6px rgba(118, 228, 217, 0.25);
-      transition: transform 0.2s ease, box-shadow 0.3s ease;
-    }
-    .cta-button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 16px rgba(118, 228, 217, 0.6);
-      background: linear-gradient(135deg, var(--bg), var(--bg-alt));
-      color: white;
-    }
-    section {
-      padding: 3rem 2rem;
-      max-width: 1100px;
-      margin: auto;
-    }
-    h2 {
-      color: var(--accent);
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-    }
-    .services-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-    .service {
-      background-color: var(--bg-alt);
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-    }
-    .service:hover {
-      transform: scale(1.03);
-      box-shadow: 0 6px 20px rgba(118, 228, 217, 0.3);
-    }
-    .service em {
-      display: block;
-      margin-top: 1rem;
-      color: #aaa;
-    }
-    .pricing p,
-    #contact p {
-      margin-bottom: 1rem;
-    }
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
+      padding: 6rem 2rem 5rem;
+      background: var(--bg);
+      position: relative;
       width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
+      max-width: 1400px;
+      margin: 0 auto;
     }
-    .modal-content {
-      background-color: var(--bg-alt);
-      padding: 2rem;
-      border-radius: 12px;
-      max-width: 600px;
-      width: 90%;
-      color: var(--text);
-      text-align: left;
-    }
-    .modal-close {
-      float: right;
-      cursor: pointer;
-      font-size: 1.2rem;
-      color: var(--accent);
-    }
-    @keyframes flicker {
-      from { opacity: 1; }
-      to { opacity: 0.6; }
-    }
-      @media (max-width: 768px) {
-  .desktop-nav {
-    display: none;
-  }
-  .menu-toggle {
-    display: block;
-  }
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem;
-  }
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    gap: 1rem;
-    padding-top: 1rem;
-  }
-  .nav-links.show {
-    display: flex;
-  }
-  .menu-toggle {
-    display: block;
-    background: none;
-    border: none;
-    color: var(--accent);
-    font-size: 1.5rem;
-    cursor: pointer;
-    margin-left: auto;
-  }
-}
-      nav a {
-        padding: 0.5rem 0;
-        font-size: 1rem;
-      }
-      nav img {
-        margin-bottom: 0.5rem;
-      }
-    }
-</style>
-</head>
-<body>
-  <nav>
-  <a href="#top"><img src="logo.png" alt="Logo Éloquence Créative"></a>
-  <div class="nav-links desktop-nav">
-  <a href="#about">À propos</a>
-  <div class="dropdown" style="position: relative; display: inline-block;">
-    <a href="#services" style="padding: 0.5rem 0; font-size: 1rem; line-height: 1.5rem; display: inline-block;" onclick="toggleDropdown(event)">Services ▼</a>
-    <div class="dropdown-content" style="display: block; position: absolute; background-color: #1B182A; margin-top: 0.5rem; padding: 0.5rem; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
-      <a href="marketing.html">Marketing digital</a>
-      <a href="redaction.html">Rédaction SEO</a>
-      <a href="branding.html">Branding sonore</a>
-    </div>
-  </div>
-  <a href="#method">Ma méthode</a>
-  <a href="#pricing">Tarifs</a>
-  <a href="#contact">Contact</a>
-</div>
-<script>
-function toggleDropdown(event) {
-  event.preventDefault();
-  const dropdown = document.querySelector('.dropdown-content');
-  dropdown.classList.toggle('show');
-  dropdown.style.display = dropdown.classList.contains('show') ? 'block' : 'none';
-}
-  document.addEventListener('click', function (e) {
-    const dropdown = document.querySelector('.dropdown-content');
-    if (!e.target.closest('.dropdown')) {
-      dropdown.classList.remove('show');
-      dropdown.style.display = 'none';
-    } else {
-      dropdown.style.display = dropdown.classList.contains('show') ? 'block' : 'none';
-    }
-  });
-</script>
-    
-  </nav>
-  <header>
-    <div class="header-content" style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
-      <p class="tagline">Vos projets méritent des mots <strong><u>justes</u></strong> et une stratégie web qui leur donne <strong><u>vie</u></strong> !</p>
-      <a href="#services" class="cta-button">Découvrir mes services</a>
-    </div>
-  
-  </header>
-
-  <section id="about">
-    <h2>À propos</h2>
-    <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
-      <img src="portrait.png" alt="Portrait de Guilhem, consultant en marketing digital et rédaction SEO, bras croisés devant une baie vitrée avec plante en arrière-plan." style="border-radius: 50%; border: 4px solid var(--accent); width: 180px; height: 180px; object-fit: cover;">
-      <p style="flex: 1; min-width: 250px;">Je suis Guilhem, consultant indépendant en marketing digital et rédaction SEO. Mon métier : transformer des idées en stratégies efficaces, des mots en leviers de visibilité, et des contenus en véritables vecteurs d’identité. J’accompagne les marques qui veulent prendre la parole avec justesse, créativité et impact — et je le fais avec méthode, rigueur… et un peu d’enthousiasme, toujours. <br><br>Parce que l’image de marque passe aussi par l’oreille, je conçois des logos sonores qui renforcent votre présence, même quand l’écran est éteint.</p>
-    </div>
-  </section>
-
-  <section id="services">
-    <h2>Services</h2>
-    <div class="services-grid">
-  <a href="marketing.html" class="service" style="text-decoration: none; color: inherit;">
-    <div style="display: flex; flex-direction: column; align-items: center;">
-      <h3 style="font-size: 1.2rem; color: var(--accent); margin-bottom: 0.5rem;">📣 Marketing digital</h3>
-      <p style="margin: 0.5rem 0; text-align: center; color: var(--text);">Marketer full stack, j’interviens à 360° sur toutes les étapes d’une stratégie digitale jusqu’à la célébration des résultats.</p>
-      <em style="color: #aaa; text-align: center;">Je suis comme un couteau suisse, mais sans le tire-bouchon inutile.</em>
-    </div>
-  </a>
-  <a href="redaction.html" class="service" style="text-decoration: none; color: inherit;">
-    <div style="display: flex; flex-direction: column; align-items: center;">
-      <h3 style="font-size: 1.2rem; color: var(--accent); margin-bottom: 0.5rem;">✍️ Rédaction SEO</h3>
-      <p style="margin: 0.5rem 0; text-align: center; color: var(--text);">Des contenus optimisés pour les moteurs de recherche, pensés d'abord pour les humains.</p>
-      <em style="color: #aaa; text-align: center;">Mes textes sont bien référencés, mais promis, ils ne parleront pas comme des robots en lithium sous anxiolytiques.</em>
-    </div>
-  </a>
-  <a href="branding.html" class="service" style="text-decoration: none; color: inherit;">
-    <div style="display: flex; flex-direction: column; align-items: center;">
-      <h3 style="font-size: 1.2rem; color: var(--accent); margin-bottom: 0.5rem;">🎧 Branding sonore</h3>
-      <p style="margin: 0.5rem 0; text-align: center; color: var(--text);">Un logo visuel, c’est bien. Un logo qui s’entend pour créer une émotion durable c’est mieux.</p>
-      <em style="color: #aaa; text-align: center;">Oui, j’fais parler les pixels.</em>
-    </div>
-  </a>
-</div>
-</section>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Éloquence Créative</title>
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Lora&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --accent: #76E4D9;
-      --bg: #1F1B2E;
-      --bg-alt: #2A243B;
-      --text: #C9F0FF;
-    }
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      font-family: 'Quicksand', sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-    section {
-      padding: 3rem 2rem;
-      max-width: 1100px;
-      margin: auto;
-    }
-    h2 {
-      color: var(--accent);
-      font-size: 1.8rem;
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      line-height: 1.2;
       margin-bottom: 1rem;
     }
-    .services-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-    .service {
-      background-color: var(--bg-alt);
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      text-align: left;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: default;
-    }
-    .service:hover {
-      transform: scale(1.01);
-      box-shadow: 0 6px 20px rgba(118, 228, 217, 0.3);
-    }
-    .service h3 {
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
+    .hero h1 strong { color: var(--accent); }
+    .animated-word {
       color: var(--accent);
+      display: inline-block;
+      animation: waveText 1.2s infinite ease-in-out;
     }
+    @keyframes waveText {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+
+    .hero p { font-size: 1.2rem; margin-bottom: 2rem; }
+
+    .cta-button {
+      background: var(--accent); color: #fff; border: none;
+      padding: 0.8rem 1.5rem; font-weight: 600;
+      border-radius: 8px; font-size: 1rem; cursor: pointer;
+      text-decoration: none; transition: background 0.3s;
+      display: inline-block;
+    }
+    .cta-button:hover { background: var(--accent-hover); }
+
+    .hero-quote {
+      font-style: italic; font-size: 1.1rem; line-height: 1.8;
+      max-width: 800px; margin: 2rem auto 0; padding: 1rem 1.5rem;
+      background: #F2EEE8; border-left: 4px solid var(--accent); border-radius: 8px;
+    }
+
+    /* ================= WAVEFORM ================= */
+    .wave-animation {
+      position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+      display: flex; gap: 4px; height: 60px; opacity: 0.4;
+    }
+    .wave-animation span {
+      display: block; width: 4px; background: var(--accent);
+      animation: wavePulse 1.2s infinite ease-in-out;
+      border-radius: 20px;
+    }
+    .wave-animation span:nth-child(n) { animation-delay: calc(0.1s * var(--i)); }
+    @keyframes wavePulse {
+      0%,100% { height: 20%; }
+      50% { height: 100%; }
+    }
+
+    section { padding: 4rem 2rem; max-width: 900px; margin: auto; }
+    section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem; color: var(--accent); text-align: center; margin-bottom: 1.5rem;
+    }
+    section p { font-size: 1.1rem; line-height: 1.8; text-align: center; margin-bottom: 2rem; }
+
+    .services ul { list-style: none; display: grid; gap: 2rem; max-width: 700px; margin: auto; padding-left: 0; }
+    .services li strong { color: var(--accent); }
+
+    @media screen and (min-width: 1024px) {
+      .hero h1 {
+        white-space: nowrap;
+        font-size: 2.2rem;
+        max-width: 90%;
+        margin: 0 auto;
+      }
+    }
+    @media(max-width:768px){
+      nav ul {
+        display: none; flex-direction: column; background: var(--bg);
+        position: absolute; top: 100%; right: 2rem;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 8px; padding: 1rem;
+      }
+      nav ul.show { display: flex; }
+      .burger { display: block; }
+      .hero h1 { font-size: 1.8rem; white-space: normal; }
+      .hero p { font-size: 1.05rem; }
+      .wave-animation { height: 40px; gap: 3px; }
+      .wave-animation span { width: 3px; }
+    }
+
+    /* ===== Cookie banner & modal ===== */
+    #cookie-banner {
+      display:none;
+      position:fixed; bottom:0; left:0; width:100%;
+      background:#fff; color:#000; border-top:1px solid #ccc;
+      padding:1rem; text-align:center; z-index:9999;
+      box-shadow:0 -2px 5px rgba(0,0,0,0.1);
+    }
+    #cookie-banner button {
+      margin-left:0.5rem; padding:0.4rem 0.8rem;
+      background:var(--accent); color:#fff; border:none; border-radius:5px; cursor:pointer;
+    }
+    #cookie-modal {
+      display:none;
+      position:fixed; top:0; left:0; width:100%; height:100%;
+      background:rgba(0,0,0,0.5); justify-content:center; align-items:center; z-index:10000;
+    }
+    #cookie-modal .modal-content {
+      background:#fff; padding:2rem; max-width:400px; border-radius:8px; text-align:center;
+    }
+    #cookie-modal button {
+      margin-top:1rem; padding:0.5rem 1rem; border:none; cursor:pointer; border-radius:5px;
+    }
+    #cookie-modal .accept { background:var(--accent); color:#fff; }
+    #cookie-modal .decline { background:#ccc; }
+
+/* ===== Bandeau BLEU D’ECLIPSE ===== */
+.banner-bleu {
+  background: rgba(172,133,94,0.07);       /* doré clair subtil */
+  color: var(--accent);
+  text-align: center;
+  padding: 2rem 2rem;
+  margin: 3rem auto;
+  max-width: 900px;
+  border: 1px solid rgba(172,133,94,0.25);  /* fine bordure dorée */
+  border-radius: 12px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.banner-bleu p {
+  margin-bottom: 1.2rem;
+}
+
+.banner-bleu .banner-button {
+  background: var(--accent);               /* bouton doré site */
+  color: #fff;
+  padding: 0.7rem 1.6rem;
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  display: inline-block;
+}
+
+.banner-bleu .banner-button:hover {
+  background: var(--accent-hover);
+}
+
+
   </style>
 </head>
-<body>
 
-<section id="cases" style="background-color: #2A243B; padding: 4rem 2rem;">
-  <h2 style="text-align: center; color: var(--accent); margin-bottom: 2rem;">Cas clients</h2>
-  <div class="services-grid">
-    <div class="service">
-      <h3>🚀 Start-up FinTech – Lancement d’un blog SEO</h3>
-      <p><strong>Client :</strong> Start-up dans la finance responsable</p>
-      <p><strong>Problème :</strong> Elle a une solution B2B innovante, mais personne ne la trouve sur Google.</p>
-      <p><strong>Mission :</strong><br>
-        • Création d’une stratégie éditoriale SEO pour leur blog<br>
-        • Rédaction d’articles ciblés “intention d’achat”<br>
-        • Optimisation des pages services et de la home
-      </p>
-      <p><strong>Résultat :</strong> +200% de trafic organique en 4 mois, hausse des demandes de démo.</p>
-      <p><strong>Service mobilisé :</strong> 🖋 Rédaction SEO</p>
+<body>
+  <header>
+    <a href="index.html" class="logo-link">
+      <img src="EloquenceCréativeLOGOVF 2.png" alt="Logo Éloquence Créative – Studio de Branding Sonore">
+    </a>
+    <nav>
+      <button class="burger" onclick="toggleMenu()" aria-label="Menu mobile">☰</button>
+      <ul id="menu">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="apropos.html">À propos</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <h1>
+      Faites <strong class="animated-word">résonner</strong> votre marque avec une
+      <strong>identité sonore mémorable</strong>
+    </h1>
+    <p>Artisan du son, je connecte votre marque à votre public grâce au pouvoir de la musique.</p>
+    <a href="portfolio.html" class="cta-button">🎧 Écouter les réalisations</a>
+
+    <blockquote class="hero-quote">
+      Dans un monde saturé d'images et de bruits, votre marque mérite la plus belle des voix.<br><br>
+      Une identité sonore permet à votre marque d’être reconnue sans être vue, d’émouvoir sans dire un mot, et de renforcer votre univers là où l’image ne suffit plus.
+    </blockquote>
+
+    <div class="wave-animation" aria-hidden="true">
+      <span style="--i:0"></span><span style="--i:1"></span><span style="--i:2"></span><span style="--i:3"></span><span style="--i:4"></span>
+      <span style="--i:5"></span><span style="--i:6"></span><span style="--i:7"></span><span style="--i:8"></span><span style="--i:9"></span>
     </div>
-    <div class="service">
-      <h3>🏭 PME industrielle – Modernisation de la présence en ligne</h3>
-      <p><strong>Client :</strong> Fabricant B2B dans l’agroéquipement</p>
-      <p><strong>Problème :</strong> Site vitrine daté, visibilité nulle, branding inexistant</p>
-      <p><strong>Mission :</strong><br>
-        • Audit digital + refonte du message de marque<br>
-        • Création de contenus web pour le nouveau site<br>
-        • Conseil sur la navigation et l’UX
-      </p>
-      <p><strong>Résultat :</strong> Site modernisé, + de demandes entrantes via formulaire, image plus pro</p>
-      <p><strong>Service mobilisé :</strong> 💻 Marketing digital</p>
+  </section>
+
+  <!-- ================= Identité sonore ================= -->
+  <section id="identite-sonore">
+    <h2>Une signature auditive à la hauteur de votre image</h2>
+    <p>Le branding sonore désigne l’ensemble des éléments sonores qui incarnent une marque de manière cohérente, émotionnelle et reconnaissable. Il ajoute une <strong>dimension sensorielle forte</strong> capable de renforcer l'empreinte mémorielle de la marque et de créer un lien profond avec son audience.</p>
+  </section>
+  
+<!-- ===== Bandeau Bleu d'Eclipse ===== -->
+<div class="banner-bleu">
+  <p>🎧 Découvrez ma dernière création sonore&nbsp;: <em>Bleu d’Eclipse</em></p>
+
+  <!-- Lecteur audio intégré -->
+  <audio controls style="width: 250px; margin-top: 0.8rem; border-radius: 6px;">
+    <source src="Eloquence Créative - Portfolio Bleu d'Eclipse Parfum.wav" type="audio/wav">
+    Votre navigateur ne supporte pas la lecture audio.
+  </audio>
+</div>
+
+  <!-- ================= Services ================= -->
+  <section class="services">
+    <h2>Mes services</h2>
+    <p>Des créations sur-mesure qui donnent de la voix à votre marque. Que vous souhaitiez marquer les esprits, enrichir l’expérience client ou structurer une identité audio cohérente, je vous accompagne à chaque étape de votre univers sonore.</p>
+    <ul>
+      <li><strong>🎧 Logo sonore</strong> – Une signature sonore brève et percutante, pensée pour accompagner l’apparition de votre logo sur tous vos supports.</li>
+      <li><strong>🎼 Musique de marque et à l'image</strong> – Une bande-son originale et synchronisée avec l'image pour vos films publicitaires, vidéos de marque et vos contenus digitaux.</li>
+      <li><strong>🎛 Ambiance sonore UX / in-store</strong> – Une atmosphère sonore immersive pour sublimer l'experience client en boutique et sur vos applications ou évènements .</li>
+    </ul>
+    <div style="text-align:center;margin-top:3rem;">
+      <a href="services.html" class="cta-button">👉 Découvrir mes services</a>
     </div>
-    <div class="service">
-      <h3>🧠 Start-up tech – Création d’un logo sonore</h3>
-      <p><strong>Client :</strong> Plateforme SaaS RH</p>
-      <p><strong>Problème :</strong> Branding très visuel, mais peu mémorable à l’oral</p>
-      <p><strong>Mission :</strong><br>
-        • Création d’un logo sonore diffusé sur vidéos, podcast & onboarding<br>
-        • Travail autour des valeurs de marque et de l’univers émotionnel
-      </p>
-      <p><strong>Résultat :</strong> Un son qui “colle à la peau”, + cohérence multisensorielle</p>
-      <p><strong>Service mobilisé :</strong> 🎧 Branding sonore</p>
-    </div>
-    <div class="service">
-      <h3>💼 Cabinet de conseil – Positionnement éditorial</h3>
-      <p><strong>Client :</strong> ETI dans la stratégie d’entreprise</p>
-      <p><strong>Problème :</strong> Leur site est flou, leurs services mal expliqués, pas de différenciation</p>
-      <p><strong>Mission :</strong><br>
-        • Refonte complète des textes du site<br>
-        • Construction d’un discours clair et différenciant<br>
-        • Création d’un manifeste éditorial pour leurs supports commerciaux
-      </p>
-      <p><strong>Résultat :</strong> Une image plus haut de gamme, message mieux compris par les prospects</p>
-      <p><strong>Service mobilisé :</strong> ✍️ Rédaction SEO + stratégie de contenu</p>
-    </div>
-    <div class="service">
-      <h3>🔧 PME tech industrielle – Acquisition via LinkedIn</h3>
-      <p><strong>Client :</strong> Éditeur d’outils de supervision IoT</p>
-      <p><strong>Problème :</strong> Pas de notoriété sur LinkedIn, pas d’acquisition organique</p>
-      <p><strong>Mission :</strong><br>
-        • Définition d’un positionnement éditorial LinkedIn<br>
-        • Création de posts à forte valeur ajoutée + gestion du calendrier<br>
-        • Analyse des retours / ajustements
-      </p>
-      <p><strong>Résultat :</strong> +700 abonnés qualifiés en 3 mois, demandes de démo entrantes</p>
-      <p><strong>Service mobilisé :</strong> 📣 Marketing digital</p>
-    </div>
-    <div class="service">
-      <h3>🧾 Plateforme B2B de services juridiques – Alignement branding & contenu</h3>
-      <p><strong>Client :</strong> LegalTech en croissance, ciblant les PME avec une offre d’abonnement juridique</p>
-      <p><strong>Problème :</strong> Un site bien conçu mais un discours trop générique. Leur branding ne reflétait pas la proximité ni la fiabilité attendue pour un sujet sensible.</p>
-      <p><strong>Mission :</strong><br>
-        • Repositionnement du ton éditorial et hiérarchisation du contenu<br>
-        • Réécriture des pages principales en mode copywriting rassurant + SEO<br>
-        • Création d’un jingle sonore pour les vidéos tutos et les podcasts de la boîte
-      </p>
-      <p><strong>Résultat :</strong> Temps passé sur le site x2, meilleure image de marque, +30% de transformation sur les pages d’atterrissage</p>
-      <p><strong>Services mobilisés :</strong> ✍️ Rédaction SEO + 🎧 Branding sonore</p>
-    </div>
+  </section>
+
+  <!-- ================= À propos ================= -->
+  <section id="approche" style="background:#FAF8F5; padding:4rem 2rem;">
+  <div style="max-width:900px; margin:auto; font-family:'Inter',sans-serif; color:#2A2A2A; line-height:1.7;">
+
+    <h2 style="
+      font-family:'Playfair Display',serif;
+      font-size:2.4rem;
+      color:#AC855E;
+      text-align:center;
+      margin-bottom:2.5rem;">
+      Mon approche
+    </h2>
+
+    <p style="font-size:1.05rem; margin-bottom:2rem; text-align:center;">
+      Chez <strong>Éloquence Créative</strong>, chaque identité sonore est pensée comme une 
+      <strong>signature raffinée</strong> : un langage musical sur-mesure qui traduit l’essence d’une marque
+      et crée une résonance émotionnelle durable auprès de son public.
+    </p>
+
+    <!-- Écouter avant de composer -->
+    <h3 style="
+      font-family:'Playfair Display',serif;
+      font-size:1.6rem;
+      color:#AC855E;
+      margin-top:2.5rem;
+      margin-bottom:1rem;">
+      Écouter avant de composer
+    </h3>
+    <p style="font-size:1.05rem; margin-bottom:1.5rem;">
+      Chaque projet commence par une phase d’<strong>écoute attentive et d’analyse stratégique</strong> :
+      comprendre l’histoire de la marque, ses valeurs, ses publics et les émotions qu’elle souhaite susciter.
+      Cette immersion me permet de cerner son ADN et de définir les codes sonores qui lui correspondent.
+    </p>
+
+    <!-- De la stratégie à l’émotion -->
+    <h3 style="
+      font-family:'Playfair Display',serif;
+      font-size:1.6rem;
+      color:#AC855E;
+      margin-top:2.5rem;
+      margin-bottom:1rem;">
+      De la stratégie à l’émotion
+    </h3>
+    <p style="font-size:1.05rem; margin-bottom:1.5rem;">
+      Nous construisons ensuite un <strong>univers sonore cohérent</strong>, en élaborant un moodboard de textures,
+      de rythmes et de timbres qui incarnent l’identité de la marque.
+      L’objectif : créer une <strong>expérience sensorielle</strong>
+      où chaque note devient porteuse de sens et de mémoire.
+    </p>
+
+    <!-- L’exigence du détail et du raffinement -->
+    <h3 style="
+      font-family:'Playfair Display',serif;
+      font-size:1.6rem;
+      color:#AC855E;
+      margin-top:2.5rem;
+      margin-bottom:1rem;">
+      L’exigence du détail et du raffinement
+    </h3>
+    <p style="font-size:1.05rem; margin-bottom:1.5rem;">
+      Passionné par la composition musicale, 
+      <strong>j’accorde une attention particulière à la texture des sons,
+      à la dynamique des harmonies et au pouvoir évocateur des timbres.</strong>
+      Chaque identité sonore devient ainsi un marqueur émotionnel durable,
+      pensé pour renforcer la mémoire auditive et l’élégance de votre image.
+    </p>
+    <p style="font-size:1.05rem; margin-bottom:1.5rem;">
+      J'attache également une <strong>attention particulière aux nuances, aux silences et à la dynamique musicale</strong> :
+      ce sont ces détails subtils qui rendent une identité sonore élégante, reconnaissable et intemporelle.
+      Chaque composition est pensée pour refléter le <strong>raffinement et la singularité</strong> de la marque :
+      ni générique ni intrusif, mais un <strong>art appliqué au service de l’image de marque</strong>.
+    </p>
+
+    <!-- Un actif de marque durable -->
+    <h3 style="
+      font-family:'Playfair Display',serif;
+      font-size:1.6rem;
+      color:#AC855E;
+      margin-top:2.5rem;
+      margin-bottom:1rem;">
+      Un actif de marque durable
+    </h3>
+    <p style="font-size:1.05rem;">
+      Une identité sonore dépasse l'intention d'une création artistique : elle devient un
+      <strong>actif stratégique</strong>.
+      Elle renforce la cohérence entre les différents points de contact : campagnes TV et digitales,
+      UX des applications, ambiance en magasin, événements... Et contribue à ancrer la marque
+      dans la mémoire collective de son audience.
+    </p>
+
   </div>
 </section>
-</body>
-</html>
-  <section id="method">
-    <h2>Ma méthode</h2>
-    <div style="display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); text-align: center;">
+
+
+  <!-- ================= FOOTER ================= -->
+  <footer style="background:var(--bg-alt);color:var(--text);padding:2rem 1rem 1.2rem;font-size:0.9rem;margin-top:3rem;">
+    <div style="max-width:1100px;margin:auto;display:flex;justify-content:center;align-items:flex-start;gap:6rem;flex-wrap:wrap;text-align:center;">
       <div>
-        <h3>🧭 Écoute & Diagnostic</h3>
-        <p>On échange sur vos besoins, objectifs et contraintes. Je m’imprègne de votre univers pour comprendre ce qui fait votre singularité.</p>
+        <h3 style="font-family:'Playfair Display',serif;color:var(--accent);font-size:1.1rem;margin-bottom:0.8rem;">Navigation</h3>
+        <nav style="display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap;font-size:0.95rem;">
+          <a href="index.html" style="text-decoration:none;color:var(--text);">Accueil</a><span>|</span>
+          <a href="services.html" style="text-decoration:none;color:var(--text);">Services</a><span>|</span>
+          <a href="portfolio.html" style="text-decoration:none;color:var(--text);">Portfolio</a><span>|</span>
+          <a href="apropos.html" style="text-decoration:none;color:var(--text);">À propos</a><span>|</span>
+          <a href="faq.html" style="text-decoration:none;color:var(--text);">FAQ</a><span>|</span>
+          <a href="contact.html" style="text-decoration:none;color:var(--text);">Contact</a>
+        </nav>
       </div>
       <div>
-        <h3>🧠 Stratégie personnalisée</h3>
-        <p>Je construis un plan d’action clair, orienté résultats : contenu, référencement, communication, branding… en fonction de votre maturité digitale.</p>
-      </div>
-      <div>
-        <h3>🎯 Création & Suivi</h3>
-        <p>Je rédige, j’optimise, je vous rends fier. Et je vous accompagne sur la durée pour ajuster et faire évoluer ce qu’on construit ensemble.</p>
+        <h3 style="font-family:'Playfair Display',serif;color:var(--accent);font-size:1.1rem;margin-bottom:0.8rem;">Contact</h3>
+        <p><a href="mailto:guilhem@eloquencecreative.fr" style="color:var(--text);text-decoration:none;">guilhem@eloquencecreative.fr</a></p>
+        <p><a href="https://www.linkedin.com/in/guilhem-vallery-radot/" target="_blank" style="color:var(--text);text-decoration:none;">LinkedIn</a></p>
+        <button onclick="openCookieSettings()" style="margin-top:0.7rem;background:var(--accent);color:#fff;border:none;padding:0.5rem 1rem;border-radius:6px;font-size:0.85rem;cursor:pointer;">Gérer mes cookies</button>
       </div>
     </div>
-  </section>
+    <div style="border-top:1px solid rgba(0,0,0,0.1);margin-top:2rem;padding-top:0.8rem;font-size:0.8rem;text-align:center;">
+      <p>© 2025 Éloquence Créative – Tous droits réservés</p>
+      <p style="margin-top:0.3rem;">
+        <a href="mentions-legales.html" style="text-decoration:none;color:var(--text);">Mentions légales</a> |
+        <a href="politique-cookies.html" style="text-decoration:none;color:var(--text);">Politique de confidentialité & cookies</a>
+      </p>
+    </div>
+  </footer>
 
-  <section id="pricing">
-    <h2>Tarifs</h2>
-    <p><strong>Conseils en marketing digital et rédaction SEO</strong></p>
-    <p><strong>TJM : 250€</strong> – pour des interventions ponctuelles ou à la journée.</p>
-    <p>Des <strong>forfaits sur mesure</strong> sont également proposés pour les missions longues ou récurrentes, à définir ensemble selon vos besoins.</p>
-    <p><strong>Branding sonore</strong></p>
-    <p>Un premier échange permet d’évaluer votre projet et de comprendre votre brief afin de vous proposer un devis sur mesure.</p>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Vous pouvez me contacter à l'adresse suivante : 📧 <a href="mailto:guilhem@eloquencecreative.fr" style="color: var(--accent); text-decoration: none; font-weight: bold;">guilhem@eloquencecreative.fr</a></p>
-    <p>Téléphone : 📞 <a href="tel:+33636666157" style="color: var(--accent); text-decoration: none; font-weight: bold;">06 36 66 61 57</a></p>
-    <a class="cta-button" href="https://calendly.com/guilhem-eloquencecreative/30min" target="_blank" rel="noopener noreferrer">Prendre rendez-vous</a>
-    <form action="https://formspree.io/f/mdkeykwk" method="POST" style="margin-top: 2rem; max-width: 500px;" onsubmit="return validateCaptcha();">
-  <div style="margin-bottom: 1rem;">
-    <label for="captcha">Combien font 3 + 5 ? (Anti-robot)</label><br>
-    <input type="text" id="captcha" name="captcha" required pattern="8" title="Répondez correctement à la question pour prouver que vous êtes humain." style="width: 100px; padding: 0.3rem; border-radius: 4px; border: none;">
+  <!-- ===== Cookie Banner & Modal ===== -->
+  <div id="cookie-banner">
+    Ce site utilise des cookies pour mesurer l’audience et améliorer votre expérience.
+    <button onclick="acceptCookies()">Accepter</button>
+    <button onclick="declineCookies()">Refuser</button>
   </div>
-  <div style="margin-bottom: 1rem;">
-    <label for="email">Votre email :</label><br>
-    <input type="email" id="email" name="email" required style="padding: 0.5rem; border-radius: 4px; border: none; width: 100%;">
-  </div>
-  <div style="margin-bottom: 1rem;">
-    <label for="message">Votre message :</label><br>
-    <textarea id="message" name="message" rows="5" required style="padding: 0.5rem; border-radius: 4px; border: none; width: 100%;"></textarea>
-  </div>
-  <button type="submit" class="cta-button">Envoyer</button>
-  <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--accent);">Un message de confirmation s’affichera après l’envoi.</p>
-</form>
 
-  </section>
+  <div id="cookie-modal">
+    <div class="modal-content">
+      <h3>Préférences cookies</h3>
+      <p>Vous pouvez activer ou désactiver la mesure d’audience (Google Analytics).</p>
+      <button class="accept" onclick="acceptCookies()">Autoriser</button>
+      <button class="decline" onclick="declineCookies()">Désactiver</button>
+      <button style="background:#eee;" onclick="closeCookieModal()">Fermer</button>
+    </div>
+  </div>
 
+  <!-- ================= SCRIPTS ================= -->
   <script>
-    function openModal(id) {
-      document.getElementById(id).style.display = 'flex';
+    function toggleMenu(){ document.getElementById("menu").classList.toggle("show"); }
+
+    // Bannière cookies
+    function openCookieSettings(){
+      document.getElementById("cookie-modal").style.display = "flex";
     }
-    function closeModal(event) {
-      if (event.target.classList.contains('modal') || event.target.classList.contains('modal-close')) {
-        event.currentTarget.style.display = 'none';
-      }
+    function closeCookieModal(){
+      document.getElementById("cookie-modal").style.display = "none";
     }
-      // Formspree confirmation message
-    const form = document.querySelector("form[action^='https://formspree.io']");
-    form.addEventListener("submit", async function (e) {
-      e.preventDefault();
-      const data = new FormData(form);
-      const response = await fetch(form.action, {
-        method: "POST",
-        body: data,
-        headers: {
-          Accept: "application/json",
-        },
-      });
-      if (response.ok) {
-        form.innerHTML = "<p style='color: var(--accent); font-weight: bold; font-size: 1.1rem;'>Merci pour votre message et votre intérêt ! Je reviens vers vous rapidement. À bientôt 😊</p>";
-      }
+
+    function acceptCookies(){
+      localStorage.setItem("cookiesAccepted","true");
+      document.getElementById("cookie-banner").style.display="none";
+      document.getElementById("cookie-modal").style.display="none";
+      loadGoogleAnalytics();
+    }
+    function declineCookies(){
+      localStorage.setItem("cookiesAccepted","false");
+      document.getElementById("cookie-banner").style.display="none";
+      document.getElementById("cookie-modal").style.display="none";
+    }
+
+    window.addEventListener("load",()=>{
+      const consent = localStorage.getItem("cookiesAccepted");
+      if(consent==="true"){ loadGoogleAnalytics(); }
+      else if(consent!=="false"){ document.getElementById("cookie-banner").style.display="block"; }
     });
-  function validateCaptcha() {
-  const captchaInput = document.getElementById('captcha');
-  if (captchaInput.value.trim() !== "8") {
-    alert("Merci de répondre correctement à la question anti-robot.");
-    captchaInput.focus();
-    return false;
-  }
-  return true;
-}
-</script>
-<footer style="background-color: #1B182A; color: var(--text); text-align: center; padding: 2rem 1rem; margin-top: 4rem; font-size: 0.9rem;">
-  <p>© 2024 Éloquence Créative – Guilhem VR</p>
-  <p>Des idées, des mots, du son… et un peu de style.</p>
-  <p>
-    <a href="mailto:guilhem@eloquencecreative.fr" style="color: var(--accent); text-decoration: none; font-weight: bold;">guilhem@eloquencecreative.fr</a> · 
-    <a href="tel:+33636666157" style="color: var(--accent); text-decoration: none; font-weight: bold;">06 36 66 61 57</a> · 
-    <a href="https://www.linkedin.com/in/guilhem-vallery-radot/" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: none; font-weight: bold; display: inline-flex; align-items: center; gap: 0.3rem; vertical-align: middle;">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="position: relative; top: 0px;">
-        <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zM4.943 13.569V6.169H2.542v7.4h2.401zM3.743 5.124c.837 0 1.356-.554 1.356-1.248-.015-.709-.519-1.247-1.341-1.247-.822 0-1.356.538-1.356 1.247 0 .694.519 1.248 1.326 1.248h.015zm4.29 8.445h2.4v-4.146c0-.222.016-.444.081-.602.177-.444.582-.904 1.262-.904.89 0 1.246.682 1.246 1.682v3.97h2.401v-4.253c0-2.278-1.215-3.337-2.836-3.337-1.304 0-1.888.721-2.212 1.228h.016v-1.056h-2.4c.03.683 0 7.4 0 7.4z"/>
-      </svg>
-      LinkedIn
-    </a>
-  </p>
-</footer>
-</footer>
+
+    // Charger GA4 seulement après consentement
+    function loadGoogleAnalytics(){
+      if(window.gaLoaded) return;
+      window.gaLoaded = true;
+      const script1 = document.createElement("script");
+      script1.async = true;
+      script1.src = "https://www.googletagmanager.com/gtag/js?id=G-M9SM7L6HEH";
+      document.head.appendChild(script1);
+
+      const script2 = document.createElement("script");
+      script2.innerHTML = `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-M9SM7L6HEH');
+      `;
+      document.head.appendChild(script2);
+    }
+  </script>
 </body>
 </html>
-
