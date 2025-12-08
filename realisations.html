@@ -24,9 +24,6 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- WaveSurfer.js -->
-  <script src="https://unpkg.com/wavesurfer.js"></script>
-
   <style>
     :root {
       --bg: #FAF8F5;
@@ -116,8 +113,8 @@
     }
 
     .subtitle {
-      margin-top: 4px;
       opacity: 0.8;
+      margin-top: 5px;
     }
 
     .big-play-btn {
@@ -129,43 +126,100 @@
       background: white;
       color: #AC855E;
       font-size: 1.8rem;
-      font-weight: bold;
       cursor: pointer;
       transition: 0.2s;
     }
 
-    .big-play-btn:hover {
-      transform: scale(1.05);
-    }
-
     .track-list {
       list-style: none;
-      padding: 0;
       margin: 0;
+      padding: 0;
     }
 
     .track-list li {
-      background: rgba(255,255,255,0.08);
       padding: 1rem 1.5rem;
-      border-bottom: 1px solid rgba(255,255,255,0.15);
+      cursor: pointer;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.1);
+      transition: 0.2s;
       display: flex;
       flex-direction: column;
       gap: 4px;
-      cursor: pointer;
-      transition: background 0.15s;
-    }
-
-    .track-list li:hover {
-      background: rgba(255,255,255,0.18);
     }
 
     .track-list li.active {
-      background: rgba(255,255,255,0.3);
-      font-weight: bold;
+      background: rgba(255,255,255,0.25);
+      font-weight: 600;
     }
 
-    .track-name { font-size: 1.05rem; }
-    .track-desc { font-size: 0.85rem; opacity: 0.85; }
+    .track-desc {
+      font-size: 0.85rem;
+      opacity: 0.9;
+    }
+
+    /* Progress Bar */
+    .player-progress-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 1rem 1.5rem;
+      background: rgba(255,255,255,0.10);
+    }
+
+    #progressBar {
+      flex: 1;
+      height: 6px;
+      background: rgba(255,255,255,0.3);
+      border-radius: 4px;
+      appearance: none;
+      cursor: pointer;
+    }
+    #progressBar::-webkit-slider-thumb {
+      appearance: none;
+      background: white;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    /* COMPOSER SECTION */
+    .composer-section {
+      max-width: 900px;
+      margin: 4rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 14px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+
+    .composer-section h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--accent);
+    }
+
+    .band-bio p {
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .spotify-wrapper,
+    .video-wrapper {
+      margin: 2rem 0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    footer {
+      background: var(--bg-alt);
+      padding: 2rem 1rem 1rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
   </style>
 </head>
 
@@ -191,10 +245,11 @@
 </section>
 
 <div class="portfolio-note">
-  Sélection illustrant mon travail de compositeur et de sound designer, principalement orienté vers les musiques orchestrales mêlant piano, cordes et cuivres.
+  Sélection illustrant mon travail de compositeur et sound designer, principalement orienté vers les musiques orchestrales mêlant piano, cordes et cuivres.
 </div>
 
-<!-- ========= PLAYER SPOTIFY-LIKE ========= -->
+
+<!-- ========== PLAYER ========== -->
 <section class="audio-section">
   <div class="audio-card-header">
     <div class="audio-cover"></div>
@@ -207,53 +262,138 @@
 
   <ul id="trackList" class="track-list">
 
-    <li data-src="audio/Un Rêve à Paris.mp3">
+    <li data-src="Un Rêve à Paris.mp3">
       <span class="track-name">Un Rêve à Paris</span>
       <span class="track-desc">Pièce pour piano et violoncelle</span>
     </li>
 
-    <li data-src="audio/Bleu d'Eclipse.mp3">
+    <li data-src="Bleu d'Eclipse.mp3">
       <span class="track-name">Bleu d’Eclipse</span>
       <span class="track-desc">Pièce pour ensemble à cordes</span>
     </li>
 
-    <li data-src="audio/La Marche Glorieuse.mp3">
+    <li data-src="La Marche Glorieuse.mp3">
       <span class="track-name">La Marche Triomphante</span>
       <span class="track-desc">Pièce pour ensemble à cordes et cuivres</span>
     </li>
 
-    <li data-src="audio/Lumière au Crépuscule.mp3">
+    <li data-src="Lumière au Crépuscule.mp3">
       <span class="track-name">Lumière au Crépuscule</span>
       <span class="track-desc">Pièce en contrepoint pour ensemble à cordes</span>
     </li>
 
   </ul>
 
+  <div class="player-progress-container">
+    <span id="currentTime">0:00</span>
+    <input type="range" id="progressBar" min="0" max="100" value="0">
+    <span id="duration">0:00</span>
+  </div>
+
   <audio id="audio"></audio>
 </section>
+
+
+<!-- ========== A/ORATOS SECTION ========== -->
+<section class="composer-section">
+  <h2>Mon travail de compositeur – A/Oratos</h2>
+
+  <div class="band-bio">
+    <p>
+      En parallèle de mes créations professionnelles, je développe un univers musical conceptuel avec mon groupe de Black Metal 
+      <strong>A/Oratos</strong>. Le projet explore une dimension mystique et ésotérique, portée par une écriture de guitare exigeante, 
+      des arrangements complexes et une approche profondément immersive.
+    </p>
+
+    <p>
+      A/Oratos publie un premier EP en <strong>2018</strong>, suivi en <strong>2024</strong> de l’album 
+      <em>Ecclesia Gnostica</em>, sorti chez <strong>Les Acteurs de l’Ombre</strong>. L’album reçoit un accueil exceptionnel, 
+      salué par la presse française et internationale, et élu <strong>Album du Mois</strong> par Rock Hard France.
+    </p>
+
+    <p>
+      Cette recherche artistique nourrit ma pratique de compositeur et enrichit mon travail d’identité sonore professionnelle.
+    </p>
+  </div>
+
+  <!-- Spotify -->
+  <div class="spotify-wrapper">
+    <iframe style="border-radius:12px" width="100%" height="352" frameborder="0"
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy"
+      src="https://open.spotify.com/embed/artist/3DTbRdhoSGCtp6O9wFRxQH?utm_source=generator">
+    </iframe>
+  </div>
+
+  <!-- YouTube -->
+  <div class="video-wrapper">
+    <iframe width="100%" height="350"
+      src="https://www.youtube.com/embed/st_iBikyKyY?si=KwhQEHQ6dgidDbVy"
+      title="A/Oratos – Guitar Playthrough"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
+  </div>
+</section>
+
 
 <footer>
   © 2025 Éloquence Créative – Tous droits réservés
 </footer>
 
-<!-- ========= SCRIPT PLAYER ========= -->
+
+<!-- ========== SCRIPT PLAYER ========== -->
 <script>
 const audio = document.getElementById("audio");
 const tracks = document.querySelectorAll("#trackList li");
 const mainPlay = document.getElementById("mainPlay");
+const progressBar = document.getElementById("progressBar");
+const currentTimeEl = document.getElementById("currentTime");
+const durationEl = document.getElementById("duration");
 
 let currentTrack = null;
+
+function formatTime(sec) {
+  if (isNaN(sec)) return "0:00";
+  const m = Math.floor(sec / 60);
+  const s = Math.floor(sec % 60).toString().padStart(2, "0");
+  return `${m}:${s}`;
+}
+
+audio.addEventListener("play", () => {
+  mainPlay.textContent = "❚❚";
+});
+audio.addEventListener("pause", () => {
+  mainPlay.textContent = "▶";
+});
+audio.addEventListener("ended", () => {
+  mainPlay.textContent = "▶";
+});
+
+audio.addEventListener("timeupdate", () => {
+  if (!isNaN(audio.duration)) {
+    progressBar.value = (audio.currentTime / audio.duration) * 100;
+    currentTimeEl.textContent = formatTime(audio.currentTime);
+  }
+});
+
+audio.addEventListener("loadedmetadata", () => {
+  durationEl.textContent = formatTime(audio.duration);
+});
+
+progressBar.addEventListener("input", () => {
+  if (!isNaN(audio.duration)) {
+    audio.currentTime = (progressBar.value / 100) * audio.duration;
+  }
+});
 
 function playTrack(li) {
   tracks.forEach(t => t.classList.remove("active"));
   li.classList.add("active");
-
-  const src = li.getAttribute("data-src");
-  audio.src = src;
+  audio.src = li.getAttribute("data-src");
   audio.play();
-
   currentTrack = li;
-  mainPlay.textContent = "❚❚";
 }
 
 tracks.forEach(li => {
@@ -265,13 +405,7 @@ mainPlay.addEventListener("click", () => {
     playTrack(tracks[0]);
     return;
   }
-  if (audio.paused) {
-    audio.play();
-    mainPlay.textContent = "❚❚";
-  } else {
-    audio.pause();
-    mainPlay.textContent = "▶";
-  }
+  audio.paused ? audio.play() : audio.pause();
 });
 </script>
 
