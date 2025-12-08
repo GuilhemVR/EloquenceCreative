@@ -5,15 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- ==================== SEO ==================== -->
-  <title>Éloquence Créative – Branding Sonore, Logo Sonore et Identité Musicale</title>
-  <meta name="description" content="Éloquence Créative, studio de branding sonore à Paris : logo sonore, identité musicale, UX audio et ambiances sur mesure pour faire résonner votre marque." />
+  <title>Éloquence Créative – Musique à l’image & Sound Design</title>
+  <meta name="description" content="Compositeur pour l'image : musique originale, sound design, textures cinématiques et identités sonores. Éloquence Créative crée des univers musicaux sur mesure pour films, publicités et narrations visuelles." />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Éloquence Créative" />
   <link rel="canonical" href="https://eloquencecreative.fr/">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Éloquence Créative – Branding Sonore" />
-  <meta property="og:description" content="Studio de branding sonore à Paris : logo sonore, identité musicale, UX audio et ambiances sur mesure pour faire résonner votre marque." />
+  <meta property="og:title" content="Éloquence Créative – Musique à l’image & Sound Design" />
+  <meta property="og:description" content="Compositeur pour films, publicités et narrations visuelles. Musique originale, sound design et identités sonores." />
   <meta property="og:image" content="https://eloquencecreative.fr/images/og-image.jpg" />
   <meta property="og:url" content="https://eloquencecreative.fr/" />
   <meta property="og:type" content="website" />
@@ -23,11 +23,6 @@
   <link rel="icon" href="favicon/favicon.ico" sizes="any">
   <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
-  <link rel="manifest" href="favicon/site.webmanifest">
-  <link rel="icon" type="image/png" sizes="192x192" href="favicon/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="favicon/web-app-manifest-512x512.png">
-  <meta name="theme-color" content="#FAF8F5">
 
   <!-- ==================== FONTS ==================== -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
@@ -47,7 +42,7 @@
       font-family: 'Inter', sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
     header {
@@ -59,7 +54,7 @@
       border-bottom: 1px solid var(--bg-alt);
       position: sticky; top: 0; z-index: 100;
     }
-    .logo-link img { max-height: 80px; width: auto; object-fit: contain; }
+    .logo-link img { max-height: 80px; }
 
     nav ul { list-style: none; display: flex; gap: 1.5rem; }
     nav a {
@@ -68,180 +63,107 @@
     }
     nav a:hover { color: var(--accent-hover); }
 
-    .burger {
-      display: none; font-size: 1.8rem; font-weight: bold; color: var(--text);
-      background: none; border: none; cursor: pointer;
-    }
+    .burger { display: none; }
 
     /* ================= HERO ================= */
     .hero {
       text-align: center;
       padding: 6rem 2rem 5rem;
-      background: var(--bg);
-      position: relative;
-      width: 100%;
-      max-width: 1400px;
+      max-width: 1100px;
       margin: 0 auto;
+      position: relative;
     }
     .hero h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      line-height: 1.2;
-      margin-bottom: 1rem;
+      font-size: 2.7rem;
+      margin-bottom: 1.2rem;
+      line-height: 1.25;
     }
     .hero h1 strong { color: var(--accent); }
-    .animated-word {
-      color: var(--accent);
-      display: inline-block;
-      animation: waveText 1.2s infinite ease-in-out;
-    }
-    @keyframes waveText {
-      0%,100% { transform: translateY(0); }
-      50% { transform: translateY(-4px); }
-    }
 
-    .hero p { font-size: 1.2rem; margin-bottom: 2rem; }
+    .hero p { font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.9; }
 
     .cta-button {
-      background: var(--accent); color: #fff; border: none;
-      padding: 0.8rem 1.5rem; font-weight: 600;
-      border-radius: 8px; font-size: 1rem; cursor: pointer;
-      text-decoration: none; transition: background 0.3s;
-      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: 0.8rem 1.4rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.3s;
     }
     .cta-button:hover { background: var(--accent-hover); }
 
     .hero-quote {
-      font-style: italic; font-size: 1.1rem; line-height: 1.8;
-      max-width: 800px; margin: 2rem auto 0; padding: 1rem 1.5rem;
-      background: #F2EEE8; border-left: 4px solid var(--accent); border-radius: 8px;
+      font-style: italic;
+      max-width: 800px;
+      margin: 2rem auto 0;
+      padding: 1rem 1.5rem;
+      background: #F2EEE8;
+      border-left: 4px solid var(--accent);
+      border-radius: 8px;
+      font-size: 1.05rem;
+      line-height: 1.8;
     }
 
-    /* ================= WAVEFORM ================= */
-    .wave-animation {
-      position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
-      display: flex; gap: 4px; height: 60px; opacity: 0.4;
+    /* ================= SECTION STANDARD ================= */
+    section {
+      padding: 4rem 2rem;
+      max-width: 900px;
+      margin: auto;
     }
-    .wave-animation span {
-      display: block; width: 4px; background: var(--accent);
-      animation: wavePulse 1.2s infinite ease-in-out;
-      border-radius: 20px;
-    }
-    .wave-animation span:nth-child(n) { animation-delay: calc(0.1s * var(--i)); }
-    @keyframes wavePulse {
-      0%,100% { height: 20%; }
-      50% { height: 100%; }
-    }
-
-    section { padding: 4rem 2rem; max-width: 900px; margin: auto; }
     section h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 2rem; color: var(--accent); text-align: center; margin-bottom: 1.5rem;
+      font-size: 2.2rem;
+      color: var(--accent);
+      text-align: center;
+      margin-bottom: 1.5rem;
     }
-    section p { font-size: 1.1rem; line-height: 1.8; text-align: center; margin-bottom: 2rem; }
+    section p {
+      text-align: center;
+      font-size: 1.15rem;
+      margin-bottom: 2rem;
+    }
 
-    .services ul { list-style: none; display: grid; gap: 2rem; max-width: 700px; margin: auto; padding-left: 0; }
+    ul { list-style: none; padding: 0; }
+    .services ul { display: grid; gap: 2rem; }
     .services li strong { color: var(--accent); }
 
-    @media screen and (min-width: 1024px) {
-      .hero h1 {
-        white-space: nowrap;
-        font-size: 2.2rem;
-        max-width: 90%;
-        margin: 0 auto;
-      }
+    /* ===== Bandeau BLEU D’ECLIPSE ===== */
+    .banner-bleu {
+      background: rgba(172,133,94,0.07);
+      color: var(--accent);
+      text-align: center;
+      padding: 2.2rem;
+      margin: 3rem auto;
+      max-width: 900px;
+      border-radius: 12px;
+      border: 1px solid rgba(172,133,94,0.25);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     }
-    @media(max-width:768px){
-      nav ul {
-        display: none; flex-direction: column; background: var(--bg);
-        position: absolute; top: 100%; right: 2rem;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 8px; padding: 1rem;
-      }
-      nav ul.show { display: flex; }
-      .burger { display: block; }
-      .hero h1 { font-size: 1.8rem; white-space: normal; }
-      .hero p { font-size: 1.05rem; }
-      .wave-animation { height: 40px; gap: 3px; }
-      .wave-animation span { width: 3px; }
+    .banner-bleu audio { margin-top: 1rem; border-radius: 8px; }
+
+    /* ================= FOOTER ================= */
+    footer {
+      background: var(--bg-alt);
+      padding: 2rem 1rem;
+      text-align: center;
+      margin-top: 4rem;
     }
-
-    /* ===== Cookie banner & modal ===== */
-    #cookie-banner {
-      display:none;
-      position:fixed; bottom:0; left:0; width:100%;
-      background:#fff; color:#000; border-top:1px solid #ccc;
-      padding:1rem; text-align:center; z-index:9999;
-      box-shadow:0 -2px 5px rgba(0,0,0,0.1);
-    }
-    #cookie-banner button {
-      margin-left:0.5rem; padding:0.4rem 0.8rem;
-      background:var(--accent); color:#fff; border:none; border-radius:5px; cursor:pointer;
-    }
-    #cookie-modal {
-      display:none;
-      position:fixed; top:0; left:0; width:100%; height:100%;
-      background:rgba(0,0,0,0.5); justify-content:center; align-items:center; z-index:10000;
-    }
-    #cookie-modal .modal-content {
-      background:#fff; padding:2rem; max-width:400px; border-radius:8px; text-align:center;
-    }
-    #cookie-modal button {
-      margin-top:1rem; padding:0.5rem 1rem; border:none; cursor:pointer; border-radius:5px;
-    }
-    #cookie-modal .accept { background:var(--accent); color:#fff; }
-    #cookie-modal .decline { background:#ccc; }
-
-/* ===== Bandeau BLEU D’ECLIPSE ===== */
-.banner-bleu {
-  background: rgba(172,133,94,0.07);       /* doré clair subtil */
-  color: var(--accent);
-  text-align: center;
-  padding: 2rem 2rem;
-  margin: 3rem auto;
-  max-width: 900px;
-  border: 1px solid rgba(172,133,94,0.25);  /* fine bordure dorée */
-  border-radius: 12px;
-  font-family: 'Playfair Display', serif;
-  font-size: 1.4rem;
-  font-weight: 500;
-  letter-spacing: 0.2px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-}
-
-.banner-bleu p {
-  margin-bottom: 1.2rem;
-}
-
-.banner-bleu .banner-button {
-  background: var(--accent);               /* bouton doré site */
-  color: #fff;
-  padding: 0.7rem 1.6rem;
-  font-size: 1rem;
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background 0.3s ease;
-  display: inline-block;
-}
-
-.banner-bleu .banner-button:hover {
-  background: var(--accent-hover);
-}
-
-
   </style>
+
 </head>
 
 <body>
+
+  <!-- ============ HEADER ============ -->
   <header>
     <a href="index.html" class="logo-link">
-      <img src="EloquenceCréativeLOGOVF 2.png" alt="Logo Éloquence Créative – Studio de Branding Sonore">
+      <img src="EloquenceCréativeLOGOVF 2.png" alt="Logo Éloquence Créative">
     </a>
     <nav>
-      <button class="burger" onclick="toggleMenu()" aria-label="Menu mobile">☰</button>
       <ul id="menu">
         <li><a href="index.html">Accueil</a></li>
         <li><a href="services.html">Services</a></li>
@@ -253,246 +175,107 @@
     </nav>
   </header>
 
-  <!-- ================= HERO ================= -->
+  <!-- ============ HERO ============ -->
   <section class="hero">
     <h1>
-      Faites <strong class="animated-word">résonner</strong> votre marque avec une
-      <strong>identité sonore mémorable</strong>
+      Composez les émotions<br>
+      que <strong>l’image ne montre plus</strong>.
     </h1>
-    <p>Artisan du son, je connecte votre marque à votre public grâce au pouvoir de la musique.</p>
+
+    <p>
+      Je crée des musiques originales et du sound design pour sublimer vos films,  
+      publicités, courts-métrages et projets narratifs.
+    </p>
+
     <a href="portfolio.html" class="cta-button">🎧 Écouter les réalisations</a>
 
     <blockquote class="hero-quote">
-      Dans un monde saturé d'images et de bruits, votre marque mérite la plus belle des voix.<br><br>
-      Une identité sonore permet à votre marque d’être reconnue sans être vue, d’émouvoir sans dire un mot, et de renforcer votre univers là où l’image ne suffit plus.
+      Dans un univers saturé d’images, la musique devient un langage.  
+      Elle raconte ce que les mots taisent, amplifie les émotions, guide la narration  
+      et révèle l’invisible.
     </blockquote>
-
-    <div class="wave-animation" aria-hidden="true">
-      <span style="--i:0"></span><span style="--i:1"></span><span style="--i:2"></span><span style="--i:3"></span><span style="--i:4"></span>
-      <span style="--i:5"></span><span style="--i:6"></span><span style="--i:7"></span><span style="--i:8"></span><span style="--i:9"></span>
-    </div>
   </section>
 
-  <!-- ================= Identité sonore ================= -->
-  <section id="identite-sonore">
-    <h2>Une signature auditive à la hauteur de votre image</h2>
-    <p>Le branding sonore désigne l’ensemble des éléments sonores qui incarnent une marque de manière cohérente, émotionnelle et reconnaissable. Il ajoute une <strong>dimension sensorielle forte</strong> capable de renforcer l'empreinte mémorielle de la marque et de créer un lien profond avec son audience.</p>
+  <!-- ============ MUSIQUE À L'IMAGE ============ -->
+  <section id="musique-image">
+    <h2>Musique à l’image — mon cœur de métier</h2>
+    <p>
+      Je compose des musiques originales pour accompagner vos courts-métrages, longs-métrages,  
+      publicités, documentaires, animations, podcasts narratifs et films institutionnels.  
+      Chaque œuvre est pensée pour servir le rythme, la dramaturgie et l’intention du réalisateur.
+    </p>
   </section>
-  
-<!-- ===== Bandeau Bleu d'Eclipse ===== -->
-<div class="banner-bleu">
-  <p>🎧 Découvrez ma dernière création sonore&nbsp;: <em>Bleu d’Eclipse</em></p>
 
-  <!-- Lecteur audio intégré -->
-  <audio controls style="width: 250px; margin-top: 0.8rem; border-radius: 6px;">
-    <source src="Eloquence Créative - Portfolio Bleu d'Eclipse Parfum.wav" type="audio/wav">
-    Votre navigateur ne supporte pas la lecture audio.
-  </audio>
-</div>
-
-  <!-- ================= Services ================= -->
+  <!-- ============ SERVICES ============ -->
   <section class="services">
-    <h2>Mes services</h2>
-    <p>Des créations sur-mesure qui donnent de la voix à votre marque. Que vous souhaitiez marquer les esprits, enrichir l’expérience client ou structurer une identité audio cohérente, je vous accompagne à chaque étape de votre univers sonore.</p>
+    <h2>Services</h2>
+
     <ul>
-      <li><strong>🎧 Logo sonore</strong> – Une signature sonore brève et percutante, pensée pour accompagner l’apparition de votre logo sur tous vos supports.</li>
-      <li><strong>🎼 Musique de marque et à l'image</strong> – Une bande-son originale et synchronisée avec l'image pour vos films publicitaires, vidéos de marque et vos contenus digitaux.</li>
-      <li><strong>🎛 Ambiance sonore UX / in-store</strong> – Une atmosphère sonore immersive pour sublimer l'experience client en boutique et sur vos applications ou évènements .</li>
+      <li><strong>🎬 Composition musicale originale</strong> – Recherches thématiques, atmosphères, thèmes orchestraux ou électroniques pour soutenir votre narration.</li>
+
+      <li><strong>🔊 Sound Design & Ambiances cinématiques</strong> – Création de textures, paysages sonores, impacts, design d’espaces et ambiances immersives.</li>
+
+      <li><strong>🎼 Orchestration & arrangements</strong> – Écriture pour cordes, cuivres, bois, guitares, piano et textures hybrides, selon les besoins de votre film.</li>
     </ul>
-    <div style="text-align:center;margin-top:3rem;">
-      <a href="services.html" class="cta-button">👉 Découvrir mes services</a>
-    </div>
   </section>
 
-  <!-- ================= À propos ================= -->
-  <section id="approche" style="background:#FAF8F5; padding:4rem 2rem;">
-  <div style="max-width:900px; margin:auto; font-family:'Inter',sans-serif; color:#2A2A2A; line-height:1.7;">
-
-    <h2 style="
-      font-family:'Playfair Display',serif;
-      font-size:2.4rem;
-      color:#AC855E;
-      text-align:center;
-      margin-bottom:2.5rem;">
-      Mon approche
-    </h2>
-
-    <p style="font-size:1.05rem; margin-bottom:2rem; text-align:center;">
-      Chez <strong>Éloquence Créative</strong>, chaque identité sonore est pensée comme une 
-      <strong>signature raffinée</strong> : un langage musical sur-mesure qui traduit l’essence d’une marque
-      et crée une résonance émotionnelle durable auprès de son public.
+  <!-- ============ BLOc IDENTITÉ SONORE (SECONDaire) ============ -->
+  <section id="identite-sonore">
+    <h2>Identité sonore — un savoir-faire complémentaire</h2>
+    <p>
+      Je conçois également des logos sonores, signatures auditives et univers audio complets  
+      pour les marques souhaitant renforcer leur présence émotionnelle sur leurs supports digitaux  
+      et campagnes vidéo.
     </p>
+  </section>
 
-    <!-- Écouter avant de composer -->
-    <h3 style="
-      font-family:'Playfair Display',serif;
-      font-size:1.6rem;
-      color:#AC855E;
-      margin-top:2.5rem;
-      margin-bottom:1rem;">
-      Écouter avant de composer
-    </h3>
-    <p style="font-size:1.05rem; margin-bottom:1.5rem;">
-      Chaque projet commence par une phase d’<strong>écoute attentive et d’analyse stratégique</strong> :
-      comprendre l’histoire de la marque, ses valeurs, ses publics et les émotions qu’elle souhaite susciter.
-      Cette immersion me permet de cerner son ADN et de définir les codes sonores qui lui correspondent.
-    </p>
-
-    <!-- De la stratégie à l’émotion -->
-    <h3 style="
-      font-family:'Playfair Display',serif;
-      font-size:1.6rem;
-      color:#AC855E;
-      margin-top:2.5rem;
-      margin-bottom:1rem;">
-      De la stratégie à l’émotion
-    </h3>
-    <p style="font-size:1.05rem; margin-bottom:1.5rem;">
-      Nous construisons ensuite un <strong>univers sonore cohérent</strong>, en élaborant un moodboard de textures,
-      de rythmes et de timbres qui incarnent l’identité de la marque.
-      L’objectif : créer une <strong>expérience sensorielle</strong>
-      où chaque note devient porteuse de sens et de mémoire.
-    </p>
-
-    <!-- L’exigence du détail et du raffinement -->
-    <h3 style="
-      font-family:'Playfair Display',serif;
-      font-size:1.6rem;
-      color:#AC855E;
-      margin-top:2.5rem;
-      margin-bottom:1rem;">
-      L’exigence du détail et du raffinement
-    </h3>
-    <p style="font-size:1.05rem; margin-bottom:1.5rem;">
-      Passionné par la composition musicale, 
-      <strong>j’accorde une attention particulière à la texture des sons,
-      à la dynamique des harmonies et au pouvoir évocateur des timbres.</strong>
-      Chaque identité sonore devient ainsi un marqueur émotionnel durable,
-      pensé pour renforcer la mémoire auditive et l’élégance de votre image.
-    </p>
-    <p style="font-size:1.05rem; margin-bottom:1.5rem;">
-      J'attache également une <strong>attention particulière aux nuances, aux silences et à la dynamique musicale</strong> :
-      ce sont ces détails subtils qui rendent une identité sonore élégante, reconnaissable et intemporelle.
-      Chaque composition est pensée pour refléter le <strong>raffinement et la singularité</strong> de la marque :
-      ni générique ni intrusif, mais un <strong>art appliqué au service de l’image de marque</strong>.
-    </p>
-
-    <!-- Un actif de marque durable -->
-    <h3 style="
-      font-family:'Playfair Display',serif;
-      font-size:1.6rem;
-      color:#AC855E;
-      margin-top:2.5rem;
-      margin-bottom:1rem;">
-      Un actif de marque durable
-    </h3>
-    <p style="font-size:1.05rem;">
-      Une identité sonore dépasse l'intention d'une création artistique : elle devient un
-      <strong>actif stratégique</strong>.
-      Elle renforce la cohérence entre les différents points de contact : campagnes TV et digitales,
-      UX des applications, ambiance en magasin, événements... Et contribue à ancrer la marque
-      dans la mémoire collective de son audience.
-    </p>
-
+  <!-- ============ BANDEAU BLEU D'ECLIPSE ============ -->
+  <div class="banner-bleu">
+    <p>🎧 Découvrez ma composition <em>Bleu d’Eclipse</em></p>
+    <audio controls>
+      <source src="Eloquence Créative - Portfolio Bleu d'Eclipse Parfum.wav" type="audio/wav">
+      Votre navigateur ne supporte pas la lecture audio.
+    </audio>
   </div>
-</section>
 
+  <!-- ============ MON APPROCHE ============ -->
+  <section id="approche">
+    <h2>Mon approche</h2>
+    <p>
+      Composer pour l’image, c’est créer un langage sensible. Une musique capable d’épouser  
+      la mise en scène, de révéler l’émotion d’un personnage et d’accompagner le spectateur  
+      dans un voyage narratif.
+    </p>
 
-  <!-- ================= FOOTER ================= -->
-  <footer style="background:var(--bg-alt);color:var(--text);padding:2rem 1rem 1.2rem;font-size:0.9rem;margin-top:3rem;">
-    <div style="max-width:1100px;margin:auto;display:flex;justify-content:center;align-items:flex-start;gap:6rem;flex-wrap:wrap;text-align:center;">
-      <div>
-        <h3 style="font-family:'Playfair Display',serif;color:var(--accent);font-size:1.1rem;margin-bottom:0.8rem;">Navigation</h3>
-        <nav style="display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap;font-size:0.95rem;">
-          <a href="index.html" style="text-decoration:none;color:var(--text);">Accueil</a><span>|</span>
-          <a href="services.html" style="text-decoration:none;color:var(--text);">Services</a><span>|</span>
-          <a href="portfolio.html" style="text-decoration:none;color:var(--text);">Portfolio</a><span>|</span>
-          <a href="apropos.html" style="text-decoration:none;color:var(--text);">À propos</a><span>|</span>
-          <a href="faq.html" style="text-decoration:none;color:var(--text);">FAQ</a><span>|</span>
-          <a href="contact.html" style="text-decoration:none;color:var(--text);">Contact</a>
-        </nav>
-      </div>
-      <div>
-        <h3 style="font-family:'Playfair Display',serif;color:var(--accent);font-size:1.1rem;margin-bottom:0.8rem;">Contact</h3>
-        <p><a href="mailto:guilhem@eloquencecreative.fr" style="color:var(--text);text-decoration:none;">guilhem@eloquencecreative.fr</a></p>
-        <p><a href="https://www.linkedin.com/in/guilhem-vallery-radot/" target="_blank" style="color:var(--text);text-decoration:none;">LinkedIn</a></p>
-        <button onclick="openCookieSettings()" style="margin-top:0.7rem;background:var(--accent);color:#fff;border:none;padding:0.5rem 1rem;border-radius:6px;font-size:0.85rem;cursor:pointer;">Gérer mes cookies</button>
-      </div>
-    </div>
-    <div style="border-top:1px solid rgba(0,0,0,0.1);margin-top:2rem;padding-top:0.8rem;font-size:0.8rem;text-align:center;">
-      <p>© 2025 Éloquence Créative – Tous droits réservés</p>
-      <p style="margin-top:0.3rem;">
-        <a href="mentions-legales.html" style="text-decoration:none;color:var(--text);">Mentions légales</a> |
-        <a href="politique-cookies.html" style="text-decoration:none;color:var(--text);">Politique de confidentialité & cookies</a>
-      </p>
-    </div>
+    <h3 style="color:var(--accent);font-family:'Playfair Display';margin-top:2rem;text-align:center;">
+      Une écriture pensée pour la narration
+    </h3>
+    <p>
+      Chaque projet commence par l’étude du scénario, des intentions de réalisation  
+      et du rythme de l’œuvre. La musique s’inscrit dans une continuité dramaturgique.
+    </p>
+
+    <h3 style="color:var(--accent);font-family:'Playfair Display';margin-top:2rem;text-align:center;">
+      Créer des émotions, pas seulement des sons
+    </h3>
+    <p>
+      Mon écriture mêle harmonies orchestrales, textures électroniques, guitare,  
+      ambiances immersives et motifs thématiques pour servir l’émotion.
+    </p>
+
+    <h3 style="color:var(--accent);font-family:'Playfair Display';margin-top:2rem;text-align:center;">
+      Un travail artisanal du son
+    </h3>
+    <p>
+      Je porte une attention particulière aux nuances, aux silences, aux détails  
+      qui donnent une âme à la musique : dynamique, timbres, textures, respiration.
+    </p>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <p>© 2025 Éloquence Créative – Tous droits réservés</p>
   </footer>
 
-  <!-- ===== Cookie Banner & Modal ===== -->
-  <div id="cookie-banner">
-    Ce site utilise des cookies pour mesurer l’audience et améliorer votre expérience.
-    <button onclick="acceptCookies()">Accepter</button>
-    <button onclick="declineCookies()">Refuser</button>
-  </div>
-
-  <div id="cookie-modal">
-    <div class="modal-content">
-      <h3>Préférences cookies</h3>
-      <p>Vous pouvez activer ou désactiver la mesure d’audience (Google Analytics).</p>
-      <button class="accept" onclick="acceptCookies()">Autoriser</button>
-      <button class="decline" onclick="declineCookies()">Désactiver</button>
-      <button style="background:#eee;" onclick="closeCookieModal()">Fermer</button>
-    </div>
-  </div>
-
-  <!-- ================= SCRIPTS ================= -->
-  <script>
-    function toggleMenu(){ document.getElementById("menu").classList.toggle("show"); }
-
-    // Bannière cookies
-    function openCookieSettings(){
-      document.getElementById("cookie-modal").style.display = "flex";
-    }
-    function closeCookieModal(){
-      document.getElementById("cookie-modal").style.display = "none";
-    }
-
-    function acceptCookies(){
-      localStorage.setItem("cookiesAccepted","true");
-      document.getElementById("cookie-banner").style.display="none";
-      document.getElementById("cookie-modal").style.display="none";
-      loadGoogleAnalytics();
-    }
-    function declineCookies(){
-      localStorage.setItem("cookiesAccepted","false");
-      document.getElementById("cookie-banner").style.display="none";
-      document.getElementById("cookie-modal").style.display="none";
-    }
-
-    window.addEventListener("load",()=>{
-      const consent = localStorage.getItem("cookiesAccepted");
-      if(consent==="true"){ loadGoogleAnalytics(); }
-      else if(consent!=="false"){ document.getElementById("cookie-banner").style.display="block"; }
-    });
-
-    // Charger GA4 seulement après consentement
-    function loadGoogleAnalytics(){
-      if(window.gaLoaded) return;
-      window.gaLoaded = true;
-      const script1 = document.createElement("script");
-      script1.async = true;
-      script1.src = "https://www.googletagmanager.com/gtag/js?id=G-M9SM7L6HEH";
-      document.head.appendChild(script1);
-
-      const script2 = document.createElement("script");
-      script2.innerHTML = `
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-M9SM7L6HEH');
-      `;
-      document.head.appendChild(script2);
-    }
-  </script>
 </body>
 </html>
