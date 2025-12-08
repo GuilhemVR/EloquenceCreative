@@ -4,35 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- ==================== SEO ==================== -->
-  <title>Portfolio – Éloquence Créative | Réalisations en Branding Sonore</title>
-  <meta name="description" content="Découvrez le portfolio d’Éloquence Créative : logos sonores, identités musicales et ambiances sonores réalisés pour des marques comme Bleu d’Eclipse, Maison Capucine, Ethera et Noblead." />
+  <title>Portfolio – Éloquence Créative | Portfolio</title>
+  <meta name="description" content="Découvrez les créations sonores d’Éloquence Créative.">
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Éloquence Créative" />
   <link rel="canonical" href="https://eloquencecreative.fr/portfolio.html">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Portfolio – Éloquence Créative | Branding Sonore" />
-  <meta property="og:description" content="Découvrez les réalisations d’Éloquence Créative : logos sonores, musiques de marque et ambiances sonores pour Bleu d’Eclipse, Maison Capucine, Ethera, Noblead et plus encore." />
+  <meta property="og:title" content="Portfolio – Éloquence Créative" />
+  <meta property="og:description" content="Découvrez les réalisations sonores d’Éloquence Créative.">
   <meta property="og:image" content="https://eloquencecreative.fr/images/og-image.jpg" />
   <meta property="og:url" content="https://eloquencecreative.fr/portfolio.html" />
   <meta property="og:type" content="website" />
+
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- ==================== FAVICONS ==================== -->
   <link rel="icon" href="favicon/favicon.ico" sizes="any">
   <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
-  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
-  <link rel="manifest" href="favicon/site.webmanifest">
-  <link rel="icon" type="image/png" sizes="192x192" href="favicon/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="favicon/web-app-manifest-512x512.png">
-  <meta name="theme-color" content="#FAF8F5">
+  <link rel="apple-touch-icon" sizes="180px" href="favicon/apple-touch-icon.png">
 
-  <!-- ==================== FONTS ==================== -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- ==================== CSS ==================== -->
   <style>
     :root {
       --bg: #FAF8F5;
@@ -42,18 +33,17 @@
       --bg-alt: #E5DCD0;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
     body {
+      margin: 0;
+      padding: 0;
       font-family: 'Inter', sans-serif;
-      background-color: var(--bg);
+      background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
     }
 
     /* HEADER */
     header {
-      background-color: var(--bg);
+      background: var(--bg);
       padding: 1.5rem 2rem;
       display: flex;
       justify-content: space-between;
@@ -63,385 +53,374 @@
       top: 0;
       z-index: 100;
     }
-    .logo-link { display: inline-flex; align-items: center; text-decoration: none; }
-    .logo-img { max-height: 80px; width: auto; object-fit: contain; }
-    nav ul { list-style: none; display: flex; gap: 1.5rem; }
-    nav a { text-decoration: none; color: var(--text); font-weight: 600; transition: color 0.3s; }
-    nav a:hover { color: var(--accent-hover); }
-    .burger { display: none; font-size: 1.8rem; background: none; border: none; cursor: pointer; }
 
-    @media (max-width: 768px) {
-      nav ul {
-        display: none; flex-direction: column; background: var(--bg);
-        position: absolute; top: 100%; right: 2rem; padding: 1rem;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 8px;
-      }
-      nav ul.show { display: flex; }
-      .burger { display: block; }
-    }
+    nav ul { list-style: none; display: flex; gap: 1.5rem; }
+    nav a { text-decoration: none; color: var(--text); font-weight: 600; }
+    nav a:hover { color: var(--accent-hover); }
+    .logo-img { max-height: 80px; }
 
     /* HERO */
-    .hero { text-align: center; padding: 5rem 2rem 1.25rem; }
-    .hero h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--text); margin-bottom: 1rem; }
-    .hero h1 strong { color: var(--accent); }
-    .hero p { max-width: 840px; margin: 0 auto; }
+    .hero {
+      text-align: center;
+      padding: 5rem 2rem 2rem;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.7rem;
+      margin-bottom: 1rem;
+    }
 
-    /* NOTE */
     .portfolio-note {
       max-width: 900px;
-      margin: 1rem auto 2.5rem;
+      margin: 1rem auto 3rem;
       padding: 1rem 1.25rem;
       background: #F2EEE8;
       border-left: 4px solid var(--accent);
       border-radius: 8px;
       font-size: 0.98rem;
     }
-    .portfolio-note em { font-style: normal; font-weight: 600; }
 
-    /* GRID 2x2 */
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 2rem;
-      max-width: 1100px;
-      margin: 0 auto 3rem;
-      padding: 0 2rem;
-    }
-    @media (max-width: 900px) {
-      .portfolio-grid { grid-template-columns: 1fr; }
+    /* ==== PLAYER STYLE SPOTIFY ==== */
+    .audio-section {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0;
+      background: #AC855E;
+      border-radius: 18px;
+      color: #fff;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
     }
 
-    .card {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    .audio-card-header {
+      display: flex;
+      align-items: center;
       padding: 2rem;
-      text-align: center;
+      gap: 1.5rem;
+    }
+
+    /* ★★★★★ COVER AVEC TA PHOTO ★★★★★ */
+    .audio-cover {
+      width: 110px;
+      height: 110px;
+      border-radius: 12px;
+      background-image: url('photo-GVR.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .audio-info h2 {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.9rem;
+    }
+
+    .subtitle {
+      opacity: 0.8;
+      margin-top: 5px;
+    }
+
+    .big-play-btn {
+      margin-left: auto;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: none;
+      background: white;
+      color: #AC855E;
+      font-size: 1.8rem;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .track-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .track-list li {
+      padding: 1rem 1.5rem;
+      cursor: pointer;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.1);
+      transition: 0.2s;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      transition: transform 0.3s;
+      gap: 4px;
     }
-    .card:hover { transform: translateY(-5px); }
-    .card h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.45rem;
-      color: var(--accent);
-      margin-bottom: 1rem;
-      min-height: 3.2rem;
-    }
-    .card p { font-size: 1rem; margin-bottom: 1.5rem; flex-grow: 1; }
 
-    .cta-button {
-      background-color: var(--accent);
-      color: #fff;
-      border: none;
-      padding: 0.6rem 1.2rem;
+    .track-list li.active {
+      background: rgba(255,255,255,0.25);
       font-weight: 600;
-      border-radius: 8px;
-      font-size: 0.95rem;
+    }
+
+    .track-desc {
+      font-size: 0.85rem;
+      opacity: 0.9;
+    }
+
+    /* Progress Bar */
+    .player-progress-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 1rem 1.5rem;
+      background: rgba(255,255,255,0.10);
+    }
+
+    #progressBar {
+      flex: 1;
+      height: 6px;
+      background: rgba(255,255,255,0.3);
+      border-radius: 4px;
+      appearance: none;
       cursor: pointer;
-      transition: background 0.3s;
-      text-decoration: none;
-      align-self: center;
     }
-    .cta-button:hover { background: var(--accent-hover); }
+    #progressBar::-webkit-slider-thumb {
+      appearance: none;
+      background: white;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
 
-    /* MODALES */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 200;
-      inset: 0;
-      background: rgba(0,0,0,0.6);
-      overflow-y: auto;
+    /* COMPOSER SECTION */
+    .composer-section {
+      max-width: 900px;
+      margin: 4rem auto;
       padding: 2rem;
+      background: white;
+      border-radius: 14px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
     }
-    .modal-content {
-      background: #fff;
-      margin: auto;
-      padding: 2rem;
+
+    .composer-section h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--accent);
+    }
+
+    .band-bio p {
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .spotify-wrapper,
+    .video-wrapper {
+      margin: 2rem 0;
       border-radius: 12px;
-      max-width: 800px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
-    .modal-content h2 { font-family: 'Playfair Display', serif; color: var(--accent); margin-bottom: 1rem; }
-    .modal-content p { margin-bottom: 1rem; }
-    .close { float: right; font-size: 1.5rem; font-weight: bold; cursor: pointer; }
-    .close:hover { color: var(--accent); }
-    .audio-player { margin-top: 1.5rem; text-align: center; }
-    audio { width: 100%; max-width: 500px; outline: none; }
 
-    /* FOOTER */
     footer {
       background: var(--bg-alt);
-      color: var(--text);
-      padding: 2rem 1rem 1.2rem;
-      font-size: 0.9rem;
+      padding: 2rem 1rem 1rem;
+      text-align: center;
       margin-top: 3rem;
     }
-    footer h3 { font-family:'Playfair Display', serif; color: var(--accent); font-size:1.1rem; margin-bottom:.8rem; }
-    footer nav { display:flex; gap:1.2rem; justify-content:center; flex-wrap:wrap; font-size:.95rem; }
-    footer a { text-decoration: none; color: var(--text); }
-    footer span { color: rgba(0,0,0,0.3); }
-    footer .footer-top { max-width:1100px; margin:auto; display:flex; justify-content:center; align-items:flex-start; gap:6rem; flex-wrap:wrap; text-align:center; }
-    footer .footer-bottom { border-top:1px solid rgba(0,0,0,.1); margin-top:2rem; padding-top:.8rem; font-size:.8rem; text-align:center; }
+    .portfolio-note {
+  font-size: 1.1rem;
+  line-height: 1.65;
+}
 
-    /* COOKIE BANNER & MODAL */
-    #cookie-banner {
-      display:none;
-      position:fixed; bottom:0; left:0; width:100%;
-      background:#fff; color:#000; border-top:1px solid #ccc;
-      padding:1rem; text-align:center; z-index:9999;
-      box-shadow:0 -2px 5px rgba(0,0,0,0.1);
-    }
-    #cookie-banner button {
-      margin-left:0.5rem; padding:0.4rem 0.8rem;
-      background:var(--accent); color:#fff; border:none; border-radius:5px; cursor:pointer;
-    }
-    #cookie-modal {
-      display:none;
-      position:fixed; top:0; left:0; width:100%; height:100%;
-      background:rgba(0,0,0,0.5); justify-content:center; align-items:center; z-index:10000;
-    }
-    #cookie-modal .modal-content {
-      background:#fff; padding:2rem; max-width:400px; border-radius:8px; text-align:center;
-    }
-    #cookie-modal button {
-      margin-top:1rem; padding:0.5rem 1rem; border:none; cursor:pointer; border-radius:5px;
-    }
-    #cookie-modal .accept { background:var(--accent); color:#fff; }
-    #cookie-modal .decline { background:#ccc; }
   </style>
 </head>
 
 <body>
-  <!-- ================= HEADER ================= -->
-  <header>
-    <a href="index.html" class="logo-link">
-      <img src="EloquenceCréativeLOGOVF 2.png" alt="Logo Éloquence Créative" class="logo-img">
-    </a>
-    <nav>
-      <button class="burger" onclick="toggleMenu()" aria-label="Ouvrir le menu">☰</button>
-      <ul id="menu">
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="portfolio.html" aria-current="page">Portfolio</a></li>
-        <li><a href="apropos.html">À propos</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <!-- ================= HERO ================= -->
-  <section class="hero">
-    <h1>Découvrez mes <strong>réalisations</strong></h1>
-    <p>Un aperçu de mes réalisations où le son donne une voix unique aux marques.</p>
-  </section>
+<header>
+  <a href="index.html"><img src="EloquenceCréativeLOGOVF 2.png" class="logo-img" alt="Éloquence Créative"></a>
+  <nav>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="portfolio.html" aria-current="page">Portfolio</a></li>
+      <li><a href="apropos.html">À propos</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <!-- ================= NOTE ================= -->
-  <div class="portfolio-note" role="note" aria-label="Mention explicative sur les réalisations">
+<section class="hero">
+  <h1>Découvrez mes <strong>compositions</strong></h1>
+  <p>Un aperçu de mes musiques originales.</p>
+</section>
+
+<div class="portfolio-note">
+ Sélection illustrant mon travail de compositeur et sound designer, principalement orienté vers les musiques orchestrales mêlant piano, cordes et cuivres. J’explore également la création électronique et les ambiances texturées cinématiques, pensées pour révéler les émotions, soutenir la narration et suggérer ce que l’image ne peut dire. En tant que guitariste, mon écriture reste profondément sensible aux nuances mélodiques, aux dynamiques et à l’expressivité instrumentale.
+</div>
+
+
+<!-- ========== PLAYER ========== -->
+<section class="audio-section">
+  <div class="audio-card-header">
+    <div class="audio-cover"></div>
+    <div class="audio-info">
+      <h2>Écouter mes créations</h2>
+      <p class="subtitle">Sélection de compositions</p>
+    </div>
+    <button id="mainPlay" class="big-play-btn">▶</button>
+  </div>
+
+  <ul id="trackList" class="track-list">
+
+    <li data-src="Un Rêve à Paris.mp3">
+      <span class="track-name">Un Rêve à Paris</span>
+      <span class="track-desc">Pièce pour piano et violoncelle</span>
+    </li>
+
+    <li data-src="Bleu d'Eclipse.mp3">
+      <span class="track-name">Bleu d’Eclipse</span>
+      <span class="track-desc">Pièce pour ensemble à cordes</span>
+    </li>
+
+    <li data-src="La Marche Glorieuse.mp3">
+      <span class="track-name">La Marche Triomphante</span>
+      <span class="track-desc">Pièce pour ensemble à cordes et cuivres</span>
+    </li>
+
+    <li data-src="Lumière au Crépuscule.mp3">
+      <span class="track-name">Lumière au Crépuscule</span>
+      <span class="track-desc">Pièce en contrepoint pour ensemble à cordes</span>
+    </li>
+
+  </ul>
+
+  <div class="player-progress-container">
+    <span id="currentTime">0:00</span>
+    <input type="range" id="progressBar" min="0" max="100" value="0">
+    <span id="duration">0:00</span>
+  </div>
+
+  <audio id="audio"></audio>
+</section>
+
+
+<!-- ========== A/ORATOS SECTION ========== -->
+<section class="composer-section">
+  <h2>Mon travail de compositeur – A/Oratos</h2>
+
+  <div class="band-bio">
     <p>
-      J’ai imaginé ces <em>réalisations fictives</em> pour montrer comment le <em>branding sonore</em> peut transformer l’expérience de marque.
-      Chaque projet illustre mon savoir-faire pour créer des identités sonores <em>sur-mesure et cohérentes</em> avec différents secteurs.
+      En parallèle de mes créations professionnelles, je développe un univers musical conceptuel avec mon groupe de Black Metal 
+      <strong>A/Oratos</strong> pour lequel j'écris la musique et suis guitariste. Le projet explore une dimension mystique et ésotérique, portée par une écriture des guitares exigeante, 
+      des arrangements complexes et une approche profondément immersive.
+    </p>
+
+    <p>
+      A/Oratos publie un premier EP en <strong>2018</strong>, suivi en <strong>2024</strong> de l’album 
+      <em>Ecclesia Gnostica</em>, sorti chez <strong>Les Acteurs de l’Ombre</strong>. L’album reçoit un accueil exceptionnel, 
+      salué par la presse française et internationale, et élu <strong>Album du Mois</strong> par Rock Hard France.
+    </p>
+
+    <p>
+      Cette recherche artistique nourrit ma pratique de compositeur et enrichit mon travail d’identité sonore professionnelle.
     </p>
   </div>
 
-  <!-- ================= GRID 2x2 ================= -->
-  <section class="portfolio-grid">
-    <div class="card">
-      <h3>Bleu d'Eclipse – Parfum</h3>
-      <p>Création d’une identité sonore de 30 secondes pour un spot publicitaire TV et réseaux sociaux.</p>
-      <button type="button" class="cta-button" onclick="openModal('modal1')">Écouter Bleu d'Eclipse</button>
-    </div>
-
-    <div class="card">
-      <h3>Maison Capucine – Immobilier de prestige</h3>
-      <p>Création d'une signature musicale pour des vidéos de présentation de biens d’exception.</p>
-      <button type="button" class="cta-button" onclick="openModal('modal2')">Écouter Maison Capucine</button>
-    </div>
-
-    <div class="card">
-      <h3>Ethera – Joaillerie contemporaine</h3>
-      <p>Création d’une identité sonore pour accompagner la campagne digitale de la marque.</p>
-      <button type="button" class="cta-button" onclick="openModal('modal3')">Écouter Ethera</button>
-    </div>
-
-    <div class="card">
-      <h3>Noblead – Cabinet de recrutement engagé à impact RSE</h3>
-      <p>Création d'un logo sonore pour la communication digitale de la marque.</p>
-      <button type="button" class="cta-button" onclick="openModal('modal4')">Écouter Noblead</button>
-    </div>
-  </section>
-
-  <!-- ================= MODALES ================= -->
-  <!-- Modale 1 -->
-  <div id="modal1" class="modal" role="dialog" aria-modal="true" aria-labelledby="m1-title">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('modal1')" aria-label="Fermer la fenêtre">&times;</span>
-      <h2 id="m1-title">Bleu d'Eclipse – Parfum</h2>
-      <p><strong>Client :</strong> Bleu d’Eclipse est une maison de parfum parisienne qui compose des fragrances contemporaines, audacieuses et profondément ancrées dans des univers narratifs et sensoriels.</p>
-      <p><strong>Brief :</strong> Accompagner le lancement de la nouvelle fragrance à travers une identité sonore singulière, conçue pour plonger l’audience dans un univers immersif et poétique.</p>
-      <p><strong>Format :</strong> Création d’une identité musicale de 30 secondes, destinée aux campagnes publicitaires TV et aux contenus diffusés sur les réseaux sociaux.</p>
-      <p><strong>Création :</strong> J'ai imaginé une orchestration élégante, à la fois cinématique et intimiste, afin de traduire les émotions suscitées par le parfum et de souligner la dimension narrative et sensible de la campagne.</p>
-      <div class="audio-player">
-        <h3>🎧 Écouter l’identité sonore</h3>
-        <audio controls>
-          <source src="Eloquence Créative - Portfolio Bleu d'Eclipse Parfum.wav" type="audio/wav">
-          Votre navigateur ne supporte pas la lecture audio.
-        </audio>
-      </div>
-    </div>
+  <!-- Spotify -->
+  <div class="spotify-wrapper">
+    <iframe style="border-radius:12px" width="100%" height="352" frameborder="0"
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy"
+      src="https://open.spotify.com/embed/artist/3DTbRdhoSGCtp6O9wFRxQH?utm_source=generator">
+    </iframe>
   </div>
 
-  <!-- Modale 2 -->
-  <div id="modal2" class="modal" role="dialog" aria-modal="true" aria-labelledby="m2-title">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('modal2')" aria-label="Fermer la fenêtre">&times;</span>
-      <h2 id="m2-title">Maison Capucine – Immobilier de prestige</h2>
-      <p><strong>Client :</strong> Maison Capucine est une agence parisienne spécialisée dans la vente de biens d’exception, alliant exigence, discrétion et art de vivre à la française.</p>
-      <p><strong>Brief :</strong> Créer une signature musicale élégante destinée à conclure chaque film de présentation de propriétés, et à en prolonger l’émotion avec subtilité et raffinement.</p>
-      <p><strong>Format :</strong> Développement d’une signature sonore pour outro vidéo, pensée pour s’intégrer harmonieusement aux supports digitaux de l’agence.</p>
-      <p><strong>Création :</strong> J'ai composé une pièce délicate au piano et au violoncelle, jouée à tempo lent, afin d’évoquer la sérénité et la sophistication des biens présentés.</p>
-      <div class="audio-player">
-        <h3>🎧 Écouter l’identité sonore</h3>
-        <audio controls>
-          <source src="Eloquence Creative - Portfolio Maison Capucine.wav" type="audio/wav">
-          Votre navigateur ne supporte pas la lecture audio.
-        </audio>
-      </div>
-    </div>
+  <p style="text-align:center; margin-top:1.5rem; font-size:1rem; opacity:0.85;">
+  Guitar playthrough capté en conditions réelles lors d’une répétition en studio.
+</p>
+
+  <!-- YouTube -->
+  <div class="video-wrapper">
+    <iframe width="100%" height="350"
+      src="https://www.youtube.com/embed/st_iBikyKyY?si=KwhQEHQ6dgidDbVy"
+      title="A/Oratos – Guitar Playthrough"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
   </div>
+</section>
 
-  <!-- Modale 3 -->
-  <div id="modal3" class="modal" role="dialog" aria-modal="true" aria-labelledby="m3-title">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('modal3')" aria-label="Fermer la fenêtre">&times;</span>
-      <h2 id="m3-title">Ethera – Joaillerie contemporaine</h2>
-      <p><strong>Client :</strong> Ethera est une maison de joaillerie parisienne au positionnement résolument contemporain, où le design épuré rencontre l’éclat intemporel des pierres précieuses.</p>
-      <p><strong>Brief :</strong> Concevoir une identité sonore distinctive pour accompagner les campagnes digitales de la marque et refléter son univers esthétique à la fois moderne et raffiné.</p>
-      <p><strong>Format :</strong> Création d’une identité musicale dédiée aux vidéos manifeste, pensée pour renforcer l’émotion et la singularité de chaque prise de parole de la marque.</p>
-      <p><strong>Création :</strong> J'ai composé une pièce aérienne et texturée, portée par une nappe sonore contemporaine et ponctuée d’harmoniques cristallines, pour incarner la pureté et la lumière qui caractérisent l’univers joaillier d’Ethera.</p>
-      <div class="audio-player">
-        <h3>🎧 Écouter l’identité sonore</h3>
-        <audio controls>
-          <source src="Eloquence Creative - Ethera.wav" type="audio/wav">
-          Votre navigateur ne supporte pas la lecture audio.
-        </audio>
-      </div>
-    </div>
-  </div>
 
-  <!-- Modale 4 -->
-  <div id="modal4" class="modal" role="dialog" aria-modal="true" aria-labelledby="m4-title">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('modal4')" aria-label="Fermer la fenêtre">&times;</span>
-      <h2 id="m4-title">Noblead – Cabinet de recrutement à impact RSE</h2>
-      <p><strong>Client :</strong> NOBLead est un cabinet de recrutement fondé sur les principes d’authenticité, de transparence et d’impact. Il accompagne les entreprises dans le recrutement (CDI / freelance) en intégrant une dimension RSE forte : jusqu’à 20 % des honoraires peuvent être reversés à une association partenaire choisie par le client.</p>
-      <p><strong>Brief :</strong> Créer un logo sonore qui reflète le double positionnement de Noblead : professionnalisme et humanité, performance et sens.</p>
-      <p><strong>Format :</strong> Logo sonore pour la communication et les assets digitaux de la marque.</p>
-      <p><strong>Création :</strong> La composition s’articule autour d’un motif lumineux traduisant la confiance et l'humanité autour de la promesse : "recruter autrement, recruter avec impact"</p>
-      <div class="audio-player">
-        <h3>🎧 Écouter l’identité sonore</h3>
-        <audio controls>
-          <source src="Eloquence Créative - Noblead.wav" type="audio/wav">
-          Votre navigateur ne supporte pas la lecture audio.
-        </audio>
-      </div>
-    </div>
-  </div>
+<footer>
+  © 2025 Éloquence Créative – Tous droits réservés
+</footer>
 
-  <!-- ================= SCRIPTS ================= -->
-  <script>
-    function toggleMenu(){ document.getElementById("menu").classList.toggle("show"); }
-    function openModal(id){ document.getElementById(id).style.display = 'block'; }
-    function closeModal(id){ document.getElementById(id).style.display = 'none'; }
 
-    window.addEventListener('click', e => { if(e.target.classList.contains('modal')) e.target.style.display='none'; });
-    window.addEventListener('keydown', e => { if(e.key==='Escape') document.querySelectorAll('.modal').forEach(m=>m.style.display='none'); });
+<!-- ========== SCRIPT PLAYER ========== -->
+<script>
+const audio = document.getElementById("audio");
+const tracks = document.querySelectorAll("#trackList li");
+const mainPlay = document.getElementById("mainPlay");
+const progressBar = document.getElementById("progressBar");
+const currentTimeEl = document.getElementById("currentTime");
+const durationEl = document.getElementById("duration");
 
-    // Cookies
-    function openCookieSettings(){ document.getElementById("cookie-modal").style.display="flex"; }
-    function closeCookieModal(){ document.getElementById("cookie-modal").style.display="none"; }
-    function acceptCookies(){
-      localStorage.setItem("cookiesAccepted","true");
-      document.getElementById("cookie-banner").style.display="none";
-      document.getElementById("cookie-modal").style.display="none";
-      loadGoogleAnalytics();
-    }
-    function declineCookies(){
-      localStorage.setItem("cookiesAccepted","false");
-      document.getElementById("cookie-banner").style.display="none";
-      document.getElementById("cookie-modal").style.display="none";
-    }
-    window.addEventListener("load",()=>{
-      const consent = localStorage.getItem("cookiesAccepted");
-      if(consent==="true") loadGoogleAnalytics();
-      else if(consent!=="false") document.getElementById("cookie-banner").style.display="block";
-    });
-    function loadGoogleAnalytics(){
-      if(window.gaLoaded) return;
-      window.gaLoaded = true;
-      const s1 = document.createElement("script");
-      s1.async = true;
-      s1.src = "https://www.googletagmanager.com/gtag/js?id=G-M9SM7L6HEH";
-      document.head.appendChild(s1);
-      const s2 = document.createElement("script");
-      s2.innerHTML = `
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-M9SM7L6HEH');
-      `;
-      document.head.appendChild(s2);
-    }
-  </script>
+let currentTrack = null;
 
-  <!-- ========= FOOTER ========= -->
-  <footer>
-    <div class="footer-top">
-      <div>
-        <h3>Navigation</h3>
-        <nav>
-          <a href="index.html">Accueil</a><span>|</span>
-          <a href="services.html">Services</a><span>|</span>
-          <a href="portfolio.html">Portfolio</a><span>|</span>
-          <a href="apropos.html">À propos</a><span>|</span>
-          <a href="contact.html">Contact</a><span>|</span>
-          <a href="faq.html">FAQ</a>
-        </nav>
-      </div>
-      <div>
-        <h3>Contact</h3>
-        <p><a href="mailto:guilhem@eloquencecreative.fr">guilhem@eloquencecreative.fr</a></p>
-        <p><a href="https://www.linkedin.com/in/guilhem-vallery-radot/" target="_blank" rel="noopener">LinkedIn</a></p>
-        <button onclick="openCookieSettings()" style="margin-top:.7rem;background:var(--accent);color:#fff;border:none;padding:.5rem 1rem;border-radius:6px;font-size:.85rem;cursor:pointer;">Gérer mes cookies</button>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2025 Éloquence Créative – Tous droits réservés</p>
-      <p style="margin-top:.3rem;">
-        <a href="mentions-legales.html">Mentions légales</a> |
-        <a href="politique-cookies.html">Politique de confidentialité & cookies</a>
-      </p>
-    </div>
-  </footer>
+function formatTime(sec) {
+  if (isNaN(sec)) return "0:00";
+  const m = Math.floor(sec / 60);
+  const s = Math.floor(sec % 60).toString().padStart(2, "0");
+  return `${m}:${s}`;
+}
 
-  <!-- Cookie Banner & Modal -->
-  <div id="cookie-banner">
-    Ce site utilise des cookies pour mesurer l’audience et améliorer votre expérience.
-    <button onclick="acceptCookies()">Accepter</button>
-    <button onclick="declineCookies()">Refuser</button>
-  </div>
+audio.addEventListener("play", () => {
+  mainPlay.textContent = "❚❚";
+});
+audio.addEventListener("pause", () => {
+  mainPlay.textContent = "▶";
+});
+audio.addEventListener("ended", () => {
+  mainPlay.textContent = "▶";
+});
 
-  <div id="cookie-modal">
-    <div class="modal-content">
-      <h3>Préférences cookies</h3>
-      <p>Vous pouvez activer ou désactiver la mesure d’audience (Google Analytics).</p>
-      <button class="accept" onclick="acceptCookies()">Autoriser</button>
-      <button class="decline" onclick="declineCookies()">Désactiver</button>
-      <button style="background:#eee;" onclick="closeCookieModal()">Fermer</button>
-    </div>
-  </div>
+audio.addEventListener("timeupdate", () => {
+  if (!isNaN(audio.duration)) {
+    progressBar.value = (audio.currentTime / audio.duration) * 100;
+    currentTimeEl.textContent = formatTime(audio.currentTime);
+  }
+});
+
+audio.addEventListener("loadedmetadata", () => {
+  durationEl.textContent = formatTime(audio.duration);
+});
+
+progressBar.addEventListener("input", () => {
+  if (!isNaN(audio.duration)) {
+    audio.currentTime = (progressBar.value / 100) * audio.duration;
+  }
+});
+
+function playTrack(li) {
+  tracks.forEach(t => t.classList.remove("active"));
+  li.classList.add("active");
+  audio.src = li.getAttribute("data-src");
+  audio.play();
+  currentTrack = li;
+}
+
+tracks.forEach(li => {
+  li.addEventListener("click", () => playTrack(li));
+});
+
+mainPlay.addEventListener("click", () => {
+  if (!currentTrack) {
+    playTrack(tracks[0]);
+    return;
+  }
+  audio.paused ? audio.play() : audio.pause();
+});
+</script>
+
 </body>
 </html>
