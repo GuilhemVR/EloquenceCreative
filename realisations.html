@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Portfolio – Éloquence Créative | Portfolio </title>
+  <title>Portfolio – Éloquence Créative | Portfolio</title>
   <meta name="description" content="Découvrez les créations sonores d’Éloquence Créative.">
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Éloquence Créative" />
@@ -84,7 +84,6 @@
     }
 
     /* ==== PLAYER STYLE SPOTIFY ==== */
-
     .audio-section {
       max-width: 900px;
       margin: 3rem auto;
@@ -150,8 +149,8 @@
       padding: 1rem 1.5rem;
       border-bottom: 1px solid rgba(255,255,255,0.15);
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      flex-direction: column;
+      gap: 4px;
       cursor: pointer;
       transition: background 0.15s;
     }
@@ -165,61 +164,8 @@
       font-weight: bold;
     }
 
-    .track-play {
-      opacity: 0.8;
-    }
-
-    /* COMPOSER SECTION */
-    .composer-section {
-      max-width: 900px;
-      margin: 4rem auto;
-      padding: 2rem;
-      background: #ffffff;
-      border-radius: 14px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    }
-
-    .composer-section h2 {
-      font-family: 'Playfair Display', serif;
-      text-align: center;
-      color: var(--accent);
-      margin-bottom: 1.5rem;
-      font-size: 2rem;
-    }
-
-    .composer-intro {
-      text-align: center;
-      margin-bottom: 2rem;
-      font-size: 1rem;
-    }
-
-    .spotify-wrapper {
-      margin-bottom: 2rem;
-    }
-
-    .video-wrapper {
-      margin: 2rem 0;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-
-    .band-bio h3 {
-      font-family: 'Playfair Display', serif;
-      color: var(--accent);
-      margin-bottom: 0.8rem;
-    }
-
-    .band-bio p {
-      line-height: 1.7;
-    }
-
-    footer {
-      background: var(--bg-alt);
-      padding: 2rem 1rem 1rem;
-      text-align: center;
-      margin-top: 3rem;
-    }
+    .track-name { font-size: 1.05rem; }
+    .track-desc { font-size: 0.85rem; opacity: 0.85; }
   </style>
 </head>
 
@@ -260,65 +206,30 @@
   </div>
 
   <ul id="trackList" class="track-list">
-    <li data-src="audio/titre1.mp3">
-      <span class="track-name">Titre 1 — Identité sonore</span>
-      <span class="track-play">▶</span>
+
+    <li data-src="audio/Un Rêve à Paris.mp3">
+      <span class="track-name">Un Rêve à Paris</span>
+      <span class="track-desc">Pièce pour piano et violoncelle</span>
     </li>
 
-    <li data-src="audio/titre2.mp3">
-      <span class="track-name">Titre 2 — Ambiance immersive</span>
-      <span class="track-play">▶</span>
+    <li data-src="audio/Bleu d'Eclipse.mp3">
+      <span class="track-name">Bleu d’Eclipse</span>
+      <span class="track-desc">Pièce pour ensemble à cordes</span>
     </li>
 
-    <li data-src="audio/titre3.mp3">
-      <span class="track-name">Titre 3 — Logo sonore</span>
-      <span class="track-play">▶</span>
+    <li data-src="audio/La Marche Glorieuse.mp3">
+      <span class="track-name">La Marche Triomphante</span>
+      <span class="track-desc">Pièce pour ensemble à cordes et cuivres</span>
     </li>
+
+    <li data-src="audio/Lumière au Crépuscule.mp3">
+      <span class="track-name">Lumière au Crépuscule</span>
+      <span class="track-desc">Pièce en contrepoint pour ensemble à cordes</span>
+    </li>
+
   </ul>
 
   <audio id="audio"></audio>
-</section>
-
-<!-- ========= SECTION A/ORATOS ========= -->
-<section class="composer-section">
-  <h2>Mon travail de compositeur – A/Oratos</h2>
-
-  <div class="band-bio">
-    <p>
-      En parallèle de mes créations professionnelles, je développe un univers musical conceptuel avec mon groupe de Black Metal 
-      <strong>A/Oratos</strong>. Le projet explore une dimension mystique et ésotérique, portée par une écriture de guitare exigeante, 
-      des arrangements complexes et une approche profondément immersive et intense de la composition.
-    </p>
-    <p>
-      A/Oratos publie un premier EP en <strong>2018</strong>, suivi en <strong>2024</strong> de l’album 
-      <em>Ecclesia Gnostica</em>, sorti chez <strong>Les Acteurs de l’Ombre</strong>. L’album reçoit un accueil élogieux, 
-      salué par la presse française et internationale, et désigné <strong>Album du Mois</strong> par Rock Hard France.
-    </p>
-    <p>
-      Cette démarche artistique nourrit ma pratique de compositeur et enrichit mes créations d’identités sonores professionnelles.
-    </p>
-  </div>
-
-  <!-- PLAYER SPOTIFY -->
-  <div class="spotify-wrapper">
-    <iframe data-testid="embed-iframe" style="border-radius:12px"
-      src="https://open.spotify.com/embed/artist/3DTbRdhoSGCtp6O9wFRxQH?utm_source=generator"
-      width="100%" height="352" frameBorder="0" allowfullscreen=""
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
-    </iframe>
-  </div>
-
-  <!-- VIDEO PLAYTHROUGH -->
-  <div class="video-wrapper">
-    <iframe width="100%" height="350"
-      src="https://www.youtube.com/embed/st_iBikyKyY?si=KwhQEHQ6dgidDbVy"
-      title="A/Oratos – Guitar Playthrough"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen>
-    </iframe>
-  </div>
 </section>
 
 <footer>
