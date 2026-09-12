@@ -4,265 +4,2704 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- ==================== SEO ==================== -->
-  <title>Éloquence Créative – Musique à l’image & Sound Design</title>
-  <meta name="description" content="Compositeur pour l'image : musique originale, sound design, textures cinématiques et identités sonores. Éloquence Créative crée des univers musicaux sur mesure pour films, publicités et narrations visuelles." />
+  <!-- =========================
+       SEO
+  ========================== -->
+  <title>Éloquence Créative | Marketing externalisé pour commerces de bouche à Paris</title>
+
+  <meta
+    name="description"
+    content="Éloquence Créative accompagne les commerces de bouche comme un responsable marketing externalisé : visibilité locale, site web, acquisition, contenus, e-commerce et suivi des résultats."
+  />
+
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Éloquence Créative" />
-  <link rel="canonical" href="https://eloquencecreative.fr/">
+  <meta name="theme-color" content="#FAF8F5" />
+
+  <link rel="canonical" href="https://eloquencecreative.fr/" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Éloquence Créative – Musique à l’image & Sound Design" />
-  <meta property="og:description" content="Compositeur pour films, publicités et narrations visuelles. Musique originale, sound design et identités sonores." />
-  <meta property="og:image" content="https://eloquencecreative.fr/images/og-image.jpg" />
+  <meta
+    property="og:title"
+    content="Éloquence Créative | Votre marketing digital, sans avoir à le piloter vous-même"
+  />
+
+  <meta
+    property="og:description"
+    content="Un interlocuteur unique pour identifier les priorités digitales de votre commerce, mettre les actions en œuvre et suivre leurs résultats."
+  />
+
   <meta property="og:url" content="https://eloquencecreative.fr/" />
   <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- ==================== FAVICONS ==================== -->
+  <meta name="twitter:card" content="summary" />
+
+  <!-- =========================
+       FAVICONS
+  ========================== -->
   <link rel="icon" href="favicon/favicon.ico" sizes="any">
   <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
 
-  <!-- ==================== FONTS ==================== -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- =========================
+       FONTS
+  ========================== -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
 
-  <!-- ==================== CSS ==================== -->
+  <!-- =========================
+       STRUCTURED DATA
+  ========================== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Éloquence Créative",
+    "url": "https://eloquencecreative.fr/",
+    "email": "guilhem@eloquencecreative.fr",
+    "telephone": "+33636666157",
+    "areaServed": {
+      "@type": "City",
+      "name": "Paris"
+    },
+    "description": "Conseil et accompagnement marketing externalisé pour les commerces de bouche à Paris.",
+    "serviceType": [
+      "Marketing digital",
+      "Référencement local",
+      "Site internet",
+      "Acquisition digitale",
+      "E-commerce",
+      "Analytics",
+      "Stratégie de contenu"
+    ]
+  }
+  </script>
+
+  <!-- =========================
+       CSS
+  ========================== -->
   <style>
+
+    /* ==================================================
+       VARIABLES
+    ================================================== */
+
     :root {
-      --bg: #FAF8F5;
-      --text: #2A2A2A;
-      --accent: #AC855E;
-      --accent-hover: #8A6B4F;
-      --bg-alt: #E5DCD0;
+      --bg: #faf8f5;
+      --bg-soft: #f3eee7;
+      --bg-deep: #e8ded2;
+
+      --text: #26231f;
+      --text-soft: #665f58;
+
+      --accent: #ac855e;
+      --accent-dark: #8a6b4f;
+      --accent-light: #d8c2aa;
+
+      --white: #ffffff;
+      --line: rgba(42, 35, 29, 0.12);
+
+      --shadow:
+        0 18px 55px rgba(55, 42, 31, 0.07);
+
+      --radius-sm: 10px;
+      --radius-md: 18px;
+      --radius-lg: 28px;
+
+      --container: 1180px;
+
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "Inter", Arial, sans-serif;
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+
+    /* ==================================================
+       RESET
+    ================================================== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 110px;
+    }
 
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: var(--sans);
       background: var(--bg);
       color: var(--text);
-      line-height: 1.7;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
 
-    header {
-      background: var(--bg);
-      padding: 1.5rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid var(--bg-alt);
-      position: sticky; top: 0; z-index: 100;
+    img {
+      max-width: 100%;
+      display: block;
     }
-    .logo-link img { max-height: 80px; }
 
-    nav ul { list-style: none; display: flex; gap: 1.5rem; }
-    nav a {
-      text-decoration: none; color: var(--text); font-weight: 600;
-      transition: color 0.3s;
+    a {
+      color: inherit;
     }
-    nav a:hover { color: var(--accent-hover); }
 
-    .burger { display: none; }
-
-    /* ================= HERO ================= */
-    .hero {
-      text-align: center;
-      padding: 6rem 2rem 5rem;
-      max-width: 1100px;
-      margin: 0 auto;
-      position: relative;
+    button {
+      font: inherit;
     }
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.7rem;
-      margin-bottom: 1.2rem;
-      line-height: 1.25;
-    }
-    .hero h1 strong { color: var(--accent); }
 
-    .hero p { font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.9; }
-
-    .cta-button {
+    ::selection {
       background: var(--accent);
       color: #fff;
-      padding: 0.8rem 1.4rem;
-      border-radius: 8px;
+    }
+
+
+    /* ==================================================
+       GLOBAL
+    ================================================== */
+
+    .container {
+      width: min(calc(100% - 40px), var(--container));
+      margin-inline: auto;
+    }
+
+    .section {
+      padding: 105px 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+
+      margin-bottom: 18px;
+
+      font-size: 0.73rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+
+      color: var(--accent-dark);
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: var(--serif);
+      font-weight: 600;
+      line-height: 1.12;
+    }
+
+    h2 {
+      font-size: clamp(2.2rem, 4vw, 3.55rem);
+      letter-spacing: -0.025em;
+    }
+
+    h3 {
+      font-size: 1.45rem;
+    }
+
+    .lead {
+      max-width: 720px;
+      color: var(--text-soft);
+      font-size: 1.14rem;
+    }
+
+
+    /* ==================================================
+       BUTTONS
+    ================================================== */
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+
+      min-height: 52px;
+      padding: 0 22px;
+
+      border: 1px solid transparent;
+      border-radius: 9px;
+
+      font-size: 0.92rem;
+      font-weight: 650;
+      text-decoration: none;
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-dark);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      border-color: var(--line);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent-dark);
+    }
+
+    .arrow {
+      font-size: 1.05rem;
+    }
+
+
+    /* ==================================================
+       HEADER
+    ================================================== */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      background: rgba(250, 248, 245, 0.94);
+      backdrop-filter: blur(16px);
+
+      border-bottom: 1px solid var(--line);
+    }
+
+    .header-inner {
+      min-height: 92px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      flex-shrink: 0;
+    }
+
+    .brand img {
+      max-height: 65px;
+      width: auto;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-list {
+      list-style: none;
+
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .nav-list a {
+      position: relative;
+
+      font-size: 0.85rem;
+      font-weight: 550;
+      text-decoration: none;
+
+      transition: color 0.2s ease;
+    }
+
+    .nav-list a:hover,
+    .nav-list a.active {
+      color: var(--accent-dark);
+    }
+
+    .nav-list a::after {
+      content: "";
+
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+
+      width: 0;
+      height: 1px;
+
+      background: var(--accent);
+
+      transition: width 0.2s ease;
+    }
+
+    .nav-list a:hover::after,
+    .nav-list a.active::after {
+      width: 100%;
+    }
+
+    .header-cta {
+      white-space: nowrap;
+    }
+
+    .menu-toggle {
+      display: none;
+
+      width: 42px;
+      height: 42px;
+
+      border: 0;
+      background: transparent;
+
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      display: block;
+
+      width: 24px;
+      height: 1px;
+
+      margin: 6px auto;
+
+      background: var(--text);
+    }
+
+
+    /* ==================================================
+       HERO
+    ================================================== */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+
+      padding: 110px 0 90px;
+
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero::before {
+      content: "";
+
+      position: absolute;
+      top: -320px;
+      right: -260px;
+
+      width: 720px;
+      height: 720px;
+
+      border: 1px solid rgba(172, 133, 94, 0.12);
+      border-radius: 50%;
+    }
+
+    .hero::after {
+      content: "";
+
+      position: absolute;
+      top: -125px;
+      right: -95px;
+
+      width: 420px;
+      height: 420px;
+
+      border: 1px solid rgba(172, 133, 94, 0.16);
+      border-radius: 50%;
+    }
+
+    .hero-grid {
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1.15fr)
+        minmax(340px, 0.65fr);
+
+      gap: 80px;
+      align-items: center;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      max-width: 780px;
+
+      font-size: clamp(3.2rem, 6.4vw, 5.7rem);
+
+      line-height: 1.01;
+      letter-spacing: -0.045em;
+    }
+
+    .hero h1 span {
+      color: var(--accent-dark);
+    }
+
+    .hero-subtitle {
+      max-width: 720px;
+
+      margin-top: 30px;
+
+      font-size: clamp(1.05rem, 1.7vw, 1.25rem);
+
+      color: var(--text-soft);
+    }
+
+    .hero-subtitle strong {
+      color: var(--text);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+
+      margin-top: 34px;
+    }
+
+    .hero-note {
+      margin-top: 26px;
+
+      color: var(--text-soft);
+
+      font-size: 0.86rem;
+    }
+
+
+    /* ==================================================
+       HERO PANEL
+    ================================================== */
+
+    .hero-panel {
+      position: relative;
+      z-index: 2;
+
+      padding: 34px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,0.58),
+          rgba(255,255,255,0.28)
+        );
+
+      border: 1px solid rgba(172, 133, 94, 0.24);
+      border-radius: var(--radius-lg);
+
+      box-shadow: var(--shadow);
+    }
+
+    .hero-panel-label {
+      margin-bottom: 22px;
+
+      color: var(--accent-dark);
+
+      font-size: 0.72rem;
+      font-weight: 700;
+
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    .hero-panel-title {
+      margin-bottom: 25px;
+
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      line-height: 1.25;
+    }
+
+    .hero-checklist {
+      list-style: none;
+    }
+
+    .hero-checklist li {
+      display: grid;
+
+      grid-template-columns: 32px 1fr;
+      gap: 12px;
+
+      padding: 14px 0;
+
+      border-top: 1px solid var(--line);
+
+      font-size: 0.91rem;
+    }
+
+    .check {
+      color: var(--accent-dark);
+      font-weight: 700;
+    }
+
+
+    /* ==================================================
+       VALUE STRIP
+    ================================================== */
+
+    .value-strip {
+      background: rgba(255,255,255,0.34);
+
+      border-bottom: 1px solid var(--line);
+    }
+
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .value-item {
+      min-height: 112px;
+
+      display: flex;
+      align-items: center;
+      gap: 16px;
+
+      padding: 27px 28px;
+
+      border-right: 1px solid var(--line);
+    }
+
+    .value-item:last-child {
+      border-right: 0;
+    }
+
+    .value-number {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+
+      color: var(--accent);
+    }
+
+    .value-item strong {
+      font-size: 0.88rem;
+      line-height: 1.45;
+    }
+
+
+    /* ==================================================
+       REALITY
+    ================================================== */
+
+    .reality-grid {
+      display: grid;
+
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 100px;
+
+      align-items: start;
+    }
+
+    .reality-copy h2 {
+      max-width: 570px;
+    }
+
+    .reality-text {
+      padding-top: 34px;
+    }
+
+    .reality-text p {
+      margin-bottom: 20px;
+
+      font-size: 1.07rem;
+
+      color: var(--text-soft);
+    }
+
+    .reality-text strong {
+      color: var(--text);
+    }
+
+    .statement {
+      margin-top: 30px;
+
+      padding: 24px 26px;
+
+      background: var(--bg-soft);
+
+      border-left: 3px solid var(--accent);
+
+      font-size: 1rem;
+    }
+
+
+    /* ==================================================
+       ACCOMPAGNEMENT
+    ================================================== */
+
+    .cases {
+      background: var(--bg-soft);
+
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 40px;
+
+      margin-bottom: 48px;
+    }
+
+    .section-heading-text {
+      max-width: 760px;
+    }
+
+    .section-heading .lead {
+      margin-top: 20px;
+    }
+
+    .case-grid {
+      display: grid;
+
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .case-card {
+      position: relative;
+      overflow: hidden;
+
+      padding: 34px;
+
+      background: var(--bg);
+
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .case-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .case-card::before {
+      content: "";
+
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 4px;
+      height: 100%;
+
+      background: var(--accent);
+    }
+
+    .case-kicker {
+      display: block;
+
+      margin-bottom: 12px;
+
+      color: var(--accent-dark);
+
+      font-size: 0.73rem;
+      font-weight: 700;
+
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .case-card h3 {
+      margin-bottom: 20px;
+
+      font-size: 1.63rem;
+    }
+
+    .case-card p {
+      color: var(--text-soft);
+    }
+
+    .case-action {
+      margin-top: 24px;
+      padding-top: 22px;
+
+      border-top: 1px solid var(--line);
+    }
+
+    .case-action strong {
+      display: block;
+
+      margin-bottom: 10px;
+
+      font-size: 0.79rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .case-action ul {
+      padding-left: 18px;
+
+      color: var(--text-soft);
+    }
+
+    .case-action li {
+      margin-bottom: 6px;
+    }
+
+    .case-metric {
+      display: inline-flex;
+
+      margin-top: 22px;
+      padding: 7px 10px;
+
+      background: rgba(172, 133, 94, 0.1);
+
+      border-radius: 6px;
+
+      color: var(--accent-dark);
+
+      font-size: 0.76rem;
+      font-weight: 650;
+    }
+
+
+    /* ==================================================
+       PROCESS
+    ================================================== */
+
+    .process-grid {
+      display: grid;
+
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 90px;
+
+      align-items: start;
+    }
+
+    .process-intro {
+      position: sticky;
+      top: 135px;
+    }
+
+    .process-intro p {
+      margin-top: 22px;
+
+      color: var(--text-soft);
+    }
+
+    .process-list {
+      counter-reset: process;
+    }
+
+    .process-step {
+      counter-increment: process;
+
+      display: grid;
+
+      grid-template-columns: 76px 1fr;
+      gap: 22px;
+
+      padding: 30px 0;
+
+      border-top: 1px solid var(--line);
+    }
+
+    .process-step:last-child {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .process-step::before {
+      content: "0" counter(process);
+
+      font-family: var(--serif);
+      font-size: 1.65rem;
+
+      color: var(--accent);
+    }
+
+    .process-step h3 {
+      margin-bottom: 10px;
+    }
+
+    .process-step p {
+      color: var(--text-soft);
+    }
+
+
+    /* ==================================================
+       RESULTS
+    ================================================== */
+
+    .measure {
+      background: #2d2925;
+      color: #fff;
+    }
+
+    .measure .eyebrow {
+      color: var(--accent-light);
+    }
+
+    .measure .eyebrow::before {
+      background: var(--accent-light);
+    }
+
+    .measure h2 {
+      max-width: 800px;
+    }
+
+    .measure-intro {
+      max-width: 780px;
+
+      margin-top: 22px;
+
+      color: rgba(255,255,255,0.7);
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+
+      margin-top: 50px;
+
+      border-top: 1px solid rgba(255,255,255,0.14);
+      border-bottom: 1px solid rgba(255,255,255,0.14);
+    }
+
+    .metric {
+      min-height: 170px;
+
+      padding: 28px 22px;
+
+      border-right: 1px solid rgba(255,255,255,0.14);
+    }
+
+    .metric:last-child {
+      border-right: 0;
+    }
+
+    .metric-number {
+      display: block;
+
+      margin-bottom: 22px;
+
+      font-family: var(--serif);
+      font-size: 1.42rem;
+
+      color: var(--accent-light);
+    }
+
+    .metric strong {
+      display: block;
+
+      margin-bottom: 7px;
+    }
+
+    .metric span:last-child {
+      color: rgba(255,255,255,0.62);
+
+      font-size: 0.84rem;
+    }
+
+    .measure-note {
+      max-width: 850px;
+
+      margin-top: 34px;
+
+      color: rgba(255,255,255,0.7);
+
+      font-size: 0.91rem;
+    }
+
+
+    /* ==================================================
+       ROLE
+    ================================================== */
+
+    .role-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+
+      margin-top: 45px;
+    }
+
+    .role-card {
+      padding: 32px;
+
+      background: rgba(255,255,255,0.34);
+
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+    }
+
+    .role-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 40px;
+      height: 40px;
+
+      margin-bottom: 24px;
+
+      border: 1px solid var(--accent-light);
+      border-radius: 50%;
+
+      color: var(--accent-dark);
+
+      font-family: var(--serif);
+    }
+
+    .role-card h3 {
+      margin-bottom: 12px;
+    }
+
+    .role-card p {
+      color: var(--text-soft);
+    }
+
+
+    /* ==================================================
+       EXPERIENCE
+    ================================================== */
+
+    .references {
+      background: var(--bg-soft);
+
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .reference-grid {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+
+      margin-top: 45px;
+    }
+
+    .reference-card {
+      min-height: 295px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      padding: 38px;
+
+      background: var(--bg);
+
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+    }
+
+    .reference-type {
+      margin-bottom: 18px;
+
+      color: var(--accent-dark);
+
+      font-size: 0.72rem;
+      font-weight: 700;
+
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .reference-name {
+      margin-bottom: 16px;
+
+      font-family: var(--serif);
+      font-size: 2rem;
+    }
+
+    .reference-card p {
+      color: var(--text-soft);
+    }
+
+    .reference-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+
+      margin-top: 28px;
+    }
+
+    .tag {
+      padding: 7px 10px;
+
+      border: 1px solid var(--line);
+      border-radius: 50px;
+
+      font-size: 0.75rem;
+    }
+
+
+    /* ==================================================
+       CONTACT
+    ================================================== */
+
+    .contact {
+      padding: 110px 0 125px;
+    }
+
+    .contact-box {
+      position: relative;
+      overflow: hidden;
+
+      display: grid;
+
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 70px;
+
+      padding: 64px;
+
+      background: var(--bg-deep);
+
+      border-radius: var(--radius-lg);
+    }
+
+    .contact-box::after {
+      content: "";
+
+      position: absolute;
+      right: -180px;
+      bottom: -260px;
+
+      width: 520px;
+      height: 520px;
+
+      border: 1px solid rgba(138,107,79,0.18);
+      border-radius: 50%;
+    }
+
+    .contact-copy,
+    .contact-details {
+      position: relative;
+      z-index: 2;
+    }
+
+    .contact-copy h2 {
+      max-width: 730px;
+    }
+
+    .contact-copy p {
+      max-width: 690px;
+
+      margin-top: 20px;
+
+      color: var(--text-soft);
+    }
+
+    .contact-details {
+      align-self: end;
+
+      padding: 28px;
+
+      background: rgba(250,248,245,0.55);
+
+      border: 1px solid rgba(138,107,79,0.18);
+      border-radius: var(--radius-md);
+    }
+
+    .contact-detail {
+      padding: 15px 0;
+
+      border-bottom: 1px solid var(--line);
+    }
+
+    .contact-detail:first-child {
+      padding-top: 0;
+    }
+
+    .contact-detail:last-child {
+      padding-bottom: 0;
+
+      border-bottom: 0;
+    }
+
+    .contact-label {
+      display: block;
+
+      margin-bottom: 5px;
+
+      color: var(--accent-dark);
+
+      font-size: 0.7rem;
+      font-weight: 700;
+
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .contact-detail a {
       font-weight: 600;
       text-decoration: none;
-      transition: background 0.3s;
-    }
-    .cta-button:hover { background: var(--accent-hover); }
-
-    .hero-quote {
-      font-style: italic;
-      max-width: 800px;
-      margin: 2rem auto 0;
-      padding: 1rem 1.5rem;
-      background: #F2EEE8;
-      border-left: 4px solid var(--accent);
-      border-radius: 8px;
-      font-size: 1.05rem;
-      line-height: 1.8;
     }
 
-    /* ================= SECTION STANDARD ================= */
-    section {
-      padding: 4rem 2rem;
-      max-width: 900px;
-      margin: auto;
-    }
-    section h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
-      color: var(--accent);
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
-    section p {
-      text-align: center;
-      font-size: 1.15rem;
-      margin-bottom: 2rem;
+    .contact-detail a:hover {
+      color: var(--accent-dark);
     }
 
-    ul { list-style: none; padding: 0; }
-    .services ul { display: grid; gap: 2rem; }
-    .services li strong { color: var(--accent); }
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
 
-    /* ===== Bandeau BLEU D’ECLIPSE ===== */
-    .banner-bleu {
-      background: rgba(172,133,94,0.07);
-      color: var(--accent);
-      text-align: center;
-      padding: 2.2rem;
-      margin: 3rem auto;
-      max-width: 900px;
-      border-radius: 12px;
-      border: 1px solid rgba(172,133,94,0.25);
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      margin-top: 32px;
     }
-    .banner-bleu audio { margin-top: 1rem; border-radius: 8px; }
 
-    /* ================= FOOTER ================= */
-    footer {
-      background: var(--bg-alt);
-      padding: 2rem 1rem;
-      text-align: center;
-      margin-top: 4rem;
+
+    /* ==================================================
+       RESPONSIVE
+    ================================================== */
+
+    @media (max-width: 1080px) {
+
+      .header-cta {
+        display: none;
+      }
+
+      .nav-list {
+        gap: 18px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+
+      .hero-panel {
+        max-width: 760px;
+      }
+
+      .value-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .value-item:nth-child(2) {
+        border-right: 0;
+      }
+
+      .value-item:nth-child(-n+2) {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .reality-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+
+      .process-intro {
+        position: static;
+      }
+
+      .metric-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .metric {
+        border-bottom: 1px solid rgba(255,255,255,0.14);
+      }
+
+      .role-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
     }
+
+
+    @media (max-width: 850px) {
+
+      html {
+        scroll-padding-top: 85px;
+      }
+
+      .site-header {
+        position: sticky;
+      }
+
+      .header-inner {
+        min-height: 80px;
+      }
+
+      .brand img {
+        max-height: 56px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav {
+        position: absolute;
+
+        top: 80px;
+        left: 0;
+        right: 0;
+
+        display: none;
+
+        padding: 28px 20px;
+
+        background: var(--bg);
+
+        border-bottom: 1px solid var(--line);
+
+        box-shadow: 0 15px 25px rgba(0,0,0,0.04);
+      }
+
+      .nav.open {
+        display: block;
+      }
+
+      .nav-list {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 22px;
+      }
+
+      .nav-list a {
+        font-size: 1rem;
+      }
+
+      .hero {
+        padding: 75px 0 65px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.8rem, 12vw, 4.2rem);
+      }
+
+      .section {
+        padding: 82px 0;
+      }
+
+      .section-heading {
+        display: block;
+      }
+
+      .case-grid,
+      .reference-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .metric-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .metric {
+        border-right: 0;
+      }
+
+      .contact {
+        padding: 82px 0 95px;
+      }
+
+      .contact-box {
+        padding: 45px 34px;
+      }
+    }
+
+
+    @media (max-width: 560px) {
+
+      .container {
+        width: min(calc(100% - 30px), var(--container));
+      }
+
+      .hero-actions,
+      .contact-actions {
+        flex-direction: column;
+      }
+
+      .hero-actions .btn,
+      .contact-actions .btn {
+        width: 100%;
+      }
+
+      .hero-panel {
+        padding: 26px 22px;
+      }
+
+      .value-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .value-item {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .case-card,
+      .reference-card,
+      .role-card {
+        padding: 27px 24px;
+      }
+
+      .process-step {
+        grid-template-columns: 55px 1fr;
+      }
+
+      .contact-box {
+        padding: 36px 24px;
+      }
+
+      .contact-details {
+        padding: 23px;
+      }
+    }
+
   </style>
-
 </head>
 
-<body>
 
-  <!-- ============ HEADER ============ -->
-  <header>
-    <a href="index.html" class="logo-link">
-      <img src="EloquenceCréativeLOGOVF 2.png" alt="Logo Éloquence Créative">
-    </a>
-    <nav>
-      <ul id="menu">
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="apropos.html">À propos</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+<body id="top">
+
+  <!-- ==================================================
+       HEADER
+  ================================================== -->
+
+  <header class="site-header">
+
+    <div class="container header-inner">
+
+      <!-- Logo volontairement non cliquable -->
+      <div class="brand">
+        <img
+          src="EloquenceCréativeLOGOVF 2.png"
+          alt="Éloquence Créative"
+        >
+      </div>
+
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Ouvrir le menu"
+        aria-expanded="false"
+        aria-controls="mainNav"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+
+      <nav
+        class="nav"
+        id="mainNav"
+        aria-label="Navigation principale"
+      >
+
+        <ul class="nav-list">
+
+          <li>
+            <a class="active" href="#top">
+              Accueil
+            </a>
+          </li>
+
+          <li>
+            <a href="#accompagnement">
+              Accompagnement
+            </a>
+          </li>
+
+          <li>
+            <a href="#methode">
+              Méthode
+            </a>
+          </li>
+
+          <li>
+            <a href="#resultats">
+              Résultats
+            </a>
+          </li>
+
+          <li>
+            <a href="#experience">
+              Expérience
+            </a>
+          </li>
+
+          <li>
+            <a href="#contact">
+              Contact
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+      <a
+        class="btn btn-primary header-cta"
+        href="#contact"
+      >
+        Échanger sur votre commerce
+      </a>
+
+    </div>
+
   </header>
 
-  <!-- ============ HERO ============ -->
-  <section class="hero">
-    <h1>
-    Là où l’image se tait,<br> <strong class="animated-word">la musique</strong> raconte.
-    </h1>
 
-    <p>
-      Je compose des musiques originales et du sound design pour sublimer vos films, publicités, courts-métrages et projets narratifs.
-    </p>
 
-    <a href="portfolio.html" class="cta-button">🎧 Écouter les réalisations</a>
+  <main>
 
-    <blockquote class="hero-quote">
-     La musique donne voix aux émotions que l’image ne peut exprimer seule.
-    </blockquote>
-  </section>
+    <!-- ==================================================
+         HERO
+    ================================================== -->
 
-  <!-- ============ MUSIQUE À L'IMAGE ============ -->
-  <section id="musique-image">
-    <h2>Musique à l’image — mon cœur de métier</h2>
-    <p>
-      Je compose des musiques originales pour accompagner vos courts-métrages, longs-métrages,  
-      publicités, documentaires, animations, podcasts narratifs et films institutionnels.  
-      Chaque œuvre est pensée pour servir le rythme et l’intention du réalisateur.
-    </p>
-  </section>
+    <section class="hero">
 
-  <!-- ============ SERVICES ============ -->
-  <section class="services">
-    <h2>Services</h2>
+      <div class="container hero-grid">
 
-    <ul>
-      <li><strong>Composition musicale originale</strong> – Recherches thématiques, atmosphères, thèmes orchestraux ou électroniques pour soutenir votre narration.</li>
+        <div class="hero-content">
 
-      <li><strong> Sound Design & Ambiances cinématiques</strong> – Création de textures, paysages sonores, impacts et ambiances immersives.</li>
+          <div class="eyebrow">
+            Marketing externalisé pour les commerces de bouche
+          </div>
 
-      <li><strong>Orchestration & arrangements</strong> – Écriture pour cordes, cuivres, bois, guitares, piano et textures hybrides, selon les besoins de votre film.</li>
-    </ul>
-  </section>
+          <h1>
+            Vous gérez votre commerce.<br>
+            <span>Je prends en charge le digital.</span>
+          </h1>
 
-  <!-- ============ BLOc IDENTITÉ SONORE (SECONDaire) ============ -->
-  <section id="identite-sonore">
-    <h2>Identité sonore — un savoir-faire complémentaire</h2>
-    <p>
-      Je conçois également des logos sonores, signatures auditives et univers audio complets  
-      pour les marques souhaitant renforcer leur présence émotionnelle sur leurs supports digitaux  
-      et campagnes vidéo.
-    </p>
-  </section>
+          <p class="hero-subtitle">
+            J'interviens comme votre
+            <strong>responsable marketing externalisé</strong> :
+            j'identifie les priorités, mets en œuvre les actions
+            et suis leurs résultats.
+          </p>
 
-  <!-- ============ MON APPROCHE ============ -->
-  <section id="approche">
-    <h2>Mon approche</h2>
-    <p>
-      Composer pour l’image, c’est créer un langage sensible. Une musique capable d’épouser  
-      la mise en scène, de révéler l’émotion d’un personnage et d’accompagner le spectateur  
-      dans un voyage narratif.
-    </p>
+          <div class="hero-actions">
 
-    <h3 style="color:var(--accent);font-family:'Playfair Display';margin-top:2rem;text-align:center;">
-      Une écriture pensée pour la narration
-    </h3>
-    <p>
-      Chaque projet commence par l’étude du scénario, des intentions de réalisation  
-      et du rythme de l’œuvre. La musique s’inscrit dans une continuité dramaturgique.
-    </p>
+            <a
+              class="btn btn-primary"
+              href="#contact"
+            >
+              Échanger sur votre commerce
+              <span class="arrow">→</span>
+            </a>
 
-    <h3 style="color:var(--accent);font-family:'Playfair Display';margin-top:2rem;text-align:center;">
-      Créer des émotions, pas seulement des sons
-    </h3>
-    <p>
-      Mon écriture mêle harmonies orchestrales, textures électroniques, guitare,  
-      ambiances immersives et motifs thématiques pour servir l’émotion.
-    </p>
+            <a
+              class="btn btn-secondary"
+              href="#accompagnement"
+            >
+              Voir ce que vous pouvez me confier
+            </a>
 
-    <h3 style="color:var(--accent);font-family:'Playfair Display';margin-top:2rem;text-align:center;">
-      Un travail artisanal du son
-    </h3>
-    <p>
-      Je porte une attention particulière aux nuances, aux silences, aux détails  
-      qui donnent une âme à la musique : dynamique, timbres, textures, respiration.
-    </p>
-  </section>
+          </div>
 
-  <!-- ============ FOOTER ============ -->
-  <footer>
-    <p>© 2025 Éloquence Créative – Tous droits réservés</p>
-  </footer>
+          <p class="hero-note">
+            Commerces indépendants · Paris · Intervention ponctuelle ou accompagnement régulier
+          </p>
+
+        </div>
+
+
+        <aside class="hero-panel">
+
+          <div class="hero-panel-label">
+            Un seul interlocuteur
+          </div>
+
+          <div class="hero-panel-title">
+            Les sujets digitaux qui restent habituellement sur votre liste peuvent avancer.
+          </div>
+
+          <ul class="hero-checklist">
+
+            <li>
+              <span class="check">01</span>
+              <span>
+                Être mieux trouvé sur Google et dans votre quartier
+              </span>
+            </li>
+
+            <li>
+              <span class="check">02</span>
+              <span>
+                Faire évoluer votre site et votre parcours client
+              </span>
+            </li>
+
+            <li>
+              <span class="check">03</span>
+              <span>
+                Faciliter les commandes, réservations ou prises de contact
+              </span>
+            </li>
+
+            <li>
+              <span class="check">04</span>
+              <span>
+                Piloter acquisition, contenus et e-commerce
+              </span>
+            </li>
+
+            <li>
+              <span class="check">05</span>
+              <span>
+                Mesurer ce qui fonctionne réellement
+              </span>
+            </li>
+
+          </ul>
+
+        </aside>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         PRINCIPES
+    ================================================== -->
+
+    <div class="value-strip">
+
+      <div class="container value-grid">
+
+        <div class="value-item">
+
+          <span class="value-number">
+            01
+          </span>
+
+          <strong>
+            Un interlocuteur pour vos sujets marketing et digitaux
+          </strong>
+
+        </div>
+
+
+        <div class="value-item">
+
+          <span class="value-number">
+            02
+          </span>
+
+          <strong>
+            Des priorités définies selon votre commerce
+          </strong>
+
+        </div>
+
+
+        <div class="value-item">
+
+          <span class="value-number">
+            03
+          </span>
+
+          <strong>
+            Des actions mises en œuvre, pas seulement recommandées
+          </strong>
+
+        </div>
+
+
+        <div class="value-item">
+
+          <span class="value-number">
+            04
+          </span>
+
+          <strong>
+            Des résultats suivis avec des indicateurs utiles
+          </strong>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         REALITY
+    ================================================== -->
+
+    <section class="section">
+
+      <div class="container reality-grid">
+
+        <div class="reality-copy">
+
+          <div class="eyebrow">
+            Votre réalité
+          </div>
+
+          <h2>
+            Vous avez un métier exigeant.
+            Le digital ne devrait pas être un poids de plus.
+          </h2>
+
+        </div>
+
+
+        <div class="reality-text">
+
+          <p>
+            Entre la boutique, les clients, les équipes,
+            les commandes et les fournisseurs, il reste rarement
+            du temps pour piloter correctement Google, le site,
+            Instagram, les campagnes publicitaires ou les données
+            e-commerce.
+          </p>
+
+          <p>
+            Résultat : les outils s'accumulent, plusieurs prestataires
+            interviennent chacun sur leur sujet et certaines actions
+            restent en attente pendant des mois.
+          </p>
+
+          <p>
+            <strong>
+              Mon rôle est de reprendre cette charge :
+              comprendre la situation, choisir les sujets qui comptent
+              vraiment et les faire avancer.
+            </strong>
+          </p>
+
+          <div class="statement">
+            Vous n'avez pas besoin de faire « plus de digital ».
+            Vous avez besoin de savoir quoi faire, dans quel ordre
+            et pourquoi.
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         ACCOMPAGNEMENT
+    ================================================== -->
+
+    <section
+      class="section cases"
+      id="accompagnement"
+    >
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="section-heading-text">
+
+            <div class="eyebrow">
+              Ce que vous pouvez me confier
+            </div>
+
+            <h2>
+              Des problèmes concrets.
+              Pas un catalogue de prestations.
+            </h2>
+
+            <p class="lead">
+              Je pars du besoin du commerce, puis je mobilise les outils
+              adaptés. Le site, Google Ads, Instagram ou Shopify
+              ne sont jamais une fin en soi.
+            </p>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="case-grid">
+
+
+          <!-- VISIBILITÉ -->
+
+          <article class="case-card">
+
+            <span class="case-kicker">
+              Visibilité locale
+            </span>
+
+            <h3>
+              « Les gens du quartier nous connaissent mal. »
+            </h3>
+
+            <p>
+              Je vérifie comment votre commerce ressort dans Google,
+              Maps et les recherches locales, puis je corrige
+              les principaux points qui limitent votre visibilité.
+            </p>
+
+            <div class="case-action">
+
+              <strong>
+                Concrètement
+              </strong>
+
+              <ul>
+                <li>audit de votre présence locale ;</li>
+                <li>optimisation de Google Business Profile ;</li>
+                <li>travail des pages locales et informations pratiques ;</li>
+                <li>avis clients et cohérence des informations en ligne.</li>
+              </ul>
+
+            </div>
+
+            <span class="case-metric">
+              À suivre : visibilité, appels, itinéraires, clics
+            </span>
+
+          </article>
+
+
+
+          <!-- SITE -->
+
+          <article class="case-card">
+
+            <span class="case-kicker">
+              Site & parcours client
+            </span>
+
+            <h3>
+              « Notre site existe, mais il ne nous apporte pas grand-chose. »
+            </h3>
+
+            <p>
+              Je regarde ce qu'un client doit réellement pouvoir faire
+              sur votre site et je simplifie son parcours.
+            </p>
+
+            <div class="case-action">
+
+              <strong>
+                Concrètement
+              </strong>
+
+              <ul>
+                <li>audit du site et du parcours utilisateur ;</li>
+                <li>refonte légère ou création si nécessaire ;</li>
+                <li>mise en avant des informations commerciales utiles ;</li>
+                <li>amélioration des appels, réservations et commandes.</li>
+              </ul>
+
+            </div>
+
+            <span class="case-metric">
+              À suivre : trafic, clics utiles, contacts, conversions
+            </span>
+
+          </article>
+
+
+
+          <!-- COMMANDES -->
+
+          <article class="case-card">
+
+            <span class="case-kicker">
+              Commandes & e-commerce
+            </span>
+
+            <h3>
+              « Nos clients veulent commander plus simplement. »
+            </h3>
+
+            <p>
+              Je cherche le niveau de solution adapté à votre organisation :
+              pas forcément un gros site e-commerce si un parcours
+              plus simple suffit.
+            </p>
+
+            <div class="case-action">
+
+              <strong>
+                Concrètement
+              </strong>
+
+              <ul>
+                <li>prise de commande simplifiée ;</li>
+                <li>WhatsApp, formulaire ou solution spécialisée ;</li>
+                <li>optimisation Shopify si vous vendez déjà en ligne ;</li>
+                <li>suivi du parcours jusqu'à l'achat.</li>
+              </ul>
+
+            </div>
+
+            <span class="case-metric">
+              À suivre : demandes, commandes, panier, chiffre d'affaires
+            </span>
+
+          </article>
+
+
+
+          <!-- CONTENUS -->
+
+          <article class="case-card">
+
+            <span class="case-kicker">
+              Contenus & réseaux sociaux
+            </span>
+
+            <h3>
+              « Nous publions, mais sans vraiment savoir ce que cela nous apporte. »
+            </h3>
+
+            <p>
+              Je donne un rôle précis aux contenus :
+              montrer votre savoir-faire, vos produits et la personnalité
+              du commerce, sans transformer votre quotidien
+              en studio de production.
+            </p>
+
+            <div class="case-action">
+
+              <strong>
+                Concrètement
+              </strong>
+
+              <ul>
+                <li>ligne éditoriale et calendrier réaliste ;</li>
+                <li>formats réutilisables ;</li>
+                <li>publication et optimisation des contenus ;</li>
+                <li>coordination photo ou vidéo lorsque nécessaire.</li>
+              </ul>
+
+            </div>
+
+            <span class="case-metric">
+              À suivre : portée utile, interactions, trafic, demandes
+            </span>
+
+          </article>
+
+
+
+          <!-- ACQUISITION -->
+
+          <article class="case-card">
+
+            <span class="case-kicker">
+              Acquisition & performance
+            </span>
+
+            <h3>
+              « Nous dépensons en publicité sans savoir si cela fonctionne. »
+            </h3>
+
+            <p>
+              Je vérifie d'abord les données disponibles avant
+              de recommander davantage d'investissement publicitaire.
+            </p>
+
+            <div class="case-action">
+
+              <strong>
+                Concrètement
+              </strong>
+
+              <ul>
+                <li>audit Google Ads et tracking ;</li>
+                <li>GA4 et suivi des conversions ;</li>
+                <li>Merchant Center pour les commerces concernés ;</li>
+                <li>optimisation des campagnes et budgets.</li>
+              </ul>
+
+            </div>
+
+            <span class="case-metric">
+              À suivre : conversions, CPA, ROAS, chiffre d'affaires
+            </span>
+
+          </article>
+
+
+
+          <!-- PILOTAGE -->
+
+          <article class="case-card">
+
+            <span class="case-kicker">
+              Pilotage marketing
+            </span>
+
+            <h3>
+              « Nous avons plusieurs sujets en cours, mais personne pour les piloter. »
+            </h3>
+
+            <p>
+              Je peux intervenir comme point de contact unique entre
+              le commerce, les outils et les prestataires spécialisés.
+            </p>
+
+            <div class="case-action">
+
+              <strong>
+                Concrètement
+              </strong>
+
+              <ul>
+                <li>priorisation des projets ;</li>
+                <li>brief et suivi des prestataires ;</li>
+                <li>coordination des actions marketing ;</li>
+                <li>reporting et recommandations régulières.</li>
+              </ul>
+
+            </div>
+
+            <span class="case-metric">
+              À suivre : avancement, budget, délais, résultats
+            </span>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         MÉTHODE
+    ================================================== -->
+
+    <section
+      class="section"
+      id="methode"
+    >
+
+      <div class="container process-grid">
+
+        <div class="process-intro">
+
+          <div class="eyebrow">
+            Comment je travaille
+          </div>
+
+          <h2>
+            Comprendre.
+            Prioriser.
+            Agir.
+            Mesurer.
+          </h2>
+
+          <p>
+            Je peux intervenir sur un sujet précis ou devenir
+            votre interlocuteur régulier pour faire avancer
+            l'ensemble de vos enjeux marketing.
+          </p>
+
+        </div>
+
+
+        <div class="process-list">
+
+          <div class="process-step">
+
+            <div>
+
+              <h3>
+                État des lieux
+              </h3>
+
+              <p>
+                J'analyse votre présence digitale, vos outils,
+                votre organisation, vos données disponibles
+                et les actions déjà engagées.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="process-step">
+
+            <div>
+
+              <h3>
+                Priorités
+              </h3>
+
+              <p>
+                Nous distinguons ce qui peut avoir un impact réel,
+                ce qui peut attendre et ce qui ne mérite probablement
+                pas votre budget.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="process-step">
+
+            <div>
+
+              <h3>
+                Mise en œuvre
+              </h3>
+
+              <p>
+                Je réalise directement les actions relevant
+                de mon champ d'intervention et coordonne
+                les compétences spécialisées lorsqu'elles sont nécessaires.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="process-step">
+
+            <div>
+
+              <h3>
+                Suivi
+              </h3>
+
+              <p>
+                Nous regardons les résultats, ajustons les actions
+                et continuons uniquement ce qui apporte de la valeur
+                au commerce.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         RÉSULTATS
+    ================================================== -->
+
+    <section
+      class="section measure"
+      id="resultats"
+    >
+
+      <div class="container">
+
+        <div class="eyebrow">
+          Des indicateurs concrets
+        </div>
+
+        <h2>
+          Une action marketing doit avoir une raison d'être.
+        </h2>
+
+        <p class="measure-intro">
+          Tout n'est pas parfaitement mesurable dans un commerce physique.
+          Mais chaque action doit être rattachée à un objectif
+          et à des indicateurs permettant de décider
+          si elle mérite d'être poursuivie.
+        </p>
+
+
+        <div class="metric-grid">
+
+          <div class="metric">
+
+            <span class="metric-number">
+              01
+            </span>
+
+            <strong>
+              Visibilité locale
+            </strong>
+
+            <span>
+              Apparitions dans Google et recherches de proximité
+            </span>
+
+          </div>
+
+
+          <div class="metric">
+
+            <span class="metric-number">
+              02
+            </span>
+
+            <strong>
+              Intention de visite
+            </strong>
+
+            <span>
+              Appels, itinéraires et interactions Google
+            </span>
+
+          </div>
+
+
+          <div class="metric">
+
+            <span class="metric-number">
+              03
+            </span>
+
+            <strong>
+              Trafic utile
+            </strong>
+
+            <span>
+              Visites du site et clics vers les actions importantes
+            </span>
+
+          </div>
+
+
+          <div class="metric">
+
+            <span class="metric-number">
+              04
+            </span>
+
+            <strong>
+              Commandes
+            </strong>
+
+            <span>
+              Leads, commandes, panier et chiffre d'affaires
+            </span>
+
+          </div>
+
+
+          <div class="metric">
+
+            <span class="metric-number">
+              05
+            </span>
+
+            <strong>
+              Rentabilité
+            </strong>
+
+            <span>
+              Coût d'acquisition, conversions et ROAS
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <p class="measure-note">
+          L'objectif n'est pas de produire davantage de tableaux de bord.
+          Il est de disposer de suffisamment d'informations pour décider
+          où investir votre temps et votre budget.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         RÔLE
+    ================================================== -->
+
+    <section class="section">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="section-heading-text">
+
+            <div class="eyebrow">
+              Mon rôle
+            </div>
+
+            <h2>
+              Vous n'avez pas besoin d'embaucher un responsable marketing à temps plein.
+            </h2>
+
+            <p class="lead">
+              Vous avez besoin que quelqu'un prenne la responsabilité
+              de faire avancer les bons sujets.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="role-grid">
+
+          <article class="role-card">
+
+            <div class="role-number">
+              1
+            </div>
+
+            <h3>
+              Je pilote
+            </h3>
+
+            <p>
+              Je centralise les sujets digitaux, définis les priorités
+              et garde une vision d'ensemble de ce qui doit avancer.
+            </p>
+
+          </article>
+
+
+          <article class="role-card">
+
+            <div class="role-number">
+              2
+            </div>
+
+            <h3>
+              Je fais
+            </h3>
+
+            <p>
+              Site, SEO local, contenus, Google Ads, analytics,
+              e-commerce : je prends directement en charge
+              une large partie de l'exécution.
+            </p>
+
+          </article>
+
+
+          <article class="role-card">
+
+            <div class="role-number">
+              3
+            </div>
+
+            <h3>
+              Je coordonne
+            </h3>
+
+            <p>
+              Lorsqu'une expertise spécifique est nécessaire,
+              je cadre le besoin et travaille avec le spécialiste adapté
+              plutôt que de vous laisser gérer plusieurs interlocuteurs.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         EXPERIENCE
+    ================================================== -->
+
+    <section
+      class="section references"
+      id="experience"
+    >
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="section-heading-text">
+
+            <div class="eyebrow">
+              Expérience terrain
+            </div>
+
+            <h2>
+              Du marketing pensé avec une logique commerciale.
+            </h2>
+
+            <p class="lead">
+              Mon parcours mêle stratégie digitale, acquisition,
+              e-commerce, contenus et développement commercial.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="reference-grid">
+
+          <article class="reference-card">
+
+            <div>
+
+              <div class="reference-type">
+                Accompagnement commerce
+              </div>
+
+              <div class="reference-name">
+                Miel Factory
+              </div>
+
+              <p>
+                Accompagnement d'une boutique parisienne spécialisée
+                dans les miels artisanaux haut de gamme sur ses enjeux
+                de contenus, e-commerce, visibilité et acquisition.
+              </p>
+
+            </div>
+
+
+            <div class="reference-tags">
+
+              <span class="tag">
+                E-commerce
+              </span>
+
+              <span class="tag">
+                Google Ads
+              </span>
+
+              <span class="tag">
+                Analytics
+              </span>
+
+              <span class="tag">
+                Contenus
+              </span>
+
+              <span class="tag">
+                Visibilité digitale
+              </span>
+
+            </div>
+
+          </article>
+
+
+
+          <article class="reference-card">
+
+            <div>
+
+              <div class="reference-type">
+                Expérience entrepreneuriale
+              </div>
+
+              <div class="reference-name">
+                Fabeo
+              </div>
+
+              <p>
+                Développement d'une activité digitale mêlant produit,
+                site web, acquisition, stratégie éditoriale
+                et développement commercial auprès de commerces indépendants.
+              </p>
+
+            </div>
+
+
+            <div class="reference-tags">
+
+              <span class="tag">
+                Produit digital
+              </span>
+
+              <span class="tag">
+                SEO
+              </span>
+
+              <span class="tag">
+                Acquisition
+              </span>
+
+              <span class="tag">
+                UX / UI
+              </span>
+
+              <span class="tag">
+                Business development
+              </span>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         CONTACT
+    ================================================== -->
+
+    <section
+      class="contact"
+      id="contact"
+    >
+
+      <div class="container">
+
+        <div class="contact-box">
+
+          <div class="contact-copy">
+
+            <div class="eyebrow">
+              Parlons de votre commerce
+            </div>
+
+            <h2>
+              Quels sont les sujets digitaux que vous repoussez depuis six mois ?
+            </h2>
+
+            <p>
+              Commençons par regarder votre situation :
+              ce qui fonctionne déjà, ce qui bloque
+              et les quelques actions qui méritent réellement
+              votre temps ou votre budget.
+            </p>
+
+            <div class="contact-actions">
+
+              <a
+                class="btn btn-primary"
+                href="mailto:guilhem@eloquencecreative.fr"
+              >
+                M'écrire
+                <span class="arrow">→</span>
+              </a>
+
+              <a
+                class="btn btn-secondary"
+                href="tel:+33636666157"
+              >
+                M'appeler
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <div class="contact-details">
+
+            <div class="contact-detail">
+
+              <span class="contact-label">
+                Email
+              </span>
+
+              <a href="mailto:guilhem@eloquencecreative.fr">
+                guilhem@eloquencecreative.fr
+              </a>
+
+            </div>
+
+
+            <div class="contact-detail">
+
+              <span class="contact-label">
+                Téléphone
+              </span>
+
+              <a href="tel:+33636666157">
+                06 36 66 61 57
+              </a>
+
+            </div>
+
+
+            <div class="contact-detail">
+
+              <span class="contact-label">
+                Zone d'intervention
+              </span>
+
+              <span>
+                Paris et proche couronne
+              </span>
+
+            </div>
+
+
+            <div class="contact-detail">
+
+              <span class="contact-label">
+                Éloquence Créative
+              </span>
+
+              <span>
+                Marketing externalisé pour commerces de bouche
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- ==================================================
+       JAVASCRIPT
+  ================================================== -->
+
+  <script>
+
+    /* -----------------------------------------
+       MENU MOBILE
+    ----------------------------------------- */
+
+    const menuToggle =
+      document.getElementById("menuToggle");
+
+    const mainNav =
+      document.getElementById("mainNav");
+
+
+    menuToggle.addEventListener("click", function () {
+
+      const isOpen =
+        mainNav.classList.toggle("open");
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        isOpen ? "true" : "false"
+      );
+
+    });
+
+
+    document
+      .querySelectorAll("#mainNav a")
+      .forEach(link => {
+
+        link.addEventListener("click", function () {
+
+          mainNav.classList.remove("open");
+
+          menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+        });
+
+      });
+
+
+
+    /* -----------------------------------------
+       NAVIGATION ACTIVE AU SCROLL
+    ----------------------------------------- */
+
+    const navLinks =
+      document.querySelectorAll(".nav-list a[href^='#']");
+
+    const sections =
+      [...navLinks]
+        .map(link => {
+
+          const id =
+            link.getAttribute("href");
+
+          return document.querySelector(id);
+
+        })
+        .filter(Boolean);
+
+
+    const observer =
+      new IntersectionObserver(
+
+        entries => {
+
+          entries.forEach(entry => {
+
+            if (!entry.isIntersecting) {
+              return;
+            }
+
+            navLinks.forEach(link => {
+
+              link.classList.remove("active");
+
+              if (
+                link.getAttribute("href") ===
+                "#" + entry.target.id
+              ) {
+
+                link.classList.add("active");
+
+              }
+
+            });
+
+          });
+
+        },
+
+        {
+          rootMargin: "-35% 0px -55% 0px",
+          threshold: 0
+        }
+
+      );
+
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+
+  </script>
 
 </body>
 </html>
